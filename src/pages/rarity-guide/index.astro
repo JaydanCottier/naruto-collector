@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { RARITY_MAP, RAINBOW_GRADIENT } from '../../utils/rarity.ts';
+
+const rarities = Object.values(RARITY_MAP).sort((a, b) => a.sortOrder - b.sortOrder);
+---
+
+<BaseLayout title="Rarity Guide — Complete KAYOU Naruto Card Rarity Reference" description="Complete guide to every KAYOU Naruto card rarity, exclusive sources, grading info, and value context.">
+
+  <h1 class="text-4xl sm:text-6xl font-bangers tracking-wider text-white mb-3 text-center">
+    Rarity <span class="text-gradient-orange">Guide</span>
+  </h1>
+  <p class="text-lg text-brand-text-muted max-w-2xl mx-auto text-center mb-12">
+    Every rarity in the KAYOU Naruto trading card line — with exclusive sources, value context, and collecting tips.
+  </p>
+
+  <!-- Section 1: Value Reality Check -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bangers tracking-wider text-white mb-6 flex items-center gap-3">
+      <span class="text-2xl">💰</span> Value Reality Check
+    </h2>
+    <div class="bg-brand-surface rounded-xl border border-brand-border p-6">
+      <p class="text-sm text-brand-text-muted mb-4">
+        Most KAYOU cards are worth <strong class="text-white">$10–20</strong> on the secondary market. Cards that command real value:
+      </p>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3">
+          <span class="text-brand-gold text-lg shrink-0">💎</span>
+          <div>
+            <p class="text-sm text-white font-semibold">SE Serialized (T4W5) — $300+</p>
+            <p class="text-xs text-brand-text-muted">SE-007/008 /199, SE-009/010 /699, SE-011/012 /999. Panoramic pairs.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-brand-gold text-lg shrink-0">💎</span>
+          <div>
+            <p class="text-sm text-white font-semibold">SP009 (EX Exclusive) — Consistently high value</p>
+            <p class="text-xs text-brand-text-muted">ONLY found in EX Rainbow Packs. One of the most expensive cards in all KAYOU.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-brand-gold text-lg shrink-0">💎</span>
+          <div>
+            <p class="text-sm text-white font-semibold">SLR #6 Itachi (T4W1 Exclusive) — Rare and sought-after</p>
+            <p class="text-xs text-brand-text-muted">The hardest SLR to pull. Only available in T4W1, never reprinted.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-brand-gold text-lg shrink-0">💎</span>
+          <div>
+            <p class="text-sm text-white font-semibold">Serial XR /72 (Ninja Age N Edition) — Rarest card in ALL of KAYOU</p>
+            <p class="text-xs text-brand-text-muted">Hidden variant, only 72 exist. The holy grail for collectors.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-brand-gold text-lg shrink-0">💎</span>
+          <div>
+            <p class="text-sm text-white font-semibold">Gold SV Minato + Kakashi (Heaven+Earth Scroll)</p>
+            <p class="text-xs text-brand-text-muted">Gold variants are the hardest to pull from the Scroll Box. Highly sought-after.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-brand-text-muted mt-4 italic">
+        These are genuine investment pieces. Everything else is for the love of the art.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Full Rarity Table -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bangers tracking-wider text-white mb-6 flex items-center gap-3">
+      <span class="text-2xl">🎨</span> Complete Rarity Table
+    </h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+        <thead>
+          <tr class="border-b border-brand-border">
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Badge</th>
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Rarity</th>
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Name</th>
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase hidden sm:table-cell">Exclusive Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rarities.map(r => (
+            <tr class="border-b border-brand-border last:border-0 hover:bg-brand-surface-light transition-colors">
+              <td class="px-4 py-3">
+                <span
+                  class="text-[11px] font-bold px-2.5 py-1 rounded-full inline-block"
+                  style={r.isGradient
+                    ? `background: ${RAINBOW_GRADIENT}; color: white;`
+                    : `background: ${r.color}20; color: ${r.color}; border: 1px solid ${r.color}40;`}
+                >
+                  {r.code}
+                </span>
+              </td>
+              <td class="px-4 py-3 font-mono text-white font-bold">{r.code}</td>
+              <td class="px-4 py-3 text-white">{r.label}</td>
+              <td class="px-4 py-3 text-xs text-brand-text-muted hidden sm:table-cell">{r.exclusiveSource}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs text-brand-text-muted mt-3">
+      <strong>Post-T4W6 rarity order:</strong> R → SR → SSR → PTR → UR → PU → MR → BP → SP → SE
+    </p>
+  </section>
+
+  <!-- Section 3: Grading KAYOU Cards -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bangers tracking-wider text-white mb-6 flex items-center gap-3">
+      <span class="text-2xl">📊</span> Grading KAYOU Cards
+    </h2>
+    <div class="bg-brand-surface rounded-xl border border-brand-border p-6 space-y-4">
+      <div class="flex items-center gap-3">
+        <span class="text-red-500 text-xl shrink-0">✗</span>
+        <div>
+          <p class="text-sm text-white font-semibold">PSA — Does NOT grade KAYOU cards</p>
+          <p class="text-xs text-brand-text-muted">PSA does not accept KAYOU submissions at this time.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-amber-500 text-xl shrink-0">✗</span>
+        <div>
+          <p class="text-sm text-white font-semibold">Beckett (BGS) — Has stopped accepting KAYOU</p>
+          <p class="text-xs text-brand-text-muted">BGS previously accepted KAYOU but has discontinued grading for these cards.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-green-500 text-xl shrink-0">✓</span>
+        <div>
+          <p class="text-sm text-white font-semibold">MNT (Mint Grading) — Currently recommended</p>
+          <p class="text-xs text-brand-text-muted">MNT is the recommended service for grading KAYOU Naruto cards. They specialise in anime and Asian TCGs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: SLR Pairs -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bangers tracking-wider text-white mb-6 flex items-center gap-3">
+      <span class="text-2xl">🖤🤍</span> SLR (Secret Legend) Pairs
+    </h2>
+    <div class="bg-brand-surface rounded-xl border border-brand-border p-6">
+      <p class="text-sm text-brand-text-muted mb-4">
+        SLR cards come in two versions: <strong class="text-white">Black</strong> (negative) and <strong class="text-white">White</strong> (positive). These are designed as a pair — a light and dark version of the same artwork.
+      </p>
+      <div class="flex gap-4 mb-4">
+        <div class="flex-1 bg-black/30 rounded-lg p-4 text-center border border-white/10">
+          <p class="text-lg font-bangers text-white">🖤 Black</p>
+          <p class="text-xs text-brand-text-muted">Dark / negative variant</p>
+        </div>
+        <div class="flex-1 bg-white/5 rounded-lg p-4 text-center border border-white/10">
+          <p class="text-lg font-bangers text-white">🤍 White</p>
+          <p class="text-xs text-brand-text-muted">Light / positive variant</p>
+        </div>
+      </div>
+      <p class="text-xs text-brand-text-muted">
+        Collectors hunt both halves to complete the pair. A complete pair is worth significantly more than either individual card. <strong class="text-brand-gold">SLR #6 Itachi</strong> (T4W1 exclusive) is the hardest SLR to pull and the most valuable pair.
+      </p>
+      <p class="text-xs text-brand-text-muted mt-2">
+        SLR cards are found in <strong class="text-white">T4 boxes</strong> and <strong class="text-white">EX Rainbow Packs</strong> only.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5: QR Redemption Warning -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bangers tracking-wider text-white mb-6 flex items-center gap-3">
+      <span class="text-2xl">⚠️</span> QR Card Redemption Warning
+    </h2>
+    <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6">
+      <p class="text-sm text-red-400 font-semibold mb-3">🚨 Important: QR cards are REDEMPTION cards</p>
+      <div class="space-y-3 text-sm text-red-300/80">
+        <p>QR (Quest Rare) cards from The Age of Ninjas set are <strong class="text-white">not standard collectible cards</strong>. They contain a unique QR code that must be redeemed for the physical card.</p>
+        <p><strong class="text-white">REDEMPTION CAN ONLY BE DONE IN CHINA.</strong> If you are outside China, you will need assistance from your seller or a proxy service to redeem the code.</p>
+        <p>⚠️ <strong class="text-white">NEVER share your QR code publicly.</strong> Each code can only be redeemed once. If someone else scans your code, your card is gone permanently.</p>
+        <p>QR cards are limited to /720 each, with a hidden /72 variant that is exceptionally rare.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rainbow gradient ref -->
+  <div class="text-center text-xs text-brand-text-muted mt-8">
+    <p>Rainbow rarity CSS: <code class="text-brand-text-muted/60">linear-gradient(135deg, #f97316, #ec4899, #8b5cf6, #3b82f6)</code></p>
+  </div>
+
+</BaseLayout>

@@ -88,7 +88,7 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
 
   <script define:vars={{ cardsData, rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient }])) }}>
     function renderNeeds() {
-      const raw = localStorage.getItem('naruto-collector-v1');
+      const raw = localStorage.getItem('naruto-collector-v2');
       const data = raw ? JSON.parse(raw) : { owned: {} };
       const owned = data.owned || {};
 

@@ -1,0 +1,29 @@
+{
+    "id": "pin-blind-box",
+    "slug": "pin-blind-box",
+    "name": "Pin Blind Box",
+    "displayName": "Pin Blind Box",
+    "tier": "PIN",
+    "type": "pin",
+    "language": "CN",
+    "releaseDate": "2022-01-01",
+    "cardCount": 12,
+    "description": "Collectible pin blind box series featuring Naruto characters. 12 pins to collect with 4 chase variants.",
+    "logoImage": "/images/sets/pin-blind-box-logo.png",
+    "bannerImage": "/images/sets/pin-blind-box-banner.jpg",
+    "notes": "ONLY source of BR (Badge Rare) rarity. 12 pins total. 4 chases: Jiraiya, Tsunade, Orochimaru, Sage Naruto. Blind box — contents unknown until opened.",
+    "unsealed": false,
+    "englishEquivalent": null,
+    "cnEquivalent": null,
+    "affiliateLinks": {
+        "aliexpress": "PLACEHOLDER",
+        "ebay": "",
+        "approxPriceUSD": 10,
+        "approxPriceCNY": 70
+    },
+    "pullRates": {
+        "ur_per_packs": 0,
+        "hit_per_packs": 0,
+        "valueRating": 3
+    }
+}

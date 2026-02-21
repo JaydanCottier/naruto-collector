@@ -1,0 +1,32 @@
+{
+    "id": "ex-packs",
+    "slug": "ex-packs",
+    "name": "EX Rainbow Packs",
+    "displayName": "EX Rainbow Packs",
+    "tier": "EX",
+    "type": "ex",
+    "language": "CN",
+    "releaseDate": "2021-06-01",
+    "cardCount": 8,
+    "packCount": 100,
+    "packPrice": "10¥",
+    "packContents": "Same contents as T4 packs + chance at exclusive SPs",
+    "description": "Loose packs only — not available in booster boxes. Sold via Kayou official store in China. 100 packs per case, 12 cases per master case.",
+    "logoImage": "/images/sets/ex-packs-logo.png",
+    "bannerImage": "/images/sets/ex-packs-banner.jpg",
+    "notes": "SP009 EXCLUSIVE — one of the most expensive cards in all KAYOU. SLR pullable. EX4+5 have SE cards. Highest hit rate of any KAYOU product.",
+    "unsealed": false,
+    "englishEquivalent": null,
+    "cnEquivalent": null,
+    "affiliateLinks": {
+        "aliexpress": "PLACEHOLDER",
+        "ebay": "",
+        "approxPriceUSD": 8,
+        "approxPriceCNY": 56
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    }
+}

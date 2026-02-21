@@ -16,6 +16,9 @@ const tierColor = getTierColor(set.tier);
 const link = set.affiliateLinks?.aliexpress || '#';
 const price = set.affiliateLinks?.approxPriceUSD || 0;
 const cardIds = cards.map((c: any) => c.id);
+const isUnsealed = set.unsealed === true;
+const isPoorHitRate = set.pullRates?.valueRating === 1;
+const valueStars = set.pullRates?.valueRating || 3;
 ---
 
 <BaseLayout title={`${set.displayName || set.name} — Set Details`} description={set.description}>
@@ -47,11 +50,16 @@ const cardIds = cards.map((c: any) => c.id);
             <span class="text-xs font-bold px-2 py-0.5 rounded bg-brand-surface-light text-brand-text-muted capitalize">
               {set.type}
             </span>
+            {set.arc && (
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                ⚔️ {set.arc}
+              </span>
+            )}
           </div>
           <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-1">{set.displayName || set.name}</h1>
           <p class="text-sm text-brand-text-muted max-w-xl">{set.description}</p>
 
-          <div class="flex gap-6 text-center mt-4">
+          <div class="flex gap-6 text-center mt-4 flex-wrap">
             <div>
               <div class="text-2xl font-bangers text-brand-orange">{cards.length}</div>
               <div class="text-xs text-brand-text-muted font-semibold uppercase">Cards</div>
@@ -108,10 +116,46 @@ const cardIds = cards.map((c: any) => c.id);
     </div>
   </div>
 
+  <!-- Unsealed Warning Panel -->
+  {isUnsealed && (
+    <div class="mb-6 bg-blue-500/10 border border-blue-500/30 rounded-xl p-4 flex items-start gap-3">
+      <span class="text-lg shrink-0">ℹ️</span>
+      <div>
+        <p class="text-sm font-semibold text-blue-400 mb-1">Unsealed Product Notice</p>
+        <p class="text-xs text-blue-300/80">
+          T4 boxes are <strong>NOT</strong> shrink wrapped. They are sealed with two sticker seals. This is normal and does not mean the box has been opened or tampered with. All T4 products ship this way from KAYOU.
+        </p>
+      </div>
+    </div>
+  )}
+
+  <!-- Poor Hit Rate Warning (T2W7 etc.) -->
+  {isPoorHitRate && (
+    <div class="mb-6 bg-amber-500/10 border border-amber-500/30 rounded-xl p-4 flex items-start gap-3">
+      <span class="text-lg shrink-0">⚠️</span>
+      <div>
+        <p class="text-sm font-semibold text-amber-400 mb-1">Poor Hit Rate Warning</p>
+        <p class="text-xs text-amber-300/80">
+          This set has a significantly lower hit rate than other products in its tier. Community consensus rates this as poor value for money. Consider other options in the same price range. <a href="/start-here" class="underline text-amber-400 hover:text-white">See our recommendations →</a>
+        </p>
+      </div>
+    </div>
+  )}
+
   <!-- Pull Rate Card -->
   <div class="mb-6">
     <PullRateCard pullRates={set.pullRates} />
   </div>
+
+  <!-- Value Stars -->
+  {set.pullRates && (
+    <div class="mb-6 flex items-center gap-2">
+      <span class="text-xs font-bold text-brand-text-muted uppercase tracking-wider">Value Rating</span>
+      <span class="text-sm text-brand-gold font-mono">
+        {'★'.repeat(valueStars)}{'☆'.repeat(5 - valueStars)}
+      </span>
+    </div>
+  )}
 
   <!-- Complete Your Set -->
   <div class="mb-6">
@@ -131,9 +175,17 @@ const cardIds = cards.map((c: any) => c.id);
 
   <slot />
 
+  <!-- Pack Contents -->
+  {set.packContents && (
+    <div class="mt-6 bg-brand-surface rounded-xl border border-brand-border p-4">
+      <h3 class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2">Pack Contents</h3>
+      <p class="text-sm text-white">{set.packContents}</p>
+    </div>
+  )}
+
   <!-- Report missing card -->
   <div class="mt-8 text-center">
-    <a href="mailto:report@narutocollector.com?subject=Missing card in {set.name}" class="text-xs text-brand-text-muted hover:text-brand-orange transition-colors">
+    <a href={`mailto:report@narutocollector.com?subject=Missing card in ${set.name}`} class="text-xs text-brand-text-muted hover:text-brand-orange transition-colors">
       📝 Report a missing card in this set
     </a>
   </div>
@@ -141,7 +193,7 @@ const cardIds = cards.map((c: any) => c.id);
   <script define:vars={{ cardIds, totalCards: cards.length }}>
     function updateProgress() {
       try {
-        const raw = localStorage.getItem('naruto-collector-v1');
+        const raw = localStorage.getItem('naruto-collector-v2') || localStorage.getItem('naruto-collector-v2');
         if (!raw) return;
         const data = JSON.parse(raw);
         const owned = cardIds.filter(id => data.owned && data.owned[id]).length;

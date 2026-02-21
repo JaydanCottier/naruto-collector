@@ -10,8 +10,8 @@
   "language": "CN",
   "releaseDate": "2023-01-01",
   "cardCount": 8,
-  "packCount": 20,
-  "packPrice": "2¥",
+  "packCount": 18,
+  "packPrice": "10",
   "description": "Chapter of Soldiers — Tier 4 Wave 5. Features serialized SE cards.",
   "logoImage": "/images/sets/t4w5-logo.png",
   "bannerImage": "/images/sets/t4w5-banner.jpg",
@@ -28,5 +28,6 @@
     "ur_per_packs": 3,
     "hit_per_packs": 1,
     "valueRating": 5
-  }
+  },
+  "unsealed": true
 }

@@ -36,20 +36,50 @@ const { card, showSet = false } = Astro.props;
       onerror={`this.onerror=null;this.src='/images/placeholder/${card.rarity.toLowerCase()}.svg'`}
     />
     <!-- Rarity badge -->
-    <div class="absolute top-2 right-2">
+    <div class="absolute top-2 left-2">
       <RarityBadge rarity={card.rarity} />
     </div>
-    <!-- Collection tick -->
-    <button
-      class="collection-btn absolute bottom-2 right-2 w-7 h-7 rounded-full bg-brand-bg/80 border border-brand-border flex items-center justify-center text-brand-text-muted hover:text-brand-orange hover:border-brand-orange transition-all"
-      data-card-id={card.id}
-      title="Toggle collection"
-      onclick="event.preventDefault();event.stopPropagation();"
-    >
-      <svg class="w-4 h-4 check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-      </svg>
-    </button>
+
+    <!-- Owned overlay (green ✓) — bottom-left -->
+    <div class="owned-overlay absolute bottom-2 left-2 hidden items-center justify-center w-7 h-7 rounded-full bg-green-500/90 text-white text-sm font-bold shadow-lg" data-card-id={card.id}>
+      ✓
+    </div>
+
+    <!-- Wishlist overlay (gold ⭐) — top-right -->
+    <div class="wishlist-overlay absolute top-2 right-2 hidden items-center justify-center w-7 h-7 rounded-full bg-yellow-500/90 text-white text-sm shadow-lg" data-card-id={card.id}>
+      ⭐
+    </div>
+
+    <!-- Hover buttons -->
+    <div class="absolute bottom-0 left-0 right-0 flex justify-between p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gradient-to-t from-black/60 to-transparent">
+      <!-- Owned toggle (✓) -->
+      <button
+        class="collection-btn flex items-center justify-center rounded-full bg-brand-bg/90 border border-brand-border text-brand-text-muted hover:text-green-400 hover:border-green-400 transition-all"
+        style="min-width: 44px; min-height: 44px; width: 44px; height: 44px;"
+        data-card-id={card.id}
+        data-action="owned"
+        title="Add to collection"
+        onclick="event.preventDefault();event.stopPropagation();"
+      >
+        <svg class="w-5 h-5 check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+        </svg>
+      </button>
+
+      <!-- Wishlist toggle (⭐) -->
+      <button
+        class="wishlist-btn flex items-center justify-center rounded-full bg-brand-bg/90 border border-brand-border text-brand-text-muted hover:text-yellow-400 hover:border-yellow-400 transition-all"
+        style="min-width: 44px; min-height: 44px; width: 44px; height: 44px;"
+        data-card-id={card.id}
+        data-action="wishlist"
+        title="Add to wishlist"
+        onclick="event.preventDefault();event.stopPropagation();"
+      >
+        <svg class="w-5 h-5 star-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- Info -->

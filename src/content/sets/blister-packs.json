@@ -1,0 +1,30 @@
+{
+    "id": "blister-packs",
+    "slug": "blister-packs",
+    "name": "Blister Packs",
+    "displayName": "Blister Packs",
+    "tier": "BLISTER",
+    "type": "blister",
+    "language": "CN",
+    "releaseDate": "2021-01-01",
+    "cardCount": 8,
+    "packContents": "4 packs + 1 promo card per blister",
+    "description": "Blister pack bundles featuring 4 packs and 1 exclusive promo card. Multiple themed blisters available including Gaara, War, and more.",
+    "logoImage": "/images/sets/blister-packs-logo.png",
+    "bannerImage": "/images/sets/blister-packs-banner.jpg",
+    "notes": "ONLY source of LR (Legendary Rare) rarity — found nowhere else. Multiple themed blisters: Gaara, War, etc.",
+    "unsealed": false,
+    "englishEquivalent": null,
+    "cnEquivalent": null,
+    "affiliateLinks": {
+        "aliexpress": "PLACEHOLDER",
+        "ebay": "",
+        "approxPriceUSD": 6,
+        "approxPriceCNY": 42
+    },
+    "pullRates": {
+        "ur_per_packs": 0,
+        "hit_per_packs": 0,
+        "valueRating": 3
+    }
+}

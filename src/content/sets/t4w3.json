@@ -10,12 +10,12 @@
   "language": "CN",
   "releaseDate": "2022-02-01",
   "cardCount": 8,
-  "packCount": 20,
-  "packPrice": "2¥",
+  "packCount": 18,
+  "packPrice": "10",
   "description": "Chapter of Soldiers — Tier 4 Wave 3.",
   "logoImage": "/images/sets/t4w3-logo.png",
   "bannerImage": "/images/sets/t4w3-banner.jpg",
-  "notes": "",
+  "notes": "T4 sticker seals - NOT shrink wrapped. This is normal.",
   "englishEquivalent": null,
   "cnEquivalent": null,
   "affiliateLinks": {
@@ -28,5 +28,6 @@
     "ur_per_packs": 3,
     "hit_per_packs": 1,
     "valueRating": 5
-  }
+  },
+  "unsealed": true
 }

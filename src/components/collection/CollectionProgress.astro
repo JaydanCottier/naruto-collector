@@ -25,7 +25,7 @@ const { total, setId, cardIds } = Astro.props;
       const total = parseInt(el.getAttribute('data-total') || '0');
 
       try {
-        const raw = localStorage.getItem('naruto-collector-v1');
+        const raw = localStorage.getItem('naruto-collector-v2');
         const data = raw ? JSON.parse(raw) : { owned: {} };
         const owned = cardIds.filter((id: string) => data.owned && data.owned[id]).length;
         const pct = total > 0 ? Math.round((owned / total) * 100) : 0;

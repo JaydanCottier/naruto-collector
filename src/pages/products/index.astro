@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { TIER_COLORS } from '../../utils/rarity.ts';
+---
+
+<BaseLayout title="Product Types — KAYOU Naruto Products Explained" description="Everything you need to know about KAYOU Naruto product types: Booster Boxes, EX Rainbow Packs, Blister Packs, Pin Blind Box, and Special Boxes.">
+
+  <h1 class="text-4xl sm:text-6xl font-bangers tracking-wider text-white mb-3 text-center">
+    Product <span class="text-gradient-orange">Types</span>
+  </h1>
+  <p class="text-lg text-brand-text-muted max-w-2xl mx-auto text-center mb-12">
+    KAYOU Naruto comes in 5 product types. Each contains different rarities and exclusives.
+  </p>
+
+  <!-- Booster Boxes (T1-T4) -->
+  <section class="mb-10">
+    <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+      <div class="bg-gradient-to-r from-brand-surface-light to-brand-surface p-6 border-b border-brand-border">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📦</span>
+          <h2 class="text-2xl font-bangers tracking-wider text-white">Booster Boxes</h2>
+        </div>
+        <p class="text-sm text-brand-text-muted mt-1">The core product line — 4 tiers of increasing rarity and value.</p>
+      </div>
+      <div class="p-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { tier: 'T1', name: 'Tier 1', desc: 'Budget entry point. 30 packs / 1¥ each. Mostly common cards with a few holos. GP in W2+.', color: TIER_COLORS['T1'], exclusive: 'GP (Gold Promo)' },
+          { tier: 'T2', name: 'Tier 2', desc: '30 packs / 2¥. Best balance of value and variety. ZR, CR, MR available. Best starting tier.', color: TIER_COLORS['T2'], exclusive: 'ZR, CR, CP (in T2.5)' },
+          { tier: 'T3', name: 'Tier 3', desc: '24 packs / 5¥. Premium cards with TR/TGR see-through holos and NR rainbow foils.', color: TIER_COLORS['T3'], exclusive: 'TR, TGR, NR' },
+          { tier: 'T4', name: 'Tier 4', desc: '18 packs / 10¥. Highest hit rate. Every other pack SSR+. SLR Black+White pairs.', color: TIER_COLORS['T4'], exclusive: 'HR, BP, SLR, SE, SP005-008' },
+        ].map(t => (
+          <div class="bg-brand-bg rounded-lg p-4 border border-brand-border">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-bold px-2.5 py-1 rounded-full" style={`background: ${t.color}20; color: ${t.color}; border: 1px solid ${t.color}40`}>
+                {t.tier}
+              </span>
+              <span class="text-sm font-bangers text-white">{t.name}</span>
+            </div>
+            <p class="text-xs text-brand-text-muted mb-3">{t.desc}</p>
+            <p class="text-[10px] font-mono text-brand-gold">Exclusive: {t.exclusive}</p>
+          </div>
+        ))}
+      </div>
+      <div class="px-6 pb-6">
+        <a href="/sets" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
+          Browse all booster box sets →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EX Rainbow Packs -->
+  <section class="mb-10">
+    <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+      <div class="bg-gradient-to-r from-orange-500/10 to-brand-surface p-6 border-b border-brand-border">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🌈</span>
+          <h2 class="text-2xl font-bangers tracking-wider text-white">EX Rainbow Packs</h2>
+        </div>
+        <p class="text-sm text-brand-text-muted mt-1">Loose packs only — not available in booster boxes.</p>
+      </div>
+      <div class="p-6">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <h3 class="text-sm font-semibold text-white mb-2">Key Details</h3>
+            <ul class="text-xs text-brand-text-muted space-y-1.5">
+              <li>• 100 packs per case, 12 cases per master case</li>
+              <li>• Same contents as T4 packs + chance at exclusive SPs</li>
+              <li>• Sold via KAYOU official store in China</li>
+              <li>• <strong class="text-brand-gold">Highest hit rate</strong> of any KAYOU product</li>
+              <li>• SLR cards are pullable</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-white mb-2">Exclusive Rarities</h3>
+            <ul class="text-xs space-y-1.5">
+              <li class="text-red-400">• SP009 — ONLY found in EX packs. One of the most expensive cards in all KAYOU.</li>
+              <li class="text-brand-gold">• SE cards available in EX4 and EX5</li>
+              <li class="text-brand-orange">• SLR Black + White pairs pullable</li>
+            </ul>
+          </div>
+        </div>
+        <a href="/sets/ex-packs/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold mt-4 inline-block">
+          View EX Rainbow Packs set →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blister Packs -->
+  <section class="mb-10">
+    <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+      <div class="bg-gradient-to-r from-yellow-500/10 to-brand-surface p-6 border-b border-brand-border">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🃏</span>
+          <h2 class="text-2xl font-bangers tracking-wider text-white">Blister Packs</h2>
+        </div>
+        <p class="text-sm text-brand-text-muted mt-1">Themed blister bundles with exclusive promo cards.</p>
+      </div>
+      <div class="p-6">
+        <p class="text-sm text-brand-text-muted mb-3">
+          Each blister contains <strong class="text-white">4 packs + 1 exclusive promo card</strong>. Multiple themed blisters available: Gaara, War, and more.
+        </p>
+        <div class="bg-brand-gold/10 border border-brand-gold/20 rounded-lg p-3 mb-4">
+          <p class="text-xs text-brand-gold font-semibold">
+            📌 ONLY source of LR (Legendary Rare) — found nowhere else in the KAYOU line.
+          </p>
+        </div>
+        <a href="/sets/blister-packs/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
+          View Blister Packs set →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pin Blind Box -->
+  <section class="mb-10">
+    <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+      <div class="bg-gradient-to-r from-purple-500/10 to-brand-surface p-6 border-b border-brand-border">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">📌</span>
+          <h2 class="text-2xl font-bangers tracking-wider text-white">Pin Blind Box</h2>
+        </div>
+        <p class="text-sm text-brand-text-muted mt-1">Collectible enamel pins in a blind box format.</p>
+      </div>
+      <div class="p-6">
+        <p class="text-sm text-brand-text-muted mb-3">
+          Not cards — but part of the KAYOU Naruto ecosystem. <strong class="text-white">12 pins</strong> to collect with <strong class="text-white">4 chase variants</strong> that are significantly harder to find.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+          {['Jiraiya', 'Tsunade', 'Orochimaru', 'Sage Naruto'].map(name => (
+            <div class="bg-brand-bg rounded-lg p-3 text-center border border-amber-500/20">
+              <p class="text-xs font-semibold text-amber-400">🏆 Chase</p>
+              <p class="text-sm text-white">{name}</p>
+            </div>
+          ))}
+        </div>
+        <div class="bg-brand-gold/10 border border-brand-gold/20 rounded-lg p-3 mb-4">
+          <p class="text-xs text-brand-gold font-semibold">
+            📌 ONLY source of BR (Badge Rare) — exclusive to the Pin Blind Box.
+          </p>
+        </div>
+        <a href="/sets/pin-blind-box/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
+          View Pin Blind Box set →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special / Gift Boxes -->
+  <section class="mb-10">
+    <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+      <div class="bg-gradient-to-r from-red-500/10 to-brand-surface p-6 border-b border-brand-border">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🎁</span>
+          <h2 class="text-2xl font-bangers tracking-wider text-white">Special / Gift Boxes</h2>
+        </div>
+        <p class="text-sm text-brand-text-muted mt-1">Premium limited-edition boxes with exclusive content.</p>
+      </div>
+      <div class="p-6">
+        <p class="text-sm text-brand-text-muted mb-3">
+          KAYOU releases special boxes for holidays and milestones. These typically contain a mix of packs from different tiers, plus <strong class="text-white">exclusive cards</strong> not found anywhere else.
+        </p>
+        <div class="space-y-2 text-xs text-brand-text-muted">
+          <p>• <strong class="text-white">Youth Scroll Box:</strong> Source of SCR (Scroll Rare)</p>
+          <p>• <strong class="text-white">Heaven + Earth Scroll:</strong> Source of SV (Scroll Variant) — Gold + Silver</p>
+          <p>• <strong class="text-white">Ninja Age (N Edition):</strong> Source of XR (Extreme Rare) /72 and QR (Quest Rare)</p>
+          <p>• <strong class="text-white">20th Anniversary Box:</strong> Source of 20TH Anniversary cards (T4W4 2nd print only)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation links -->
+  <div class="text-center mt-8 flex flex-wrap justify-center gap-4">
+    <a href="/rarity-guide" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold border border-brand-orange/30 px-4 py-2 rounded-lg hover:bg-brand-orange/10">
+      📖 Rarity Guide
+    </a>
+    <a href="/start-here" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold border border-brand-orange/30 px-4 py-2 rounded-lg hover:bg-brand-orange/10">
+      🆕 Start Here Guide
+    </a>
+    <a href="/sets" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold border border-brand-orange/30 px-4 py-2 rounded-lg hover:bg-brand-orange/10">
+      📦 Browse All Sets
+    </a>
+  </div>
+
+</BaseLayout>

@@ -60,7 +60,7 @@ const setsForBuy = allSets.map(s => ({
 
   <script define:vars={{ cardsData, setsForBuy, rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient }])) }}>
     function renderWishlist() {
-      const raw = localStorage.getItem('naruto-collector-v1');
+      const raw = localStorage.getItem('naruto-collector-v2');
       const data = raw ? JSON.parse(raw) : { wishlist: {} };
       const wishlist = data.wishlist || {};
       const wishIds = Object.keys(wishlist);
@@ -137,7 +137,7 @@ const setsForBuy = allSets.map(s => ({
 
     // Share wishlist
     document.getElementById('share-btn')?.addEventListener('click', () => {
-      const raw = localStorage.getItem('naruto-collector-v1');
+      const raw = localStorage.getItem('naruto-collector-v2');
       const data = raw ? JSON.parse(raw) : { wishlist: {} };
       const ids = Object.keys(data.wishlist || {});
       if (ids.length === 0) {
@@ -187,12 +187,12 @@ const setsForBuy = allSets.map(s => ({
         grid?.parentNode?.insertBefore(banner, grid);
 
         document.getElementById('import-shared-btn')?.addEventListener('click', () => {
-          const raw = localStorage.getItem('naruto-collector-v1') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+          const raw = localStorage.getItem('naruto-collector-v2') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
           const data = JSON.parse(raw);
           if (!data.wishlist) data.wishlist = {};
           sharedIds.forEach(id => { data.wishlist[id] = true; });
           data.lastModified = new Date().toISOString();
-          localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+          localStorage.setItem('naruto-collector-v2', JSON.stringify(data));
           renderWishlist();
           banner.innerHTML = '<div class="text-center text-sm text-purple-400 py-2">✅ Imported! Cards added to your wishlist.</div>';
           window.dispatchEvent(new Event('collection-updated'));

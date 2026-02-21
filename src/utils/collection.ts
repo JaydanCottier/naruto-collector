@@ -1,18 +1,23 @@
-// localStorage collection helpers — full spec implementation
-// Key: "naruto-collector-v1"
-// Supports: owned (with variant), wishlist, backup tracking, auto-export
+// localStorage collection helpers — v2 spec
+// Key: "naruto-collector-v2"
+// Supports: owned (with variant, quantity, notes), wishlist, backup tracking, auto-export
 
-const STORAGE_KEY = 'naruto-collector-v1';
-const AUTO_EXPORT_INTERVAL = 10; // trigger download every N new cards
+const STORAGE_KEY = 'naruto-collector-v2';
+const LEGACY_KEY = 'naruto-collector-v1';
+const AUTO_EXPORT_INTERVAL = 10;
+
+export type VariantType = 'standard' | 'holo' | 'gold' | 'silver' | 'black' | 'white' | 'diamond' | 'english';
 
 export interface OwnedEntry {
-    owned: true;
-    variant: 'standard' | 'holo' | 'serialized' | 'promo' | 'english';
+    owned: boolean;
+    variant: VariantType;
+    quantity: number;
     addedAt: string;
+    notes: string;
 }
 
 export interface CollectionData {
-    version: number;
+    version: 2;
     lastExported: string | null;
     lastModified: string;
     owned: Record<string, OwnedEntry>;
@@ -22,7 +27,7 @@ export interface CollectionData {
 
 function getDefaultCollection(): CollectionData {
     return {
-        version: 1,
+        version: 2,
         lastExported: null,
         lastModified: new Date().toISOString(),
         owned: {},
@@ -31,28 +36,71 @@ function getDefaultCollection(): CollectionData {
     };
 }
 
+/** Migrate v1 data to v2 format */
+function migrateV1toV2(v1Data: any): CollectionData {
+    const data = getDefaultCollection();
+    if (v1Data.owned) {
+        for (const [id, val] of Object.entries(v1Data.owned)) {
+            if (val === true) {
+                data.owned[id] = { owned: true, variant: 'standard', quantity: 1, addedAt: new Date().toISOString(), notes: '' };
+            } else if (val && typeof val === 'object') {
+                const entry = val as any;
+                data.owned[id] = {
+                    owned: entry.owned ?? true,
+                    variant: entry.variant || 'standard',
+                    quantity: entry.quantity || 1,
+                    addedAt: entry.addedAt || new Date().toISOString(),
+                    notes: entry.notes || '',
+                };
+            }
+        }
+    }
+    if (v1Data.wishlist) {
+        data.wishlist = v1Data.wishlist;
+    }
+    if (v1Data.lastExported) data.lastExported = v1Data.lastExported;
+    if (v1Data.lastModified) data.lastModified = v1Data.lastModified;
+    if (v1Data._addCountSinceExport) data._addCountSinceExport = v1Data._addCountSinceExport;
+    return data;
+}
+
 export function getCollection(): CollectionData {
     if (typeof window === 'undefined') return getDefaultCollection();
     try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return getDefaultCollection();
-        const data = JSON.parse(raw) as CollectionData;
-        // Migrate old format (owned was Record<string, boolean>)
-        if (data.owned) {
-            for (const [id, val] of Object.entries(data.owned)) {
-                if (val === true || (val as any) === false) {
-                    if (val) {
-                        (data.owned as any)[id] = { owned: true, variant: 'standard', addedAt: new Date().toISOString() };
+        // Check for v2 first
+        let raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) {
+            const data = JSON.parse(raw) as CollectionData;
+            // Ensure all owned entries have full structure
+            if (data.owned) {
+                for (const [id, val] of Object.entries(data.owned)) {
+                    if (typeof val !== 'object' || val === null) {
+                        data.owned[id] = { owned: true, variant: 'standard', quantity: 1, addedAt: new Date().toISOString(), notes: '' };
                     } else {
-                        delete data.owned[id];
+                        if (!val.quantity) val.quantity = 1;
+                        if (!val.notes) val.notes = '';
+                        if (!val.variant) val.variant = 'standard';
                     }
                 }
             }
+            if (!data.wishlist) data.wishlist = {};
+            if (!data.lastExported) data.lastExported = null;
+            if (!data._addCountSinceExport) data._addCountSinceExport = 0;
+            return data;
         }
-        if (!data.wishlist) data.wishlist = {};
-        if (!data.lastExported) data.lastExported = null;
-        if (!data._addCountSinceExport) data._addCountSinceExport = 0;
-        return data;
+
+        // Try migrating from v1
+        raw = localStorage.getItem(LEGACY_KEY);
+        if (raw) {
+            const v1Data = JSON.parse(raw);
+            const v2Data = migrateV1toV2(v1Data);
+            saveCollection(v2Data);
+            // Clean up legacy key
+            localStorage.removeItem(LEGACY_KEY);
+            return v2Data;
+        }
+
+        return getDefaultCollection();
     } catch {
         return getDefaultCollection();
     }
@@ -81,7 +129,9 @@ export function toggleOwned(cardId: string): boolean {
         collection.owned[cardId] = {
             owned: true,
             variant: 'standard',
+            quantity: 1,
             addedAt: new Date().toISOString(),
+            notes: '',
         };
         collection._addCountSinceExport = (collection._addCountSinceExport || 0) + 1;
         saveCollection(collection);
@@ -100,15 +150,45 @@ export function toggleCard(cardId: string): boolean {
 
 // --- Variant ---
 
-export function getVariant(cardId: string): string {
+export function getVariant(cardId: string): VariantType {
     const collection = getCollection();
     return collection.owned[cardId]?.variant || 'standard';
 }
 
-export function setVariant(cardId: string, variant: OwnedEntry['variant']): void {
+export function setVariant(cardId: string, variant: VariantType): void {
     const collection = getCollection();
     if (collection.owned[cardId]) {
         collection.owned[cardId].variant = variant;
+        saveCollection(collection);
+    }
+}
+
+// --- Quantity ---
+
+export function getQuantity(cardId: string): number {
+    const collection = getCollection();
+    return collection.owned[cardId]?.quantity || 0;
+}
+
+export function setQuantity(cardId: string, quantity: number): void {
+    const collection = getCollection();
+    if (collection.owned[cardId]) {
+        collection.owned[cardId].quantity = Math.max(1, quantity);
+        saveCollection(collection);
+    }
+}
+
+// --- Notes ---
+
+export function getNotes(cardId: string): string {
+    const collection = getCollection();
+    return collection.owned[cardId]?.notes || '';
+}
+
+export function setNotes(cardId: string, notes: string): void {
+    const collection = getCollection();
+    if (collection.owned[cardId]) {
+        collection.owned[cardId].notes = notes;
         saveCollection(collection);
     }
 }
@@ -153,7 +233,7 @@ export function getWishlistCardIds(): string[] {
 export function shouldShowBackupWarning(): boolean {
     const collection = getCollection();
     const ownedCount = Object.keys(collection.owned).length;
-    if (ownedCount === 0) return false; // no point warning if nothing to back up
+    if (ownedCount === 0) return false;
     if (!collection.lastExported) return true;
     const daysSinceExport = (Date.now() - new Date(collection.lastExported).getTime()) / (1000 * 60 * 60 * 24);
     return daysSinceExport > 7;
@@ -185,7 +265,7 @@ export function triggerDownload(data: CollectionData): void {
     const a = document.createElement('a');
     a.href = url;
     const date = new Date().toISOString().slice(0, 10);
-    a.download = `naruto-collection-${date}.json`;
+    a.download = `naruto-collector-backup-${date}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -201,9 +281,15 @@ function triggerAutoExport(data: CollectionData): void {
 
 export function importCollection(json: string): boolean {
     try {
-        const data = JSON.parse(json) as CollectionData;
-        if (data.version && data.owned) {
-            saveCollection(data);
+        const data = JSON.parse(json);
+        // Handle v1 imports
+        if (data.version === 1 || !data.version) {
+            const v2 = migrateV1toV2(data);
+            saveCollection(v2);
+            return true;
+        }
+        if (data.version === 2 && data.owned) {
+            saveCollection(data as CollectionData);
             return true;
         }
         return false;

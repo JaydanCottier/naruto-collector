@@ -4,7 +4,7 @@ import path from 'path';
 const basePath = 'Information';
 const usCsvPath = path.join(basePath, 'English_Naruto_KAYOU_Cardlist - US Prints.csv');
 const seaCsvPath = path.join(basePath, 'English_Naruto_KAYOU_Cardlist - SEA Prints.csv');
-const refCsvPath = path.join(basePath, 'English_Naruto_KAYOU_Cardlist - KAYOU Naruto English Set Reference Table.csv');
+const refCsvPath = path.join(basePath, 'English_Naruto_KAYOU_Cardlist - KAYOU Naruto English Set Reference Table (Updated).csv');
 
 // 1. Parse Reference Table
 const refData = fs.readFileSync(refCsvPath, 'utf8');
@@ -12,12 +12,16 @@ const refRows = refData.trim().split('\n').map(row => row.trim());
 refRows.shift(); // Remove header
 
 const refMap = {}; // Set_ID -> US_Equivalent
+const refNameMap = {}; // Set_ID + Region -> Set Name
 refRows.forEach(row => {
     if (!row) return;
     const parts = row.split(','); // Set ID,Set Name,Region,Release Date,Chinese Equivalent,SEA Equivalent,US Equivalent
     const setId = parts[0];
+    const setName = parts[1];
+    const region = parts[2];
     const usEq = parts[6];
     refMap[setId] = usEq !== 'N/A' ? usEq : setId;
+    refNameMap[`${setId}-${region}`] = setName;
 });
 
 // 2. Parse Cards
@@ -76,14 +80,15 @@ function processCsv(csvPath) {
 
         const setCode = `${setIdRaw}-${region}`;
         const actualBaseSetCode = refMap[setIdRaw] || setIdRaw;
+        const finalSetName = refNameMap[setCode] || setName;
 
         if (!setsMap[setCode]) {
             setsMap[setCode] = {
                 id: setCode.toLowerCase(),
                 slug: setCode.toLowerCase(),
                 officialCode: actualBaseSetCode,
-                name: setName,
-                displayName: setName,
+                name: finalSetName,
+                displayName: finalSetName,
                 tier: "EN",
                 wave: parseInt(actualBaseSetCode.replace(/[^0-9]/g, '')) || 1,
                 series: "English",
@@ -95,7 +100,7 @@ function processCsv(csvPath) {
                 cardCount: 0,
                 packCount: 36,
                 packContents: "5 cards per pack",
-                description: `KAYOU Naruto ${setName}`,
+                description: `KAYOU Naruto ${finalSetName}`,
                 logoImage: `/images/sets/${actualBaseSetCode.toLowerCase()}-logo.png`,
                 bannerImage: `/images/sets/${actualBaseSetCode.toLowerCase()}-banner.jpg`,
                 caseSize: { regular: 36, master: null },

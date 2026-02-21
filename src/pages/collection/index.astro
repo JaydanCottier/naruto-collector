@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardThumbnail from '../../components/CardThumbnail.astro';
+import { getCollection } from 'astro:content';
+import { getTierColor, RARITY_MAP } from '../../utils/rarity.ts';
+
+const allSets = await getCollection('sets');
+const allCardGroups = await getCollection('cards');
+const allCards = allCardGroups.flatMap(g => g.data);
+
+// Build set data with card info
+const setsData = allSets.map(s => {
+  const cardGroup = allCardGroups.find(g => g.id === s.data.slug || g.id === s.data.id);
+  const cards = cardGroup ? cardGroup.data : [];
+  return {
+    id: s.data.id,
+    slug: s.data.slug,
+    name: s.data.displayName || s.data.name,
+    tier: s.data.tier,
+    cardCount: cards.length,
+    cardIds: cards.map(c => c.id),
+    tierColor: getTierColor(s.data.tier),
+  };
+}).sort((a, b) => a.name.localeCompare(b.name));
+
+const totalCards = allCards.length;
+
+// Build all-cards data for the "All Owned" tab
+const allCardsData = allCards.map(c => {
+  const set = allSets.find(s => s.data.id === c.setId);
+  return {
+    id: c.id,
+    slug: c.slug,
+    name: c.name,
+    rarity: c.rarity,
+    setName: set?.data.displayName || set?.data.name || c.setId,
+    image: c.image,
+  };
+});
+---
+
+<BaseLayout title="My Collection" description="Track your KAYOU Naruto card collection. See progress per set, export and import your collection.">
+
+  <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">My Collection</h1>
+  <p class="text-brand-text-muted mb-8">Track your KAYOU Naruto card collection. Data is stored locally in your browser — no account needed.</p>
+
+  <!-- Overall Stats -->
+  <div class="bg-brand-surface rounded-xl border border-brand-border p-6 mb-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
+      <div>
+        <h2 class="text-lg font-bangers tracking-wider text-white">Overall Completion</h2>
+        <p class="text-3xl font-bangers text-brand-orange" id="total-progress">0 / {totalCards} cards</p>
+        <p class="text-xs text-brand-text-muted mt-1">
+          <span id="wishlist-count">0</span> cards on wishlist
+        </p>
+      </div>
+      <div class="flex gap-3 flex-wrap">
+        <button id="export-btn" class="px-4 py-2 bg-brand-surface-light border border-brand-border rounded-lg text-sm font-bold text-brand-text-muted hover:text-white hover:border-brand-orange transition-all">
+          📥 Export JSON
+        </button>
+        <label class="px-4 py-2 bg-brand-surface-light border border-brand-border rounded-lg text-sm font-bold text-brand-text-muted hover:text-white hover:border-brand-orange transition-all cursor-pointer">
+          📤 Import JSON
+          <input type="file" id="import-input" accept=".json" class="hidden" />
+        </label>
+      </div>
+    </div>
+    <div class="w-full h-3 bg-brand-bg rounded-full overflow-hidden">
+      <div class="h-full bg-brand-orange rounded-full transition-all duration-500" id="total-bar" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="flex gap-2 mb-6">
+    <button id="tab-sets" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-orange text-white transition-all">By Set</button>
+    <button id="tab-owned" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-surface text-brand-text-muted border border-brand-border hover:text-white transition-all">All Owned</button>
+  </div>
+
+  <!-- Tab 1: By Set -->
+  <div id="view-sets">
+    <!-- Filter -->
+    <div class="flex items-center gap-4 mb-4">
+      <label class="flex items-center gap-2 text-sm text-brand-text-muted cursor-pointer">
+        <input type="checkbox" id="filter-incomplete" class="accent-brand-orange" />
+        <span>Show only incomplete sets</span>
+      </label>
+    </div>
+
+    <div class="space-y-3" id="set-list">
+      {setsData.map(set => (
+        <div class="set-progress-row bg-brand-surface rounded-lg border border-brand-border p-4 transition-all hover:border-brand-border"
+             data-set-id={set.id}
+             data-card-ids={JSON.stringify(set.cardIds)}
+             data-card-count={set.cardCount}>
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <div class="w-1 h-6 rounded-full" style={`background: ${set.tierColor}`}></div>
+              <a href={`/sets/${set.slug}/`} class="text-sm font-semibold text-white hover:text-brand-orange transition-colors">{set.name}</a>
+              <span class="text-[10px] font-bold px-1.5 py-0.5 rounded" style={`background: ${set.tierColor}20; color: ${set.tierColor}`}>{set.tier}</span>
+            </div>
+            <span class="set-count text-xs font-mono text-brand-text-muted">0 / {set.cardCount}</span>
+          </div>
+          <div class="w-full h-1.5 bg-brand-bg rounded-full overflow-hidden">
+            <div class="set-bar h-full rounded-full transition-all duration-500" style={`width: 0%; background: ${set.tierColor}`}></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Tab 2: All Owned -->
+  <div id="view-owned" class="hidden">
+    <p class="text-sm text-brand-text-muted mb-4" id="owned-label">Loading...</p>
+    <div id="owned-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+    </div>
+    <div id="owned-empty" class="hidden text-center py-12 text-brand-text-muted">
+      <p class="text-lg font-semibold">No cards owned yet</p>
+      <p class="text-sm mt-1">Browse sets and start adding cards to your collection!</p>
+    </div>
+  </div>
+
+  <script define:vars={{ totalCards, allCardsData, rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient }])) }}>
+    // Tab switching
+    const tabSets = document.getElementById('tab-sets');
+    const tabOwned = document.getElementById('tab-owned');
+    const viewSets = document.getElementById('view-sets');
+    const viewOwned = document.getElementById('view-owned');
+
+    tabSets?.addEventListener('click', () => {
+      tabSets.classList.add('bg-brand-orange', 'text-white');
+      tabSets.classList.remove('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
+      tabOwned.classList.remove('bg-brand-orange', 'text-white');
+      tabOwned.classList.add('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
+      viewSets.classList.remove('hidden');
+      viewOwned.classList.add('hidden');
+    });
+
+    tabOwned?.addEventListener('click', () => {
+      tabOwned.classList.add('bg-brand-orange', 'text-white');
+      tabOwned.classList.remove('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
+      tabSets.classList.remove('bg-brand-orange', 'text-white');
+      tabSets.classList.add('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
+      viewOwned.classList.remove('hidden');
+      viewSets.classList.add('hidden');
+      renderOwned();
+    });
+
+    function updateCollectionUI() {
+      try {
+        const raw = localStorage.getItem('naruto-collector-v1');
+        const data = raw ? JSON.parse(raw) : { owned: {}, wishlist: {} };
+        const owned = data.owned || {};
+        const wishlist = data.wishlist || {};
+        const totalOwned = Object.keys(owned).length;
+        const totalWish = Object.keys(wishlist).length;
+
+        document.getElementById('total-progress').textContent = `${totalOwned} / ${totalCards} cards`;
+        document.getElementById('total-bar').style.width = `${totalCards > 0 ? Math.round((totalOwned / totalCards) * 100) : 0}%`;
+        document.getElementById('wishlist-count').textContent = String(totalWish);
+
+        // Per-set progress
+        document.querySelectorAll('.set-progress-row').forEach(row => {
+          const cardIds = JSON.parse(row.getAttribute('data-card-ids'));
+          const count = parseInt(row.getAttribute('data-card-count'));
+          const setOwned = cardIds.filter(id => owned[id]).length;
+          const pct = count > 0 ? Math.round((setOwned / count) * 100) : 0;
+          row.querySelector('.set-count').textContent = `${setOwned} / ${count}`;
+          row.querySelector('.set-bar').style.width = `${pct}%`;
+          row.setAttribute('data-owned', setOwned);
+          row.setAttribute('data-complete', setOwned >= count ? '1' : '0');
+        });
+      } catch(e) {}
+    }
+
+    function renderOwned() {
+      const raw = localStorage.getItem('naruto-collector-v1');
+      const data = raw ? JSON.parse(raw) : { owned: {} };
+      const ownedIds = Object.keys(data.owned || {});
+      const grid = document.getElementById('owned-grid');
+      const label = document.getElementById('owned-label');
+      const empty = document.getElementById('owned-empty');
+
+      const ownedCards = allCardsData.filter(c => ownedIds.includes(c.id));
+
+      if (ownedCards.length === 0) {
+        grid.innerHTML = '';
+        empty.classList.remove('hidden');
+        label.textContent = '';
+        return;
+      }
+
+      empty.classList.add('hidden');
+      label.textContent = `${ownedCards.length} cards owned`;
+
+      grid.innerHTML = ownedCards.map(c => {
+        const ri = rarityMap[c.rarity] || { color: '#6b7280', isGradient: false };
+        const badgeStyle = ri.isGradient
+          ? 'background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6, #3b82f6); color: white;'
+          : `background: ${ri.color}20; color: ${ri.color};`;
+        return `
+          <a href="/cards/${c.slug}/" class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover block">
+            <div class="aspect-[5/7] relative overflow-hidden bg-brand-bg">
+              <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover" loading="lazy"
+                onerror="this.src='/images/placeholder/${c.rarity.toLowerCase()}.svg'" />
+              <span class="absolute top-1.5 right-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="${badgeStyle}">${c.rarity}</span>
+              <span class="absolute top-1.5 left-1.5 text-green-400 text-sm">✓</span>
+            </div>
+            <div class="p-2">
+              <div class="text-xs font-semibold text-white truncate">${c.name}</div>
+              <div class="text-[10px] text-brand-text-muted truncate">${c.setName}</div>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+
+    updateCollectionUI();
+    window.addEventListener('collection-updated', updateCollectionUI);
+
+    // Sort sets by % incomplete (most incomplete first)
+    function sortSetsByIncomplete() {
+      const setList = document.getElementById('set-list');
+      if (!setList) return;
+      const rows = Array.from(setList.querySelectorAll('.set-progress-row'));
+      rows.sort((a, b) => {
+        const aCount = parseInt(a.getAttribute('data-card-count') || '0');
+        const aOwned = parseInt(a.getAttribute('data-owned') || '0');
+        const bCount = parseInt(b.getAttribute('data-card-count') || '0');
+        const bOwned = parseInt(b.getAttribute('data-owned') || '0');
+        const aPct = aCount > 0 ? aOwned / aCount : 1;
+        const bPct = bCount > 0 ? bOwned / bCount : 1;
+        return aPct - bPct; // least complete first
+      });
+      rows.forEach(row => setList.appendChild(row));
+    }
+    sortSetsByIncomplete();
+
+    // Filter incomplete
+    document.getElementById('filter-incomplete')?.addEventListener('change', (e) => {
+      const filterOn = e.target.checked;
+      document.querySelectorAll('.set-progress-row').forEach(row => {
+        const count = parseInt(row.getAttribute('data-card-count'));
+        const owned = parseInt(row.getAttribute('data-owned') || '0');
+        if (filterOn && owned >= count) {
+          row.style.display = 'none';
+        } else {
+          row.style.display = '';
+        }
+      });
+    });
+
+    // Export
+    document.getElementById('export-btn')?.addEventListener('click', () => {
+      const raw = localStorage.getItem('naruto-collector-v1') || '{}';
+      const data = JSON.parse(raw);
+      data.lastExported = new Date().toISOString();
+      data._addCountSinceExport = 0;
+      localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `naruto-collection-${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+
+      // Hide backup warning
+      document.getElementById('backup-warning')?.classList.add('hidden');
+    });
+
+    // Import
+    document.getElementById('import-input')?.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          const data = JSON.parse(ev.target.result);
+          if (data.owned) {
+            localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+            updateCollectionUI();
+            renderOwned();
+            alert('Collection imported successfully!');
+          } else {
+            alert('Invalid collection file.');
+          }
+        } catch(err) {
+          alert('Error reading file.');
+        }
+      };
+      reader.readAsText(file);
+    });
+  </script>
+</BaseLayout>

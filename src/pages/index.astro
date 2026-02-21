@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SetCard from '../components/SetCard.astro';
+import CardGrid from '../components/CardGrid.astro';
+import CardThumbnail from '../components/CardThumbnail.astro';
+import { getCollection } from 'astro:content';
+
+// Fetch all data
+const allSets = await getCollection('sets');
+const allCardGroups = await getCollection('cards');
+const allCards = allCardGroups.flatMap(group => group.data);
+
+// Sort sets by release date (newest first)
+const sortedSets = [...allSets].sort((a, b) =>
+  new Date(b.data.releaseDate).valueOf() - new Date(a.data.releaseDate).valueOf()
+);
+const latestSets = sortedSets.slice(0, 6);
+
+// Get unique characters
+const uniqueCharacters = new Set(allCards.map(c => c.character).filter(Boolean));
+
+// Featured cards — highest rarity from latest sets
+const featuredCards = allCards
+  .filter(c => ['UR','SE','SP','HR','XR','SLR','SCR','SV','LR','PU'].includes(c.rarity))
+  .slice(0, 8);
+const displayCards = featuredCards.length > 0 ? featuredCards : allCards.slice(-8).reverse();
+---
+
+<BaseLayout title="Home">
+
+  <!-- Hero Section with chakra glow -->
+  <div class="relative w-full rounded-3xl overflow-hidden mb-12 border border-brand-border chakra-glow">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-bg via-brand-surface to-brand-bg"></div>
+
+    <!-- Animated orange orb deco -->
+    <div class="absolute top-1/2 right-1/4 w-64 h-64 bg-brand-orange/5 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-0 left-1/3 w-48 h-48 bg-brand-red/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+
+    <div class="relative px-6 sm:px-12 py-12 sm:py-16">
+      <div class="max-w-2xl">
+        <h1 class="text-5xl sm:text-7xl font-bangers tracking-wider text-white mb-3 leading-tight">
+          NARUTO<br/><span class="text-gradient-orange">COLLECTOR</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-brand-text-muted mb-8 font-rajdhani font-medium max-w-lg">
+          The complete KAYOU Naruto card index. Browse every set, track your collection, find what you need, and get the best deals.
+        </p>
+
+        <!-- Stats -->
+        <div class="flex flex-wrap gap-6 sm:gap-8 mb-8">
+          <div class="flex flex-col">
+            <span class="text-3xl font-bangers text-brand-orange tracking-wider">{allSets.length}</span>
+            <span class="text-xs uppercase text-brand-text-muted font-bold tracking-wider">Sets</span>
+          </div>
+          <div class="w-px h-12 bg-brand-border hidden sm:block"></div>
+          <div class="flex flex-col">
+            <span class="text-3xl font-bangers text-brand-orange tracking-wider">{allCards.length}</span>
+            <span class="text-xs uppercase text-brand-text-muted font-bold tracking-wider">Cards</span>
+          </div>
+          <div class="w-px h-12 bg-brand-border hidden sm:block"></div>
+          <div class="flex flex-col">
+            <span class="text-3xl font-bangers text-brand-orange tracking-wider">{uniqueCharacters.size}</span>
+            <span class="text-xs uppercase text-brand-text-muted font-bold tracking-wider">Characters</span>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div class="flex flex-wrap gap-3">
+          <a href="/sets" class="px-5 py-2.5 bg-brand-orange text-white font-bold text-sm rounded-lg hover:bg-brand-orange/90 transition-all hover:scale-105 shadow-lg shadow-brand-orange/20">
+            Browse Sets
+          </a>
+          <a href="/collection" class="px-5 py-2.5 bg-brand-surface border border-brand-border text-white font-bold text-sm rounded-lg hover:border-brand-orange transition-all hover:scale-105">
+            My Collection
+          </a>
+          <a href="/start-here" class="px-5 py-2.5 bg-brand-gold/10 border border-brand-gold/30 text-brand-gold font-bold text-sm rounded-lg hover:bg-brand-gold/20 transition-all hover:scale-105">
+            🆕 Start Here
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- New to KAYOU? CTA Banner -->
+  <div class="mb-12 bg-gradient-to-r from-brand-orange/10 to-brand-red/5 rounded-xl border border-brand-orange/20 p-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-bangers tracking-wider text-white mb-1">New to KAYOU Cards? 🍥</h2>
+        <p class="text-sm text-brand-text-muted">Not sure where to start? We'll help you pick the perfect first box.</p>
+      </div>
+      <a href="/start-here" class="px-6 py-3 bg-brand-orange text-white font-bold text-sm rounded-lg hover:bg-brand-orange/90 transition-all hover:scale-105 shadow-lg shadow-brand-orange/20 shrink-0">
+        Show Me →
+      </a>
+    </div>
+  </div>
+
+  <!-- Latest Sets -->
+  <section class="mb-12">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl sm:text-3xl font-bangers tracking-wider text-white">Latest Sets</h2>
+      <a href="/sets" class="text-sm font-bold text-brand-orange hover:text-white transition-colors">View All →</a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-grid">
+      {latestSets.map(set => (
+        <SetCard set={set.data} />
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured Cards -->
+  <section class="mb-8">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl sm:text-3xl font-bangers tracking-wider text-white">Featured Cards</h2>
+    </div>
+    <CardGrid>
+      {displayCards.map(card => (
+        <CardThumbnail card={card} showSet={true} />
+      ))}
+    </CardGrid>
+  </section>
+
+  <!-- Collection toggle script -->
+  <script>
+    function initCollectionButtons() {
+      document.querySelectorAll('.collection-btn').forEach(btn => {
+        const cardId = btn.getAttribute('data-card-id');
+        if (!cardId) return;
+
+        // Check initial state
+        try {
+          const raw = localStorage.getItem('naruto-collector-v1');
+          if (raw) {
+            const data = JSON.parse(raw);
+            if (data.owned && data.owned[cardId]) {
+              btn.classList.add('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.remove('text-brand-text-muted');
+            }
+          }
+        } catch(e) {}
+
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          try {
+            const raw = localStorage.getItem('naruto-collector-v1') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+            const data = JSON.parse(raw);
+            if (!data.owned) data.owned = {};
+            if (data.owned[cardId]) {
+              delete data.owned[cardId];
+              btn.classList.remove('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.add('text-brand-text-muted');
+            } else {
+              data.owned[cardId] = { owned: true, variant: 'standard', addedAt: new Date().toISOString() };
+              btn.classList.add('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.remove('text-brand-text-muted');
+            }
+            data.lastModified = new Date().toISOString();
+            localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+            window.dispatchEvent(new Event('collection-updated'));
+          } catch(e) {}
+        });
+      });
+    }
+    initCollectionButtons();
+  </script>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+interface Props {
+  total: number;
+  setId: string;
+  cardIds: string[];
+}
+
+const { total, setId, cardIds } = Astro.props;
+---
+
+<div class="collection-progress" data-set-id={setId} data-card-ids={JSON.stringify(cardIds)} data-total={total}>
+  <div class="flex items-center justify-between mb-1.5">
+    <span class="text-xs font-bold text-brand-text-muted uppercase tracking-wider">Collection</span>
+    <span class="progress-text text-sm font-mono text-brand-text-muted">0 / {total}</span>
+  </div>
+  <div class="w-full h-2 bg-brand-bg rounded-full overflow-hidden">
+    <div class="progress-bar h-full bg-brand-orange rounded-full transition-all duration-500" style="width: 0%"></div>
+  </div>
+</div>
+
+<script>
+  function updateProgressBars() {
+    document.querySelectorAll('.collection-progress').forEach(el => {
+      const cardIds = JSON.parse(el.getAttribute('data-card-ids') || '[]');
+      const total = parseInt(el.getAttribute('data-total') || '0');
+
+      try {
+        const raw = localStorage.getItem('naruto-collector-v1');
+        const data = raw ? JSON.parse(raw) : { owned: {} };
+        const owned = cardIds.filter((id: string) => data.owned && data.owned[id]).length;
+        const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
+
+        const text = el.querySelector('.progress-text');
+        const bar = el.querySelector('.progress-bar') as HTMLElement;
+        if (text) text.textContent = `${owned} / ${total}`;
+        if (bar) bar.style.width = `${pct}%`;
+      } catch(e) {}
+    });
+  }
+
+  updateProgressBars();
+  window.addEventListener('collection-updated', updateProgressBars);
+</script>

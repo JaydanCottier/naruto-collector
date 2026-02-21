@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allCardGroups = await getCollection('cards');
+const allCards = allCardGroups.flatMap(group => group.data);
+
+// Build character index
+const charMap = new Map<string, { name: string; slug: string; count: number; rarities: Set<string>; sets: Set<string> }>();
+
+for (const card of allCards) {
+  if (!card.character || !card.characterSlug) continue;
+
+  if (!charMap.has(card.characterSlug)) {
+    charMap.set(card.characterSlug, {
+      name: card.character,
+      slug: card.characterSlug,
+      count: 0,
+      rarities: new Set(),
+      sets: new Set(),
+    });
+  }
+
+  const entry = charMap.get(card.characterSlug)!;
+  entry.count++;
+  entry.rarities.add(card.rarity);
+  entry.sets.add(card.setId);
+}
+
+const characters = [...charMap.values()].sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<BaseLayout title="Characters" description="Browse all Naruto characters featured on KAYOU trading cards.">
+
+  <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">Characters</h1>
+  <p class="text-brand-text-muted mb-6">All {characters.length} characters featured across KAYOU Naruto sets.</p>
+
+  <!-- Search -->
+  <div class="mb-6">
+    <input
+      type="text"
+      id="char-search"
+      placeholder="Search characters..."
+      class="w-full max-w-md bg-brand-surface border border-brand-border rounded-lg px-4 py-2.5 text-sm text-white placeholder-brand-text-muted outline-none focus:border-brand-orange transition-colors font-rajdhani"
+    />
+  </div>
+
+  <!-- Character Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 stagger-grid" id="char-grid">
+    {characters.map(char => (
+      <a
+        href={`/characters/${char.slug}/`}
+        class="char-item bg-brand-surface rounded-xl border border-brand-border p-4 card-hover fade-in-up block"
+        data-name={char.name.toLowerCase()}
+      >
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-sm font-bold text-white">{char.name}</h3>
+          <span class="text-xs font-mono text-brand-orange">{char.count} cards</span>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] text-brand-text-muted">
+          <span>{char.sets.size} sets</span>
+          <span>·</span>
+          <div class="flex gap-1 flex-wrap">
+            {[...char.rarities].slice(0, 4).map(r => (
+              <span class="font-bold">{r}</span>
+            ))}
+            {char.rarities.size > 4 && <span>+{char.rarities.size - 4}</span>}
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <script>
+    const search = document.getElementById('char-search') as HTMLInputElement;
+    search?.addEventListener('input', () => {
+      const q = search.value.toLowerCase().trim();
+      document.querySelectorAll('.char-item').forEach(el => {
+        const name = el.getAttribute('data-name') || '';
+        (el as HTMLElement).style.display = name.includes(q) ? '' : 'none';
+      });
+    });
+  </script>
+</BaseLayout>

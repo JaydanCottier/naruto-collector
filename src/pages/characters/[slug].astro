@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CardThumbnail from '../../components/CardThumbnail.astro';
+import BuyButton from '../../components/affiliate/BuyButton.astro';
+import AffiliateDisclosure from '../../components/affiliate/AffiliateDisclosure.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allCardGroups = await getCollection('cards');
+  const allSets = await getCollection('sets');
+  const allCards = allCardGroups.flatMap(group => group.data);
+
+  const setMap: Record<string, any> = {};
+  allSets.forEach(s => { setMap[s.data.id] = s.data; });
+
+  // Group by characterSlug
+  const charMap = new Map<string, any[]>();
+  for (const card of allCards) {
+    if (!card.characterSlug) continue;
+    if (!charMap.has(card.characterSlug)) charMap.set(card.characterSlug, []);
+    charMap.get(card.characterSlug)!.push(card);
+  }
+
+  return [...charMap.entries()].map(([slug, cards]) => {
+    // Group by set
+    const setGroups: Record<string, { set: any; cards: any[] }> = {};
+    for (const card of cards) {
+      if (!setGroups[card.setId]) {
+        setGroups[card.setId] = { set: setMap[card.setId] || {}, cards: [] };
+      }
+      setGroups[card.setId].cards.push(card);
+    }
+
+    return {
+      params: { slug },
+      props: {
+        characterName: cards[0]?.character || slug,
+        slug,
+        cards,
+        setGroups: Object.values(setGroups),
+        totalCards: cards.length,
+        totalSets: Object.keys(setGroups).length,
+      }
+    };
+  });
+}
+
+const { characterName, slug, cards, setGroups, totalCards, totalSets } = Astro.props;
+
+// Character bios (short, lore-based)
+const bios: Record<string, string> = {
+  'naruto-uzumaki': 'The Seventh Hokage of Konohagakure and the jinchūriki of the Nine-Tails, Kurama.',
+  'sasuke-uchiha': 'The last surviving member of the Uchiha clan and one of the most powerful shinobi in history.',
+  'itachi-uchiha': 'A prodigy of the Uchiha clan who massacred his clan under orders to protect Konoha.',
+  'kakashi-hatake': 'The Sixth Hokage, known as the Copy Ninja for his mastery of over 1,000 jutsu via the Sharingan.',
+  'sakura-haruno': 'A medical-nin and one of the most powerful kunoichi, trained under the legendary Tsunade.',
+  'gaara': 'The Fifth Kazekage of Sunagakure and the former jinchūriki of the One-Tail, Shukaku.',
+  'rock-lee': 'A taijutsu specialist who proved that hard work can surpass natural talent.',
+  'hinata-hyuga': 'A member of the Hyūga clan who became a powerful Gentle Fist user and the wife of Naruto.',
+  'jiraiya': 'One of the Legendary Sannin and Naruto\'s mentor. Known as the Toad Sage.',
+  'tsunade': 'The Fifth Hokage and one of the Legendary Sannin. The greatest medical-nin in history.',
+  'orochimaru': 'One of the Legendary Sannin who sought immortality through forbidden jutsu.',
+  'minato-namikaze': 'The Fourth Hokage, known as the Yellow Flash. Father of Naruto Uzumaki.',
+  'obito-uchiha': 'Kakashi\'s former teammate who became the masked villain Tobi before his redemption.',
+  'pain-nagato': 'The leader of the Akatsuki who sought peace through destruction. Wielder of the Rinnegan.',
+  'madara-uchiha': 'The legendary co-founder of Konohagakure and the most powerful Uchiha in history.',
+};
+const bio = bios[slug] || `A character from the Naruto series featured across ${totalSets} KAYOU card sets.`;
+---
+
+<BaseLayout title={`${characterName} — All Cards`} description={`All KAYOU Naruto cards featuring ${characterName} across ${totalSets} sets.`}>
+
+  <!-- Breadcrumb -->
+  <nav class="text-xs text-brand-text-muted mb-6 font-semibold">
+    <a href="/" class="hover:text-white transition-colors">Home</a>
+    <span class="mx-2">›</span>
+    <a href="/characters" class="hover:text-white transition-colors">Characters</a>
+    <span class="mx-2">›</span>
+    <span class="text-white">{characterName}</span>
+  </nav>
+
+  <!-- Character Header -->
+  <div class="mb-8">
+    <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">{characterName}</h1>
+    <p class="text-sm text-brand-text-muted max-w-2xl mb-4">{bio}</p>
+    <div class="flex gap-4 text-sm">
+      <span class="text-brand-orange font-bold">{totalCards} cards</span>
+      <span class="text-brand-text-muted">across</span>
+      <span class="text-white font-bold">{totalSets} sets</span>
+    </div>
+  </div>
+
+  <!-- Cards grouped by set -->
+  {setGroups.map((group: any) => {
+    const setName = group.set.displayName || group.set.name || group.cards[0]?.setId;
+    const link = group.set.affiliateLinks?.aliexpress || '#';
+    const price = group.set.affiliateLinks?.approxPriceUSD || 0;
+
+    return (
+      <section class="mb-10">
+        <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <div class="flex items-center gap-3">
+            <h2 class="text-xl font-bangers tracking-wider text-white">{setName}</h2>
+            <a href={`/sets/${group.set.slug || group.cards[0]?.setSlug}/`} class="text-xs font-bold text-brand-orange hover:text-white transition-colors">
+              View Set →
+            </a>
+          </div>
+          <BuyButton href={link} price={price} label="Buy Box" size="sm" />
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 stagger-grid">
+          {group.cards.map((card: any) => (
+            <CardThumbnail card={card} />
+          ))}
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- Complete This Character -->
+  <div class="bg-gradient-to-r from-brand-orange/10 to-brand-red/5 rounded-xl border border-brand-orange/30 p-5 mb-8">
+    <h3 class="text-sm font-bold text-brand-orange uppercase tracking-wider mb-3">Complete This Character</h3>
+    <p class="text-sm text-brand-text-muted mb-4">
+      {characterName} appears in {totalSets} sets. Buy these boxes to collect all their cards:
+    </p>
+    <div class="flex flex-wrap gap-2">
+      {setGroups.map((group: any) => {
+        const setName = group.set.displayName || group.set.name || 'Set';
+        const link = group.set.affiliateLinks?.aliexpress || '#';
+        const isPlaceholder = link.includes('PLACEHOLDER');
+        return (
+          <a
+            href={isPlaceholder ? '#' : link}
+            target={isPlaceholder ? undefined : '_blank'}
+            rel="noopener noreferrer nofollow"
+            class="text-xs font-bold px-3 py-1.5 bg-brand-surface border border-brand-border rounded-lg text-brand-text-muted hover:text-white hover:border-brand-orange transition-all"
+          >
+            {setName}
+          </a>
+        );
+      })}
+    </div>
+  </div>
+  <div class="mb-8">
+    <AffiliateDisclosure />
+  </div>
+
+  <!-- Collection buttons -->
+  <script>
+    function initCollectionButtons() {
+      document.querySelectorAll('.collection-btn').forEach(btn => {
+        const cardId = btn.getAttribute('data-card-id');
+        if (!cardId) return;
+        try {
+          const raw = localStorage.getItem('naruto-collector-v1');
+          if (raw) {
+            const data = JSON.parse(raw);
+            if (data.owned && data.owned[cardId]) {
+              btn.classList.add('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.remove('text-brand-text-muted');
+            }
+          }
+        } catch(e) {}
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          try {
+            const raw = localStorage.getItem('naruto-collector-v1') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+            const data = JSON.parse(raw);
+            if (!data.owned) data.owned = {};
+            if (data.owned[cardId]) {
+              delete data.owned[cardId];
+              btn.classList.remove('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.add('text-brand-text-muted');
+            } else {
+              data.owned[cardId] = { owned: true, variant: 'standard', addedAt: new Date().toISOString() };
+              btn.classList.add('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.remove('text-brand-text-muted');
+            }
+            data.lastModified = new Date().toISOString();
+            localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+          } catch(e) {}
+        });
+      });
+    }
+    initCollectionButtons();
+  </script>
+</BaseLayout>

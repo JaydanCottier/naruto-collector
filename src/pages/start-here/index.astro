@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BoxRecommendation from '../../components/affiliate/BoxRecommendation.astro';
+import AffiliateDisclosure from '../../components/affiliate/AffiliateDisclosure.astro';
+import { getCollection } from 'astro:content';
+
+const allSets = await getCollection('sets');
+const setMap: Record<string, any> = {};
+allSets.forEach(s => { setMap[s.data.id] = s.data; });
+
+// Recommended sets
+const beginner1 = setMap['t2-5w1']; // Itachi Cloud Box
+const beginner2 = setMap['heaven-scroll-s1']; // Best English option
+const rarest1 = setMap['t4w6'];
+const rarest2 = setMap['t4w7'];
+const budget1 = setMap['t1w1'];
+const budget2 = setMap['t2w1'];
+const english1 = setMap['heaven-scroll-s1'];
+const english2 = setMap['jin-s2'];
+---
+
+<BaseLayout title="Start Here — Beginner's Guide" description="New to KAYOU Naruto cards? Find out which box to buy first, best value sets, and how to start your collection.">
+
+  <!-- Hero -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl sm:text-6xl font-bangers tracking-wider text-white mb-3">
+      Start <span class="text-gradient-orange">Here</span> 🍥
+    </h1>
+    <p class="text-lg text-brand-text-muted max-w-2xl mx-auto">
+      New to KAYOU Naruto trading cards? This guide will help you pick your first box, understand the tiers, and start collecting with confidence.
+    </p>
+  </div>
+
+  <!-- Section 1: New Collector -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="text-2xl">🆕</span>
+      <h2 class="text-2xl font-bangers tracking-wider text-white">I'm New — Where Do I Start?</h2>
+    </div>
+    <p class="text-sm text-brand-text-muted mb-6 max-w-3xl">
+      If you've never opened a KAYOU box before, we recommend these two sets. They're fun to open, have great pull rates, and won't break the bank.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {beginner1 && <BoxRecommendation set={beginner1} heading="Itachi Cloud Box (T2.5W1)" description="The ultimate starter box — 50 packs, exclusive CP rarity cards, and the iconic Itachi theme. A fan favourite." />}
+      {beginner2 && <BoxRecommendation set={beginner2} heading="Heaven Scroll Series 1" description="The first full English release. 8 cards per pack, exclusive PR Konan, and stunning art. Perfect if you want English cards." />}
+    </div>
+  </section>
+
+  <!-- Section 2: Rarest Cards -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="text-2xl">💎</span>
+      <h2 class="text-2xl font-bangers tracking-wider text-white">I Want the Rarest Cards</h2>
+    </div>
+    <p class="text-sm text-brand-text-muted mb-6 max-w-3xl">
+      Tier 4 (T4) boxes are the premium tier — lower pack counts but much higher hit rates. These have the best pull rates for UR, SE, and SP cards.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {rarest1 && <BoxRecommendation set={rarest1} heading="T4 Wave 6" description="The CN equivalent of Heaven Scroll. One of the most sought-after T4 sets with incredible art and serialized chases." />}
+      {rarest2 && <BoxRecommendation set={rarest2} heading="T4 Wave 7" description="The CN equivalent of Jin Series 2. Top-tier pull rates and beautiful character art. Worth every penny." />}
+    </div>
+  </section>
+
+  <!-- Section 3: Budget -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="text-2xl">💰</span>
+      <h2 class="text-2xl font-bangers tracking-wider text-white">I'm on a Budget (Under $20)</h2>
+    </div>
+    <p class="text-sm text-brand-text-muted mb-6 max-w-3xl">
+      Tier 1 and Tier 2 boxes are the most affordable. They have more packs per box and are great for building a base collection. Pull rates for URs are lower, but you get a lot of cards for your money.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {budget1 && <BoxRecommendation set={budget1} heading="T1 Wave 1 (~$12)" description="36 packs at just 1¥ each. Great for bulk collecting. The original KAYOU Naruto T1 release." />}
+      {budget2 && <BoxRecommendation set={budget2} heading="T2 Wave 1 (~$20)" description="30 packs with better pull rates than T1. A solid middle-ground for collectors who want good value." />}
+    </div>
+  </section>
+
+  <!-- Section 4: English -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="text-2xl">🇬🇧</span>
+      <h2 class="text-2xl font-bangers tracking-wider text-white">I Want English Cards</h2>
+    </div>
+    <p class="text-sm text-brand-text-muted mb-6 max-w-3xl">
+      KAYOU has started releasing English versions of their most popular sets. These are easier to find on eBay and Amazon, and the text is in English — great for Western collectors.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {english1 && <BoxRecommendation set={english1} heading="Heaven Scroll Series 1 🇬🇧" description="The English version of T4W6. 24 packs, 8 cards per pack. Exclusive PR Konan. The gold standard for English KAYOU." />}
+      {english2 && <BoxRecommendation set={english2} heading="Jin Series 2 🇬🇧" description="The English version of T4W7. 12 blister packs per display. Excellent hit rates and sharp card quality." />}
+    </div>
+  </section>
+
+  <!-- Live Pack Openings -->
+  <section class="mb-12">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="text-2xl">📺</span>
+      <h2 class="text-2xl font-bangers tracking-wider text-white">Watch Live Pack Openings</h2>
+    </div>
+    <div class="bg-brand-surface rounded-xl border border-brand-border p-6">
+      <p class="text-sm text-brand-text-muted mb-4">
+        Want to see cards pulled live before you buy? Check out Whatnot — a live auction platform where sellers open packs in real-time. You can buy singles and sealed product.
+      </p>
+      <a href="https://www.whatnot.com" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 text-white font-bold text-sm rounded-lg hover:bg-purple-500 transition-all hover:scale-105">
+        📺 Browse Whatnot
+      </a>
+    </div>
+  </section>
+
+  <!-- Tier Guide -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bangers tracking-wider text-white mb-6">Understanding KAYOU Tiers</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+        <thead>
+          <tr class="border-b border-brand-border">
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Tier</th>
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Price / Pack</th>
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">UR Pull Rate</th>
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-brand-border">
+            <td class="px-4 py-3"><span class="font-bold" style="color: #6b7280">T1</span></td>
+            <td class="px-4 py-3 font-mono text-white">1¥ (~$0.15)</td>
+            <td class="px-4 py-3 text-white">~1 per 12 packs</td>
+            <td class="px-4 py-3 text-brand-text-muted">Budget collecting, bulk</td>
+          </tr>
+          <tr class="border-b border-brand-border">
+            <td class="px-4 py-3"><span class="font-bold" style="color: #3b82f6">T2</span></td>
+            <td class="px-4 py-3 font-mono text-white">2¥ (~$0.30)</td>
+            <td class="px-4 py-3 text-white">~1 per 8 packs</td>
+            <td class="px-4 py-3 text-brand-text-muted">Good value, solid hits</td>
+          </tr>
+          <tr class="border-b border-brand-border">
+            <td class="px-4 py-3"><span class="font-bold" style="color: #f59e0b">T2.5</span></td>
+            <td class="px-4 py-3 font-mono text-white">2¥ (~$0.30)</td>
+            <td class="px-4 py-3 text-white">~1 per 6 packs</td>
+            <td class="px-4 py-3 text-brand-text-muted">Itachi fans, exclusive CP rarity</td>
+          </tr>
+          <tr class="border-b border-brand-border">
+            <td class="px-4 py-3"><span class="font-bold" style="color: #8b5cf6">T3</span></td>
+            <td class="px-4 py-3 font-mono text-white">5¥ (~$0.70)</td>
+            <td class="px-4 py-3 text-white">~1 per 5 packs</td>
+            <td class="px-4 py-3 text-brand-text-muted">Premium art, great pulls</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3"><span class="font-bold" style="color: #dc2626">T4</span></td>
+            <td class="px-4 py-3 font-mono text-white">10¥ (~$1.40)</td>
+            <td class="px-4 py-3 text-white">~1 per 3 packs</td>
+            <td class="px-4 py-3 text-brand-text-muted">Chase cards, best art & hits</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <AffiliateDisclosure />
+</BaseLayout>

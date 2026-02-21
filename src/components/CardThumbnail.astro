@@ -1,0 +1,64 @@
+---
+import RarityBadge from './cards/RarityBadge.astro';
+
+interface Props {
+  card: {
+    id: string;
+    slug: string;
+    name: string;
+    number: string;
+    rarity: string;
+    image: string;
+    setId?: string;
+  };
+  showSet?: boolean;
+}
+
+const { card, showSet = false } = Astro.props;
+---
+
+<a
+  href={`/cards/${card.slug}/`}
+  class="group relative bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover fade-in-up block"
+  data-rarity={card.rarity}
+  data-name={card.name.toLowerCase()}
+  data-character={card.name.toLowerCase()}
+  data-card-id={card.id}
+>
+  <!-- Image -->
+  <div class="relative aspect-[5/7] bg-brand-bg overflow-hidden">
+    <img
+      src={card.image}
+      alt={card.name}
+      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      loading="lazy"
+      onerror={`this.onerror=null;this.src='/images/placeholder/${card.rarity.toLowerCase()}.svg'`}
+    />
+    <!-- Rarity badge -->
+    <div class="absolute top-2 right-2">
+      <RarityBadge rarity={card.rarity} />
+    </div>
+    <!-- Collection tick -->
+    <button
+      class="collection-btn absolute bottom-2 right-2 w-7 h-7 rounded-full bg-brand-bg/80 border border-brand-border flex items-center justify-center text-brand-text-muted hover:text-brand-orange hover:border-brand-orange transition-all"
+      data-card-id={card.id}
+      title="Toggle collection"
+      onclick="event.preventDefault();event.stopPropagation();"
+    >
+      <svg class="w-4 h-4 check-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Info -->
+  <div class="p-2.5">
+    <div class="flex items-center gap-1.5 mb-0.5">
+      <span class="text-[10px] font-mono text-brand-text-muted">#{card.number}</span>
+      {showSet && card.setId && (
+        <span class="text-[10px] text-brand-text-muted">• {card.setId.toUpperCase()}</span>
+      )}
+    </div>
+    <p class="text-sm font-semibold text-white truncate leading-tight">{card.name}</p>
+  </div>
+</a>

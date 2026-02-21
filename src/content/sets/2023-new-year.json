@@ -1,0 +1,32 @@
+{
+  "id": "2023-new-year",
+  "slug": "2023-new-year",
+  "name": "2023 New Year Legendary Scroll Box",
+  "displayName": "2023 New Year Legendary Scroll Box",
+  "tier": "SP",
+  "wave": null,
+  "series": "Special",
+  "type": "gift",
+  "language": "CN",
+  "releaseDate": "2023-01-15",
+  "cardCount": 8,
+  "packCount": null,
+  "packPrice": null,
+  "description": "Limited New Year gift box with exclusive legendary scroll cards.",
+  "logoImage": "/images/sets/2023-new-year-logo.png",
+  "bannerImage": "/images/sets/2023-new-year-banner.jpg",
+  "notes": "",
+  "englishEquivalent": null,
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 50,
+    "approxPriceCNY": 300
+  },
+  "pullRates": {
+    "ur_per_packs": 0,
+    "hit_per_packs": 0,
+    "valueRating": 4
+  }
+}

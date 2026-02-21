@@ -1,0 +1,32 @@
+{
+  "id": "t2w8",
+  "slug": "t2w8",
+  "name": "T2W8",
+  "displayName": "Tier 2 Wave 8",
+  "tier": "T2",
+  "wave": 8,
+  "series": "Tier 2",
+  "type": "booster",
+  "language": "CN",
+  "releaseDate": "2024-03-01",
+  "cardCount": 8,
+  "packCount": 30,
+  "packPrice": "2¥",
+  "description": "Chapter of Soldiers — Tier 2 Wave 8.",
+  "logoImage": "/images/sets/t2w8-logo.png",
+  "bannerImage": "/images/sets/t2w8-banner.jpg",
+  "notes": "",
+  "englishEquivalent": "heaven-scroll-earth",
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 20,
+    "approxPriceCNY": 60
+  },
+  "pullRates": {
+    "ur_per_packs": 8,
+    "hit_per_packs": 4,
+    "valueRating": 3
+  }
+}

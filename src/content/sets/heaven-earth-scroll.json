@@ -1,0 +1,32 @@
+{
+  "id": "heaven-earth-scroll",
+  "slug": "heaven-earth-scroll",
+  "name": "Heaven and Earth Scroll Box",
+  "displayName": "Heaven and Earth Scroll Box",
+  "tier": "SP",
+  "wave": null,
+  "series": "Special",
+  "type": "gift",
+  "language": "CN",
+  "releaseDate": "2022-11-11",
+  "cardCount": 8,
+  "packCount": null,
+  "packPrice": null,
+  "description": "11.11 gift set with exclusive SV (Scroll Variant) cards.",
+  "logoImage": "/images/sets/heaven-earth-scroll-logo.png",
+  "bannerImage": "/images/sets/heaven-earth-scroll-banner.jpg",
+  "notes": "11.11 gift set with exclusive SV cards",
+  "englishEquivalent": null,
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 65,
+    "approxPriceCNY": 400
+  },
+  "pullRates": {
+    "ur_per_packs": 3,
+    "hit_per_packs": 1,
+    "valueRating": 5
+  }
+}

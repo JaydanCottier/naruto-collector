@@ -1,0 +1,32 @@
+{
+  "id": "jin-s2",
+  "slug": "jin-s2",
+  "name": "Jin Series 2",
+  "displayName": "Jin Series 2",
+  "tier": "T4",
+  "wave": null,
+  "series": "Tier 4",
+  "type": "booster",
+  "language": "EN",
+  "releaseDate": "2025-06-01",
+  "cardCount": 8,
+  "packCount": 12,
+  "packPrice": "$4.99",
+  "description": "Second English release. 12 blister packs per display.",
+  "logoImage": "/images/sets/jin-s2-logo.png",
+  "bannerImage": "/images/sets/jin-s2-banner.jpg",
+  "notes": "12 blister packs per display.",
+  "englishEquivalent": null,
+  "cnEquivalent": "t4w7",
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "https://ebay.us/PLACEHOLDER",
+    "approxPriceUSD": 48,
+    "approxPriceCNY": 0
+  },
+  "pullRates": {
+    "ur_per_packs": 3,
+    "hit_per_packs": 1,
+    "valueRating": 5
+  }
+}

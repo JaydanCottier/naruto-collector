@@ -1,0 +1,70 @@
+---
+import BuyButton from '../affiliate/BuyButton.astro';
+
+interface Props {
+  set: any;
+  cardIds: string[];
+}
+
+const { set, cardIds } = Astro.props;
+const totalCards = cardIds.length;
+const link = set.affiliateLinks?.aliexpress || '#';
+const price = set.affiliateLinks?.approxPriceUSD || 0;
+const setName = set.displayName || set.name;
+---
+
+<div
+  class="complete-your-set-panel hidden bg-gradient-to-r from-brand-orange/10 to-brand-red/5 rounded-xl border border-brand-orange/30 p-5"
+  data-card-ids={JSON.stringify(cardIds)}
+  data-total={totalCards}
+  id="complete-panel"
+>
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <div>
+      <h3 class="text-sm font-bold text-brand-orange uppercase tracking-wider mb-1">Complete Your Set</h3>
+      <p class="text-sm text-brand-text">
+        You own <span class="font-bold text-white complete-owned-count">0</span> / <span class="font-mono">{totalCards}</span> cards.
+        The remaining <span class="font-bold text-white complete-remaining-count">{totalCards}</span> cards are in this box →
+      </p>
+    </div>
+    <div class="shrink-0">
+      <BuyButton
+        href={link}
+        price={price}
+        label={`Buy ${setName}`}
+        size="md"
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  function updateCompletePanel() {
+    const panel = document.getElementById('complete-panel');
+    if (!panel) return;
+
+    try {
+      const cardIds = JSON.parse(panel.getAttribute('data-card-ids') || '[]');
+      const total = parseInt(panel.getAttribute('data-total') || '0');
+      const raw = localStorage.getItem('naruto-collector-v1');
+      const data = raw ? JSON.parse(raw) : { owned: {} };
+      const owned = cardIds.filter((id: string) => data.owned && data.owned[id]).length;
+      const remaining = total - owned;
+
+      const ownedEl = panel.querySelector('.complete-owned-count');
+      const remainingEl = panel.querySelector('.complete-remaining-count');
+      if (ownedEl) ownedEl.textContent = String(owned);
+      if (remainingEl) remainingEl.textContent = String(remaining);
+
+      // Show panel when user has some but not all cards
+      if (owned > 0 && owned < total) {
+        panel.classList.remove('hidden');
+      } else {
+        panel.classList.add('hidden');
+      }
+    } catch(e) {}
+  }
+
+  updateCompletePanel();
+  window.addEventListener('collection-updated', updateCompletePanel);
+</script>

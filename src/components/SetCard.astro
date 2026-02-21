@@ -1,0 +1,81 @@
+---
+import { getTierColor } from '../utils/rarity.ts';
+
+interface Props {
+  set: any;
+}
+
+const { set } = Astro.props;
+const tierColor = getTierColor(set.tier);
+const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
+const price = set.affiliateLinks?.approxPriceUSD || 0;
+const valueRating = set.pullRates?.valueRating || 0;
+const link = set.affiliateLinks?.aliexpress || '#';
+const isPlaceholder = link.includes('PLACEHOLDER');
+
+function stars(n: number) {
+  return '★'.repeat(n) + '☆'.repeat(5 - n);
+}
+---
+
+<a
+  href={`/sets/${set.slug}/`}
+  class="group relative bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover fade-in-up block"
+>
+  <!-- Banner area -->
+  <div class="relative h-28 bg-brand-bg overflow-hidden">
+    <div class="absolute inset-0 opacity-20 bg-cover bg-center" style={`background-image: url('${set.bannerImage}')`}></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-surface to-transparent"></div>
+
+    <!-- Tier badge -->
+    <div class="absolute top-2 left-2 flex gap-1.5">
+      <span
+        class="text-[10px] font-bold px-2 py-0.5 rounded-full"
+        style={`background: ${tierColor}20; color: ${tierColor}; border: 1px solid ${tierColor}40;`}
+      >
+        {set.tier}{set.wave ? `W${set.wave}` : ''}
+      </span>
+    </div>
+
+    <!-- Language flag -->
+    <div class="absolute top-2 right-2">
+      <span class={`text-[10px] font-bold px-1.5 py-0.5 rounded ${set.language === 'EN' ? 'bg-blue-500/20 text-blue-400' : 'bg-red-500/20 text-red-400'}`}>
+        {set.language === 'EN' ? '🇬🇧' : '🇨🇳'}
+      </span>
+    </div>
+
+    {isFinalWave && (
+      <div class="absolute bottom-2 left-2">
+        <span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">
+          FINAL WAVE
+        </span>
+      </div>
+    )}
+  </div>
+
+  <!-- Info -->
+  <div class="p-3">
+    <h3 class="text-sm font-bangers tracking-wider text-white group-hover:text-brand-orange transition-colors mb-1">
+      {set.displayName || set.name}
+    </h3>
+    <div class="flex items-center justify-between text-[11px] text-brand-text-muted mb-1">
+      <span>{set.cardCount || '—'} cards</span>
+      <span>{set.releaseDate}</span>
+    </div>
+
+    <!-- Value + Price row -->
+    <div class="flex items-center justify-between mt-1.5">
+      <div class="flex items-center gap-2">
+        <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-surface-light text-brand-text-muted capitalize">
+          {set.type}
+        </span>
+        {valueRating > 0 && (
+          <span class="text-[10px] text-brand-gold tracking-wider">{stars(valueRating)}</span>
+        )}
+      </div>
+      {price > 0 && (
+        <span class="text-[10px] font-mono font-bold text-brand-orange">~${price}</span>
+      )}
+    </div>
+  </div>
+</a>

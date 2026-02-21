@@ -1,0 +1,32 @@
+{
+  "id": "age-of-ninjas",
+  "slug": "age-of-ninjas",
+  "name": "The Age of Ninjas",
+  "displayName": "The Age of Ninjas",
+  "tier": "SP",
+  "wave": null,
+  "series": "Special",
+  "type": "special",
+  "language": "CN",
+  "releaseDate": "2023-03-01",
+  "cardCount": 8,
+  "packCount": null,
+  "packPrice": null,
+  "description": "Noble Edition introducing PTR, QR, and XR rarities.",
+  "logoImage": "/images/sets/age-of-ninjas-logo.png",
+  "bannerImage": "/images/sets/age-of-ninjas-banner.jpg",
+  "notes": "Introduces PTR/QR/XR rarities. Noble Edition.",
+  "englishEquivalent": null,
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 45,
+    "approxPriceCNY": 280
+  },
+  "pullRates": {
+    "ur_per_packs": 4,
+    "hit_per_packs": 2,
+    "valueRating": 4
+  }
+}

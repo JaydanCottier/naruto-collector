@@ -1,0 +1,32 @@
+{
+  "id": "t3w2",
+  "slug": "t3w2",
+  "name": "T3W2",
+  "displayName": "Tier 3 Wave 2",
+  "tier": "T3",
+  "wave": 2,
+  "series": "Tier 3",
+  "type": "booster",
+  "language": "CN",
+  "releaseDate": "2021-10-01",
+  "cardCount": 8,
+  "packCount": 20,
+  "packPrice": "2¥",
+  "description": "Chapter of Soldiers — Tier 3 Wave 2.",
+  "logoImage": "/images/sets/t3w2-logo.png",
+  "bannerImage": "/images/sets/t3w2-banner.jpg",
+  "notes": "",
+  "englishEquivalent": null,
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 28,
+    "approxPriceCNY": 100
+  },
+  "pullRates": {
+    "ur_per_packs": 5,
+    "hit_per_packs": 2,
+    "valueRating": 4
+  }
+}

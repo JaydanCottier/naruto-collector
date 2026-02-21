@@ -1,0 +1,72 @@
+---
+// BackupWarning.astro — shown when user hasn't exported in 7+ days
+---
+
+<div id="backup-warning" class="hidden bg-amber-900/30 border border-amber-600/40 rounded-lg px-4 py-3 mb-6">
+  <div class="flex items-center justify-between gap-3 flex-wrap">
+    <div class="flex items-center gap-2 text-sm">
+      <span class="text-amber-400 text-lg">⚠️</span>
+      <span class="text-amber-200 font-semibold" id="backup-text">
+        Your collection hasn't been backed up recently.
+      </span>
+    </div>
+    <button
+      id="backup-export-btn"
+      class="px-3 py-1.5 bg-amber-600 text-white font-bold text-xs rounded-lg hover:bg-amber-500 transition-all shrink-0"
+    >
+      Export Now
+    </button>
+  </div>
+</div>
+
+<script>
+  function checkBackup() {
+    const banner = document.getElementById('backup-warning');
+    const text = document.getElementById('backup-text');
+    if (!banner) return;
+
+    try {
+      const raw = localStorage.getItem('naruto-collector-v1');
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      const ownedCount = Object.keys(data.owned || {}).length;
+      if (ownedCount === 0) return;
+
+      if (!data.lastExported) {
+        if (text) text.textContent = 'Your collection has never been backed up. Export now to keep it safe!';
+        banner.classList.remove('hidden');
+        return;
+      }
+
+      const days = Math.floor((Date.now() - new Date(data.lastExported).getTime()) / (1000 * 60 * 60 * 24));
+      if (days > 7) {
+        if (text) text.textContent = `Last backed up ${days} days ago — export your collection to keep it safe!`;
+        banner.classList.remove('hidden');
+      }
+    } catch(e) {}
+  }
+
+  document.getElementById('backup-export-btn')?.addEventListener('click', () => {
+    try {
+      const raw = localStorage.getItem('naruto-collector-v1') || '{}';
+      const data = JSON.parse(raw);
+      data.lastExported = new Date().toISOString();
+      data._addCountSinceExport = 0;
+      localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `naruto-collection-${new Date().toISOString().slice(0,10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      document.getElementById('backup-warning')?.classList.add('hidden');
+    } catch(e) {}
+  });
+
+  checkBackup();
+</script>

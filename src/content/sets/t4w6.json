@@ -1,0 +1,32 @@
+{
+  "id": "t4w6",
+  "slug": "t4w6",
+  "name": "T4W6",
+  "displayName": "Tier 4 Wave 6",
+  "tier": "T4",
+  "wave": 6,
+  "series": "Tier 4",
+  "type": "booster",
+  "language": "CN",
+  "releaseDate": "2023-09-01",
+  "cardCount": 8,
+  "packCount": 20,
+  "packPrice": "2¥",
+  "description": "Chapter of Soldiers — Tier 4 Wave 6. New simplified rarity system.",
+  "logoImage": "/images/sets/t4w6-logo.png",
+  "bannerImage": "/images/sets/t4w6-banner.jpg",
+  "notes": "",
+  "englishEquivalent": "heaven-scroll-s1",
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 55,
+    "approxPriceCNY": 200
+  },
+  "pullRates": {
+    "ur_per_packs": 3,
+    "hit_per_packs": 1,
+    "valueRating": 5
+  }
+}

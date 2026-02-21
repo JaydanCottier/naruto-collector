@@ -1,0 +1,205 @@
+---
+interface Props {
+  cardId: string;
+  size?: 'sm' | 'md';
+}
+
+const { cardId, size = 'sm' } = Astro.props;
+const btnSize = size === 'sm' ? 'w-8 h-8 text-sm' : 'w-10 h-10 text-base';
+const variants = ['standard', 'holo', 'serialized', 'promo', 'english'];
+---
+
+<div class="collection-toggle inline-flex items-center gap-1 relative" data-card-id={cardId}>
+  <!-- Owned button -->
+  <button
+    class:list={[
+      'owned-btn flex items-center justify-center rounded-lg border transition-all',
+      btnSize,
+      'border-brand-border text-brand-text-muted hover:text-green-400 hover:border-green-400',
+    ]}
+    data-card-id={cardId}
+    data-action="owned"
+    aria-label="Toggle owned"
+    title="Mark as owned"
+    style="min-height: 44px; min-width: 44px;"
+  >
+    ✓
+  </button>
+  <!-- Wishlist button -->
+  <button
+    class:list={[
+      'wish-btn flex items-center justify-center rounded-lg border transition-all',
+      btnSize,
+      'border-brand-border text-brand-text-muted hover:text-brand-gold hover:border-brand-gold',
+    ]}
+    data-card-id={cardId}
+    data-action="wishlist"
+    aria-label="Toggle wishlist"
+    title="Add to wishlist"
+    style="min-height: 44px; min-width: 44px;"
+  >
+    ⭐
+  </button>
+  <!-- Variant badge (shows when owned) -->
+  <span class="variant-badge hidden text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-brand-surface-light text-brand-text-muted border border-brand-border cursor-pointer" title="Click to change variant"></span>
+  <!-- Variant dropdown (hidden by default) -->
+  <div class="variant-dropdown hidden absolute top-full left-0 mt-1 bg-brand-surface border border-brand-border rounded-lg shadow-xl z-20 min-w-[120px] overflow-hidden">
+    {variants.map(v => (
+      <button
+        class="variant-option w-full text-left px-3 py-2 text-xs font-semibold text-brand-text-muted hover:text-white hover:bg-brand-surface-light transition-colors capitalize"
+        data-variant={v}
+        style="min-height: 40px;"
+      >
+        {v}
+      </button>
+    ))}
+  </div>
+</div>
+
+<script>
+  function initCollectionToggles() {
+    document.querySelectorAll('.collection-toggle').forEach(container => {
+      const cardId = container.getAttribute('data-card-id');
+      if (!cardId) return;
+
+      const ownedBtn = container.querySelector('.owned-btn') as HTMLElement;
+      const wishBtn = container.querySelector('.wish-btn') as HTMLElement;
+      const variantBadge = container.querySelector('.variant-badge') as HTMLElement;
+      const variantDropdown = container.querySelector('.variant-dropdown') as HTMLElement;
+      const variantOptions = container.querySelectorAll('.variant-option');
+
+      function getState() {
+        try {
+          const raw = localStorage.getItem('naruto-collector-v1');
+          if (!raw) return { owned: false, wishlisted: false, variant: 'standard' };
+          const data = JSON.parse(raw);
+          const ownedEntry = data.owned?.[cardId!];
+          return {
+            owned: !!ownedEntry,
+            wishlisted: !!(data.wishlist && data.wishlist[cardId!]),
+            variant: ownedEntry?.variant || 'standard',
+          };
+        } catch { return { owned: false, wishlisted: false, variant: 'standard' }; }
+      }
+
+      function updateUI() {
+        const state = getState();
+        if (ownedBtn) {
+          if (state.owned) {
+            ownedBtn.classList.add('bg-green-500/20', 'border-green-500', 'text-green-400');
+            ownedBtn.classList.remove('text-brand-text-muted', 'border-brand-border');
+          } else {
+            ownedBtn.classList.remove('bg-green-500/20', 'border-green-500', 'text-green-400');
+            ownedBtn.classList.add('text-brand-text-muted', 'border-brand-border');
+          }
+        }
+        if (wishBtn) {
+          if (state.wishlisted) {
+            wishBtn.classList.add('bg-brand-gold/20', 'border-brand-gold', 'text-brand-gold');
+            wishBtn.classList.remove('text-brand-text-muted', 'border-brand-border');
+          } else {
+            wishBtn.classList.remove('bg-brand-gold/20', 'border-brand-gold', 'text-brand-gold');
+            wishBtn.classList.add('text-brand-text-muted', 'border-brand-border');
+          }
+        }
+        // Variant badge
+        if (variantBadge) {
+          if (state.owned) {
+            variantBadge.classList.remove('hidden');
+            variantBadge.textContent = state.variant;
+          } else {
+            variantBadge.classList.add('hidden');
+          }
+        }
+        // Highlight active variant option
+        variantOptions.forEach(opt => {
+          const v = opt.getAttribute('data-variant');
+          if (v === state.variant) {
+            (opt as HTMLElement).classList.add('text-brand-orange', 'bg-brand-orange/10');
+          } else {
+            (opt as HTMLElement).classList.remove('text-brand-orange', 'bg-brand-orange/10');
+          }
+        });
+      }
+
+      function toggle(action: string) {
+        try {
+          const raw = localStorage.getItem('naruto-collector-v1') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null,"_addCountSinceExport":0}';
+          const data = JSON.parse(raw);
+          if (!data.owned) data.owned = {};
+          if (!data.wishlist) data.wishlist = {};
+
+          if (action === 'owned') {
+            if (data.owned[cardId!]) {
+              delete data.owned[cardId!];
+            } else {
+              data.owned[cardId!] = { owned: true, variant: 'standard', addedAt: new Date().toISOString() };
+              data._addCountSinceExport = (data._addCountSinceExport || 0) + 1;
+            }
+          } else {
+            if (data.wishlist[cardId!]) {
+              delete data.wishlist[cardId!];
+            } else {
+              data.wishlist[cardId!] = true;
+            }
+          }
+          data.lastModified = new Date().toISOString();
+          localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+          updateUI();
+          window.dispatchEvent(new Event('collection-updated'));
+        } catch(e) {}
+      }
+
+      function setVariant(variant: string) {
+        try {
+          const raw = localStorage.getItem('naruto-collector-v1') || '{}';
+          const data = JSON.parse(raw);
+          if (data.owned?.[cardId!]) {
+            data.owned[cardId!].variant = variant;
+            data.lastModified = new Date().toISOString();
+            localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+            updateUI();
+            variantDropdown?.classList.add('hidden');
+          }
+        } catch(e) {}
+      }
+
+      ownedBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggle('owned');
+      });
+
+      wishBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggle('wishlist');
+      });
+
+      // Toggle variant dropdown on badge click
+      variantBadge?.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        variantDropdown?.classList.toggle('hidden');
+      });
+
+      // Variant option clicks
+      variantOptions.forEach(opt => {
+        opt.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setVariant(opt.getAttribute('data-variant') || 'standard');
+        });
+      });
+
+      // Close dropdown on outside click
+      document.addEventListener('click', () => {
+        variantDropdown?.classList.add('hidden');
+      });
+
+      updateUI();
+    });
+  }
+
+  initCollectionToggles();
+</script>

@@ -1,0 +1,402 @@
+---
+import SetLayout from '../../layouts/SetLayout.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import CardThumbnail from '../../components/CardThumbnail.astro';
+import { getCollection } from 'astro:content';
+import { RARITY_MAP } from '../../utils/rarity.ts';
+
+export async function getStaticPaths() {
+  const sets = await getCollection('sets');
+  const allCardGroups = await getCollection('cards');
+
+  return sets.map(set => {
+    const cardGroup = allCardGroups.find(g => g.id === set.data.slug || g.id === set.data.id);
+    const cards = cardGroup ? cardGroup.data : [];
+
+    return {
+      params: { slug: set.data.slug },
+      props: { set: set.data, cards }
+    };
+  });
+}
+
+const { set, cards } = Astro.props;
+
+// Get unique rarities and characters for filter UI
+const rarities = [...new Set(cards.map(c => c.rarity))].sort(
+  (a, b) => (RARITY_MAP[a]?.sortOrder || 0) - (RARITY_MAP[b]?.sortOrder || 0)
+);
+const characters = [...new Set(cards.map(c => c.character).filter(Boolean))].sort();
+const types = [...new Set(cards.map(c => c.type).filter(Boolean))].sort();
+const CARDS_PER_PAGE = 48;
+---
+
+<SetLayout set={set} cards={cards}>
+
+  <!-- Mobile filter button (visible < md) -->
+  <button
+    id="mobile-filter-btn"
+    class="md:hidden fixed bottom-6 right-6 z-30 flex items-center gap-2 px-4 py-3 bg-brand-orange text-white rounded-full shadow-lg shadow-brand-orange/30 font-bold text-sm hover:bg-brand-orange/90 transition-all"
+    style="min-height: 44px; min-width: 44px;"
+  >
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/>
+    </svg>
+    Filters
+  </button>
+
+  <!-- Bottom sheet overlay (mobile) -->
+  <div id="filter-overlay" class="bottom-sheet-overlay md:hidden"></div>
+
+  <!-- Bottom sheet (mobile) -->
+  <div id="filter-sheet" class="bottom-sheet md:hidden">
+    <div class="bottom-sheet-handle"></div>
+    <h3 class="text-sm font-bold text-white mb-4">Filter Cards</h3>
+
+    <!-- Rarity filter -->
+    <div class="mb-4">
+      <label class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2 block">Rarity</label>
+      <div class="flex flex-wrap gap-1.5" id="mobile-rarity-filters">
+        {rarities.map(r => {
+          const info = RARITY_MAP[r];
+          return (
+            <button
+              class="mobile-rarity-btn text-[11px] font-bold px-2 py-1 rounded-full border transition-all"
+              style={`border-color: ${info?.color || '#6b7280'}40; color: ${info?.color || '#6b7280'}; min-height: 44px;`}
+              data-rarity={r}
+            >
+              {r}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+
+    <!-- Character filter -->
+    <div class="mb-4">
+      <label class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2 block">Character</label>
+      <input
+        type="text"
+        id="mobile-char-filter"
+        placeholder="Filter by character..."
+        class="w-full bg-brand-bg border border-brand-border rounded-lg px-3 py-2.5 text-sm text-white placeholder-brand-text-muted outline-none focus:border-brand-orange transition-colors font-rajdhani"
+        style="min-height: 44px;"
+      />
+    </div>
+
+    <!-- Sort -->
+    <div class="mb-4">
+      <label class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2 block">Sort</label>
+      <select id="mobile-sort-select" class="w-full bg-brand-bg border border-brand-border rounded-lg px-3 py-2.5 text-sm text-white font-rajdhani" style="min-height: 44px;">
+        <option value="number">By Number</option>
+        <option value="rarity">Rarest First</option>
+        <option value="name">By Name</option>
+      </select>
+    </div>
+
+    <button id="apply-filters-btn" class="w-full py-3 bg-brand-orange text-white font-bold rounded-lg text-sm" style="min-height: 44px;">
+      Apply Filters
+    </button>
+  </div>
+
+  <!-- Desktop Filter Bar (hidden on mobile) -->
+  <div class="hidden md:block bg-brand-surface rounded-xl border border-brand-border p-4 mb-6">
+    <div class="flex flex-wrap gap-4 items-start">
+      <!-- Rarity filter -->
+      <div class="flex-1 min-w-[200px]">
+        <label class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2 block">Rarity</label>
+        <div class="flex flex-wrap gap-1.5" id="rarity-filters">
+          {rarities.map(r => {
+            const info = RARITY_MAP[r];
+            return (
+              <button
+                class="rarity-filter-btn text-[11px] font-bold px-2 py-1 rounded-full border transition-all"
+                style={`border-color: ${info?.color || '#6b7280'}40; color: ${info?.color || '#6b7280'};`}
+                data-rarity={r}
+              >
+                {r}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Character search -->
+      <div class="flex-1 min-w-[200px]">
+        <label class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2 block">Character</label>
+        <input
+          type="text"
+          id="char-filter"
+          placeholder="Filter by character..."
+          class="w-full bg-brand-bg border border-brand-border rounded-lg px-3 py-1.5 text-sm text-white placeholder-brand-text-muted outline-none focus:border-brand-orange transition-colors font-rajdhani"
+        />
+      </div>
+
+      <!-- Sort -->
+      <div class="min-w-[150px]">
+        <label class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2 block">Sort</label>
+        <select id="sort-select" class="w-full bg-brand-bg border border-brand-border rounded-lg px-3 py-1.5 text-sm text-white outline-none focus:border-brand-orange transition-colors font-rajdhani">
+          <option value="number">By Number</option>
+          <option value="rarity">Rarest First</option>
+          <option value="name">By Name</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card Grid -->
+  <div id="card-grid">
+    <CardGrid>
+      {cards.map(card => (
+        <CardThumbnail card={card} />
+      ))}
+    </CardGrid>
+  </div>
+
+  <!-- Pagination Controls -->
+  <div id="pagination" class="flex items-center justify-center gap-2 mt-6 hidden">
+    <button id="prev-page" class="px-4 py-2 bg-brand-surface border border-brand-border rounded-lg text-sm font-bold text-brand-text-muted hover:text-white hover:border-brand-orange transition-all disabled:opacity-50" style="min-height: 44px;">
+      ← Prev
+    </button>
+    <span id="page-info" class="text-sm font-mono text-brand-text-muted px-3"></span>
+    <button id="next-page" class="px-4 py-2 bg-brand-surface border border-brand-border rounded-lg text-sm font-bold text-brand-text-muted hover:text-white hover:border-brand-orange transition-all disabled:opacity-50" style="min-height: 44px;">
+      Next →
+    </button>
+  </div>
+
+  <div id="no-results" class="hidden text-center py-12 text-brand-text-muted">
+    <p class="text-lg font-semibold">No cards match your filters</p>
+    <p class="text-sm mt-1">Try adjusting your rarity or character filters</p>
+  </div>
+
+  <script define:vars={{ rarityOrder: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, v.sortOrder])), CARDS_PER_PAGE }}>
+    // State
+    const activeRarities = new Set();
+    let currentPage = 1;
+    let charQuery = '';
+    let currentSort = 'number';
+
+    // Elements
+    const rarityBtns = document.querySelectorAll('.rarity-filter-btn');
+    const mobileRarityBtns = document.querySelectorAll('.mobile-rarity-btn');
+    const charFilter = document.getElementById('char-filter');
+    const mobileCharFilter = document.getElementById('mobile-char-filter');
+    const sortSelect = document.getElementById('sort-select');
+    const mobileSortSelect = document.getElementById('mobile-sort-select');
+    const cardGrid = document.querySelector('#card-grid .stagger-grid');
+    const noResults = document.getElementById('no-results');
+    const pagination = document.getElementById('pagination');
+    const prevBtn = document.getElementById('prev-page');
+    const nextBtn = document.getElementById('next-page');
+    const pageInfo = document.getElementById('page-info');
+
+    // Bottom sheet
+    const filterBtn = document.getElementById('mobile-filter-btn');
+    const filterSheet = document.getElementById('filter-sheet');
+    const filterOverlay = document.getElementById('filter-overlay');
+    const applyBtn = document.getElementById('apply-filters-btn');
+
+    function openSheet() {
+      filterSheet?.classList.add('active');
+      filterOverlay?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSheet() {
+      filterSheet?.classList.remove('active');
+      filterOverlay?.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    filterBtn?.addEventListener('click', openSheet);
+    filterOverlay?.addEventListener('click', closeSheet);
+    applyBtn?.addEventListener('click', () => {
+      // Sync mobile inputs to main state
+      charQuery = mobileCharFilter?.value?.trim().toLowerCase() || '';
+      if (charFilter) charFilter.value = mobileCharFilter?.value || '';
+      if (sortSelect) sortSelect.value = mobileSortSelect?.value || 'number';
+      currentSort = mobileSortSelect?.value || 'number';
+      closeSheet();
+      applySort();
+      applyFiltersAndPaginate();
+    });
+
+    function getVisibleCards() {
+      const cards = Array.from(cardGrid.children);
+      return cards.filter(card => {
+        const rarity = card.getAttribute('data-rarity');
+        const name = card.getAttribute('data-name');
+        const character = card.getAttribute('data-character');
+
+        let show = true;
+        if (activeRarities.size > 0 && !activeRarities.has(rarity)) show = false;
+        if (charQuery && !name.includes(charQuery) && !character.includes(charQuery)) show = false;
+        return show;
+      });
+    }
+
+    function applyFiltersAndPaginate() {
+      const allCards = Array.from(cardGrid.children);
+      const visible = getVisibleCards();
+      const totalPages = Math.max(1, Math.ceil(visible.length / CARDS_PER_PAGE));
+
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      const start = (currentPage - 1) * CARDS_PER_PAGE;
+      const end = start + CARDS_PER_PAGE;
+
+      allCards.forEach(card => card.style.display = 'none');
+      visible.forEach((card, i) => {
+        card.style.display = (i >= start && i < end) ? '' : 'none';
+      });
+
+      noResults.classList.toggle('hidden', visible.length > 0);
+
+      // Update pagination
+      if (visible.length > CARDS_PER_PAGE) {
+        pagination.classList.remove('hidden');
+        pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+        prevBtn.disabled = currentPage <= 1;
+        nextBtn.disabled = currentPage >= totalPages;
+      } else {
+        pagination.classList.add('hidden');
+      }
+    }
+
+    function applySort() {
+      const cards = Array.from(cardGrid.children);
+      cards.sort((a, b) => {
+        if (currentSort === 'number') {
+          return (a.querySelector('.font-mono')?.textContent || '').localeCompare(
+            b.querySelector('.font-mono')?.textContent || ''
+          );
+        } else if (currentSort === 'rarity') {
+          const ra = rarityOrder[a.getAttribute('data-rarity')] || 0;
+          const rb = rarityOrder[b.getAttribute('data-rarity')] || 0;
+          return rb - ra;
+        } else if (currentSort === 'name') {
+          return (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || '');
+        }
+        return 0;
+      });
+      cards.forEach(card => cardGrid.appendChild(card));
+    }
+
+    // Desktop rarity toggle
+    function setupRarityBtn(btn) {
+      btn.addEventListener('click', () => {
+        const r = btn.getAttribute('data-rarity');
+        if (activeRarities.has(r)) {
+          activeRarities.delete(r);
+          btn.style.background = 'transparent';
+        } else {
+          activeRarities.add(r);
+          btn.style.background = btn.style.color + '20';
+        }
+        // Sync mobile buttons
+        mobileRarityBtns.forEach(mb => {
+          if (mb.getAttribute('data-rarity') === r) {
+            mb.style.background = activeRarities.has(r) ? mb.style.color + '20' : 'transparent';
+          }
+        });
+        currentPage = 1;
+        applyFiltersAndPaginate();
+      });
+    }
+
+    // Mobile rarity toggle
+    function setupMobileRarityBtn(btn) {
+      btn.addEventListener('click', () => {
+        const r = btn.getAttribute('data-rarity');
+        if (activeRarities.has(r)) {
+          activeRarities.delete(r);
+          btn.style.background = 'transparent';
+        } else {
+          activeRarities.add(r);
+          btn.style.background = btn.style.color + '20';
+        }
+        // Sync desktop buttons
+        rarityBtns.forEach(db => {
+          if (db.getAttribute('data-rarity') === r) {
+            db.style.background = activeRarities.has(r) ? db.style.color + '20' : 'transparent';
+          }
+        });
+      });
+    }
+
+    rarityBtns.forEach(setupRarityBtn);
+    mobileRarityBtns.forEach(setupMobileRarityBtn);
+
+    charFilter?.addEventListener('input', () => {
+      charQuery = charFilter.value.trim().toLowerCase();
+      currentPage = 1;
+      applyFiltersAndPaginate();
+    });
+
+    sortSelect?.addEventListener('change', () => {
+      currentSort = sortSelect.value;
+      applySort();
+      currentPage = 1;
+      applyFiltersAndPaginate();
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        applyFiltersAndPaginate();
+        window.scrollTo({ top: document.getElementById('card-grid').offsetTop - 80, behavior: 'smooth' });
+      }
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      currentPage++;
+      applyFiltersAndPaginate();
+      window.scrollTo({ top: document.getElementById('card-grid').offsetTop - 80, behavior: 'smooth' });
+    });
+
+    // Initial render
+    applyFiltersAndPaginate();
+
+    // Collection buttons
+    function initCollectionButtons() {
+      document.querySelectorAll('.collection-btn').forEach(btn => {
+        const cardId = btn.getAttribute('data-card-id');
+        if (!cardId) return;
+
+        try {
+          const raw = localStorage.getItem('naruto-collector-v1');
+          if (raw) {
+            const data = JSON.parse(raw);
+            if (data.owned && data.owned[cardId]) {
+              btn.classList.add('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.remove('text-brand-text-muted');
+            }
+          }
+        } catch(e) {}
+
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          try {
+            const raw = localStorage.getItem('naruto-collector-v1') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+            const data = JSON.parse(raw);
+            if (!data.owned) data.owned = {};
+            if (data.owned[cardId]) {
+              delete data.owned[cardId];
+              btn.classList.remove('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.add('text-brand-text-muted');
+            } else {
+              data.owned[cardId] = { owned: true, variant: 'standard', addedAt: new Date().toISOString() };
+              btn.classList.add('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+              btn.classList.remove('text-brand-text-muted');
+            }
+            data.lastModified = new Date().toISOString();
+            localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+            window.dispatchEvent(new Event('collection-updated'));
+          } catch(e) {}
+        });
+      });
+    }
+    initCollectionButtons();
+  </script>
+</SetLayout>

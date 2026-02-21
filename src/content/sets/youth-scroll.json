@@ -1,0 +1,32 @@
+{
+  "id": "youth-scroll",
+  "slug": "youth-scroll",
+  "name": "Youth Scroll Box",
+  "displayName": "Youth Scroll Box",
+  "tier": "SP",
+  "wave": null,
+  "series": "Special",
+  "type": "gift",
+  "language": "CN",
+  "releaseDate": "2022-03-01",
+  "cardCount": 8,
+  "packCount": null,
+  "packPrice": null,
+  "description": "Gift box featuring exclusive SCR Naruto and Boruto promo cards.",
+  "logoImage": "/images/sets/youth-scroll-logo.png",
+  "bannerImage": "/images/sets/youth-scroll-banner.jpg",
+  "notes": "SCR Naruto & Boruto promos",
+  "englishEquivalent": null,
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 35,
+    "approxPriceCNY": 200
+  },
+  "pullRates": {
+    "ur_per_packs": 4,
+    "hit_per_packs": 2,
+    "valueRating": 3
+  }
+}

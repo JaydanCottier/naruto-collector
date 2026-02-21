@@ -1,0 +1,32 @@
+{
+  "id": "t4w4",
+  "slug": "t4w4",
+  "name": "T4W4",
+  "displayName": "Tier 4 Wave 4",
+  "tier": "T4",
+  "wave": 4,
+  "series": "Tier 4",
+  "type": "booster",
+  "language": "CN",
+  "releaseDate": "2022-07-01",
+  "cardCount": 8,
+  "packCount": 20,
+  "packPrice": "2¥",
+  "description": "Chapter of Soldiers — Tier 4 Wave 4.",
+  "logoImage": "/images/sets/t4w4-logo.png",
+  "bannerImage": "/images/sets/t4w4-banner.jpg",
+  "notes": "2nd print includes 20th Anniversary promo",
+  "englishEquivalent": null,
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 48,
+    "approxPriceCNY": 200
+  },
+  "pullRates": {
+    "ur_per_packs": 3,
+    "hit_per_packs": 1,
+    "valueRating": 5
+  }
+}

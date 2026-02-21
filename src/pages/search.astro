@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RarityBadge from '../components/cards/RarityBadge.astro';
+---
+
+<BaseLayout title="Search" description="Search KAYOU Naruto trading cards by name, character, set, or rarity.">
+
+  <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-6">Search Cards</h1>
+
+  <!-- Search input -->
+  <div class="bg-brand-surface rounded-xl border border-brand-border p-4 mb-8">
+    <div class="flex items-center bg-brand-bg rounded-lg px-4 py-3 border border-brand-border focus-within:border-brand-orange transition-colors">
+      <svg class="w-5 h-5 text-brand-text-muted mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <input
+        type="text"
+        id="page-search-input"
+        placeholder="Search by card name, character, set, or rarity..."
+        class="bg-transparent text-white placeholder-brand-text-muted outline-none w-full font-rajdhani text-lg"
+        autocomplete="off"
+      />
+    </div>
+  </div>
+
+  <div id="search-status" class="text-sm text-brand-text-muted mb-4 hidden"></div>
+
+  <div id="page-search-results" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+
+  <div id="no-results" class="hidden text-center py-16 text-brand-text-muted">
+    <p class="text-4xl mb-4">🔍</p>
+    <p class="text-lg font-semibold">No cards found</p>
+    <p class="text-sm mt-1">Try a different search term</p>
+  </div>
+
+  <div id="initial-state" class="text-center py-16 text-brand-text-muted">
+    <p class="text-4xl mb-4">🍥</p>
+    <p class="text-lg font-semibold">Search for any card</p>
+    <p class="text-sm mt-1">Type at least 3 characters to search</p>
+  </div>
+
+  <script>
+    let searchData = null;
+    const searchInput = document.getElementById('page-search-input');
+    const resultsContainer = document.getElementById('page-search-results');
+    const noResults = document.getElementById('no-results');
+    const initialState = document.getElementById('initial-state');
+    const searchStatus = document.getElementById('search-status');
+
+    const rarityColors = {
+      R:'#6b7280',SR:'#3b82f6',SSR:'#8b5cf6',TR:'#06b6d4',HR:'#ec4899',
+      TGR:'#14b8a6',NR:'#34d399',ZR:'#f97316',GP:'#fbbf24',BP:'#64748b',
+      CP:'#f59e0b',CR:'#f472b6',OR:'#f97316',AR:'#a855f7',PTR:'#f97316',
+      QR:'#a78bfa',UR:'#f59e0b',MR:'#c084fc',PU:'#e879f9',LR:'#fcd34d',
+      SP:'#ef4444',SE:'#f59e0b',PR:'#94a3b8',SLR:'#f97316',SCR:'#f59e0b',
+      SV:'#a855f7',XR:'#3b82f6'
+    };
+
+    async function loadSearchIndex() {
+      if (searchData) return searchData;
+      const res = await fetch('/search.json');
+      searchData = await res.json();
+      return searchData;
+    }
+
+    // Check for ?q= param
+    const params = new URLSearchParams(window.location.search);
+    const initialQuery = params.get('q');
+    if (initialQuery) {
+      searchInput.value = initialQuery;
+      performSearch(initialQuery);
+    }
+
+    async function performSearch(query) {
+      if (query.length < 3) {
+        resultsContainer.innerHTML = '';
+        noResults.classList.add('hidden');
+        initialState.classList.remove('hidden');
+        searchStatus.classList.add('hidden');
+        return;
+      }
+
+      initialState.classList.add('hidden');
+      const data = await loadSearchIndex();
+      const q = query.toLowerCase();
+
+      const results = data.filter(c =>
+        c.name.toLowerCase().includes(q) ||
+        (c.character && c.character.toLowerCase().includes(q)) ||
+        c.setName.toLowerCase().includes(q) ||
+        c.rarity.toLowerCase().includes(q)
+      );
+
+      searchStatus.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`;
+      searchStatus.classList.remove('hidden');
+
+      if (results.length === 0) {
+        resultsContainer.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+      const color = (r) => rarityColors[r] || '#6b7280';
+
+      resultsContainer.innerHTML = results.map(c => `
+        <a href="/cards/${c.slug}/" class="flex items-center gap-4 p-4 bg-brand-surface rounded-xl border border-brand-border hover:border-brand-orange transition-all group">
+          <img src="${c.image}" alt="${c.name}" class="w-12 h-16 object-cover rounded-lg border border-brand-border" onerror="this.src='/images/placeholder/${c.rarity.toLowerCase()}.svg'" />
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-semibold text-white group-hover:text-brand-orange transition-colors truncate">${c.name}</p>
+            <p class="text-xs text-brand-text-muted">${c.setName} • #${c.id.split('-').pop()}</p>
+          </div>
+          <span class="text-xs font-bold px-2 py-0.5 rounded-full shrink-0" style="background:${color(c.rarity)}20;color:${color(c.rarity)};border:1px solid ${color(c.rarity)}40">${c.rarity}</span>
+        </a>
+      `).join('');
+    }
+
+    searchInput?.addEventListener('input', (e) => {
+      performSearch(e.target.value.trim());
+    });
+  </script>
+</BaseLayout>

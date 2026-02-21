@@ -1,0 +1,86 @@
+---
+import BuyButton from './BuyButton.astro';
+
+interface Props {
+  set: any;
+  heading?: string;
+  description?: string;
+}
+
+const { set, heading, description } = Astro.props;
+
+const name = set.displayName || set.name;
+const price = set.affiliateLinks?.approxPriceUSD || 0;
+const link = set.affiliateLinks?.aliexpress || '#';
+const pullRates = set.pullRates;
+
+function stars(rating: number) {
+  return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+}
+---
+
+<div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover">
+  <!-- Banner / Image area -->
+  <div class="h-32 bg-gradient-to-br from-brand-orange/20 to-brand-red/10 flex items-center justify-center relative">
+    {set.bannerImage ? (
+      <img
+        src={set.bannerImage}
+        alt={name}
+        class="w-full h-full object-cover"
+        onerror="this.style.display='none'"
+      />
+    ) : (
+      <span class="text-4xl font-bangers text-white/30 tracking-wider">{set.name}</span>
+    )}
+    {set.language && (
+      <span class="absolute top-2 right-2 text-[10px] font-bold px-2 py-0.5 rounded bg-brand-bg/60 text-white">
+        {set.language === 'EN' ? '🇬🇧 EN' : '🇨🇳 CN'}
+      </span>
+    )}
+  </div>
+
+  <div class="p-4">
+    <h3 class="text-lg font-bangers tracking-wider text-white mb-1">{heading || name}</h3>
+    {description && <p class="text-xs text-brand-text-muted mb-3">{description}</p>}
+
+    <!-- Stats -->
+    <div class="flex flex-wrap gap-3 mb-3 text-xs text-brand-text-muted">
+      {set.packCount && (
+        <span class="flex items-center gap-1">
+          📦 <span class="font-mono">{set.packCount} packs</span>
+        </span>
+      )}
+      {set.packPrice && (
+        <span class="flex items-center gap-1">
+          💰 <span class="font-mono">{set.packPrice}/pack</span>
+        </span>
+      )}
+    </div>
+
+    <!-- Pull rates -->
+    {pullRates && pullRates.ur_per_packs > 0 && (
+      <div class="text-[11px] text-brand-text-muted mb-3 space-y-0.5">
+        <div>~1 UR per <span class="text-brand-gold font-bold">{pullRates.ur_per_packs}</span> packs</div>
+        {pullRates.hit_per_packs > 0 && (
+          <div>Hit rate: 1 in <span class="text-white font-bold">{pullRates.hit_per_packs}</span> packs</div>
+        )}
+      </div>
+    )}
+
+    <!-- Value rating -->
+    {pullRates && pullRates.valueRating > 0 && (
+      <div class="text-sm mb-4">
+        <span class="text-brand-gold tracking-wider">{stars(pullRates.valueRating)}</span>
+        <span class="text-[10px] text-brand-text-muted ml-1">Value</span>
+      </div>
+    )}
+
+    <BuyButton
+      href={link}
+      price={price}
+      label={`Buy on AliExpress`}
+      fullWidth
+      size="md"
+    />
+  </div>
+</div>

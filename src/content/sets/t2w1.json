@@ -1,0 +1,32 @@
+{
+  "id": "t2w1",
+  "slug": "t2w1",
+  "name": "T2W1",
+  "displayName": "Tier 2 Wave 1",
+  "tier": "T2",
+  "wave": 1,
+  "series": "Tier 2",
+  "type": "booster",
+  "language": "CN",
+  "releaseDate": "2021-02-01",
+  "cardCount": 8,
+  "packCount": 30,
+  "packPrice": "2¥",
+  "description": "Chapter of Soldiers — Tier 2 Wave 1. Introduces the T2 booster line.",
+  "logoImage": "/images/sets/t2w1-logo.png",
+  "bannerImage": "/images/sets/t2w1-banner.jpg",
+  "notes": "",
+  "englishEquivalent": null,
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 20,
+    "approxPriceCNY": 140
+  },
+  "pullRates": {
+    "ur_per_packs": 8,
+    "hit_per_packs": 4,
+    "valueRating": 3
+  }
+}

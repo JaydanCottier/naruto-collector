@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SetCard from '../../components/SetCard.astro';
+import { getCollection } from 'astro:content';
+import { getTierColor } from '../../utils/rarity.ts';
+
+const allSets = await getCollection('sets');
+
+// Group sets
+const cnSets = allSets.filter(s => s.data.language === 'CN');
+const enSets = allSets.filter(s => s.data.language === 'EN');
+const specialSets = allSets.filter(s => s.data.type === 'gift' || s.data.type === 'special');
+const boosterSets = cnSets.filter(s => s.data.type === 'booster');
+
+// Group CN boosters by tier
+const tiers = ['T1', 'T2', 'T2.5', 'T3', 'T4'];
+const tierGroups = tiers.map(tier => ({
+  tier,
+  color: getTierColor(tier),
+  sets: boosterSets
+    .filter(s => s.data.tier === tier)
+    .sort((a, b) => (a.data.wave || 0) - (b.data.wave || 0))
+})).filter(g => g.sets.length > 0);
+
+// Sort special sets by date
+const sortedSpecial = specialSets.sort((a, b) =>
+  new Date(a.data.releaseDate).valueOf() - new Date(b.data.releaseDate).valueOf()
+);
+
+// Sort EN sets by date
+const sortedEN = enSets.sort((a, b) =>
+  new Date(a.data.releaseDate).valueOf() - new Date(b.data.releaseDate).valueOf()
+);
+---
+
+<BaseLayout title="Browse Sets" description="Browse all KAYOU Naruto trading card sets — Chinese and English releases, organized by tier.">
+
+  <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-6">Browse Sets</h1>
+
+  <!-- Filter Tabs -->
+  <div class="flex flex-wrap gap-2 mb-8" id="set-filters">
+    <button class="filter-tab active px-4 py-2 text-sm font-bold rounded-lg bg-brand-orange text-white transition-all" data-filter="all">
+      All ({allSets.length})
+    </button>
+    <button class="filter-tab px-4 py-2 text-sm font-bold rounded-lg bg-brand-surface border border-brand-border text-brand-text-muted hover:text-white transition-all" data-filter="chinese">
+      🇨🇳 Chinese ({cnSets.length})
+    </button>
+    <button class="filter-tab px-4 py-2 text-sm font-bold rounded-lg bg-brand-surface border border-brand-border text-brand-text-muted hover:text-white transition-all" data-filter="english">
+      🇬🇧 English ({enSets.length})
+    </button>
+    <button class="filter-tab px-4 py-2 text-sm font-bold rounded-lg bg-brand-surface border border-brand-border text-brand-text-muted hover:text-white transition-all" data-filter="special">
+      ⭐ Special/Gift ({specialSets.length})
+    </button>
+  </div>
+
+  <!-- All / Chinese view: Tier groups -->
+  <div id="section-all">
+    {tierGroups.map(group => (
+      <section class="mb-10 tier-section" data-lang="chinese">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-1 h-8 rounded-full" style={`background: ${group.color}`}></div>
+          <h2 class="text-xl font-bangers tracking-wider text-white">
+            Tier {group.tier.replace('T', '')}
+          </h2>
+          <span class="text-xs text-brand-text-muted font-semibold">{group.sets.length} sets</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 stagger-grid">
+          {group.sets.map(set => (
+            <SetCard set={set.data} />
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <!-- Special / Gift sets -->
+    <section class="mb-10 tier-section" data-lang="special" id="section-special">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-1 h-8 rounded-full bg-brand-red"></div>
+        <h2 class="text-xl font-bangers tracking-wider text-white">Special & Gift Sets</h2>
+        <span class="text-xs text-brand-text-muted font-semibold">{sortedSpecial.length} sets</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 stagger-grid">
+        {sortedSpecial.map(set => (
+          <SetCard set={set.data} />
+        ))}
+      </div>
+    </section>
+
+    <!-- English sets -->
+    <section class="mb-10 tier-section" data-lang="english" id="section-english">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-1 h-8 rounded-full bg-blue-500"></div>
+        <h2 class="text-xl font-bangers tracking-wider text-white">English Releases</h2>
+        <span class="text-xs text-brand-text-muted font-semibold">{sortedEN.length} sets</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 stagger-grid">
+        {sortedEN.map(set => (
+          <SetCard set={set.data} />
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.filter-tab');
+    const sections = document.querySelectorAll('.tier-section');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+
+        // Update active tab
+        tabs.forEach(t => {
+          t.classList.remove('bg-brand-orange', 'text-white', 'active');
+          t.classList.add('bg-brand-surface', 'border', 'border-brand-border', 'text-brand-text-muted');
+        });
+        tab.classList.add('bg-brand-orange', 'text-white', 'active');
+        tab.classList.remove('bg-brand-surface', 'border', 'border-brand-border', 'text-brand-text-muted');
+
+        // Filter sections
+        sections.forEach(section => {
+          const lang = section.getAttribute('data-lang');
+          if (filter === 'all') {
+            section.style.display = '';
+          } else if (filter === 'chinese') {
+            section.style.display = (lang === 'chinese' || lang === undefined) && lang !== 'special' && lang !== 'english' ? '' : 'none';
+          } else if (filter === 'english') {
+            section.style.display = lang === 'english' ? '' : 'none';
+          } else if (filter === 'special') {
+            section.style.display = lang === 'special' ? '' : 'none';
+          }
+        });
+      });
+    });
+  </script>
+</BaseLayout>

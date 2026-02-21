@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allSets = await getCollection('sets');
+const allCardGroups = await getCollection('cards');
+const allCards = allCardGroups.flatMap(group => group.data);
+
+// Build card data for client-side filtering
+const cardsData = allCards.map(c => {
+  const set = allSets.find(s => s.data.id === c.setId);
+  return {
+    id: c.id,
+    slug: c.slug,
+    name: c.name,
+    rarity: c.rarity,
+    character: c.character || '',
+    characterSlug: c.characterSlug || '',
+    setId: c.setId,
+    setName: set?.data.displayName || set?.data.name || c.setId,
+    setSlug: c.setSlug,
+    tier: set?.data.tier || '',
+    image: c.image,
+    affiliateLink: set?.data.affiliateLinks?.aliexpress || '#',
+    approxPrice: set?.data.affiliateLinks?.approxPriceUSD || 0,
+  };
+});
+
+// Get filter options
+const sets = allSets.map(s => ({ id: s.data.id, name: s.data.displayName || s.data.name, tier: s.data.tier })).sort((a,b) => a.name.localeCompare(b.name));
+const tiers = [...new Set(allSets.map(s => s.data.tier))].sort();
+const rarities = [...new Set(allCards.map(c => c.rarity))].sort();
+const characters = [...new Set(allCards.map(c => c.character).filter(Boolean))].sort() as string[];
+
+import { RARITY_MAP } from '../../utils/rarity.ts';
+---
+
+<BaseLayout title="What I Need" description="See all the KAYOU Naruto cards you still need to complete your collection.">
+
+  <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">What I Need</h1>
+  <p class="text-brand-text-muted mb-6">Cards you don't own yet, across all sets. Find where to buy them.</p>
+
+  <!-- Filters -->
+  <div class="bg-brand-surface rounded-xl border border-brand-border p-4 mb-6">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div>
+        <label class="text-[10px] font-bold text-brand-text-muted uppercase tracking-wider mb-1 block">Set</label>
+        <select id="filter-set" class="w-full bg-brand-bg border border-brand-border rounded-lg px-2 py-1.5 text-xs text-white font-rajdhani">
+          <option value="">All Sets</option>
+          {sets.map(s => <option value={s.id}>{s.name}</option>)}
+        </select>
+      </div>
+      <div>
+        <label class="text-[10px] font-bold text-brand-text-muted uppercase tracking-wider mb-1 block">Tier</label>
+        <select id="filter-tier" class="w-full bg-brand-bg border border-brand-border rounded-lg px-2 py-1.5 text-xs text-white font-rajdhani">
+          <option value="">All Tiers</option>
+          {tiers.map(t => <option value={t}>{t}</option>)}
+        </select>
+      </div>
+      <div>
+        <label class="text-[10px] font-bold text-brand-text-muted uppercase tracking-wider mb-1 block">Rarity</label>
+        <select id="filter-rarity" class="w-full bg-brand-bg border border-brand-border rounded-lg px-2 py-1.5 text-xs text-white font-rajdhani">
+          <option value="">All Rarities</option>
+          {rarities.map(r => <option value={r}>{r}</option>)}
+        </select>
+      </div>
+      <div>
+        <label class="text-[10px] font-bold text-brand-text-muted uppercase tracking-wider mb-1 block">Character</label>
+        <select id="filter-char" class="w-full bg-brand-bg border border-brand-border rounded-lg px-2 py-1.5 text-xs text-white font-rajdhani">
+          <option value="">All Characters</option>
+          {characters.map(c => <option value={c}>{c}</option>)}
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-sm text-brand-text-muted mb-4" id="needs-count">Loading...</p>
+
+  <!-- Card Grid -->
+  <div id="needs-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+  </div>
+
+  <div id="needs-empty" class="hidden text-center py-16">
+    <div class="text-4xl mb-3">🎉</div>
+    <h3 class="text-xl font-bangers text-white mb-2">You Own Everything!</h3>
+    <p class="text-sm text-brand-text-muted">Or you haven't started tracking yet. <a href="/collection" class="text-brand-orange hover:text-white">Check your collection →</a></p>
+  </div>
+
+  <script define:vars={{ cardsData, rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient }])) }}>
+    function renderNeeds() {
+      const raw = localStorage.getItem('naruto-collector-v1');
+      const data = raw ? JSON.parse(raw) : { owned: {} };
+      const owned = data.owned || {};
+
+      const filterSet = document.getElementById('filter-set').value;
+      const filterTier = document.getElementById('filter-tier').value;
+      const filterRarity = document.getElementById('filter-rarity').value;
+      const filterChar = document.getElementById('filter-char').value;
+
+      const needed = cardsData.filter(c => {
+        if (owned[c.id]) return false;
+        if (filterSet && c.setId !== filterSet) return false;
+        if (filterTier && c.tier !== filterTier) return false;
+        if (filterRarity && c.rarity !== filterRarity) return false;
+        if (filterChar && c.character !== filterChar) return false;
+        return true;
+      });
+
+      const grid = document.getElementById('needs-grid');
+      const countEl = document.getElementById('needs-count');
+      const emptyEl = document.getElementById('needs-empty');
+
+      if (needed.length === 0) {
+        grid.innerHTML = '';
+        grid.classList.add('hidden');
+        emptyEl.classList.remove('hidden');
+        countEl.textContent = 'You have everything you need!';
+        return;
+      }
+
+      grid.classList.remove('hidden');
+      emptyEl.classList.add('hidden');
+      countEl.textContent = `${needed.length} cards needed`;
+
+      grid.innerHTML = needed.slice(0, 100).map(c => {
+        const ri = rarityMap[c.rarity] || { color: '#6b7280', isGradient: false };
+        const badgeStyle = ri.isGradient
+          ? 'background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6, #3b82f6); color: white;'
+          : `background: ${ri.color}20; color: ${ri.color};`;
+        const isPlaceholder = c.affiliateLink.includes('PLACEHOLDER');
+        return `
+          <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover fade-in-up">
+            <a href="/cards/${c.slug}/" class="block">
+              <div class="aspect-[5/7] relative overflow-hidden bg-brand-bg">
+                <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover" loading="lazy"
+                  onerror="this.src='/images/placeholder/${c.rarity.toLowerCase()}.svg'" />
+                <span class="absolute top-1.5 right-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="${badgeStyle}">${c.rarity}</span>
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-white truncate">${c.name}</div>
+                <div class="text-[10px] text-brand-text-muted truncate">${c.setName}</div>
+              </div>
+            </a>
+            <div class="px-2 pb-2">
+              <a href="${isPlaceholder ? '#' : c.affiliateLink}" ${isPlaceholder ? '' : 'target="_blank" rel="noopener noreferrer nofollow"'}
+                class="block w-full text-center text-[10px] font-bold py-1.5 bg-brand-orange/10 text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-all">
+                Buy Set ~$${c.approxPrice}
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      if (needed.length > 100) {
+        grid.innerHTML += `<div class="col-span-full text-center text-sm text-brand-text-muted py-4">Showing 100 of ${needed.length} cards. Use filters to narrow down.</div>`;
+      }
+    }
+
+    renderNeeds();
+
+    document.getElementById('filter-set').addEventListener('change', renderNeeds);
+    document.getElementById('filter-tier').addEventListener('change', renderNeeds);
+    document.getElementById('filter-rarity').addEventListener('change', renderNeeds);
+    document.getElementById('filter-char').addEventListener('change', renderNeeds);
+    window.addEventListener('collection-updated', renderNeeds);
+  </script>
+</BaseLayout>

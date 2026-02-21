@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RarityBadge from '../../components/cards/RarityBadge.astro';
+import CardThumbnail from '../../components/CardThumbnail.astro';
+import CollectionToggle from '../../components/collection/CollectionToggle.astro';
+import BuyButton from '../../components/affiliate/BuyButton.astro';
+import AffiliateDisclosure from '../../components/affiliate/AffiliateDisclosure.astro';
+import { getCollection } from 'astro:content';
+import { getRarityInfo } from '../../utils/rarity.ts';
+
+export async function getStaticPaths() {
+  const allCardGroups = await getCollection('cards');
+  const allSets = await getCollection('sets');
+  const allCards = allCardGroups.flatMap(group => group.data);
+
+  const setMap: Record<string, any> = {};
+  allSets.forEach(s => { setMap[s.data.id] = s.data; });
+
+  return allCards.map(card => {
+    const set = setMap[card.setId];
+    const sameSetCards = allCards
+      .filter(c => c.setId === card.setId && c.id !== card.id)
+      .slice(0, 4);
+    const sameCharCards = allCards
+      .filter(c => c.character === card.character && c.id !== card.id)
+      .slice(0, 6);
+
+    return {
+      params: { slug: card.slug },
+      props: { card, set, sameSetCards, sameCharCards }
+    };
+  });
+}
+
+const { card, set, sameSetCards, sameCharCards } = Astro.props;
+const rarityInfo = getRarityInfo(card.rarity);
+const affiliateLink = set?.affiliateLinks?.aliexpress || '#';
+const approxPrice = set?.affiliateLinks?.approxPriceUSD || 0;
+---
+
+<BaseLayout title={`${card.name} — ${card.id.toUpperCase()}`} description={`${card.name} (${card.rarity}) from ${set?.displayName || card.setId} — KAYOU Naruto Trading Card`}>
+
+  <!-- Breadcrumb -->
+  <nav class="text-xs text-brand-text-muted mb-6 font-semibold">
+    <a href="/" class="hover:text-white transition-colors">Home</a>
+    <span class="mx-2">›</span>
+    <a href="/sets" class="hover:text-white transition-colors">Sets</a>
+    <span class="mx-2">›</span>
+    <a href={`/sets/${card.setSlug}/`} class="hover:text-white transition-colors">{set?.displayName || card.setId}</a>
+    <span class="mx-2">›</span>
+    <span class="text-white">{card.name}</span>
+  </nav>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    <!-- Card Image -->
+    <div class="flex justify-center">
+      <div class="relative w-full max-w-sm">
+        <div class="aspect-[5/7] rounded-2xl overflow-hidden border border-brand-border bg-brand-surface shadow-2xl">
+          <img
+            src={card.image}
+            alt={card.name}
+            class="w-full h-full object-cover"
+            onerror={`this.onerror=null;this.src='/images/placeholder/${card.rarity.toLowerCase()}.svg'`}
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Info -->
+    <div>
+      <div class="flex items-center gap-3 mb-3">
+        <RarityBadge rarity={card.rarity} size="md" />
+        <span class="text-sm font-mono text-brand-text-muted">#{card.number}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">{card.name}</h1>
+      <p class="text-brand-text-muted mb-6">{rarityInfo.label} — {set?.displayName || card.setId}</p>
+
+      <!-- Collection Toggle (Owned + Wishlist) -->
+      <div class="mb-6">
+        <CollectionToggle cardId={card.id} size="md" />
+      </div>
+
+      <!-- Buy CTA -->
+      <div class="mb-6">
+        <BuyButton
+          href={affiliateLink}
+          price={approxPrice}
+          label={`Find in ${set?.displayName || card.setId}`}
+          size="md"
+          fullWidth
+        />
+        <div class="mt-2">
+          <AffiliateDisclosure />
+        </div>
+      </div>
+
+      <!-- Info Table -->
+      <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+        <table class="w-full text-sm">
+          <tbody>
+            <tr class="border-b border-brand-border">
+              <td class="px-4 py-3 text-brand-text-muted font-semibold w-32">Set</td>
+              <td class="px-4 py-3 text-white">
+                <a href={`/sets/${card.setSlug}/`} class="text-brand-orange hover:text-white transition-colors">
+                  {set?.displayName || card.setId}
+                </a>
+              </td>
+            </tr>
+            <tr class="border-b border-brand-border">
+              <td class="px-4 py-3 text-brand-text-muted font-semibold">Number</td>
+              <td class="px-4 py-3 text-white font-mono">{card.number}</td>
+            </tr>
+            <tr class="border-b border-brand-border">
+              <td class="px-4 py-3 text-brand-text-muted font-semibold">Rarity</td>
+              <td class="px-4 py-3"><RarityBadge rarity={card.rarity} size="md" /></td>
+            </tr>
+            <tr class="border-b border-brand-border">
+              <td class="px-4 py-3 text-brand-text-muted font-semibold">Type</td>
+              <td class="px-4 py-3 text-white">{card.type}</td>
+            </tr>
+            {card.character && (
+              <tr class="border-b border-brand-border">
+                <td class="px-4 py-3 text-brand-text-muted font-semibold">Character</td>
+                <td class="px-4 py-3 text-white">
+                  {card.characterSlug ? (
+                    <a href={`/characters/${card.characterSlug}/`} class="text-brand-orange hover:text-white transition-colors">
+                      {card.character}
+                    </a>
+                  ) : card.character}
+                </td>
+              </tr>
+            )}
+            {card.arc && (
+              <tr class="border-b border-brand-border">
+                <td class="px-4 py-3 text-brand-text-muted font-semibold">Arc</td>
+                <td class="px-4 py-3 text-white">{card.arc}</td>
+              </tr>
+            )}
+            {card.variant && (
+              <tr class="border-b border-brand-border">
+                <td class="px-4 py-3 text-brand-text-muted font-semibold">Variant</td>
+                <td class="px-4 py-3 text-white">{card.variant}</td>
+              </tr>
+            )}
+            {card.serialLimit && (
+              <tr class="border-b border-brand-border">
+                <td class="px-4 py-3 text-brand-text-muted font-semibold">Serial Limit</td>
+                <td class="px-4 py-3 text-brand-gold font-bold">/{card.serialLimit}</td>
+              </tr>
+            )}
+            {card.isPromo && (
+              <tr class="border-b border-brand-border">
+                <td class="px-4 py-3 text-brand-text-muted font-semibold">Promo</td>
+                <td class="px-4 py-3 text-brand-orange">Yes</td>
+              </tr>
+            )}
+            <tr>
+              <td class="px-4 py-3 text-brand-text-muted font-semibold">Language</td>
+              <td class="px-4 py-3 text-white">{set?.language === 'EN' ? '🇬🇧 English' : '🇨🇳 Chinese'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other cards in this set -->
+  {sameSetCards.length > 0 && (
+    <section class="mb-12">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bangers tracking-wider text-white">Other cards in {set?.displayName || card.setId}</h2>
+        <a href={`/sets/${card.setSlug}/`} class="text-sm font-bold text-brand-orange hover:text-white transition-colors">View All →</a>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 stagger-grid">
+        {sameSetCards.map(c => (
+          <CardThumbnail card={c} />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Other cards of this character -->
+  {sameCharCards.length > 0 && (
+    <section class="mb-8">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bangers tracking-wider text-white">More {card.character} Cards</h2>
+        {card.characterSlug && (
+          <a href={`/characters/${card.characterSlug}/`} class="text-sm font-bold text-brand-orange hover:text-white transition-colors">View All →</a>
+        )}
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 stagger-grid">
+        {sameCharCards.map(c => (
+          <CardThumbnail card={c} showSet={true} />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Collection buttons for thumbnail cards -->
+  <script>
+    document.querySelectorAll('.collection-btn').forEach(btn => {
+      const cid = btn.getAttribute('data-card-id');
+      if (!cid) return;
+      try {
+        const raw = localStorage.getItem('naruto-collector-v1');
+        if (raw) {
+          const data = JSON.parse(raw);
+          if (data.owned && data.owned[cid]) {
+            btn.classList.add('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+            btn.classList.remove('text-brand-text-muted');
+          }
+        }
+      } catch(e) {}
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        try {
+          const raw = localStorage.getItem('naruto-collector-v1') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+          const data = JSON.parse(raw);
+          if (!data.owned) data.owned = {};
+          if (data.owned[cid]) {
+            delete data.owned[cid];
+            btn.classList.remove('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+            btn.classList.add('text-brand-text-muted');
+          } else {
+            data.owned[cid] = { owned: true, variant: 'standard', addedAt: new Date().toISOString() };
+            btn.classList.add('text-brand-orange', 'border-brand-orange', 'bg-brand-orange/20');
+            btn.classList.remove('text-brand-text-muted');
+          }
+          data.lastModified = new Date().toISOString();
+          localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+        } catch(e) {}
+      });
+    });
+  </script>
+</BaseLayout>

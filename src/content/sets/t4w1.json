@@ -1,0 +1,32 @@
+{
+  "id": "t4w1",
+  "slug": "t4w1",
+  "name": "T4W1",
+  "displayName": "Tier 4 Wave 1",
+  "tier": "T4",
+  "wave": 1,
+  "series": "Tier 4",
+  "type": "booster",
+  "language": "CN",
+  "releaseDate": "2021-04-01",
+  "cardCount": 8,
+  "packCount": 20,
+  "packPrice": "2¥",
+  "description": "Chapter of Soldiers — Tier 4 Wave 1. Premium T4 booster line.",
+  "logoImage": "/images/sets/t4w1-logo.png",
+  "bannerImage": "/images/sets/t4w1-banner.jpg",
+  "notes": "",
+  "englishEquivalent": null,
+  "cnEquivalent": null,
+  "affiliateLinks": {
+    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 48,
+    "approxPriceCNY": 200
+  },
+  "pullRates": {
+    "ur_per_packs": 3,
+    "hit_per_packs": 1,
+    "valueRating": 5
+  }
+}

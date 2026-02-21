@@ -1,0 +1,54 @@
+---
+import AffiliateDisclosure from './AffiliateDisclosure.astro';
+
+interface Props {
+  href: string;
+  price?: number;
+  label?: string;
+  platform?: 'aliexpress' | 'ebay';
+  fullWidth?: boolean;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const {
+  href,
+  price,
+  label = 'Buy on AliExpress',
+  platform = 'aliexpress',
+  fullWidth = false,
+  size = 'md',
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-3 py-1.5 text-xs',
+  md: 'px-5 py-2.5 text-sm',
+  lg: 'px-6 py-3 text-base',
+};
+
+const isPlaceholder = href.includes('PLACEHOLDER');
+---
+
+<div class:list={['inline-flex flex-col', fullWidth && 'w-full']}>
+  <a
+    href={isPlaceholder ? '#' : href}
+    target={isPlaceholder ? undefined : '_blank'}
+    rel="noopener noreferrer nofollow"
+    class:list={[
+      'inline-flex items-center justify-center gap-2 font-bold rounded-lg transition-all hover:scale-105 shadow-lg',
+      'bg-brand-orange text-white hover:bg-brand-orange/90 shadow-brand-orange/20',
+      sizeClasses[size],
+      fullWidth && 'w-full',
+    ]}
+  >
+    {platform === 'aliexpress' ? (
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+    ) : (
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+    )}
+    <span>{label}</span>
+    {price && price > 0 && (
+      <span class="font-mono opacity-90">~${price}</span>
+    )}
+  </a>
+  <AffiliateDisclosure compact />
+</div>

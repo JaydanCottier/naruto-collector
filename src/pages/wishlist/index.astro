@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { RARITY_MAP } from '../../utils/rarity.ts';
+
+const allSets = await getCollection('sets');
+const allCardGroups = await getCollection('cards');
+const allCards = allCardGroups.flatMap(group => group.data);
+
+const cardsData = allCards.map(c => {
+  const set = allSets.find(s => s.data.id === c.setId);
+  return {
+    id: c.id,
+    slug: c.slug,
+    name: c.name,
+    rarity: c.rarity,
+    character: c.character || '',
+    setId: c.setId,
+    setName: set?.data.displayName || set?.data.name || c.setId,
+    setSlug: c.setSlug,
+    image: c.image,
+    affiliateLink: set?.data.affiliateLinks?.aliexpress || '#',
+    approxPrice: set?.data.affiliateLinks?.approxPriceUSD || 0,
+  };
+});
+
+// Group sets for buy buttons
+const setsForBuy = allSets.map(s => ({
+  id: s.data.id,
+  name: s.data.displayName || s.data.name,
+  slug: s.data.slug,
+  link: s.data.affiliateLinks?.aliexpress || '#',
+  price: s.data.affiliateLinks?.approxPriceUSD || 0,
+}));
+---
+
+<BaseLayout title="Wishlist" description="Your chase cards — starred cards you want to find or buy.">
+
+  <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">⭐ Wishlist</h1>
+  <p class="text-brand-text-muted mb-6">Cards you're chasing. Star any card with the ⭐ button to add it here.</p>
+
+  <!-- Share -->
+  <div class="flex gap-3 mb-6">
+    <button id="share-btn" class="px-4 py-2 bg-brand-surface border border-brand-border rounded-lg text-xs font-bold text-brand-text-muted hover:text-white hover:border-brand-orange transition-all">
+      🔗 Share Wishlist
+    </button>
+  </div>
+
+  <p class="text-sm text-brand-text-muted mb-4" id="wish-count">Loading...</p>
+
+  <!-- Grouped cards -->
+  <div id="wish-grid"></div>
+
+  <div id="wish-empty" class="hidden text-center py-16">
+    <div class="text-4xl mb-3">⭐</div>
+    <h3 class="text-xl font-bangers text-white mb-2">No Cards on Your Wishlist</h3>
+    <p class="text-sm text-brand-text-muted">Browse sets and tap the ⭐ button on any card to start your wishlist.</p>
+    <a href="/sets" class="inline-block mt-4 px-5 py-2.5 bg-brand-orange text-white font-bold text-sm rounded-lg hover:bg-brand-orange/90 transition-all">Browse Sets →</a>
+  </div>
+
+  <script define:vars={{ cardsData, setsForBuy, rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient }])) }}>
+    function renderWishlist() {
+      const raw = localStorage.getItem('naruto-collector-v1');
+      const data = raw ? JSON.parse(raw) : { wishlist: {} };
+      const wishlist = data.wishlist || {};
+      const wishIds = Object.keys(wishlist);
+
+      const grid = document.getElementById('wish-grid');
+      const countEl = document.getElementById('wish-count');
+      const emptyEl = document.getElementById('wish-empty');
+
+      const wishedCards = cardsData.filter(c => wishIds.includes(c.id));
+
+      if (wishedCards.length === 0) {
+        grid.innerHTML = '';
+        emptyEl.classList.remove('hidden');
+        countEl.textContent = '';
+        return;
+      }
+
+      emptyEl.classList.add('hidden');
+      countEl.textContent = `${wishedCards.length} cards on your wishlist`;
+
+      // Group by set
+      const grouped = {};
+      wishedCards.forEach(c => {
+        if (!grouped[c.setId]) grouped[c.setId] = [];
+        grouped[c.setId].push(c);
+      });
+
+      let html = '';
+      for (const [setId, cards] of Object.entries(grouped)) {
+        const setInfo = setsForBuy.find(s => s.id === setId) || { name: setId, link: '#', price: 0 };
+        const isPlaceholder = setInfo.link.includes('PLACEHOLDER');
+        html += `
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+              <h3 class="text-lg font-bangers tracking-wider text-white">${setInfo.name}</h3>
+              <a href="${isPlaceholder ? '#' : setInfo.link}" ${isPlaceholder ? '' : 'target="_blank" rel="noopener noreferrer nofollow"'}
+                class="text-xs font-bold px-3 py-1.5 bg-brand-orange text-white rounded-lg hover:bg-brand-orange/90 transition-all">
+                Buy Box ~$${setInfo.price}
+              </a>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        `;
+
+        for (const c of cards) {
+          const ri = rarityMap[c.rarity] || { color: '#6b7280', isGradient: false };
+          const badgeStyle = ri.isGradient
+            ? 'background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6, #3b82f6); color: white;'
+            : `background: ${ri.color}20; color: ${ri.color};`;
+
+          html += `
+            <a href="/cards/${c.slug}/" class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover fade-in-up block">
+              <div class="aspect-[5/7] relative overflow-hidden bg-brand-bg">
+                <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover" loading="lazy"
+                  onerror="this.src='/images/placeholder/${c.rarity.toLowerCase()}.svg'" />
+                <span class="absolute top-1.5 right-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="${badgeStyle}">${c.rarity}</span>
+                <span class="absolute top-1.5 left-1.5 text-lg">⭐</span>
+              </div>
+              <div class="p-2">
+                <div class="text-xs font-semibold text-white truncate">${c.name}</div>
+                <div class="text-[10px] text-brand-text-muted truncate">${c.setName}</div>
+              </div>
+            </a>
+          `;
+        }
+
+        html += '</div></div>';
+      }
+
+      grid.innerHTML = html;
+    }
+
+    renderWishlist();
+    window.addEventListener('collection-updated', renderWishlist);
+
+    // Share wishlist
+    document.getElementById('share-btn')?.addEventListener('click', () => {
+      const raw = localStorage.getItem('naruto-collector-v1');
+      const data = raw ? JSON.parse(raw) : { wishlist: {} };
+      const ids = Object.keys(data.wishlist || {});
+      if (ids.length === 0) {
+        alert('Your wishlist is empty!');
+        return;
+      }
+      const url = window.location.origin + '/wishlist?cards=' + ids.join(',');
+      navigator.clipboard.writeText(url).then(() => {
+        alert('Wishlist link copied to clipboard!');
+      }).catch(() => {
+        prompt('Copy this link:', url);
+      });
+    });
+
+    // Handle incoming shared wishlist URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const sharedCards = urlParams.get('cards');
+    if (sharedCards) {
+      const sharedIds = sharedCards.split(',').filter(Boolean);
+      const sharedCardData = cardsData.filter(c => sharedIds.includes(c.id));
+      if (sharedCardData.length > 0) {
+        const banner = document.createElement('div');
+        banner.className = 'bg-purple-500/10 border border-purple-500/30 rounded-xl p-4 mb-6';
+        banner.innerHTML = `
+          <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
+            <div>
+              <h3 class="text-sm font-bold text-purple-400">📩 Shared Wishlist (${sharedCardData.length} cards)</h3>
+              <p class="text-xs text-brand-text-muted">Someone shared their wishlist with you</p>
+            </div>
+            <button id="import-shared-btn" class="px-4 py-2 bg-purple-500 text-white font-bold text-xs rounded-lg hover:bg-purple-400 transition-all" style="min-height: 44px;">
+              Import to My Wishlist
+            </button>
+          </div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2">
+            ${sharedCardData.map(c => `
+              <a href="/cards/${c.slug}/" class="bg-brand-bg rounded-lg overflow-hidden block">
+                <div class="aspect-[5/7] relative overflow-hidden">
+                  <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover" loading="lazy"
+                    onerror="this.src='/images/placeholder/${c.rarity.toLowerCase()}.svg'" />
+                </div>
+                <div class="p-1 text-[9px] font-semibold text-white truncate">${c.name}</div>
+              </a>
+            `).join('')}
+          </div>
+        `;
+        const grid = document.getElementById('wish-grid');
+        grid?.parentNode?.insertBefore(banner, grid);
+
+        document.getElementById('import-shared-btn')?.addEventListener('click', () => {
+          const raw = localStorage.getItem('naruto-collector-v1') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+          const data = JSON.parse(raw);
+          if (!data.wishlist) data.wishlist = {};
+          sharedIds.forEach(id => { data.wishlist[id] = true; });
+          data.lastModified = new Date().toISOString();
+          localStorage.setItem('naruto-collector-v1', JSON.stringify(data));
+          renderWishlist();
+          banner.innerHTML = '<div class="text-center text-sm text-purple-400 py-2">✅ Imported! Cards added to your wishlist.</div>';
+          window.dispatchEvent(new Event('collection-updated'));
+        });
+      }
+    }
+  </script>
+</BaseLayout>

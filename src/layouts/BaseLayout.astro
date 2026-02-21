@@ -1,0 +1,231 @@
+---
+import '../styles/global.css';
+import BackupWarning from '../components/collection/BackupWarning.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "The ultimate KAYOU Naruto Trading Card reference and collection tracker." } = Astro.props;
+const pageTitle = title === "Home" ? "Naruto Collector — KAYOU Card Reference" : `${title} — Naruto Collector`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{pageTitle}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body class="min-h-screen flex flex-col">
+  <nav class="sticky top-0 z-50 bg-brand-bg/95 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="text-2xl">🍥</span>
+          <span class="font-bangers text-xl tracking-wider text-white group-hover:text-brand-orange transition-colors">
+            NARUTO <span class="text-brand-orange">COLLECTOR</span>
+          </span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="/sets" class="px-3 py-2 text-sm font-semibold text-brand-text-muted hover:text-white transition-colors rounded-lg hover:bg-brand-surface">Sets</a>
+          <a href="/characters" class="px-3 py-2 text-sm font-semibold text-brand-text-muted hover:text-white transition-colors rounded-lg hover:bg-brand-surface">Characters</a>
+          <a href="/collection" class="px-3 py-2 text-sm font-semibold text-brand-text-muted hover:text-white transition-colors rounded-lg hover:bg-brand-surface">Collection</a>
+          <a href="/needs" class="px-3 py-2 text-sm font-semibold text-brand-text-muted hover:text-white transition-colors rounded-lg hover:bg-brand-surface">Needs</a>
+          <a href="/wishlist" class="px-3 py-2 text-sm font-semibold text-brand-text-muted hover:text-white transition-colors rounded-lg hover:bg-brand-surface">Wishlist</a>
+          <a href="/start-here" class="px-3 py-2 text-sm font-semibold text-brand-orange hover:text-white transition-colors rounded-lg hover:bg-brand-surface">Start Here</a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="relative hidden sm:block" id="search-container">
+          <div class="flex items-center bg-brand-surface border border-brand-border rounded-lg px-3 py-1.5 focus-within:border-brand-orange transition-colors">
+            <svg class="w-4 h-4 text-brand-text-muted mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search cards..."
+              class="bg-transparent text-sm text-white placeholder-brand-text-muted outline-none w-28 sm:w-40 font-rajdhani"
+              autocomplete="off"
+            />
+          </div>
+          <div id="search-results" class="absolute top-full right-0 mt-2 w-80 bg-brand-surface border border-brand-border rounded-xl shadow-2xl overflow-hidden hidden max-h-96 overflow-y-auto z-50"></div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-brand-text-muted hover:text-white" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile nav -->
+      <div id="mobile-menu" class="lg:hidden hidden pb-4 border-t border-brand-border mt-2 pt-4">
+        <a href="/sets" class="block py-2 text-sm font-semibold text-brand-text-muted hover:text-white">Browse Sets</a>
+        <a href="/characters" class="block py-2 text-sm font-semibold text-brand-text-muted hover:text-white">Characters</a>
+        <a href="/collection" class="block py-2 text-sm font-semibold text-brand-text-muted hover:text-white">My Collection</a>
+        <a href="/needs" class="block py-2 text-sm font-semibold text-brand-text-muted hover:text-white">What I Need</a>
+        <a href="/wishlist" class="block py-2 text-sm font-semibold text-brand-text-muted hover:text-white">Wishlist</a>
+        <a href="/start-here" class="block py-2 text-sm font-semibold text-brand-orange hover:text-white">🆕 Start Here</a>
+        <!-- Mobile search -->
+        <div class="mt-3 sm:hidden">
+          <div class="flex items-center bg-brand-surface border border-brand-border rounded-lg px-3 py-1.5">
+            <svg class="w-4 h-4 text-brand-text-muted mr-2 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <input
+              type="text"
+              id="mobile-search-input"
+              placeholder="Search cards..."
+              class="bg-transparent text-sm text-white placeholder-brand-text-muted outline-none w-full font-rajdhani"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <BackupWarning />
+    <slot />
+  </main>
+
+  <footer class="border-t border-brand-border mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-lg">🍥</span>
+            <span class="font-bangers text-sm tracking-wider text-brand-text-muted">NARUTO COLLECTOR</span>
+          </div>
+          <p class="text-xs text-brand-text-muted">The complete KAYOU Naruto card reference and collection tracker.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2">Browse</h4>
+          <div class="flex flex-col gap-1 text-xs text-brand-text-muted">
+            <a href="/sets" class="hover:text-white transition-colors">All Sets</a>
+            <a href="/characters" class="hover:text-white transition-colors">Characters</a>
+            <a href="/start-here" class="hover:text-white transition-colors">Start Here</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-brand-text-muted uppercase tracking-wider mb-2">My Cards</h4>
+          <div class="flex flex-col gap-1 text-xs text-brand-text-muted">
+            <a href="/collection" class="hover:text-white transition-colors">Collection</a>
+            <a href="/needs" class="hover:text-white transition-colors">What I Need</a>
+            <a href="/wishlist" class="hover:text-white transition-colors">Wishlist</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-brand-border pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p class="text-[10px] text-brand-text-muted text-center">
+          Fan-made reference. Not affiliated with KAYOU or Naruto/Boruto. Database last updated: Feb 2026.
+        </p>
+        <p class="text-[10px] text-brand-text-muted/50">
+          🔗 Some links are affiliate links — we may earn a small commission at no cost to you.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Search functionality
+    let searchData: any = null;
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const mobileSearchInput = document.getElementById('mobile-search-input') as HTMLInputElement;
+    const searchResults = document.getElementById('search-results');
+    const searchContainer = document.getElementById('search-container');
+
+    async function loadSearchIndex() {
+      if (searchData) return searchData;
+      const res = await fetch('/search.json');
+      searchData = await res.json();
+      return searchData;
+    }
+
+    function getRarityColor(rarity: string) {
+      const colors: Record<string, string> = {
+        R:'#6b7280',SR:'#3b82f6',SSR:'#8b5cf6',TR:'#06b6d4',HR:'#ec4899',
+        TGR:'#14b8a6',NR:'#34d399',ZR:'#f97316',GP:'#fbbf24',BP:'#64748b',
+        CP:'#f59e0b',CR:'#f472b6',OR:'#f97316',AR:'#a855f7',PTR:'#f97316',
+        QR:'#a78bfa',UR:'#f59e0b',MR:'#c084fc',PU:'#e879f9',LR:'#fcd34d',
+        SP:'#ef4444',SE:'#f59e0b',PR:'#94a3b8',SLR:'#f97316',SCR:'#f59e0b',
+        SV:'#a855f7',XR:'#3b82f6'
+      };
+      return colors[rarity] || '#6b7280';
+    }
+
+    async function handleSearch(query: string) {
+      if (!searchResults) return;
+      if (query.length < 3) {
+        searchResults.classList.add('hidden');
+        return;
+      }
+
+      const data = await loadSearchIndex();
+      const results = data.filter((c: any) =>
+        c.name.toLowerCase().includes(query) ||
+        (c.character && c.character.toLowerCase().includes(query)) ||
+        c.setName.toLowerCase().includes(query) ||
+        c.rarity.toLowerCase().includes(query)
+      ).slice(0, 8);
+
+      if (results.length === 0) {
+        searchResults.innerHTML = '<div class="p-4 text-sm text-brand-text-muted">No results found</div>';
+      } else {
+        searchResults.innerHTML = results.map((c: any) => `
+          <a href="/cards/${c.slug}/" class="flex items-center gap-3 p-3 hover:bg-brand-surface-light transition-colors border-b border-brand-border last:border-0">
+            <img src="${c.image}" alt="${c.name}" class="w-10 h-14 object-cover rounded" onerror="this.src='/images/placeholder/${c.rarity.toLowerCase()}.svg'" />
+            <div class="flex-1 min-w-0">
+              <div class="text-sm font-semibold text-white truncate">${c.name}</div>
+              <div class="text-xs text-brand-text-muted">${c.setName}</div>
+            </div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full" style="background:${getRarityColor(c.rarity)}20;color:${getRarityColor(c.rarity)}">${c.rarity}</span>
+          </a>
+        `).join('');
+      }
+
+      searchResults.innerHTML += `
+        <a href="/search?q=${encodeURIComponent(query)}" class="block p-3 text-center text-sm font-semibold text-brand-orange hover:bg-brand-surface-light transition-colors">
+          View all results →
+        </a>
+      `;
+      searchResults.classList.remove('hidden');
+    }
+
+    searchInput?.addEventListener('input', (e) => {
+      handleSearch((e.target as HTMLInputElement).value.trim().toLowerCase());
+    });
+
+    mobileSearchInput?.addEventListener('input', (e) => {
+      const q = (e.target as HTMLInputElement).value.trim();
+      if (q.length >= 3) {
+        window.location.href = `/search?q=${encodeURIComponent(q)}`;
+      }
+    });
+
+    // Close search when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!searchContainer?.contains(e.target as Node)) {
+        searchResults?.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>

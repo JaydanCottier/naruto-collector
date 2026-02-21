@@ -1,0 +1,25 @@
+---
+interface Props {
+  rarity: string;
+  size?: 'sm' | 'md';
+}
+
+const { rarity, size = 'sm' } = Astro.props;
+import { getRarityInfo } from '../../utils/rarity.ts';
+
+const info = getRarityInfo(rarity);
+const sizeClasses = size === 'md' ? 'text-xs px-2.5 py-1' : 'text-[10px] px-2 py-0.5';
+---
+
+{info.isGradient ? (
+  <span class={`font-bold rounded-full rarity-gradient text-white ${sizeClasses}`}>
+    {info.code}
+  </span>
+) : (
+  <span
+    class={`font-bold rounded-full ${sizeClasses}`}
+    style={`background: ${info.color}20; color: ${info.color}; border: 1px solid ${info.color}40;`}
+  >
+    {info.code}
+  </span>
+)}

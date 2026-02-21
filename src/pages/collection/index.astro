@@ -20,6 +20,7 @@ const setsData = allSets.map(s => {
     cardCount: cards.length,
     cardIds: cards.map(c => c.id),
     tierColor: getTierColor(s.data.tier),
+    language: s.data.language,
   };
 }).sort((a, b) => a.name.localeCompare(b.name));
 
@@ -35,6 +36,7 @@ const allCardsData = allCards.map(c => {
     rarity: c.rarity,
     setName: set?.data.displayName || set?.data.name || c.setId,
     image: c.image,
+    language: set?.data.language || 'CN',
   };
 });
 ---
@@ -69,10 +71,20 @@ const allCardsData = allCards.map(c => {
     </div>
   </div>
 
-  <!-- Tabs -->
-  <div class="flex gap-2 mb-6">
-    <button id="tab-sets" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-orange text-white transition-all">By Set</button>
-    <button id="tab-owned" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-surface text-brand-text-muted border border-brand-border hover:text-white transition-all">All Owned</button>
+  <!-- Tabs and Global Filters -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+    <div class="flex gap-2">
+      <button id="tab-sets" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-orange text-white transition-all">By Set</button>
+      <button id="tab-owned" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-surface text-brand-text-muted border border-brand-border hover:text-white transition-all">All Owned</button>
+    </div>
+    <div class="flex items-center gap-2">
+      <label class="text-sm font-bold text-brand-text-muted uppercase tracking-wider">Language</label>
+      <select id="global-lang-filter" class="bg-brand-bg border border-brand-border rounded-lg px-3 py-1.5 text-sm text-white font-rajdhani focus:border-brand-orange outline-none">
+        <option value="">All</option>
+        <option value="EN">English</option>
+        <option value="CN">Chinese</option>
+      </select>
+    </div>
   </div>
 
   <!-- Tab 1: By Set -->
@@ -90,7 +102,8 @@ const allCardsData = allCards.map(c => {
         <div class="set-progress-row bg-brand-surface rounded-lg border border-brand-border p-4 transition-all hover:border-brand-border"
              data-set-id={set.id}
              data-card-ids={JSON.stringify(set.cardIds)}
-             data-card-count={set.cardCount}>
+             data-card-count={set.cardCount}
+             data-language={set.language}>
           <div class="flex items-center justify-between mb-2">
             <div class="flex items-center gap-3">
               <div class="w-1 h-6 rounded-full" style={`background: ${set.tierColor}`}></div>
@@ -178,8 +191,12 @@ const allCardsData = allCards.map(c => {
       const grid = document.getElementById('owned-grid');
       const label = document.getElementById('owned-label');
       const empty = document.getElementById('owned-empty');
+      const langFilter = document.getElementById('global-lang-filter')?.value;
 
-      const ownedCards = allCardsData.filter(c => ownedIds.includes(c.id));
+      let ownedCards = allCardsData.filter(c => ownedIds.includes(c.id));
+      if (langFilter) {
+        ownedCards = ownedCards.filter(c => c.language === langFilter);
+      }
 
       if (ownedCards.length === 0) {
         grid.innerHTML = '';
@@ -234,18 +251,28 @@ const allCardsData = allCards.map(c => {
     }
     sortSetsByIncomplete();
 
-    // Filter incomplete
-    document.getElementById('filter-incomplete')?.addEventListener('change', (e) => {
-      const filterOn = e.target.checked;
+    // Apply Filters
+    function applySetFilters() {
+      const filterOn = document.getElementById('filter-incomplete')?.checked;
+      const langFilter = document.getElementById('global-lang-filter')?.value;
+      
       document.querySelectorAll('.set-progress-row').forEach(row => {
-        const count = parseInt(row.getAttribute('data-card-count'));
+        const count = parseInt(row.getAttribute('data-card-count') || '0');
         const owned = parseInt(row.getAttribute('data-owned') || '0');
-        if (filterOn && owned >= count) {
-          row.style.display = 'none';
-        } else {
-          row.style.display = '';
-        }
+        const lang = row.getAttribute('data-language');
+        
+        let show = true;
+        if (filterOn && owned >= count) show = false;
+        if (langFilter && lang !== langFilter) show = false;
+        
+        row.style.display = show ? '' : 'none';
       });
+    }
+
+    document.getElementById('filter-incomplete')?.addEventListener('change', applySetFilters);
+    document.getElementById('global-lang-filter')?.addEventListener('change', () => {
+      applySetFilters();
+      renderOwned();
     });
 
     // Export

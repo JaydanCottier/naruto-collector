@@ -10,6 +10,7 @@ interface Props {
     rarity: string;
     image: string;
     setId?: string;
+    character?: string | null;
   };
   showSet?: boolean;
 }
@@ -22,7 +23,7 @@ const { card, showSet = false } = Astro.props;
   class="group relative bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover fade-in-up block"
   data-rarity={card.rarity}
   data-name={card.name.toLowerCase()}
-  data-character={card.name.toLowerCase()}
+  data-character={(card.character || '').toLowerCase()}
   data-card-id={card.id}
 >
   <!-- Image -->

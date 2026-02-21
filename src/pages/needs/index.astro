@@ -97,12 +97,17 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
       const filterRarity = document.getElementById('filter-rarity').value;
       const filterChar = document.getElementById('filter-char').value;
 
+      const valSet = filterSet ? filterSet.trim() : '';
+      const valTier = filterTier ? filterTier.trim().toLowerCase() : '';
+      const valRarity = filterRarity ? filterRarity.trim().toLowerCase() : '';
+      const valChar = filterChar ? filterChar.trim().toLowerCase() : '';
+
       const needed = cardsData.filter(c => {
         if (owned[c.id]) return false;
-        if (filterSet && c.setId !== filterSet) return false;
-        if (filterTier && c.tier !== filterTier) return false;
-        if (filterRarity && c.rarity !== filterRarity) return false;
-        if (filterChar && c.character !== filterChar) return false;
+        if (valSet && c.setId !== valSet) return false;
+        if (valTier && (c.tier || '').toLowerCase() !== valTier) return false;
+        if (valRarity && (c.rarity || '').toLowerCase() !== valRarity) return false;
+        if (valChar && (c.character || '').toLowerCase() !== valChar) return false;
         return true;
       });
 

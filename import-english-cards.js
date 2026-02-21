@@ -19,44 +19,55 @@ function generateSlug(str) {
 rows.forEach(row => {
     if (!row) return;
     const parts = row.split(',');
-    // If a name contains a comma, this simple split would break, but looking at the CSV, names like "Enter: Naruto Uzumaki! 1" don't contain commas.
-    // Wait, let's join back if length > 5
-    if (parts.length > 5) {
-        // Find the last 4 elements which are Rarity, Card_ID, Set, Set_Name
-        // Then join the rest for the name
-    }
-    const name = parts.slice(0, parts.length - 4).join(',');
-    const rarity = parts[parts.length - 4];
-    const cardId = parts[parts.length - 3];
-    const setCode = parts[parts.length - 2];
-    const setName = parts[parts.length - 1];
+    const region = parts[parts.length - 1];
+    const manufacturer = parts[parts.length - 2];
+    const chineseWave = parts[parts.length - 3];
+    const chineseTier = parts[parts.length - 4];
+    const setNameRaw = parts[parts.length - 5];
+    const baseSetCode = parts[parts.length - 6];
+    const cardIdRaw = parts[parts.length - 7];
+    const rarity = parts[parts.length - 8];
+    const name = parts.slice(0, parts.length - 8).join(',');
 
-    const isPromo = setCode === 'Promo' || cardId.includes('-PR-');
+    const isPromo = baseSetCode === 'Promo' || cardIdRaw.includes('-PR-');
 
     if (isPromo) {
-        promoCards.push({ name, rarity, cardId, setCode, setName });
+        promoCards.push({ name, rarity, cardId: cardIdRaw, setCode: baseSetCode, setName: setNameRaw });
         return;
     }
+
+    // Fix for SEA cards where baseSetCode is just 'NRSA'
+    let actualBaseSetCode = baseSetCode;
+    if (baseSetCode === 'NRSA' && region === 'SEA') {
+        const waveNum = parseInt(chineseWave.replace('Wave ', '').trim());
+        if (waveNum === 6) actualBaseSetCode = 'NRSA01';
+        if (waveNum === 7) actualBaseSetCode = 'NRSA02';
+    }
+
+    const setCode = `${actualBaseSetCode}-${region}`;
+    const setName = `${setNameRaw} (${region})`;
 
     if (!setsMap[setCode]) {
         setsMap[setCode] = {
             id: setCode.toLowerCase(),
             slug: setCode.toLowerCase(),
-            officialCode: setCode,
+            officialCode: actualBaseSetCode,
             name: setName,
             displayName: setName,
             tier: "EN",
-            wave: parseInt(setCode.replace('NRSA', '')),
+            wave: parseInt(actualBaseSetCode.replace('NRSA', '')),
             series: "English",
             type: "booster",
             language: "EN",
+            region: region,
+            isMaster: region === 'US',
             releaseDate: "2024-01-01", // Placeholder
             cardCount: 0,
             packCount: 36,
             packContents: "5 cards per pack",
             description: `KAYOU Naruto ${setName}`,
-            logoImage: `/images/sets/${setCode.toLowerCase()}-logo.png`,
-            bannerImage: `/images/sets/${setCode.toLowerCase()}-banner.jpg`,
+            logoImage: `/images/sets/${actualBaseSetCode.toLowerCase()}-logo.png`,
+            bannerImage: `/images/sets/${actualBaseSetCode.toLowerCase()}-banner.jpg`,
             caseSize: { regular: 36 },
             boxVariants: null,
             cardBreakdown: {},
@@ -69,30 +80,29 @@ rows.forEach(row => {
 
     // Parse Card
     // Example: Card_ID = NRSA01-SE-001L5
-    // number: SE-001L5
-    const number = cardId.replace(`${setCode}-`, '');
-
-    // Character guess: name without numbers or exclamation marks?
-    // Actually, "Enter: Naruto Uzumaki! 1" features characters. We'll just use the full name if we can't tell, 
-    // but the CSV "Name" is actually the Character name for higher rarities (e.g. "Sasuke Uchiha"),
-    // and for base cards (R), it's the scene name.
+    // Actually, SEA cards might use NRSA01-SE-001L5 as well in the cardIdRaw, which is from the CSV.
+    // Except they don't, for SEA it's NRSA-SE-001L5. We need to handle that.
+    const number = cardIdRaw.replace(`${baseSetCode}-`, '');
     const isScene = rarity === 'R';
     const character = isScene ? 'Various' : name;
+    // uniqueCardId will be like NRSA-SE-001L5-SEA or NRSA01-SE-001L5-US
+    const uniqueCardId = `${cardIdRaw}-${region}`;
 
     cardsMap[setCode].push({
-        id: cardId.toLowerCase(),
-        slug: cardId.toLowerCase(),
+        id: uniqueCardId.toLowerCase(),
+        slug: uniqueCardId.toLowerCase(),
         setId: setCode.toLowerCase(),
         setSlug: setCode.toLowerCase(),
-        officialCode: setCode,
-        cardCode: cardId,
+        officialCode: actualBaseSetCode,
+        cardCode: `${cardIdRaw} (${region})`,
         number: number,
         name: name,
         rarity: rarity,
         type: "card",
         character: character,
         characterSlug: generateSlug(character),
-        image: `/images/cards/${setCode.toLowerCase()}/${number.toLowerCase()}.jpg`,
+        // Image path defaults to without region for now, since they use same artwork
+        image: `/images/cards/${actualBaseSetCode.toLowerCase()}/${number.toLowerCase()}.jpg`,
         variants: ["english"]
     });
 

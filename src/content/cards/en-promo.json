@@ -16,7 +16,7 @@
         "variants": [
             "english"
         ],
-        "exclusiveTo": "nrsa01",
+        "exclusiveTo": "nrsa01-us",
         "isPromo": true,
         "notes": "Exclusive to Heaven Scroll S1 24-pack display box ONLY."
     },
@@ -36,7 +36,7 @@
         "variants": [
             "english"
         ],
-        "exclusiveTo": "nrsa02",
+        "exclusiveTo": "nrsa02-us",
         "isPromo": true,
         "notes": "Exclusive to Jin Series 2 display box."
     },

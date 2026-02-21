@@ -56,6 +56,7 @@ const setsCollection = defineCollection({
         notes: z.string().optional().nullable().default(''),
         arc: z.string().optional().nullable(),
         unsealed: z.boolean().optional().nullable().default(false),
+        isMaster: z.boolean().optional().nullable().default(false),
         waves: z.array(z.string()).optional().nullable(),
         englishEquivalent: z.string().optional().nullable(),
         cnEquivalent: z.string().optional().nullable(),

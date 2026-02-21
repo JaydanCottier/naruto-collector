@@ -1,0 +1,47 @@
+{
+  "id": "nrsa02-sea",
+  "slug": "nrsa02-sea",
+  "officialCode": "NRSA02",
+  "name": "Smriti Chapter Jin English Series 2 (SEA)",
+  "displayName": "Smriti Chapter Jin English Series 2 (SEA)",
+  "tier": "EN",
+  "wave": 2,
+  "series": "English",
+  "type": "booster",
+  "language": "EN",
+  "region": "SEA",
+  "isMaster": false,
+  "releaseDate": "2024-01-01",
+  "cardCount": 168,
+  "packCount": 36,
+  "packContents": "5 cards per pack",
+  "description": "KAYOU Naruto Smriti Chapter Jin English Series 2 (SEA)",
+  "logoImage": "/images/sets/nrsa02-logo.png",
+  "bannerImage": "/images/sets/nrsa02-banner.jpg",
+  "caseSize": {
+    "regular": 36
+  },
+  "boxVariants": null,
+  "cardBreakdown": {
+    "SE": 4,
+    "SP": 4,
+    "BP": 7,
+    "AR": 10,
+    "MR": 7,
+    "PU": 8,
+    "PTR": 20,
+    "UR": 15,
+    "SSR": 23,
+    "SR": 20,
+    "R": 50
+  },
+  "retailAvailability": [
+    "hobby"
+  ],
+  "unsealed": false,
+  "affiliateLinks": {
+    "ebay": "PLACEHOLDER",
+    "approxPriceUSD": 30,
+    "approxPriceCNY": 0
+  }
+}

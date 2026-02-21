@@ -2,8 +2,8 @@
   "id": "nrsa02-us",
   "slug": "nrsa02-us",
   "officialCode": "NRSA02",
-  "name": "Smriti Chapter Jin English Series 2 (US)",
-  "displayName": "Smriti Chapter Jin English Series 2 (US)",
+  "name": "US English Heaven Scroll 2",
+  "displayName": "US English Heaven Scroll 2",
   "tier": "EN",
   "wave": 2,
   "series": "English",
@@ -11,15 +11,16 @@
   "language": "EN",
   "region": "US",
   "isMaster": true,
-  "releaseDate": "2024-01-01",
+  "releaseDate": "December 2025",
   "cardCount": 168,
   "packCount": 36,
   "packContents": "5 cards per pack",
-  "description": "KAYOU Naruto Smriti Chapter Jin English Series 2 (US)",
+  "description": "KAYOU Naruto US English Heaven Scroll 2",
   "logoImage": "/images/sets/nrsa02-logo.png",
   "bannerImage": "/images/sets/nrsa02-banner.jpg",
   "caseSize": {
-    "regular": 36
+    "regular": 36,
+    "master": null
   },
   "boxVariants": null,
   "cardBreakdown": {
@@ -38,7 +39,9 @@
   "retailAvailability": [
     "hobby"
   ],
+  "boxesPerCarton": null,
   "unsealed": false,
+  "notes": "",
   "affiliateLinks": {
     "ebay": "PLACEHOLDER",
     "approxPriceUSD": 30,

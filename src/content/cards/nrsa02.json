@@ -1,0 +1,3026 @@
+[
+    {
+        "id": "nrsa02-se-001l5",
+        "slug": "nrsa02-se-001l5",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SE-001L5",
+        "number": "SE-001L5",
+        "name": "Yashamaru",
+        "rarity": "SE",
+        "type": "card",
+        "character": "Yashamaru",
+        "characterSlug": "yashamaru",
+        "image": "/images/cards/nrsa02/se-001l5.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-se-002l5",
+        "slug": "nrsa02-se-002l5",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SE-002L5",
+        "number": "SE-002L5",
+        "name": "Gaara",
+        "rarity": "SE",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/se-002l5.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-se-003l5",
+        "slug": "nrsa02-se-003l5",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SE-003L5",
+        "number": "SE-003L5",
+        "name": "Might Guy",
+        "rarity": "SE",
+        "type": "card",
+        "character": "Might Guy",
+        "characterSlug": "might-guy",
+        "image": "/images/cards/nrsa02/se-003l5.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-se-004l5",
+        "slug": "nrsa02-se-004l5",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SE-004L5",
+        "number": "SE-004L5",
+        "name": "Rock Lee",
+        "rarity": "SE",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/se-004l5.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sp-001l5",
+        "slug": "nrsa02-sp-001l5",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SP-001L5",
+        "number": "SP-001L5",
+        "name": "Hinata Hyuga",
+        "rarity": "SP",
+        "type": "card",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "image": "/images/cards/nrsa02/sp-001l5.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sp-002l5",
+        "slug": "nrsa02-sp-002l5",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SP-002L5",
+        "number": "SP-002L5",
+        "name": "Neji Hyuga",
+        "rarity": "SP",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/sp-002l5.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sp-003l5",
+        "slug": "nrsa02-sp-003l5",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SP-003L5",
+        "number": "SP-003L5",
+        "name": "Gaara",
+        "rarity": "SP",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/sp-003l5.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sp-004l5",
+        "slug": "nrsa02-sp-004l5",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SP-004L5",
+        "number": "SP-004L5",
+        "name": "Rock Lee",
+        "rarity": "SP",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/sp-004l5.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-bp-001l4",
+        "slug": "nrsa02-bp-001l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-BP-001L4",
+        "number": "BP-001L4",
+        "name": "Hinata Hyuga",
+        "rarity": "BP",
+        "type": "card",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "image": "/images/cards/nrsa02/bp-001l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-bp-002l4",
+        "slug": "nrsa02-bp-002l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-BP-002L4",
+        "number": "BP-002L4",
+        "name": "Orochimaru",
+        "rarity": "BP",
+        "type": "card",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "image": "/images/cards/nrsa02/bp-002l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-bp-003l4",
+        "slug": "nrsa02-bp-003l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-BP-003L4",
+        "number": "BP-003L4",
+        "name": "Choji Akimichi",
+        "rarity": "BP",
+        "type": "card",
+        "character": "Choji Akimichi",
+        "characterSlug": "choji-akimichi",
+        "image": "/images/cards/nrsa02/bp-003l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-bp-004l4",
+        "slug": "nrsa02-bp-004l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-BP-004L4",
+        "number": "BP-004L4",
+        "name": "Shikamaru Nara",
+        "rarity": "BP",
+        "type": "card",
+        "character": "Shikamaru Nara",
+        "characterSlug": "shikamaru-nara",
+        "image": "/images/cards/nrsa02/bp-004l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-bp-005l4",
+        "slug": "nrsa02-bp-005l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-BP-005L4",
+        "number": "BP-005L4",
+        "name": "Neji Hyuga",
+        "rarity": "BP",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/bp-005l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-bp-006l4",
+        "slug": "nrsa02-bp-006l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-BP-006L4",
+        "number": "BP-006L4",
+        "name": "Kiba Inuzuka",
+        "rarity": "BP",
+        "type": "card",
+        "character": "Kiba Inuzuka",
+        "characterSlug": "kiba-inuzuka",
+        "image": "/images/cards/nrsa02/bp-006l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-bp-007l4",
+        "slug": "nrsa02-bp-007l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-BP-007L4",
+        "number": "BP-007L4",
+        "name": "Rock Lee",
+        "rarity": "BP",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/bp-007l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-001l4",
+        "slug": "nrsa02-ar-001l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-001L4",
+        "number": "AR-001L4",
+        "name": "Gaara",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/ar-001l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-002l4",
+        "slug": "nrsa02-ar-002l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-002L4",
+        "number": "AR-002L4",
+        "name": "Rock Lee",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/ar-002l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-003l4",
+        "slug": "nrsa02-ar-003l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-003L4",
+        "number": "AR-003L4",
+        "name": "Naruto Uzumaki",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/nrsa02/ar-003l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-004l4",
+        "slug": "nrsa02-ar-004l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-004L4",
+        "number": "AR-004L4",
+        "name": "Neji Hyuga",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/ar-004l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-005l4",
+        "slug": "nrsa02-ar-005l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-005L4",
+        "number": "AR-005L4",
+        "name": "Shikamaru Nara",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Shikamaru Nara",
+        "characterSlug": "shikamaru-nara",
+        "image": "/images/cards/nrsa02/ar-005l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-006l4",
+        "slug": "nrsa02-ar-006l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-006L4",
+        "number": "AR-006L4",
+        "name": "Temari",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Temari",
+        "characterSlug": "temari",
+        "image": "/images/cards/nrsa02/ar-006l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-007l4",
+        "slug": "nrsa02-ar-007l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-007L4",
+        "number": "AR-007L4",
+        "name": "Gaara",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/ar-007l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-008l4",
+        "slug": "nrsa02-ar-008l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-008L4",
+        "number": "AR-008L4",
+        "name": "Sasuke Uchiha",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "image": "/images/cards/nrsa02/ar-008l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-009l4",
+        "slug": "nrsa02-ar-009l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-009L4",
+        "number": "AR-009L4",
+        "name": "Naruto Uzumaki",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/nrsa02/ar-009l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ar-010l4",
+        "slug": "nrsa02-ar-010l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-AR-010L4",
+        "number": "AR-010L4",
+        "name": "Sasuke Uchiha",
+        "rarity": "AR",
+        "type": "card",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "image": "/images/cards/nrsa02/ar-010l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-mr-001",
+        "slug": "nrsa02-mr-001",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-MR-001",
+        "number": "MR-001",
+        "name": "Naruto Uzumaki",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/nrsa02/mr-001.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-mr-002",
+        "slug": "nrsa02-mr-002",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-MR-002",
+        "number": "MR-002",
+        "name": "Sasuke Uchiha",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "image": "/images/cards/nrsa02/mr-002.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-mr-003",
+        "slug": "nrsa02-mr-003",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-MR-003",
+        "number": "MR-003",
+        "name": "Gaara",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/mr-003.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-mr-004",
+        "slug": "nrsa02-mr-004",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-MR-004",
+        "number": "MR-004",
+        "name": "Shikamaru Nara",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Shikamaru Nara",
+        "characterSlug": "shikamaru-nara",
+        "image": "/images/cards/nrsa02/mr-004.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-mr-005",
+        "slug": "nrsa02-mr-005",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-MR-005",
+        "number": "MR-005",
+        "name": "Neji Hyuga",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/mr-005.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-mr-006",
+        "slug": "nrsa02-mr-006",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-MR-006",
+        "number": "MR-006",
+        "name": "Hiruzen Sarutobi",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Hiruzen Sarutobi",
+        "characterSlug": "hiruzen-sarutobi",
+        "image": "/images/cards/nrsa02/mr-006.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-mr-007",
+        "slug": "nrsa02-mr-007",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-MR-007",
+        "number": "MR-007",
+        "name": "Orochimaru",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "image": "/images/cards/nrsa02/mr-007.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-pu-001l4",
+        "slug": "nrsa02-pu-001l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PU-001L4",
+        "number": "PU-001L4",
+        "name": "Kabuto Yakushi",
+        "rarity": "PU",
+        "type": "card",
+        "character": "Kabuto Yakushi",
+        "characterSlug": "kabuto-yakushi",
+        "image": "/images/cards/nrsa02/pu-001l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-pu-002l4",
+        "slug": "nrsa02-pu-002l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PU-002L4",
+        "number": "PU-002L4",
+        "name": "Orochimaru",
+        "rarity": "PU",
+        "type": "card",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "image": "/images/cards/nrsa02/pu-002l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-pu-003l4",
+        "slug": "nrsa02-pu-003l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PU-003L4",
+        "number": "PU-003L4",
+        "name": "Naruto Uzumaki",
+        "rarity": "PU",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/nrsa02/pu-003l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-pu-004l4",
+        "slug": "nrsa02-pu-004l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PU-004L4",
+        "number": "PU-004L4",
+        "name": "Jiraiya",
+        "rarity": "PU",
+        "type": "card",
+        "character": "Jiraiya",
+        "characterSlug": "jiraiya",
+        "image": "/images/cards/nrsa02/pu-004l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-pu-005l4",
+        "slug": "nrsa02-pu-005l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PU-005L4",
+        "number": "PU-005L4",
+        "name": "Tenten",
+        "rarity": "PU",
+        "type": "card",
+        "character": "Tenten",
+        "characterSlug": "tenten",
+        "image": "/images/cards/nrsa02/pu-005l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-pu-006l4",
+        "slug": "nrsa02-pu-006l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PU-006L4",
+        "number": "PU-006L4",
+        "name": "Might Guy",
+        "rarity": "PU",
+        "type": "card",
+        "character": "Might Guy",
+        "characterSlug": "might-guy",
+        "image": "/images/cards/nrsa02/pu-006l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-pu-007l4",
+        "slug": "nrsa02-pu-007l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PU-007L4",
+        "number": "PU-007L4",
+        "name": "Rock Lee",
+        "rarity": "PU",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/pu-007l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-pu-008l4",
+        "slug": "nrsa02-pu-008l4",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PU-008L4",
+        "number": "PU-008L4",
+        "name": "Neji Hyuga",
+        "rarity": "PU",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/pu-008l4.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-001l3",
+        "slug": "nrsa02-ptr-001l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-001L3",
+        "number": "PTR-001L3",
+        "name": "NRSA02-PTR-001",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-001",
+        "characterSlug": "nrsa02-ptr-001",
+        "image": "/images/cards/nrsa02/ptr-001l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-002l3",
+        "slug": "nrsa02-ptr-002l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-002L3",
+        "number": "PTR-002L3",
+        "name": "NRSA02-PTR-002",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-002",
+        "characterSlug": "nrsa02-ptr-002",
+        "image": "/images/cards/nrsa02/ptr-002l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-003l3",
+        "slug": "nrsa02-ptr-003l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-003L3",
+        "number": "PTR-003L3",
+        "name": "NRSA02-PTR-003",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-003",
+        "characterSlug": "nrsa02-ptr-003",
+        "image": "/images/cards/nrsa02/ptr-003l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-004l3",
+        "slug": "nrsa02-ptr-004l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-004L3",
+        "number": "PTR-004L3",
+        "name": "NRSA02-PTR-004",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-004",
+        "characterSlug": "nrsa02-ptr-004",
+        "image": "/images/cards/nrsa02/ptr-004l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-005l3",
+        "slug": "nrsa02-ptr-005l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-005L3",
+        "number": "PTR-005L3",
+        "name": "NRSA02-PTR-005",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-005",
+        "characterSlug": "nrsa02-ptr-005",
+        "image": "/images/cards/nrsa02/ptr-005l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-006l3",
+        "slug": "nrsa02-ptr-006l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-006L3",
+        "number": "PTR-006L3",
+        "name": "NRSA02-PTR-006",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-006",
+        "characterSlug": "nrsa02-ptr-006",
+        "image": "/images/cards/nrsa02/ptr-006l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-007l3",
+        "slug": "nrsa02-ptr-007l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-007L3",
+        "number": "PTR-007L3",
+        "name": "NRSA02-PTR-007",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-007",
+        "characterSlug": "nrsa02-ptr-007",
+        "image": "/images/cards/nrsa02/ptr-007l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-008l3",
+        "slug": "nrsa02-ptr-008l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-008L3",
+        "number": "PTR-008L3",
+        "name": "NRSA02-PTR-008",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-008",
+        "characterSlug": "nrsa02-ptr-008",
+        "image": "/images/cards/nrsa02/ptr-008l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-009l3",
+        "slug": "nrsa02-ptr-009l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-009L3",
+        "number": "PTR-009L3",
+        "name": "NRSA02-PTR-009",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-009",
+        "characterSlug": "nrsa02-ptr-009",
+        "image": "/images/cards/nrsa02/ptr-009l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-010l3",
+        "slug": "nrsa02-ptr-010l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-010L3",
+        "number": "PTR-010L3",
+        "name": "NRSA02-PTR-010",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-010",
+        "characterSlug": "nrsa02-ptr-010",
+        "image": "/images/cards/nrsa02/ptr-010l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-011l3",
+        "slug": "nrsa02-ptr-011l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-011L3",
+        "number": "PTR-011L3",
+        "name": "NRSA02-PTR-011",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-011",
+        "characterSlug": "nrsa02-ptr-011",
+        "image": "/images/cards/nrsa02/ptr-011l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-012l3",
+        "slug": "nrsa02-ptr-012l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-012L3",
+        "number": "PTR-012L3",
+        "name": "NRSA02-PTR-012",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-012",
+        "characterSlug": "nrsa02-ptr-012",
+        "image": "/images/cards/nrsa02/ptr-012l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-013l3",
+        "slug": "nrsa02-ptr-013l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-013L3",
+        "number": "PTR-013L3",
+        "name": "NRSA02-PTR-013",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-013",
+        "characterSlug": "nrsa02-ptr-013",
+        "image": "/images/cards/nrsa02/ptr-013l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-014l3",
+        "slug": "nrsa02-ptr-014l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-014L3",
+        "number": "PTR-014L3",
+        "name": "NRSA02-PTR-014",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-014",
+        "characterSlug": "nrsa02-ptr-014",
+        "image": "/images/cards/nrsa02/ptr-014l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-015l3",
+        "slug": "nrsa02-ptr-015l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-015L3",
+        "number": "PTR-015L3",
+        "name": "NRSA02-PTR-015",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-015",
+        "characterSlug": "nrsa02-ptr-015",
+        "image": "/images/cards/nrsa02/ptr-015l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-016l3",
+        "slug": "nrsa02-ptr-016l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-016L3",
+        "number": "PTR-016L3",
+        "name": "NRSA02-PTR-016",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-016",
+        "characterSlug": "nrsa02-ptr-016",
+        "image": "/images/cards/nrsa02/ptr-016l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-017l3",
+        "slug": "nrsa02-ptr-017l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-017L3",
+        "number": "PTR-017L3",
+        "name": "NRSA02-PTR-017",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-017",
+        "characterSlug": "nrsa02-ptr-017",
+        "image": "/images/cards/nrsa02/ptr-017l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-018l3",
+        "slug": "nrsa02-ptr-018l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-018L3",
+        "number": "PTR-018L3",
+        "name": "NRSA02-PTR-018",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-018",
+        "characterSlug": "nrsa02-ptr-018",
+        "image": "/images/cards/nrsa02/ptr-018l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-019l3",
+        "slug": "nrsa02-ptr-019l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-019L3",
+        "number": "PTR-019L3",
+        "name": "NRSA02-PTR-019",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-019",
+        "characterSlug": "nrsa02-ptr-019",
+        "image": "/images/cards/nrsa02/ptr-019l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ptr-020l3",
+        "slug": "nrsa02-ptr-020l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-PTR-020L3",
+        "number": "PTR-020L3",
+        "name": "NRSA02-PTR-020",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "NRSA02-PTR-020",
+        "characterSlug": "nrsa02-ptr-020",
+        "image": "/images/cards/nrsa02/ptr-020l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-001l3",
+        "slug": "nrsa02-ur-001l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-001L3",
+        "number": "UR-001L3",
+        "name": "Orochimaru",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "image": "/images/cards/nrsa02/ur-001l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-002l3",
+        "slug": "nrsa02-ur-002l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-002L3",
+        "number": "UR-002L3",
+        "name": "Shikamaru Nara",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Shikamaru Nara",
+        "characterSlug": "shikamaru-nara",
+        "image": "/images/cards/nrsa02/ur-002l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-003l3",
+        "slug": "nrsa02-ur-003l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-003L3",
+        "number": "UR-003L3",
+        "name": "Kabuto Yakushi",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Kabuto Yakushi",
+        "characterSlug": "kabuto-yakushi",
+        "image": "/images/cards/nrsa02/ur-003l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-004l3",
+        "slug": "nrsa02-ur-004l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-004L3",
+        "number": "UR-004L3",
+        "name": "Anko Mitarashi",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Anko Mitarashi",
+        "characterSlug": "anko-mitarashi",
+        "image": "/images/cards/nrsa02/ur-004l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-005l3",
+        "slug": "nrsa02-ur-005l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-005L3",
+        "number": "UR-005L3",
+        "name": "Might Guy",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Might Guy",
+        "characterSlug": "might-guy",
+        "image": "/images/cards/nrsa02/ur-005l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-006l3",
+        "slug": "nrsa02-ur-006l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-006L3",
+        "number": "UR-006L3",
+        "name": "Naruto Uzumaki",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/nrsa02/ur-006l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-007l3",
+        "slug": "nrsa02-ur-007l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-007L3",
+        "number": "UR-007L3",
+        "name": "Neji Hyuga",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/ur-007l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-008l3",
+        "slug": "nrsa02-ur-008l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-008L3",
+        "number": "UR-008L3",
+        "name": "Kiba Inuzuka",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Kiba Inuzuka",
+        "characterSlug": "kiba-inuzuka",
+        "image": "/images/cards/nrsa02/ur-008l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-009l3",
+        "slug": "nrsa02-ur-009l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-009L3",
+        "number": "UR-009L3",
+        "name": "Hiruzen Sarutobi",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Hiruzen Sarutobi",
+        "characterSlug": "hiruzen-sarutobi",
+        "image": "/images/cards/nrsa02/ur-009l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-010l3",
+        "slug": "nrsa02-ur-010l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-010L3",
+        "number": "UR-010L3",
+        "name": "Ibiki Morino",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Ibiki Morino",
+        "characterSlug": "ibiki-morino",
+        "image": "/images/cards/nrsa02/ur-010l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-011l3",
+        "slug": "nrsa02-ur-011l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-011L3",
+        "number": "UR-011L3",
+        "name": "Temari",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Temari",
+        "characterSlug": "temari",
+        "image": "/images/cards/nrsa02/ur-011l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-012l3",
+        "slug": "nrsa02-ur-012l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-012L3",
+        "number": "UR-012L3",
+        "name": "Gaara",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/ur-012l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-013l3",
+        "slug": "nrsa02-ur-013l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-013L3",
+        "number": "UR-013L3",
+        "name": "Rock Lee",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/ur-013l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-014l3",
+        "slug": "nrsa02-ur-014l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-014L3",
+        "number": "UR-014L3",
+        "name": "Jiraiya",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Jiraiya",
+        "characterSlug": "jiraiya",
+        "image": "/images/cards/nrsa02/ur-014l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ur-015l3",
+        "slug": "nrsa02-ur-015l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-UR-015L3",
+        "number": "UR-015L3",
+        "name": "Sasuke Uchiha",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "image": "/images/cards/nrsa02/ur-015l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-001l3",
+        "slug": "nrsa02-ssr-001l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-001L3",
+        "number": "SSR-001L3",
+        "name": "Hinata Hyuga",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "image": "/images/cards/nrsa02/ssr-001l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-002l3",
+        "slug": "nrsa02-ssr-002l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-002L3",
+        "number": "SSR-002L3",
+        "name": "Neji Hyuga",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/ssr-002l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-003l3",
+        "slug": "nrsa02-ssr-003l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-003L3",
+        "number": "SSR-003L3",
+        "name": "Gaara",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/ssr-003l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-004l3",
+        "slug": "nrsa02-ssr-004l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-004L3",
+        "number": "SSR-004L3",
+        "name": "Rock Lee",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/ssr-004l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-005l3",
+        "slug": "nrsa02-ssr-005l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-005L3",
+        "number": "SSR-005L3",
+        "name": "Kiba Inuzuka",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Kiba Inuzuka",
+        "characterSlug": "kiba-inuzuka",
+        "image": "/images/cards/nrsa02/ssr-005l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-006l3",
+        "slug": "nrsa02-ssr-006l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-006L3",
+        "number": "SSR-006L3",
+        "name": "Naruto Uzumaki",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/nrsa02/ssr-006l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-007l3",
+        "slug": "nrsa02-ssr-007l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-007L3",
+        "number": "SSR-007L3",
+        "name": "Sakura Haruno",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Sakura Haruno",
+        "characterSlug": "sakura-haruno",
+        "image": "/images/cards/nrsa02/ssr-007l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-008l3",
+        "slug": "nrsa02-ssr-008l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-008L3",
+        "number": "SSR-008L3",
+        "name": "Ino Yamanaka",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Ino Yamanaka",
+        "characterSlug": "ino-yamanaka",
+        "image": "/images/cards/nrsa02/ssr-008l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-009l3",
+        "slug": "nrsa02-ssr-009l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-009L3",
+        "number": "SSR-009L3",
+        "name": "Sasuke Uchiha",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "image": "/images/cards/nrsa02/ssr-009l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-010l3",
+        "slug": "nrsa02-ssr-010l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-010L3",
+        "number": "SSR-010L3",
+        "name": "Orochimaru",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "image": "/images/cards/nrsa02/ssr-010l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-011l3",
+        "slug": "nrsa02-ssr-011l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-011L3",
+        "number": "SSR-011L3",
+        "name": "Orochimaru",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "image": "/images/cards/nrsa02/ssr-011l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-012l3",
+        "slug": "nrsa02-ssr-012l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-012L3",
+        "number": "SSR-012L3",
+        "name": "Anko Mitarashi",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Anko Mitarashi",
+        "characterSlug": "anko-mitarashi",
+        "image": "/images/cards/nrsa02/ssr-012l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-013l3",
+        "slug": "nrsa02-ssr-013l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-013L3",
+        "number": "SSR-013L3",
+        "name": "Neji Hyuga",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/ssr-013l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-014l3",
+        "slug": "nrsa02-ssr-014l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-014L3",
+        "number": "SSR-014L3",
+        "name": "Gaara",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/ssr-014l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-015l3",
+        "slug": "nrsa02-ssr-015l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-015L3",
+        "number": "SSR-015L3",
+        "name": "Rock Lee",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/ssr-015l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-016l3",
+        "slug": "nrsa02-ssr-016l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-016L3",
+        "number": "SSR-016L3",
+        "name": "Rock Lee",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/ssr-016l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-017l3",
+        "slug": "nrsa02-ssr-017l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-017L3",
+        "number": "SSR-017L3",
+        "name": "Kabuto Yakushi",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Kabuto Yakushi",
+        "characterSlug": "kabuto-yakushi",
+        "image": "/images/cards/nrsa02/ssr-017l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-018l3",
+        "slug": "nrsa02-ssr-018l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-018L3",
+        "number": "SSR-018L3",
+        "name": "Hinata Hyuga",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "image": "/images/cards/nrsa02/ssr-018l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-019l3",
+        "slug": "nrsa02-ssr-019l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-019L3",
+        "number": "SSR-019L3",
+        "name": "Choji Akimichi",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Choji Akimichi",
+        "characterSlug": "choji-akimichi",
+        "image": "/images/cards/nrsa02/ssr-019l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-020l3",
+        "slug": "nrsa02-ssr-020l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-020L3",
+        "number": "SSR-020L3",
+        "name": "Ino Yamanaka",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Ino Yamanaka",
+        "characterSlug": "ino-yamanaka",
+        "image": "/images/cards/nrsa02/ssr-020l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-021l3",
+        "slug": "nrsa02-ssr-021l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-021L3",
+        "number": "SSR-021L3",
+        "name": "Shikamaru Nara",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Shikamaru Nara",
+        "characterSlug": "shikamaru-nara",
+        "image": "/images/cards/nrsa02/ssr-021l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-022l3",
+        "slug": "nrsa02-ssr-022l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-022L3",
+        "number": "SSR-022L3",
+        "name": "Kiba Inuzuka",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Kiba Inuzuka",
+        "characterSlug": "kiba-inuzuka",
+        "image": "/images/cards/nrsa02/ssr-022l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-ssr-023l3",
+        "slug": "nrsa02-ssr-023l3",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SSR-023L3",
+        "number": "SSR-023L3",
+        "name": "Shino Aburame",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Shino Aburame",
+        "characterSlug": "shino-aburame",
+        "image": "/images/cards/nrsa02/ssr-023l3.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-001l2",
+        "slug": "nrsa02-sr-001l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-001L2",
+        "number": "SR-001L2",
+        "name": "Hinata Hyuga",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "image": "/images/cards/nrsa02/sr-001l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-002l2",
+        "slug": "nrsa02-sr-002l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-002L2",
+        "number": "SR-002L2",
+        "name": "Choji Akimichi",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Choji Akimichi",
+        "characterSlug": "choji-akimichi",
+        "image": "/images/cards/nrsa02/sr-002l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-003l2",
+        "slug": "nrsa02-sr-003l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-003L2",
+        "number": "SR-003L2",
+        "name": "Choji Akimichi",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Choji Akimichi",
+        "characterSlug": "choji-akimichi",
+        "image": "/images/cards/nrsa02/sr-003l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-004l2",
+        "slug": "nrsa02-sr-004l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-004L2",
+        "number": "SR-004L2",
+        "name": "Kabuto Yakushi",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Kabuto Yakushi",
+        "characterSlug": "kabuto-yakushi",
+        "image": "/images/cards/nrsa02/sr-004l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-005l2",
+        "slug": "nrsa02-sr-005l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-005L2",
+        "number": "SR-005L2",
+        "name": "Anko Mitarashi",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Anko Mitarashi",
+        "characterSlug": "anko-mitarashi",
+        "image": "/images/cards/nrsa02/sr-005l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-006l2",
+        "slug": "nrsa02-sr-006l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-006L2",
+        "number": "SR-006L2",
+        "name": "Ino Yamanaka",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Ino Yamanaka",
+        "characterSlug": "ino-yamanaka",
+        "image": "/images/cards/nrsa02/sr-006l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-007l2",
+        "slug": "nrsa02-sr-007l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-007L2",
+        "number": "SR-007L2",
+        "name": "Ino Yamanaka",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Ino Yamanaka",
+        "characterSlug": "ino-yamanaka",
+        "image": "/images/cards/nrsa02/sr-007l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-008l2",
+        "slug": "nrsa02-sr-008l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-008L2",
+        "number": "SR-008L2",
+        "name": "Orochimaru",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "image": "/images/cards/nrsa02/sr-008l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-009l2",
+        "slug": "nrsa02-sr-009l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-009L2",
+        "number": "SR-009L2",
+        "name": "Naruto Uzumaki",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/nrsa02/sr-009l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-010l2",
+        "slug": "nrsa02-sr-010l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-010L2",
+        "number": "SR-010L2",
+        "name": "Naruto Uzumaki",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/nrsa02/sr-010l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-011l2",
+        "slug": "nrsa02-sr-011l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-011L2",
+        "number": "SR-011L2",
+        "name": "Neji Hyuga",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "image": "/images/cards/nrsa02/sr-011l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-012l2",
+        "slug": "nrsa02-sr-012l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-012L2",
+        "number": "SR-012L2",
+        "name": "Kiba Inuzuka",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Kiba Inuzuka",
+        "characterSlug": "kiba-inuzuka",
+        "image": "/images/cards/nrsa02/sr-012l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-013l2",
+        "slug": "nrsa02-sr-013l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-013L2",
+        "number": "SR-013L2",
+        "name": "Ibiki Morino",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Ibiki Morino",
+        "characterSlug": "ibiki-morino",
+        "image": "/images/cards/nrsa02/sr-013l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-014l2",
+        "slug": "nrsa02-sr-014l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-014L2",
+        "number": "SR-014L2",
+        "name": "Temari",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Temari",
+        "characterSlug": "temari",
+        "image": "/images/cards/nrsa02/sr-014l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-015l2",
+        "slug": "nrsa02-sr-015l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-015L2",
+        "number": "SR-015L2",
+        "name": "Gaara",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/nrsa02/sr-015l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-016l2",
+        "slug": "nrsa02-sr-016l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-016L2",
+        "number": "SR-016L2",
+        "name": "Rock Lee",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/sr-016l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-017l2",
+        "slug": "nrsa02-sr-017l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-017L2",
+        "number": "SR-017L2",
+        "name": "Rock Lee",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "image": "/images/cards/nrsa02/sr-017l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-018l2",
+        "slug": "nrsa02-sr-018l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-018L2",
+        "number": "SR-018L2",
+        "name": "Sakura Haruno",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Sakura Haruno",
+        "characterSlug": "sakura-haruno",
+        "image": "/images/cards/nrsa02/sr-018l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-019l2",
+        "slug": "nrsa02-sr-019l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-019L2",
+        "number": "SR-019L2",
+        "name": "Sakura Haruno",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Sakura Haruno",
+        "characterSlug": "sakura-haruno",
+        "image": "/images/cards/nrsa02/sr-019l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-sr-020l2",
+        "slug": "nrsa02-sr-020l2",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-SR-020L2",
+        "number": "SR-020L2",
+        "name": "Sasuke Uchiha",
+        "rarity": "SR",
+        "type": "card",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "image": "/images/cards/nrsa02/sr-020l2.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-001l1",
+        "slug": "nrsa02-r-001l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-001L1",
+        "number": "R-001L1",
+        "name": "Chunin Challenge: Rock Lee vs. Sasuke! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-001l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-002l1",
+        "slug": "nrsa02-r-002l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-002L1",
+        "number": "R-002L1",
+        "name": "Chunin Challenge: Rock Lee vs. Sasuke! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-002l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-003l1",
+        "slug": "nrsa02-r-003l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-003L1",
+        "number": "R-003L1",
+        "name": "Chunin Challenge: Rock Lee vs. Sasuke! 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-003l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-004l1",
+        "slug": "nrsa02-r-004l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-004L1",
+        "number": "R-004L1",
+        "name": "Chunin Challenge: Rock Lee vs. Sasuke! 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-004l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-005l1",
+        "slug": "nrsa02-r-005l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-005L1",
+        "number": "R-005L1",
+        "name": "Chunin Challenge: Rock Lee vs. Sasuke! 5",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-005l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-006l1",
+        "slug": "nrsa02-r-006l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-006L1",
+        "number": "R-006L1",
+        "name": "Start Your Engines: The Chunin Exam Begins! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-006l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-007l1",
+        "slug": "nrsa02-r-007l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-007L1",
+        "number": "R-007L1",
+        "name": "Start Your Engines: The Chunin Exam Begins! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-007l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-008l1",
+        "slug": "nrsa02-r-008l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-008L1",
+        "number": "R-008L1",
+        "name": "Start Your Engines: The Chunin Exam Begins! 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-008l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-009l1",
+        "slug": "nrsa02-r-009l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-009L1",
+        "number": "R-009L1",
+        "name": "Start Your Engines: The Chunin Exam Begins! 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-009l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-010l1",
+        "slug": "nrsa02-r-010l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-010L1",
+        "number": "R-010L1",
+        "name": "The Tenth Question: All or Nothing! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-010l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-011l1",
+        "slug": "nrsa02-r-011l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-011L1",
+        "number": "R-011L1",
+        "name": "The Tenth Question: All or Nothing! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-011l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-012l1",
+        "slug": "nrsa02-r-012l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-012L1",
+        "number": "R-012L1",
+        "name": "The Tenth Question: All or Nothing! 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-012l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-013l1",
+        "slug": "nrsa02-r-013l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-013L1",
+        "number": "R-013L1",
+        "name": "The Tenth Question: All or Nothing! 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-013l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-014l1",
+        "slug": "nrsa02-r-014l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-014L1",
+        "number": "R-014L1",
+        "name": "The Chunin Exam Stage 2: The Forest of Death 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-014l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-015l1",
+        "slug": "nrsa02-r-015l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-015L1",
+        "number": "R-015L1",
+        "name": "The Chunin Exam Stage 2: The Forest of Death 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-015l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-016l1",
+        "slug": "nrsa02-r-016l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-016L1",
+        "number": "R-016L1",
+        "name": "The Chunin Exam Stage 2: The Forest of Death 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-016l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-017l1",
+        "slug": "nrsa02-r-017l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-017L1",
+        "number": "R-017L1",
+        "name": "The Chunin Exam Stage 2: The Forest of Death 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-017l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-018l1",
+        "slug": "nrsa02-r-018l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-018L1",
+        "number": "R-018L1",
+        "name": "Naruto's Counterattack: Never Give In! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-018l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-019l1",
+        "slug": "nrsa02-r-019l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-019L1",
+        "number": "R-019L1",
+        "name": "Naruto's Counterattack: Never Give In! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-019l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-020l1",
+        "slug": "nrsa02-r-020l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-020L1",
+        "number": "R-020L1",
+        "name": "Bushy Brow's Pledge: Undying Love and Protection! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-020l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-021l1",
+        "slug": "nrsa02-r-021l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-021L1",
+        "number": "R-021L1",
+        "name": "Bushy Brow's Pledge: Undying Love and Protection! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-021l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-022l1",
+        "slug": "nrsa02-r-022l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-022L1",
+        "number": "R-022L1",
+        "name": "Bushy Brow's Pledge: Undying Love and Protection! 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-022l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-023l1",
+        "slug": "nrsa02-r-023l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-023L1",
+        "number": "R-023L1",
+        "name": "Bushy Brow's Pledge: Undying Love and Protection! 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-023l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-024l1",
+        "slug": "nrsa02-r-024l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-024L1",
+        "number": "R-024L1",
+        "name": "Sakura Blossoms! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-024l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-025l1",
+        "slug": "nrsa02-r-025l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-025L1",
+        "number": "R-025L1",
+        "name": "Sakura Blossoms! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-025l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-026l1",
+        "slug": "nrsa02-r-026l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-026L1",
+        "number": "R-026L1",
+        "name": "Sakura Blossoms! 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-026l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-027l1",
+        "slug": "nrsa02-r-027l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-027L1",
+        "number": "R-027L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-027l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-028l1",
+        "slug": "nrsa02-r-028l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-028L1",
+        "number": "R-028L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-028l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-029l1",
+        "slug": "nrsa02-r-029l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-029L1",
+        "number": "R-029L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-029l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-030l1",
+        "slug": "nrsa02-r-030l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-030L1",
+        "number": "R-030L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-030l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-031l1",
+        "slug": "nrsa02-r-031l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-031L1",
+        "number": "R-031L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 5",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-031l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-032l1",
+        "slug": "nrsa02-r-032l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-032L1",
+        "number": "R-032L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 6",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-032l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-033l1",
+        "slug": "nrsa02-r-033l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-033L1",
+        "number": "R-033L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 7",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-033l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-034l1",
+        "slug": "nrsa02-r-034l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-034L1",
+        "number": "R-034L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 8",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-034l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-035l1",
+        "slug": "nrsa02-r-035l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-035L1",
+        "number": "R-035L1",
+        "name": "Battle Formation: Ino-Shika-Cho!! 9",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-035l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-036l1",
+        "slug": "nrsa02-r-036l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-036L1",
+        "number": "R-036L1",
+        "name": "Clone vs. Clone: Mine are Better Than Yours! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-036l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-037l1",
+        "slug": "nrsa02-r-037l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-037L1",
+        "number": "R-037L1",
+        "name": "Clone vs. Clone: Mine are Better Than Yours! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-037l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-038l1",
+        "slug": "nrsa02-r-038l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-038L1",
+        "number": "R-038L1",
+        "name": "Clone vs. Clone: Mine are Better Than Yours! 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-038l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-039l1",
+        "slug": "nrsa02-r-039l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-039L1",
+        "number": "R-039L1",
+        "name": "Clone vs. Clone: Mine are Better Than Yours! 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-039l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-040l1",
+        "slug": "nrsa02-r-040l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-040L1",
+        "number": "R-040L1",
+        "name": "Bushy Brow's Jealousy: Lions Barrage Unleashed! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-040l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-041l1",
+        "slug": "nrsa02-r-041l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-041L1",
+        "number": "R-041L1",
+        "name": "Bushy Brow's Jealousy: Lions Barrage Unleashed! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-041l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-042l1",
+        "slug": "nrsa02-r-042l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-042L1",
+        "number": "R-042L1",
+        "name": "Bushy Brow's Jealousy: Lions Barrage Unleashed! 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-042l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-043l1",
+        "slug": "nrsa02-r-043l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-043L1",
+        "number": "R-043L1",
+        "name": "Bushy Brow's Jealousy: Lions Barrage Unleashed! 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-043l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-044l1",
+        "slug": "nrsa02-r-044l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-044L1",
+        "number": "R-044L1",
+        "name": "Kunoichi Rumble: The Rivals Get Serious! 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-044l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-045l1",
+        "slug": "nrsa02-r-045l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-045L1",
+        "number": "R-045L1",
+        "name": "Kunoichi Rumble: The Rivals Get Serious! 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-045l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-046l1",
+        "slug": "nrsa02-r-046l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-046L1",
+        "number": "R-046L1",
+        "name": "Akamaru Unleashed! Who's Top Dog Now? 1",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-046l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-047l1",
+        "slug": "nrsa02-r-047l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-047L1",
+        "number": "R-047L1",
+        "name": "Akamaru Unleashed! Who's Top Dog Now? 2",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-047l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-048l1",
+        "slug": "nrsa02-r-048l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-048L1",
+        "number": "R-048L1",
+        "name": "Akamaru Unleashed! Who's Top Dog Now? 3",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-048l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-049l1",
+        "slug": "nrsa02-r-049l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-049L1",
+        "number": "R-049L1",
+        "name": "Akamaru Unleashed! Who's Top Dog Now? 4",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-049l1.jpg",
+        "variants": [
+            "english"
+        ]
+    },
+    {
+        "id": "nrsa02-r-050l1",
+        "slug": "nrsa02-r-050l1",
+        "setId": "nrsa02",
+        "setSlug": "nrsa02",
+        "officialCode": "NRSA02",
+        "cardCode": "NRSA02-R-050L1",
+        "number": "R-050L1",
+        "name": "Akamaru Unleashed! Who's Top Dog Now? 5",
+        "rarity": "R",
+        "type": "card",
+        "character": "Various",
+        "characterSlug": "various",
+        "image": "/images/cards/nrsa02/r-050l1.jpg",
+        "variants": [
+            "english"
+        ]
+    }
+]

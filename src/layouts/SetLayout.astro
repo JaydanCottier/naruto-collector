@@ -19,6 +19,7 @@ const cardIds = cards.map((c: any) => c.id);
 const isUnsealed = set.unsealed === true;
 const isPoorHitRate = set.pullRates?.valueRating === 1;
 const valueStars = set.pullRates?.valueRating || 3;
+const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
 ---
 
 <BaseLayout title={`${set.displayName || set.name} — Set Details`} description={set.description}>
@@ -53,6 +54,11 @@ const valueStars = set.pullRates?.valueRating || 3;
             {set.arc && (
               <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 border border-purple-500/30">
                 ⚔️ {set.arc}
+              </span>
+            )}
+            {isFinalWave && (
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-red-500/20 text-red-400 border border-red-500/30">
+                FINAL WAVE
               </span>
             )}
           </div>

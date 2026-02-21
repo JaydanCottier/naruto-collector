@@ -153,5 +153,105 @@
         ],
         "isPromo": true,
         "notes": "Event exclusive promo."
+    },
+    {
+        "id": "nrsa-pr-002",
+        "slug": "nrsa-pr-002",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "cardCode": "NRSA-PR-002",
+        "number": "PR-002",
+        "name": "Naruto Uzumaki",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/en-promo/pr-002.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": ""
+    },
+    {
+        "id": "nrsa-pr-003",
+        "slug": "nrsa-pr-003",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "cardCode": "NRSA-PR-003",
+        "number": "PR-003",
+        "name": "Naruto Uzumaki",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/en-promo/pr-003.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": ""
+    },
+    {
+        "id": "nrsa-pr-004",
+        "slug": "nrsa-pr-004",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "cardCode": "NRSA-PR-004",
+        "number": "PR-004",
+        "name": "Naruto Uzumaki",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/en-promo/pr-004.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": ""
+    },
+    {
+        "id": "nrsa-pr-005",
+        "slug": "nrsa-pr-005",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "cardCode": "NRSA-PR-005",
+        "number": "PR-005",
+        "name": "Naruto Uzumaki",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/en-promo/pr-005.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": ""
+    },
+    {
+        "id": "nrsa-pr-006",
+        "slug": "nrsa-pr-006",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "cardCode": "NRSA-PR-006",
+        "number": "PR-006",
+        "name": "Kakashi Hatake",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Kakashi Hatake",
+        "characterSlug": "kakashi-hatake",
+        "image": "/images/cards/en-promo/pr-006.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": ""
     }
 ]

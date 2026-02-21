@@ -1,0 +1,44 @@
+{
+  "id": "nrsa01",
+  "slug": "nrsa01",
+  "officialCode": "NRSA01",
+  "name": "English Series 1",
+  "displayName": "English Series 1",
+  "tier": "EN",
+  "wave": 1,
+  "series": "English",
+  "type": "booster",
+  "language": "EN",
+  "releaseDate": "2024-01-01",
+  "cardCount": 158,
+  "packCount": 36,
+  "packContents": "5 cards per pack",
+  "description": "KAYOU Naruto English Series 1",
+  "logoImage": "/images/sets/nrsa01-logo.png",
+  "bannerImage": "/images/sets/nrsa01-banner.jpg",
+  "caseSize": {
+    "regular": 36
+  },
+  "boxVariants": null,
+  "cardBreakdown": {
+    "SE": 4,
+    "SP": 4,
+    "BP": 7,
+    "MR": 6,
+    "PU": 8,
+    "PTR": 20,
+    "UR": 15,
+    "SSR": 24,
+    "SR": 20,
+    "R": 50
+  },
+  "retailAvailability": [
+    "hobby"
+  ],
+  "unsealed": false,
+  "affiliateLinks": {
+    "ebay": "PLACEHOLDER",
+    "approxPriceUSD": 30,
+    "approxPriceCNY": 0
+  }
+}

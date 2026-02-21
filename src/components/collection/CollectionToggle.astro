@@ -70,7 +70,7 @@ const variants = ['standard', 'holo', 'serialized', 'promo', 'english'];
 
       function getState() {
         try {
-          const raw = localStorage.getItem('naruto-collector-v2');
+          const raw = localStorage.getItem('naruto-collector-v3');
           if (!raw) return { owned: false, wishlisted: false, variant: 'standard' };
           const data = JSON.parse(raw);
           const ownedEntry = data.owned?.[cardId!];
@@ -124,7 +124,7 @@ const variants = ['standard', 'holo', 'serialized', 'promo', 'english'];
 
       function toggle(action: string) {
         try {
-          const raw = localStorage.getItem('naruto-collector-v2') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null,"_addCountSinceExport":0}';
+          const raw = localStorage.getItem('naruto-collector-v3') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null,"_addCountSinceExport":0}';
           const data = JSON.parse(raw);
           if (!data.owned) data.owned = {};
           if (!data.wishlist) data.wishlist = {};
@@ -144,7 +144,7 @@ const variants = ['standard', 'holo', 'serialized', 'promo', 'english'];
             }
           }
           data.lastModified = new Date().toISOString();
-          localStorage.setItem('naruto-collector-v2', JSON.stringify(data));
+          localStorage.setItem('naruto-collector-v3', JSON.stringify(data));
           updateUI();
           window.dispatchEvent(new Event('collection-updated'));
         } catch(e) {}
@@ -152,12 +152,12 @@ const variants = ['standard', 'holo', 'serialized', 'promo', 'english'];
 
       function setVariant(variant: string) {
         try {
-          const raw = localStorage.getItem('naruto-collector-v2') || '{}';
+          const raw = localStorage.getItem('naruto-collector-v3') || '{}';
           const data = JSON.parse(raw);
           if (data.owned?.[cardId!]) {
             data.owned[cardId!].variant = variant;
             data.lastModified = new Date().toISOString();
-            localStorage.setItem('naruto-collector-v2', JSON.stringify(data));
+            localStorage.setItem('naruto-collector-v3', JSON.stringify(data));
             updateUI();
             variantDropdown?.classList.add('hidden');
           }

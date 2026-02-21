@@ -1,6 +1,7 @@
 {
   "id": "t3w1",
   "slug": "t3w1",
+  "officialCode": "NR-CC-D001",
   "name": "T3W1",
   "displayName": "Tier 3 Wave 1",
   "tier": "T3",
@@ -11,15 +12,19 @@
   "releaseDate": "2021-03-01",
   "cardCount": 8,
   "packCount": 20,
-  "packPrice": "2¥",
-  "description": "Chapter of Soldiers — Tier 3 Wave 1.",
+  "packPrice": "5¥",
+  "packContents": "1x TR/TGR (see-through chibi) + 2x R + 1x SR + SSR or better",
+  "caseSize": {
+    "regular": 24,
+    "master": 48
+  },
+  "description": "Chapter of Fighting — Tier 3 Wave 1.",
   "logoImage": "/images/sets/t3w1-logo.png",
   "bannerImage": "/images/sets/t3w1-banner.jpg",
-  "notes": "SP001/004 included",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "SP001/004 included. AR 001-010 silver variant EXCLUSIVE to this box. Blister packs available separately.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 28,
     "approxPriceCNY": 100

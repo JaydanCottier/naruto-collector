@@ -1,0 +1,24 @@
+{
+  "id": "en-promo",
+  "slug": "en-promo",
+  "officialCode": "NRSA-PR",
+  "name": "English Promos",
+  "displayName": "English Promos",
+  "tier": "PR",
+  "wave": null,
+  "series": "English",
+  "type": "promo",
+  "language": "EN",
+  "releaseDate": "2025-01-01",
+  "cardCount": 8,
+  "description": "English-exclusive promo cards.",
+  "logoImage": "/images/sets/en-promo-logo.png",
+  "bannerImage": "/images/sets/en-promo-banner.jpg",
+  "notes": "English-exclusive promo cards. NRSA-PR-001 Konan in Heaven Scroll S1 24-pack display only. Additional promos via events and display boxes.",
+  "unsealed": false,
+  "affiliateLinks": {
+    "ebay": "PLACEHOLDER",
+    "approxPriceUSD": 15,
+    "approxPriceCNY": 0
+  }
+}

@@ -10,19 +10,16 @@
   "language": "CN",
   "releaseDate": "2022-03-01",
   "cardCount": 8,
-  "packCount": null,
-  "packPrice": null,
   "description": "Gift box featuring exclusive SCR Naruto and Boruto promo cards.",
   "logoImage": "/images/sets/youth-scroll-logo.png",
   "bannerImage": "/images/sets/youth-scroll-banner.jpg",
-  "notes": "SCR Naruto & Boruto promos",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "ONLY source of SCR rarity. Contents: 2 branded brick slabs, Naruto+Boruto SCR promo cards, 2 special coins, sleeves, art print, 3 packs. Each pack: 1 guaranteed SP + chance at hokage BP or CR.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
-    "approxPriceUSD": 35,
-    "approxPriceCNY": 200
+    "approxPriceUSD": 65,
+    "approxPriceCNY": 400
   },
   "pullRates": {
     "ur_per_packs": 4,

@@ -1,6 +1,7 @@
 {
   "id": "t2w3",
   "slug": "t2w3",
+  "officialCode": "NR-CC-B003",
   "name": "T2W3",
   "displayName": "Tier 2 Wave 3",
   "tier": "T2",
@@ -12,14 +13,17 @@
   "cardCount": 8,
   "packCount": 30,
   "packPrice": "2¥",
+  "caseSize": {
+    "regular": 24,
+    "master": 48
+  },
   "description": "Chapter of Soldiers — Tier 2 Wave 3.",
   "logoImage": "/images/sets/t2w3-logo.png",
   "bannerImage": "/images/sets/t2w3-banner.jpg",
   "notes": "",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 20,
     "approxPriceCNY": 60

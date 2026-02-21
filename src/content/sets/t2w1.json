@@ -1,6 +1,7 @@
 {
   "id": "t2w1",
   "slug": "t2w1",
+  "officialCode": "NR-CC-B001",
   "name": "T2W1",
   "displayName": "Tier 2 Wave 1",
   "tier": "T2",
@@ -12,17 +13,21 @@
   "cardCount": 8,
   "packCount": 30,
   "packPrice": "2¥",
-  "description": "Chapter of Soldiers — Tier 2 Wave 1. Introduces the T2 booster line.",
+  "packContents": "4x R + 1x SR or higher",
+  "caseSize": {
+    "regular": 24,
+    "master": 48
+  },
+  "description": "Chapter of Soldiers — Tier 2 Wave 1.",
   "logoImage": "/images/sets/t2w1-logo.png",
   "bannerImage": "/images/sets/t2w1-banner.jpg",
-  "notes": "",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "Chapter of Soldiers.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 20,
-    "approxPriceCNY": 140
+    "approxPriceCNY": 60
   },
   "pullRates": {
     "ur_per_packs": 8,

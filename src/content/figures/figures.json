@@ -1,0 +1,862 @@
+[
+    {
+        "id": "fig-001",
+        "slug": "fig-001-naruto-uzumaki",
+        "name": "Naruto Uzumaki",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "figureType": "regular",
+        "xpCardId": "fig-bb-001",
+        "image": "/images/figures/fig-001.jpg"
+    },
+    {
+        "id": "fig-002",
+        "slug": "fig-002-sasuke-uchiha",
+        "name": "Sasuke Uchiha",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "figureType": "regular",
+        "xpCardId": "fig-bb-002",
+        "image": "/images/figures/fig-002.jpg"
+    },
+    {
+        "id": "fig-003",
+        "slug": "fig-003-kakashi-hatake",
+        "name": "Kakashi Hatake",
+        "character": "Kakashi Hatake",
+        "characterSlug": "kakashi-hatake",
+        "figureType": "regular",
+        "xpCardId": "fig-bb-003",
+        "image": "/images/figures/fig-003.jpg"
+    },
+    {
+        "id": "fig-004",
+        "slug": "fig-004-itachi-uchiha",
+        "name": "Itachi Uchiha",
+        "character": "Itachi Uchiha",
+        "characterSlug": "itachi-uchiha",
+        "figureType": "regular",
+        "xpCardId": "fig-bb-004",
+        "image": "/images/figures/fig-004.jpg"
+    },
+    {
+        "id": "fig-005",
+        "slug": "fig-005-sakura-haruno",
+        "name": "Sakura Haruno",
+        "character": "Sakura Haruno",
+        "characterSlug": "sakura-haruno",
+        "figureType": "regular",
+        "xpCardId": "fig-bb-005",
+        "image": "/images/figures/fig-005.jpg"
+    },
+    {
+        "id": "fig-006",
+        "slug": "fig-006-gaara",
+        "name": "Gaara",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "figureType": "regular",
+        "xpCardId": "fig-bb-006",
+        "image": "/images/figures/fig-006.jpg"
+    },
+    {
+        "id": "fig-007",
+        "slug": "fig-007-hinata-hyuga",
+        "name": "Hinata Hyuga",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "figureType": "regular",
+        "xpCardId": "fig-bb-007",
+        "image": "/images/figures/fig-007.jpg"
+    },
+    {
+        "id": "fig-008",
+        "slug": "fig-008-jiraiya",
+        "name": "Jiraiya",
+        "character": "Jiraiya",
+        "characterSlug": "jiraiya",
+        "figureType": "regular",
+        "xpCardId": "fig-bb-008",
+        "image": "/images/figures/fig-008.jpg"
+    },
+    {
+        "id": "fig-009",
+        "slug": "fig-009-rock-lee",
+        "name": "Rock Lee",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-009.jpg"
+    },
+    {
+        "id": "fig-010",
+        "slug": "fig-010-neji-hyuga",
+        "name": "Neji Hyuga",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-010.jpg"
+    },
+    {
+        "id": "fig-011",
+        "slug": "fig-011-shikamaru",
+        "name": "Shikamaru Nara",
+        "character": "Shikamaru Nara",
+        "characterSlug": "shikamaru-nara",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-011.jpg"
+    },
+    {
+        "id": "fig-012",
+        "slug": "fig-012-ino-yamanaka",
+        "name": "Ino Yamanaka",
+        "character": "Ino Yamanaka",
+        "characterSlug": "ino-yamanaka",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-012.jpg"
+    },
+    {
+        "id": "fig-013",
+        "slug": "fig-013-choji",
+        "name": "Choji Akimichi",
+        "character": "Choji Akimichi",
+        "characterSlug": "choji-akimichi",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-013.jpg"
+    },
+    {
+        "id": "fig-014",
+        "slug": "fig-014-tenten",
+        "name": "Tenten",
+        "character": "Tenten",
+        "characterSlug": "tenten",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-014.jpg"
+    },
+    {
+        "id": "fig-015",
+        "slug": "fig-015-kiba",
+        "name": "Kiba Inuzuka",
+        "character": "Kiba Inuzuka",
+        "characterSlug": "kiba-inuzuka",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-015.jpg"
+    },
+    {
+        "id": "fig-016",
+        "slug": "fig-016-shino",
+        "name": "Shino Aburame",
+        "character": "Shino Aburame",
+        "characterSlug": "shino-aburame",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-016.jpg"
+    },
+    {
+        "id": "fig-017",
+        "slug": "fig-017-minato",
+        "name": "Minato Namikaze",
+        "character": "Minato Namikaze",
+        "characterSlug": "minato-namikaze",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-017.jpg"
+    },
+    {
+        "id": "fig-018",
+        "slug": "fig-018-tsunade",
+        "name": "Tsunade",
+        "character": "Tsunade",
+        "characterSlug": "tsunade",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-018.jpg"
+    },
+    {
+        "id": "fig-019",
+        "slug": "fig-019-orochimaru",
+        "name": "Orochimaru",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-019.jpg"
+    },
+    {
+        "id": "fig-020",
+        "slug": "fig-020-kabuto",
+        "name": "Kabuto Yakushi",
+        "character": "Kabuto Yakushi",
+        "characterSlug": "kabuto-yakushi",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-020.jpg"
+    },
+    {
+        "id": "fig-021",
+        "slug": "fig-021-zabuza",
+        "name": "Zabuza Momochi",
+        "character": "Zabuza Momochi",
+        "characterSlug": "zabuza-momochi",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-021.jpg"
+    },
+    {
+        "id": "fig-022",
+        "slug": "fig-022-haku",
+        "name": "Haku",
+        "character": "Haku",
+        "characterSlug": "haku",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-022.jpg"
+    },
+    {
+        "id": "fig-023",
+        "slug": "fig-023-iruka",
+        "name": "Iruka Umino",
+        "character": "Iruka Umino",
+        "characterSlug": "iruka-umino",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-023.jpg"
+    },
+    {
+        "id": "fig-024",
+        "slug": "fig-024-might-guy",
+        "name": "Might Guy",
+        "character": "Might Guy",
+        "characterSlug": "might-guy",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-024.jpg"
+    },
+    {
+        "id": "fig-025",
+        "slug": "fig-025-kurenai",
+        "name": "Kurenai Yuhi",
+        "character": "Kurenai Yuhi",
+        "characterSlug": "kurenai-yuhi",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-025.jpg"
+    },
+    {
+        "id": "fig-026",
+        "slug": "fig-026-asuma",
+        "name": "Asuma Sarutobi",
+        "character": "Asuma Sarutobi",
+        "characterSlug": "asuma-sarutobi",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-026.jpg"
+    },
+    {
+        "id": "fig-027",
+        "slug": "fig-027-anko",
+        "name": "Anko Mitarashi",
+        "character": "Anko Mitarashi",
+        "characterSlug": "anko-mitarashi",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-027.jpg"
+    },
+    {
+        "id": "fig-028",
+        "slug": "fig-028-yamato",
+        "name": "Yamato",
+        "character": "Yamato",
+        "characterSlug": "yamato",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-028.jpg"
+    },
+    {
+        "id": "fig-029",
+        "slug": "fig-029-sai",
+        "name": "Sai",
+        "character": "Sai",
+        "characterSlug": "sai",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-029.jpg"
+    },
+    {
+        "id": "fig-030",
+        "slug": "fig-030-temari",
+        "name": "Temari",
+        "character": "Temari",
+        "characterSlug": "temari",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-030.jpg"
+    },
+    {
+        "id": "fig-031",
+        "slug": "fig-031-kankuro",
+        "name": "Kankuro",
+        "character": "Kankuro",
+        "characterSlug": "kankuro",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-031.jpg"
+    },
+    {
+        "id": "fig-032",
+        "slug": "fig-032-pain",
+        "name": "Pain/Nagato",
+        "character": "Pain",
+        "characterSlug": "pain",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-032.jpg"
+    },
+    {
+        "id": "fig-033",
+        "slug": "fig-033-konan",
+        "name": "Konan",
+        "character": "Konan",
+        "characterSlug": "konan",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-033.jpg"
+    },
+    {
+        "id": "fig-034",
+        "slug": "fig-034-deidara",
+        "name": "Deidara",
+        "character": "Deidara",
+        "characterSlug": "deidara",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-034.jpg"
+    },
+    {
+        "id": "fig-035",
+        "slug": "fig-035-sasori",
+        "name": "Sasori",
+        "character": "Sasori",
+        "characterSlug": "sasori",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-035.jpg"
+    },
+    {
+        "id": "fig-036",
+        "slug": "fig-036-hidan",
+        "name": "Hidan",
+        "character": "Hidan",
+        "characterSlug": "hidan",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-036.jpg"
+    },
+    {
+        "id": "fig-037",
+        "slug": "fig-037-kakuzu",
+        "name": "Kakuzu",
+        "character": "Kakuzu",
+        "characterSlug": "kakuzu",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-037.jpg"
+    },
+    {
+        "id": "fig-038",
+        "slug": "fig-038-kisame",
+        "name": "Kisame Hoshigaki",
+        "character": "Kisame Hoshigaki",
+        "characterSlug": "kisame-hoshigaki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-038.jpg"
+    },
+    {
+        "id": "fig-039",
+        "slug": "fig-039-zetsu",
+        "name": "Zetsu",
+        "character": "Zetsu",
+        "characterSlug": "zetsu",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-039.jpg"
+    },
+    {
+        "id": "fig-040",
+        "slug": "fig-040-tobi",
+        "name": "Tobi/Obito",
+        "character": "Obito Uchiha",
+        "characterSlug": "obito-uchiha",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-040.jpg"
+    },
+    {
+        "id": "fig-041",
+        "slug": "fig-041-hashirama",
+        "name": "Hashirama Senju",
+        "character": "Hashirama Senju",
+        "characterSlug": "hashirama-senju",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-041.jpg"
+    },
+    {
+        "id": "fig-042",
+        "slug": "fig-042-tobirama",
+        "name": "Tobirama Senju",
+        "character": "Tobirama Senju",
+        "characterSlug": "tobirama-senju",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-042.jpg"
+    },
+    {
+        "id": "fig-043",
+        "slug": "fig-043-hiruzen",
+        "name": "Hiruzen Sarutobi",
+        "character": "Hiruzen Sarutobi",
+        "characterSlug": "hiruzen-sarutobi",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-043.jpg"
+    },
+    {
+        "id": "fig-044",
+        "slug": "fig-044-kushina",
+        "name": "Kushina Uzumaki",
+        "character": "Kushina Uzumaki",
+        "characterSlug": "kushina-uzumaki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-044.jpg"
+    },
+    {
+        "id": "fig-045",
+        "slug": "fig-045-madara",
+        "name": "Madara Uchiha",
+        "character": "Madara Uchiha",
+        "characterSlug": "madara-uchiha",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-045.jpg"
+    },
+    {
+        "id": "fig-046",
+        "slug": "fig-046-kaguya",
+        "name": "Kaguya Otsutsuki",
+        "character": "Kaguya Otsutsuki",
+        "characterSlug": "kaguya-otsutsuki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-046.jpg"
+    },
+    {
+        "id": "fig-047",
+        "slug": "fig-047-boruto",
+        "name": "Boruto Uzumaki",
+        "character": "Boruto Uzumaki",
+        "characterSlug": "boruto-uzumaki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-047.jpg"
+    },
+    {
+        "id": "fig-048",
+        "slug": "fig-048-sarada",
+        "name": "Sarada Uchiha",
+        "character": "Sarada Uchiha",
+        "characterSlug": "sarada-uchiha",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-048.jpg"
+    },
+    {
+        "id": "fig-049",
+        "slug": "fig-049-mitsuki",
+        "name": "Mitsuki",
+        "character": "Mitsuki",
+        "characterSlug": "mitsuki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-049.jpg"
+    },
+    {
+        "id": "fig-050",
+        "slug": "fig-050-kawaki",
+        "name": "Kawaki",
+        "character": "Kawaki",
+        "characterSlug": "kawaki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-050.jpg"
+    },
+    {
+        "id": "fig-051",
+        "slug": "fig-051-naruto-sage",
+        "name": "Naruto (Sage Mode)",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-051.jpg"
+    },
+    {
+        "id": "fig-052",
+        "slug": "fig-052-sasuke-rinnegan",
+        "name": "Sasuke (Rinnegan)",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-052.jpg"
+    },
+    {
+        "id": "fig-053",
+        "slug": "fig-053-naruto-kcm",
+        "name": "Naruto (KCM)",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-053.jpg"
+    },
+    {
+        "id": "fig-054",
+        "slug": "fig-054-naruto-baryon",
+        "name": "Naruto (Baryon Mode)",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-054.jpg"
+    },
+    {
+        "id": "fig-055",
+        "slug": "fig-055-kakashi-anbu",
+        "name": "Kakashi (ANBU)",
+        "character": "Kakashi Hatake",
+        "characterSlug": "kakashi-hatake",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-055.jpg"
+    },
+    {
+        "id": "fig-056",
+        "slug": "fig-056-itachi-anbu",
+        "name": "Itachi (ANBU)",
+        "character": "Itachi Uchiha",
+        "characterSlug": "itachi-uchiha",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-056.jpg"
+    },
+    {
+        "id": "fig-057",
+        "slug": "fig-057-shisui",
+        "name": "Shisui Uchiha",
+        "character": "Shisui Uchiha",
+        "characterSlug": "shisui-uchiha",
+        "figureType": "regular",
+        "xpCardId": null,
+        "image": "/images/figures/fig-057.jpg"
+    },
+    {
+        "id": "fig-058",
+        "slug": "fig-058-naruto-eternal",
+        "name": "Naruto (Eternal)",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-058.jpg"
+    },
+    {
+        "id": "fig-059",
+        "slug": "fig-059-sasuke-eternal",
+        "name": "Sasuke (Eternal)",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-059.jpg"
+    },
+    {
+        "id": "fig-060",
+        "slug": "fig-060-kakashi-eternal",
+        "name": "Kakashi (Eternal)",
+        "character": "Kakashi Hatake",
+        "characterSlug": "kakashi-hatake",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-060.jpg"
+    },
+    {
+        "id": "fig-061",
+        "slug": "fig-061-itachi-eternal",
+        "name": "Itachi (Eternal)",
+        "character": "Itachi Uchiha",
+        "characterSlug": "itachi-uchiha",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-061.jpg"
+    },
+    {
+        "id": "fig-062",
+        "slug": "fig-062-sakura-eternal",
+        "name": "Sakura (Eternal)",
+        "character": "Sakura Haruno",
+        "characterSlug": "sakura-haruno",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-062.jpg"
+    },
+    {
+        "id": "fig-063",
+        "slug": "fig-063-gaara-eternal",
+        "name": "Gaara (Eternal)",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-063.jpg"
+    },
+    {
+        "id": "fig-064",
+        "slug": "fig-064-hinata-eternal",
+        "name": "Hinata (Eternal)",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-064.jpg"
+    },
+    {
+        "id": "fig-065",
+        "slug": "fig-065-jiraiya-eternal",
+        "name": "Jiraiya (Eternal)",
+        "character": "Jiraiya",
+        "characterSlug": "jiraiya",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-065.jpg"
+    },
+    {
+        "id": "fig-066",
+        "slug": "fig-066-tsunade-eternal",
+        "name": "Tsunade (Eternal)",
+        "character": "Tsunade",
+        "characterSlug": "tsunade",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-066.jpg"
+    },
+    {
+        "id": "fig-067",
+        "slug": "fig-067-orochimaru-eternal",
+        "name": "Orochimaru (Eternal)",
+        "character": "Orochimaru",
+        "characterSlug": "orochimaru",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-067.jpg"
+    },
+    {
+        "id": "fig-068",
+        "slug": "fig-068-minato-eternal",
+        "name": "Minato (Eternal)",
+        "character": "Minato Namikaze",
+        "characterSlug": "minato-namikaze",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-068.jpg"
+    },
+    {
+        "id": "fig-069",
+        "slug": "fig-069-rock-lee-eternal",
+        "name": "Rock Lee (Eternal)",
+        "character": "Rock Lee",
+        "characterSlug": "rock-lee",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-069.jpg"
+    },
+    {
+        "id": "fig-070",
+        "slug": "fig-070-neji-eternal",
+        "name": "Neji (Eternal)",
+        "character": "Neji Hyuga",
+        "characterSlug": "neji-hyuga",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-070.jpg"
+    },
+    {
+        "id": "fig-071",
+        "slug": "fig-071-might-guy-eternal",
+        "name": "Might Guy (Eternal)",
+        "character": "Might Guy",
+        "characterSlug": "might-guy",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-071.jpg"
+    },
+    {
+        "id": "fig-072",
+        "slug": "fig-072-pain-eternal",
+        "name": "Pain (Eternal)",
+        "character": "Pain",
+        "characterSlug": "pain",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-072.jpg"
+    },
+    {
+        "id": "fig-073",
+        "slug": "fig-073-konan-eternal",
+        "name": "Konan (Eternal)",
+        "character": "Konan",
+        "characterSlug": "konan",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-073.jpg"
+    },
+    {
+        "id": "fig-074",
+        "slug": "fig-074-deidara-eternal",
+        "name": "Deidara (Eternal)",
+        "character": "Deidara",
+        "characterSlug": "deidara",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-074.jpg"
+    },
+    {
+        "id": "fig-075",
+        "slug": "fig-075-madara-eternal",
+        "name": "Madara (Eternal)",
+        "character": "Madara Uchiha",
+        "characterSlug": "madara-uchiha",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-075.jpg"
+    },
+    {
+        "id": "fig-076",
+        "slug": "fig-076-hashirama-eternal",
+        "name": "Hashirama (Eternal)",
+        "character": "Hashirama Senju",
+        "characterSlug": "hashirama-senju",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-076.jpg"
+    },
+    {
+        "id": "fig-077",
+        "slug": "fig-077-obito-eternal",
+        "name": "Obito (Eternal)",
+        "character": "Obito Uchiha",
+        "characterSlug": "obito-uchiha",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-077.jpg"
+    },
+    {
+        "id": "fig-078",
+        "slug": "fig-078-shisui-eternal",
+        "name": "Shisui (Eternal)",
+        "character": "Shisui Uchiha",
+        "characterSlug": "shisui-uchiha",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-078.jpg"
+    },
+    {
+        "id": "fig-079",
+        "slug": "fig-079-boruto-eternal",
+        "name": "Boruto (Eternal)",
+        "character": "Boruto Uzumaki",
+        "characterSlug": "boruto-uzumaki",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-079.jpg"
+    },
+    {
+        "id": "fig-080",
+        "slug": "fig-080-zabuza-eternal",
+        "name": "Zabuza (Eternal)",
+        "character": "Zabuza Momochi",
+        "characterSlug": "zabuza-momochi",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-080.jpg"
+    },
+    {
+        "id": "fig-081",
+        "slug": "fig-081-haku-eternal",
+        "name": "Haku (Eternal)",
+        "character": "Haku",
+        "characterSlug": "haku",
+        "figureType": "eternal",
+        "xpCardId": null,
+        "image": "/images/figures/fig-081.jpg"
+    },
+    {
+        "id": "fig-082",
+        "slug": "fig-082-naruto-ultimate",
+        "name": "Naruto (Ultimate)",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "figureType": "ultimate",
+        "xpCardId": null,
+        "image": "/images/figures/fig-082.jpg"
+    },
+    {
+        "id": "fig-083",
+        "slug": "fig-083-kurama-big",
+        "name": "Kurama (Big)",
+        "character": "Kurama",
+        "characterSlug": "kurama",
+        "figureType": "big",
+        "xpCardId": null,
+        "image": "/images/figures/fig-083.jpg"
+    },
+    {
+        "id": "fig-084",
+        "slug": "fig-084-naruto-chase",
+        "name": "Naruto (Chase Small)",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "figureType": "chase-small",
+        "xpCardId": null,
+        "image": "/images/figures/fig-084.jpg"
+    },
+    {
+        "id": "fig-085",
+        "slug": "fig-085-sasuke-chase",
+        "name": "Sasuke (Chase Small)",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "figureType": "chase-small",
+        "xpCardId": null,
+        "image": "/images/figures/fig-085.jpg"
+    },
+    {
+        "id": "fig-086",
+        "slug": "fig-086-kakashi-chase",
+        "name": "Kakashi (Chase Small)",
+        "character": "Kakashi Hatake",
+        "characterSlug": "kakashi-hatake",
+        "figureType": "chase-small",
+        "xpCardId": null,
+        "image": "/images/figures/fig-086.jpg"
+    }
+]

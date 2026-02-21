@@ -1,6 +1,7 @@
 {
   "id": "t4w1",
   "slug": "t4w1",
+  "officialCode": "NR-RD-Z001",
   "name": "T4W1",
   "displayName": "Tier 4 Wave 1",
   "tier": "T4",
@@ -12,19 +13,28 @@
   "cardCount": 8,
   "packCount": 18,
   "packPrice": "10¥",
-  "packContents": "Every other pack SSR+, HR in every pack (W2+)",
-  "description": "Chapter of the Array — Tier 4 Wave 1. The premium booster tier with the highest hit rates.",
+  "packContents": "Every other pack SSR+",
+  "caseSize": {
+    "regular": 18,
+    "master": 36
+  },
+  "boxVariants": {
+    "sl": {
+      "code": "1-10",
+      "approxPriceUSD": 40
+    },
+    "lb": null
+  },
+  "description": "Chapter of the Array — Tier 4 Wave 1.",
   "logoImage": "/images/sets/t4w1-logo.png",
   "bannerImage": "/images/sets/t4w1-banner.jpg",
-  "notes": "HR 001-009 EXCLUSIVE. SLR #6 Itachi EXCLUSIVE (hardest SLR). SP 005-008 EXCLUSIVE (Kaguya hardest). T4 sticker seals — NOT shrink wrapped. This is normal.",
+  "notes": "HR 001-009 EXCLUSIVE. SLR #6 Itachi EXCLUSIVE (hardest SLR). SP 005-008 EXCLUSIVE (Kaguya hardest). T4 sticker seals — NOT shrink wrapped. Normal.",
   "unsealed": true,
-  "englishEquivalent": null,
-  "cnEquivalent": null,
   "affiliateLinks": {
     "aliexpress": "PLACEHOLDER",
     "ebay": "",
-    "approxPriceUSD": 48,
-    "approxPriceCNY": 200
+    "approxPriceUSD": 59,
+    "approxPriceCNY": 180
   },
   "pullRates": {
     "ur_per_packs": 3,

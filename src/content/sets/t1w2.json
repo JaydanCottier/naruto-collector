@@ -1,6 +1,7 @@
 {
   "id": "t1w2",
   "slug": "t1w2",
+  "officialCode": "NR-CC-L002",
   "name": "T1W2",
   "displayName": "Tier 1 Wave 2",
   "tier": "T1",
@@ -11,15 +12,18 @@
   "releaseDate": "2021-08-01",
   "cardCount": 8,
   "packCount": 36,
-  "packPrice": "2¥",
-  "description": "Chapter of Soldiers — Tier 1 Wave 2. Introduces GP rarity.",
+  "packPrice": "1¥",
+  "caseSize": {
+    "regular": 24,
+    "master": 48
+  },
+  "description": "Chapter of Pros — Tier 1 Wave 2.",
   "logoImage": "/images/sets/t1w2-logo.png",
   "bannerImage": "/images/sets/t1w2-banner.jpg",
-  "notes": "",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "GP rarity exclusive starts this wave.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 12,
     "approxPriceCNY": 36

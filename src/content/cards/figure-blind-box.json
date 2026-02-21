@@ -1,0 +1,130 @@
+[
+    {
+        "id": "fig-bb-001",
+        "slug": "fig-bb-001",
+        "setId": "figure-blind-box",
+        "setSlug": "figure-blind-box",
+        "number": "XP-001",
+        "name": "Naruto Uzumaki XP",
+        "rarity": "XP",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/figure-blind-box/xp-001.jpg",
+        "variants": [
+            "standard"
+        ]
+    },
+    {
+        "id": "fig-bb-002",
+        "slug": "fig-bb-002",
+        "setId": "figure-blind-box",
+        "setSlug": "figure-blind-box",
+        "number": "XP-002",
+        "name": "Sasuke Uchiha XP",
+        "rarity": "XP",
+        "type": "card",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "image": "/images/cards/figure-blind-box/xp-002.jpg",
+        "variants": [
+            "standard"
+        ]
+    },
+    {
+        "id": "fig-bb-003",
+        "slug": "fig-bb-003",
+        "setId": "figure-blind-box",
+        "setSlug": "figure-blind-box",
+        "number": "XP-003",
+        "name": "Kakashi Hatake XP",
+        "rarity": "XP",
+        "type": "card",
+        "character": "Kakashi Hatake",
+        "characterSlug": "kakashi-hatake",
+        "image": "/images/cards/figure-blind-box/xp-003.jpg",
+        "variants": [
+            "standard"
+        ]
+    },
+    {
+        "id": "fig-bb-004",
+        "slug": "fig-bb-004",
+        "setId": "figure-blind-box",
+        "setSlug": "figure-blind-box",
+        "number": "XP-004",
+        "name": "Itachi Uchiha XP",
+        "rarity": "XP",
+        "type": "card",
+        "character": "Itachi Uchiha",
+        "characterSlug": "itachi-uchiha",
+        "image": "/images/cards/figure-blind-box/xp-004.jpg",
+        "variants": [
+            "standard"
+        ]
+    },
+    {
+        "id": "fig-bb-005",
+        "slug": "fig-bb-005",
+        "setId": "figure-blind-box",
+        "setSlug": "figure-blind-box",
+        "number": "XP-005",
+        "name": "Sakura Haruno XP",
+        "rarity": "XP",
+        "type": "card",
+        "character": "Sakura Haruno",
+        "characterSlug": "sakura-haruno",
+        "image": "/images/cards/figure-blind-box/xp-005.jpg",
+        "variants": [
+            "standard"
+        ]
+    },
+    {
+        "id": "fig-bb-006",
+        "slug": "fig-bb-006",
+        "setId": "figure-blind-box",
+        "setSlug": "figure-blind-box",
+        "number": "XP-006",
+        "name": "Gaara XP",
+        "rarity": "XP",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/figure-blind-box/xp-006.jpg",
+        "variants": [
+            "standard"
+        ]
+    },
+    {
+        "id": "fig-bb-007",
+        "slug": "fig-bb-007",
+        "setId": "figure-blind-box",
+        "setSlug": "figure-blind-box",
+        "number": "XP-007",
+        "name": "Hinata Hyuga XP",
+        "rarity": "XP",
+        "type": "card",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "image": "/images/cards/figure-blind-box/xp-007.jpg",
+        "variants": [
+            "standard"
+        ]
+    },
+    {
+        "id": "fig-bb-008",
+        "slug": "fig-bb-008",
+        "setId": "figure-blind-box",
+        "setSlug": "figure-blind-box",
+        "number": "XP-008",
+        "name": "Jiraiya XP",
+        "rarity": "XP",
+        "type": "card",
+        "character": "Jiraiya",
+        "characterSlug": "jiraiya",
+        "image": "/images/cards/figure-blind-box/xp-008.jpg",
+        "variants": [
+            "standard"
+        ]
+    }
+]

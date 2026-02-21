@@ -10,23 +10,15 @@
   "language": "CN",
   "releaseDate": "2022-04-01",
   "cardCount": 8,
-  "packCount": null,
-  "packPrice": null,
-  "description": "Official collector binder with exclusive promo cards.",
+  "description": "Official collector binder with booster packs.",
   "logoImage": "/images/sets/official-binder-logo.png",
   "bannerImage": "/images/sets/official-binder-banner.jpg",
-  "notes": "",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "Official collector binder + packs.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 40,
     "approxPriceCNY": 250
-  },
-  "pullRates": {
-    "ur_per_packs": 0,
-    "hit_per_packs": 0,
-    "valueRating": 3
   }
 }

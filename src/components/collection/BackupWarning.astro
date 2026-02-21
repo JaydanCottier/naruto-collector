@@ -26,7 +26,7 @@
     if (!banner) return;
 
     try {
-      const raw = localStorage.getItem('naruto-collector-v2');
+      const raw = localStorage.getItem('naruto-collector-v3');
       if (!raw) return;
       const data = JSON.parse(raw);
       const ownedCount = Object.keys(data.owned || {}).length;
@@ -48,11 +48,11 @@
 
   document.getElementById('backup-export-btn')?.addEventListener('click', () => {
     try {
-      const raw = localStorage.getItem('naruto-collector-v2') || '{}';
+      const raw = localStorage.getItem('naruto-collector-v3') || '{}';
       const data = JSON.parse(raw);
       data.lastExported = new Date().toISOString();
       data._addCountSinceExport = 0;
-      localStorage.setItem('naruto-collector-v2', JSON.stringify(data));
+      localStorage.setItem('naruto-collector-v3', JSON.stringify(data));
 
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);

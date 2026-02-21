@@ -1,6 +1,7 @@
 {
   "id": "t2w6",
   "slug": "t2w6",
+  "officialCode": "NR-CC-B006",
   "name": "T2W6",
   "displayName": "Tier 2 Wave 6",
   "tier": "T2",
@@ -12,14 +13,17 @@
   "cardCount": 8,
   "packCount": 30,
   "packPrice": "2¥",
+  "caseSize": {
+    "regular": 24,
+    "master": 48
+  },
   "description": "Chapter of Soldiers — Tier 2 Wave 6.",
   "logoImage": "/images/sets/t2w6-logo.png",
   "bannerImage": "/images/sets/t2w6-banner.jpg",
-  "notes": "",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "ZR 025-036 EXCLUSIVE. ZR 033 and ZR 036 are hardest to pull.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 20,
     "approxPriceCNY": 60

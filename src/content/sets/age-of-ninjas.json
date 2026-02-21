@@ -10,19 +10,19 @@
   "language": "CN",
   "releaseDate": "2023-03-01",
   "cardCount": 8,
-  "packCount": null,
-  "packPrice": null,
-  "description": "Noble Edition introducing PTR, QR, and XR rarities.",
+  "packCount": 10,
+  "packPrice": "5¥",
+  "packContents": "5 cards per pack. 1x PTR guaranteed.",
+  "description": "Ninja Age box introducing PTR, QR, and XR rarities.",
   "logoImage": "/images/sets/age-of-ninjas-logo.png",
   "bannerImage": "/images/sets/age-of-ninjas-banner.jpg",
-  "notes": "Introduces PTR/QR/XR rarities. Noble Edition.",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "10 packs of 5 cards. PTR (20 poster cards over 20 years), QR (chibi, /720, hidden /72 — REDEMPTION CHINA ONLY), XR (scroll art, /720). Diamond parallel variants. Two versions: Regular (~$20) and N Edition Noble (~$59).",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
-    "approxPriceUSD": 45,
-    "approxPriceCNY": 280
+    "approxPriceUSD": 20,
+    "approxPriceCNY": 120
   },
   "pullRates": {
     "ur_per_packs": 4,

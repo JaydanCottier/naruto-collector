@@ -1,0 +1,157 @@
+[
+    {
+        "id": "en-promo-001",
+        "slug": "en-promo-001",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "cardCode": "NRSA-PR-001",
+        "number": "PR-001",
+        "name": "Konan",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Konan",
+        "characterSlug": "konan",
+        "image": "/images/cards/en-promo/pr-001.jpg",
+        "variants": [
+            "english"
+        ],
+        "exclusiveTo": "heaven-scroll-s1",
+        "isPromo": true,
+        "notes": "Exclusive to Heaven Scroll S1 24-pack display box ONLY."
+    },
+    {
+        "id": "en-promo-002",
+        "slug": "en-promo-002",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "number": "PR-002",
+        "name": "NRSA02 Display Promo",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/en-promo/pr-002.jpg",
+        "variants": [
+            "english"
+        ],
+        "exclusiveTo": "jin-s2",
+        "isPromo": true,
+        "notes": "Exclusive to Jin Series 2 display box."
+    },
+    {
+        "id": "en-promo-003",
+        "slug": "en-promo-003",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "number": "PR-003",
+        "name": "Event Promo Naruto",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/en-promo/pr-003.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": "Event exclusive promo."
+    },
+    {
+        "id": "en-promo-004",
+        "slug": "en-promo-004",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "number": "PR-004",
+        "name": "Event Promo Sasuke",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Sasuke Uchiha",
+        "characterSlug": "sasuke-uchiha",
+        "image": "/images/cards/en-promo/pr-004.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": "Event exclusive promo."
+    },
+    {
+        "id": "en-promo-005",
+        "slug": "en-promo-005",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "number": "PR-005",
+        "name": "Event Promo Kakashi",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Kakashi Hatake",
+        "characterSlug": "kakashi-hatake",
+        "image": "/images/cards/en-promo/pr-005.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": "Event exclusive promo."
+    },
+    {
+        "id": "en-promo-006",
+        "slug": "en-promo-006",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "number": "PR-006",
+        "name": "Event Promo Itachi",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Itachi Uchiha",
+        "characterSlug": "itachi-uchiha",
+        "image": "/images/cards/en-promo/pr-006.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": "Event exclusive promo."
+    },
+    {
+        "id": "en-promo-007",
+        "slug": "en-promo-007",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "number": "PR-007",
+        "name": "Event Promo Sakura",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Sakura Haruno",
+        "characterSlug": "sakura-haruno",
+        "image": "/images/cards/en-promo/pr-007.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": "Event exclusive promo."
+    },
+    {
+        "id": "en-promo-008",
+        "slug": "en-promo-008",
+        "setId": "en-promo",
+        "setSlug": "en-promo",
+        "officialCode": "NRSA-PR",
+        "number": "PR-008",
+        "name": "Event Promo Gaara",
+        "rarity": "PR",
+        "type": "card",
+        "character": "Gaara",
+        "characterSlug": "gaara",
+        "image": "/images/cards/en-promo/pr-008.jpg",
+        "variants": [
+            "english"
+        ],
+        "isPromo": true,
+        "notes": "Event exclusive promo."
+    }
+]

@@ -10,19 +10,16 @@
   "language": "CN",
   "releaseDate": "2022-11-11",
   "cardCount": 8,
-  "packCount": null,
-  "packPrice": null,
   "description": "11.11 gift set with exclusive SV (Scroll Variant) cards.",
   "logoImage": "/images/sets/heaven-earth-scroll-logo.png",
   "bannerImage": "/images/sets/heaven-earth-scroll-banner.jpg",
-  "notes": "11.11 gift set with exclusive SV cards",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "ONLY source of SV-S and SV-G rarities. Contents: 1 brick slab + 2 special packs. Each special pack: 1 guaranteed SV card. One pack has chance at gold SV chase (Gold Minato + Gold Kakashi rarest). Also contains exclusive URs, SPs, HRs.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
-    "approxPriceUSD": 65,
-    "approxPriceCNY": 400
+    "approxPriceUSD": 30,
+    "approxPriceCNY": 200
   },
   "pullRates": {
     "ur_per_packs": 3,

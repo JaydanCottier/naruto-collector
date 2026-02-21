@@ -10,23 +10,15 @@
   "language": "CN",
   "releaseDate": "2023-01-15",
   "cardCount": 8,
-  "packCount": null,
-  "packPrice": null,
-  "description": "Limited New Year gift box with exclusive legendary scroll cards.",
+  "description": "New Year gift set with exclusive coin card and calendar cards.",
   "logoImage": "/images/sets/2023-new-year-logo.png",
   "bannerImage": "/images/sets/2023-new-year-banner.jpg",
-  "notes": "",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "Exclusive coin card, calendar cards+stand, 2 New Year themed SE cards, 2 card bricks. 3 packs with gold/silver SV, SP, AR, UR, HR rarities.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
-    "approxPriceUSD": 50,
-    "approxPriceCNY": 300
-  },
-  "pullRates": {
-    "ur_per_packs": 0,
-    "hit_per_packs": 0,
-    "valueRating": 4
+    "approxPriceUSD": 100,
+    "approxPriceCNY": 600
   }
 }

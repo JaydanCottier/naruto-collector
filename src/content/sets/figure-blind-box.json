@@ -1,0 +1,24 @@
+{
+  "id": "figure-blind-box",
+  "slug": "figure-blind-box",
+  "name": "Figure Blind Box",
+  "displayName": "Figure Blind Box",
+  "tier": "FIGURE",
+  "wave": null,
+  "series": "Figure",
+  "type": "figure",
+  "language": "CN",
+  "releaseDate": "2024-01-01",
+  "cardCount": 8,
+  "description": "Collectable figure blind boxes with exclusive XP rarity cards.",
+  "logoImage": "/images/sets/figure-blind-box-logo.png",
+  "bannerImage": "/images/sets/figure-blind-box-banner.jpg",
+  "notes": "ONLY source of XP rarity cards. Each box: 1 blind figure + 1 XP card (~$10). 86 figures total: 57 regular, 24 eternal, 1 ultimate, 1 big, 3 small chase. 12-pack: 10 regular + 1 eternal + 1 chase guaranteed. Separate figure collection tracking required.",
+  "unsealed": false,
+  "affiliateLinks": {
+    "aliexpress": "PLACEHOLDER",
+    "ebay": "",
+    "approxPriceUSD": 10,
+    "approxPriceCNY": 65
+  }
+}

@@ -46,7 +46,7 @@ const setName = set.displayName || set.name;
     try {
       const cardIds = JSON.parse(panel.getAttribute('data-card-ids') || '[]');
       const total = parseInt(panel.getAttribute('data-total') || '0');
-      const raw = localStorage.getItem('naruto-collector-v2');
+      const raw = localStorage.getItem('naruto-collector-v3');
       const data = raw ? JSON.parse(raw) : { owned: {} };
       const owned = cardIds.filter((id: string) => data.owned && data.owned[id]).length;
       const remaining = total - owned;

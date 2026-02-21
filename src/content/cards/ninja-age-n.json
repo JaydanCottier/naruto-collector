@@ -1,0 +1,144 @@
+[
+    {
+        "id": "ninja-age-n-001",
+        "slug": "ninja-age-n-001",
+        "setId": "ninja-age-n",
+        "setSlug": "ninja-age-n",
+        "number": "SP-N01",
+        "name": "Special SP Naruto",
+        "rarity": "SP",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/ninja-age-n/sp-n01.jpg",
+        "variants": [
+            "standard"
+        ],
+        "exclusiveTo": "ninja-age-n",
+        "notes": "N Edition ONLY. NOT guaranteed per box."
+    },
+    {
+        "id": "ninja-age-n-002",
+        "slug": "ninja-age-n-002",
+        "setId": "ninja-age-n",
+        "setSlug": "ninja-age-n",
+        "number": "MR-W01",
+        "name": "Wedding MR Naruto",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/ninja-age-n/mr-w01.jpg",
+        "variants": [
+            "standard"
+        ],
+        "exclusiveTo": "ninja-age-n",
+        "notes": "N Edition ONLY. Naruto + Hinata wedding."
+    },
+    {
+        "id": "ninja-age-n-003",
+        "slug": "ninja-age-n-003",
+        "setId": "ninja-age-n",
+        "setSlug": "ninja-age-n",
+        "number": "MR-W02",
+        "name": "Wedding MR Hinata",
+        "rarity": "MR",
+        "type": "card",
+        "character": "Hinata Hyuga",
+        "characterSlug": "hinata-hyuga",
+        "image": "/images/cards/ninja-age-n/mr-w02.jpg",
+        "variants": [
+            "standard"
+        ],
+        "exclusiveTo": "ninja-age-n",
+        "notes": "N Edition ONLY."
+    },
+    {
+        "id": "ninja-age-n-004",
+        "slug": "ninja-age-n-004",
+        "setId": "ninja-age-n",
+        "setSlug": "ninja-age-n",
+        "number": "QR-N01",
+        "name": "Special QR Naruto",
+        "rarity": "QR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/ninja-age-n/qr-n01.jpg",
+        "variants": [
+            "standard"
+        ],
+        "exclusiveTo": "ninja-age-n",
+        "notes": "N Edition ONLY. REDEMPTION — China only. Never share the QR code."
+    },
+    {
+        "id": "ninja-age-n-005",
+        "slug": "ninja-age-n-005",
+        "setId": "ninja-age-n",
+        "setSlug": "ninja-age-n",
+        "number": "XR-001",
+        "name": "Serial XR Naruto /72",
+        "rarity": "XR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/ninja-age-n/xr-001.jpg",
+        "variants": [
+            "standard"
+        ],
+        "exclusiveTo": "ninja-age-n",
+        "serialLimit": 72,
+        "notes": "RAREST CARD IN ALL KAYOU. /72 serial. N Edition ONLY."
+    },
+    {
+        "id": "ninja-age-n-006",
+        "slug": "ninja-age-n-006",
+        "setId": "ninja-age-n",
+        "setSlug": "ninja-age-n",
+        "number": "PTR-001",
+        "name": "PTR Naruto",
+        "rarity": "PTR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/ninja-age-n/ptr-001.jpg",
+        "variants": [
+            "standard",
+            "diamond"
+        ]
+    },
+    {
+        "id": "ninja-age-n-007",
+        "slug": "ninja-age-n-007",
+        "setId": "ninja-age-n",
+        "setSlug": "ninja-age-n",
+        "number": "SSR-001",
+        "name": "Naruto vs Sasuke",
+        "rarity": "SSR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/ninja-age-n/ssr-001.jpg",
+        "variants": [
+            "standard",
+            "diamond"
+        ]
+    },
+    {
+        "id": "ninja-age-n-008",
+        "slug": "ninja-age-n-008",
+        "setId": "ninja-age-n",
+        "setSlug": "ninja-age-n",
+        "number": "UR-001",
+        "name": "Sage Mode Naruto",
+        "rarity": "UR",
+        "type": "card",
+        "character": "Naruto Uzumaki",
+        "characterSlug": "naruto-uzumaki",
+        "image": "/images/cards/ninja-age-n/ur-001.jpg",
+        "variants": [
+            "standard",
+            "diamond"
+        ]
+    }
+]

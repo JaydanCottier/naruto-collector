@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CardThumbnail from '../../components/CardThumbnail.astro';
 import BuyButton from '../../components/affiliate/BuyButton.astro';
@@ -49,14 +49,14 @@ const { characterName, slug, cards, setGroups, totalCards, totalSets } = Astro.p
 
 // Character bios (short, lore-based)
 const bios: Record<string, string> = {
-  'naruto-uzumaki': 'The Seventh Hokage of Konohagakure and the jinchūriki of the Nine-Tails, Kurama.',
+  'naruto-uzumaki': 'The Seventh Hokage of Konohagakure and the jinchÅ«riki of the Nine-Tails, Kurama.',
   'sasuke-uchiha': 'The last surviving member of the Uchiha clan and one of the most powerful shinobi in history.',
   'itachi-uchiha': 'A prodigy of the Uchiha clan who massacred his clan under orders to protect Konoha.',
   'kakashi-hatake': 'The Sixth Hokage, known as the Copy Ninja for his mastery of over 1,000 jutsu via the Sharingan.',
   'sakura-haruno': 'A medical-nin and one of the most powerful kunoichi, trained under the legendary Tsunade.',
-  'gaara': 'The Fifth Kazekage of Sunagakure and the former jinchūriki of the One-Tail, Shukaku.',
+  'gaara': 'The Fifth Kazekage of Sunagakure and the former jinchÅ«riki of the One-Tail, Shukaku.',
   'rock-lee': 'A taijutsu specialist who proved that hard work can surpass natural talent.',
-  'hinata-hyuga': 'A member of the Hyūga clan who became a powerful Gentle Fist user and the wife of Naruto.',
+  'hinata-hyuga': 'A member of the HyÅ«ga clan who became a powerful Gentle Fist user and the wife of Naruto.',
   'jiraiya': 'One of the Legendary Sannin and Naruto\'s mentor. Known as the Toad Sage.',
   'tsunade': 'The Fifth Hokage and one of the Legendary Sannin. The greatest medical-nin in history.',
   'orochimaru': 'One of the Legendary Sannin who sought immortality through forbidden jutsu.',
@@ -68,14 +68,14 @@ const bios: Record<string, string> = {
 const bio = bios[slug] || `A character from the Naruto series featured across ${totalSets} KAYOU card sets.`;
 ---
 
-<BaseLayout title={`${characterName} — All Cards`} description={`All KAYOU Naruto cards featuring ${characterName} across ${totalSets} sets.`}>
+<BaseLayout title={`${characterName} â€” All Cards`} description={`All KAYOU Naruto cards featuring ${characterName} across ${totalSets} sets.`}>
 
   <!-- Breadcrumb -->
   <nav class="text-xs text-brand-text-muted mb-6 font-semibold">
     <a href="/" class="hover:text-white transition-colors">Home</a>
-    <span class="mx-2">›</span>
+    <span class="mx-2">â€º</span>
     <a href="/characters" class="hover:text-white transition-colors">Characters</a>
-    <span class="mx-2">›</span>
+    <span class="mx-2">â€º</span>
     <span class="text-white">{characterName}</span>
   </nav>
 
@@ -102,7 +102,7 @@ const bio = bios[slug] || `A character from the Naruto series featured across ${
           <div class="flex items-center gap-3">
             <h2 class="text-xl font-bangers tracking-wider text-white">{setName}</h2>
             <a href={`/sets/${group.set.slug || group.cards[0]?.setSlug}/`} class="text-xs font-bold text-brand-orange hover:text-white transition-colors">
-              View Set →
+              View Set â†’
             </a>
           </div>
           <BuyButton href={link} price={price} label="Buy Box" size="sm" />
@@ -151,7 +151,7 @@ const bio = bios[slug] || `A character from the Naruto series featured across ${
         const cardId = btn.getAttribute('data-card-id');
         if (!cardId) return;
         try {
-          const raw = localStorage.getItem('naruto-collector-v2');
+          const raw = localStorage.getItem('naruto-collector-v3');
           if (raw) {
             const data = JSON.parse(raw);
             if (data.owned && data.owned[cardId]) {
@@ -164,7 +164,7 @@ const bio = bios[slug] || `A character from the Naruto series featured across ${
           e.preventDefault();
           e.stopPropagation();
           try {
-            const raw = localStorage.getItem('naruto-collector-v2') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+            const raw = localStorage.getItem('naruto-collector-v3') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
             const data = JSON.parse(raw);
             if (!data.owned) data.owned = {};
             if (data.owned[cardId]) {
@@ -177,7 +177,7 @@ const bio = bios[slug] || `A character from the Naruto series featured across ${
               btn.classList.remove('text-brand-text-muted');
             }
             data.lastModified = new Date().toISOString();
-            localStorage.setItem('naruto-collector-v2', JSON.stringify(data));
+            localStorage.setItem('naruto-collector-v3', JSON.stringify(data));
           } catch(e) {}
         });
       });
@@ -185,3 +185,4 @@ const bio = bios[slug] || `A character from the Naruto series featured across ${
     initCollectionButtons();
   </script>
 </BaseLayout>
+

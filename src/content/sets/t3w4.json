@@ -1,6 +1,7 @@
 {
   "id": "t3w4",
   "slug": "t3w4",
+  "officialCode": "NR-CC-D004",
   "name": "T3W4",
   "displayName": "Tier 3 Wave 4",
   "tier": "T3",
@@ -11,15 +12,18 @@
   "releaseDate": "2022-06-01",
   "cardCount": 8,
   "packCount": 20,
-  "packPrice": "2¥",
-  "description": "Chapter of Soldiers — Tier 3 Wave 4.",
+  "packPrice": "5¥",
+  "caseSize": {
+    "regular": 24,
+    "master": 48
+  },
+  "description": "Chapter of Fighting — Tier 3 Wave 4.",
   "logoImage": "/images/sets/t3w4-logo.png",
   "bannerImage": "/images/sets/t3w4-banner.jpg",
   "notes": "",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 28,
     "approxPriceCNY": 100

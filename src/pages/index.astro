@@ -126,7 +126,7 @@ const displayCards = featuredCards.length > 0 ? featuredCards : allCards.slice(-
 
         // Check initial state
         try {
-          const raw = localStorage.getItem('naruto-collector-v2');
+          const raw = localStorage.getItem('naruto-collector-v3');
           if (raw) {
             const data = JSON.parse(raw);
             if (data.owned && data.owned[cardId]) {
@@ -140,7 +140,7 @@ const displayCards = featuredCards.length > 0 ? featuredCards : allCards.slice(-
           e.preventDefault();
           e.stopPropagation();
           try {
-            const raw = localStorage.getItem('naruto-collector-v2') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+            const raw = localStorage.getItem('naruto-collector-v3') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
             const data = JSON.parse(raw);
             if (!data.owned) data.owned = {};
             if (data.owned[cardId]) {
@@ -153,7 +153,7 @@ const displayCards = featuredCards.length > 0 ? featuredCards : allCards.slice(-
               btn.classList.remove('text-brand-text-muted');
             }
             data.lastModified = new Date().toISOString();
-            localStorage.setItem('naruto-collector-v2', JSON.stringify(data));
+            localStorage.setItem('naruto-collector-v3', JSON.stringify(data));
             window.dispatchEvent(new Event('collection-updated'));
           } catch(e) {}
         });

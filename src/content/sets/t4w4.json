@@ -1,6 +1,7 @@
 {
   "id": "t4w4",
   "slug": "t4w4",
+  "officialCode": "NR-RD-Z004",
   "name": "T4W4",
   "displayName": "Tier 4 Wave 4",
   "tier": "T4",
@@ -11,23 +12,25 @@
   "releaseDate": "2022-07-01",
   "cardCount": 8,
   "packCount": 18,
-  "packPrice": "10",
-  "description": "Chapter of Soldiers — Tier 4 Wave 4.",
+  "packPrice": "10¥",
+  "caseSize": {
+    "regular": 18,
+    "master": 36
+  },
+  "description": "Chapter of the Array — Tier 4 Wave 4.",
   "logoImage": "/images/sets/t4w4-logo.png",
   "bannerImage": "/images/sets/t4w4-banner.jpg",
-  "notes": "2nd print includes 20th Anniversary promo",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "1st print: SE cards (/777 each, non-serialized, $300+ range). 2nd print ONLY: 20th Anniversary promo (7th Hokage Naruto). T4 sticker seals.",
+  "unsealed": true,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
-    "approxPriceUSD": 48,
-    "approxPriceCNY": 200
+    "approxPriceUSD": 33,
+    "approxPriceCNY": 180
   },
   "pullRates": {
     "ur_per_packs": 3,
     "hit_per_packs": 1,
     "valueRating": 5
-  },
-  "unsealed": true
+  }
 }

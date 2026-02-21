@@ -1,6 +1,7 @@
 {
   "id": "t1w3",
   "slug": "t1w3",
+  "officialCode": "NR-CC-L003",
   "name": "T1W3",
   "displayName": "Tier 1 Wave 3",
   "tier": "T1",
@@ -11,15 +12,18 @@
   "releaseDate": "2021-12-01",
   "cardCount": 8,
   "packCount": 36,
-  "packPrice": "2¥",
-  "description": "Chapter of Soldiers — Tier 1 Wave 3.",
+  "packPrice": "1¥",
+  "caseSize": {
+    "regular": 24,
+    "master": 48
+  },
+  "description": "Chapter of Pros — Tier 1 Wave 3.",
   "logoImage": "/images/sets/t1w3-logo.png",
   "bannerImage": "/images/sets/t1w3-banner.jpg",
   "notes": "",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 12,
     "approxPriceCNY": 36

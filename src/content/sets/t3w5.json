@@ -1,6 +1,7 @@
 {
   "id": "t3w5",
   "slug": "t3w5",
+  "officialCode": "NR-CC-D005",
   "name": "T3W5",
   "displayName": "Tier 3 Wave 5",
   "tier": "T3",
@@ -11,15 +12,18 @@
   "releaseDate": "2022-10-01",
   "cardCount": 8,
   "packCount": 20,
-  "packPrice": "2¥",
-  "description": "Chapter of Soldiers — Tier 3 Wave 5. Final Tier 3 wave.",
+  "packPrice": "5¥",
+  "caseSize": {
+    "regular": 24,
+    "master": 48
+  },
+  "description": "Chapter of Fighting — Tier 3 Wave 5.",
   "logoImage": "/images/sets/t3w5-logo.png",
   "bannerImage": "/images/sets/t3w5-banner.jpg",
-  "notes": "Final Tier 3 wave",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "FINAL Tier 3 wave ever.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
     "approxPriceUSD": 28,
     "approxPriceCNY": 100

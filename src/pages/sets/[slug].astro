@@ -1,4 +1,4 @@
----
+﻿---
 import SetLayout from '../../layouts/SetLayout.astro';
 import CardGrid from '../../components/CardGrid.astro';
 import CardThumbnail from '../../components/CardThumbnail.astro';
@@ -156,11 +156,11 @@ const CARDS_PER_PAGE = 48;
   <!-- Pagination Controls -->
   <div id="pagination" class="flex items-center justify-center gap-2 mt-6 hidden">
     <button id="prev-page" class="px-4 py-2 bg-brand-surface border border-brand-border rounded-lg text-sm font-bold text-brand-text-muted hover:text-white hover:border-brand-orange transition-all disabled:opacity-50" style="min-height: 44px;">
-      ← Prev
+      â† Prev
     </button>
     <span id="page-info" class="text-sm font-mono text-brand-text-muted px-3"></span>
     <button id="next-page" class="px-4 py-2 bg-brand-surface border border-brand-border rounded-lg text-sm font-bold text-brand-text-muted hover:text-white hover:border-brand-orange transition-all disabled:opacity-50" style="min-height: 44px;">
-      Next →
+      Next â†’
     </button>
   </div>
 
@@ -364,7 +364,7 @@ const CARDS_PER_PAGE = 48;
         if (!cardId) return;
 
         try {
-          const raw = localStorage.getItem('naruto-collector-v2');
+          const raw = localStorage.getItem('naruto-collector-v3');
           if (raw) {
             const data = JSON.parse(raw);
             if (data.owned && data.owned[cardId]) {
@@ -378,7 +378,7 @@ const CARDS_PER_PAGE = 48;
           e.preventDefault();
           e.stopPropagation();
           try {
-            const raw = localStorage.getItem('naruto-collector-v2') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
+            const raw = localStorage.getItem('naruto-collector-v3') || '{"version":1,"lastModified":"","owned":{},"wishlist":{},"lastExported":null}';
             const data = JSON.parse(raw);
             if (!data.owned) data.owned = {};
             if (data.owned[cardId]) {
@@ -391,7 +391,7 @@ const CARDS_PER_PAGE = 48;
               btn.classList.remove('text-brand-text-muted');
             }
             data.lastModified = new Date().toISOString();
-            localStorage.setItem('naruto-collector-v2', JSON.stringify(data));
+            localStorage.setItem('naruto-collector-v3', JSON.stringify(data));
             window.dispatchEvent(new Event('collection-updated'));
           } catch(e) {}
         });
@@ -400,3 +400,5 @@ const CARDS_PER_PAGE = 48;
     initCollectionButtons();
   </script>
 </SetLayout>
+
+

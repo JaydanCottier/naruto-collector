@@ -2,7 +2,7 @@
   "id": "the-last-gift",
   "slug": "the-last-gift",
   "name": "The Last: Naruto the Movie Gift Box",
-  "displayName": "The Last: Naruto the Movie Gift Box",
+  "displayName": "The Last Gift Box",
   "tier": "SP",
   "wave": null,
   "series": "Special",
@@ -10,23 +10,15 @@
   "language": "CN",
   "releaseDate": "2023-06-01",
   "cardCount": 8,
-  "packCount": null,
-  "packPrice": null,
-  "description": "Movie commemoration gift set for The Last: Naruto the Movie.",
+  "description": "Movie commemoration gift set.",
   "logoImage": "/images/sets/the-last-gift-logo.png",
   "bannerImage": "/images/sets/the-last-gift-banner.jpg",
-  "notes": "Movie commemoration gift set",
-  "englishEquivalent": null,
-  "cnEquivalent": null,
+  "notes": "Movie commemoration gift set. Further details TBC.",
+  "unsealed": false,
   "affiliateLinks": {
-    "aliexpress": "https://s.click.aliexpress.com/e/PLACEHOLDER",
+    "aliexpress": "PLACEHOLDER",
     "ebay": "",
-    "approxPriceUSD": 60,
-    "approxPriceCNY": 380
-  },
-  "pullRates": {
-    "ur_per_packs": 0,
-    "hit_per_packs": 0,
-    "valueRating": 4
+    "approxPriceUSD": 30,
+    "approxPriceCNY": 180
   }
 }

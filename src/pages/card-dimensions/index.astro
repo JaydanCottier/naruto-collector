@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Card Dimensions" description="KAYOU Naruto card sizes, sleeve recommendations, and storage guide. 62×86mm — smaller than Pokémon.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-3xl font-bangers tracking-wider text-white mb-2">📏 Card Dimensions</h1>
+    <p class="text-sm text-brand-text-muted mb-8 max-w-2xl">
+      KAYOU Naruto cards are <strong class="text-white">NOT the same size</strong> as Pokémon or Magic: The Gathering cards. Here's everything you need to know.
+    </p>
+
+    <!-- Comparison -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bangers tracking-wider text-white mb-4">Size Comparison</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm bg-brand-surface rounded-xl border border-brand-border overflow-hidden">
+          <thead class="bg-brand-surface-hover">
+            <tr>
+              <th class="text-left px-4 py-3 text-brand-text-muted font-semibold text-xs">Brand</th>
+              <th class="text-left px-4 py-3 text-brand-text-muted font-semibold text-xs">Dimensions</th>
+              <th class="text-left px-4 py-3 text-brand-text-muted font-semibold text-xs">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-brand-border">
+            <tr class="bg-orange-900/10">
+              <td class="px-4 py-3 font-semibold text-orange-300">KAYOU Naruto</td>
+              <td class="px-4 py-3 text-white font-mono">62 × 86 mm</td>
+              <td class="px-4 py-3 text-brand-text-muted">Smaller than standard TCG cards</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-white">Pokémon / MTG</td>
+              <td class="px-4 py-3 text-white font-mono">63 × 88 mm</td>
+              <td class="px-4 py-3 text-brand-text-muted">Standard TCG size</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-white">Yu-Gi-Oh!</td>
+              <td class="px-4 py-3 text-white font-mono">59 × 86 mm</td>
+              <td class="px-4 py-3 text-brand-text-muted">Japanese small size</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-3 bg-yellow-900/20 border border-yellow-700/30 rounded-lg p-3">
+        <p class="text-xs text-yellow-300 font-semibold">⚠️ Standard Pokémon sleeves will be too loose</p>
+        <p class="text-xs text-brand-text-muted mt-1">KAYOU cards are 1mm narrower and 2mm shorter than standard TCG cards. Using standard Pokémon sleeves will leave the card sliding around inside, risking edge damage.</p>
+      </div>
+    </section>
+
+    <!-- Sleeve Recommendations -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bangers tracking-wider text-white mb-4">🧤 Sleeve Recommendations</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-gradient-to-br from-emerald-900/30 to-brand-surface border border-emerald-700/30 rounded-xl p-5">
+          <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] rounded-full font-semibold mb-2 inline-block">BEST FIT</span>
+          <h3 class="text-sm font-semibold text-white mb-2">KMC Perfect Size (Small)</h3>
+          <p class="text-xs text-brand-text-muted mb-2">64 × 89mm inner sleeve. Snug fit for KAYOU cards. Available on Amazon Japan or eBay.</p>
+          <ul class="text-xs text-brand-text-muted space-y-1">
+            <li>• SKU: KMC-0817</li>
+            <li>• ~$4 per 100 sleeves</li>
+            <li>• Clear, acid-free</li>
+          </ul>
+        </div>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-5">
+          <span class="px-2 py-0.5 bg-blue-500/20 text-blue-300 text-[10px] rounded-full font-semibold mb-2 inline-block">ALTERNATIVE</span>
+          <h3 class="text-sm font-semibold text-white mb-2">Dragon Shield Japanese Size</h3>
+          <p class="text-xs text-brand-text-muted mb-2">59 × 86mm. Fits slightly tighter — good for Yu-Gi-Oh! size but works for KAYOU too.</p>
+          <ul class="text-xs text-brand-text-muted space-y-1">
+            <li>• Multiple colors available</li>
+            <li>• ~$8 per 60 sleeves</li>
+            <li>• Matte or glossy backs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- One-Touch & Storage -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bangers tracking-wider text-white mb-4">📦 Storage & Display</h2>
+      <div class="space-y-3">
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-4">
+          <h3 class="text-sm font-semibold text-white mb-1">One-Touch Magnetic Cases</h3>
+          <p class="text-xs text-brand-text-muted">Use 35pt one-touch holders for standard KAYOU cards. For thicker foil cards (BP, LR, NR), use 55pt. Available from Ultra Pro on Amazon. Some KAYOU-specific one-touches are available on AliExpress.</p>
+        </div>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-4">
+          <h3 class="text-sm font-semibold text-white mb-1">Top Loaders</h3>
+          <p class="text-xs text-brand-text-muted">Standard 3×4" top loaders work fine for KAYOU since the card is smaller. Penny sleeve first, then insert into top loader. Cheap and effective bulk storage.</p>
+        </div>
+        <div class="bg-brand-surface border border-brand-border rounded-xl p-4">
+          <h3 class="text-sm font-semibold text-white mb-1">Binder Pages</h3>
+          <p class="text-xs text-brand-text-muted">9-pocket standard pages (for Pokémon/MTG) will have slight play. For a perfect fit, use Japanese-size 9-pocket pages. KAYOU sells an official binder box with fitted pages.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Reference -->
+    <section class="mb-10">
+      <div class="bg-brand-surface border border-brand-border rounded-xl p-6">
+        <h2 class="text-lg font-bangers tracking-wider text-white mb-3">Quick Reference</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div>
+            <p class="text-2xl font-bangers text-brand-orange">62mm</p>
+            <p class="text-[10px] text-brand-text-muted uppercase tracking-wider">Width</p>
+          </div>
+          <div>
+            <p class="text-2xl font-bangers text-brand-orange">86mm</p>
+            <p class="text-[10px] text-brand-text-muted uppercase tracking-wider">Height</p>
+          </div>
+          <div>
+            <p class="text-2xl font-bangers text-brand-orange">~0.3mm</p>
+            <p class="text-[10px] text-brand-text-muted uppercase tracking-wider">Thickness</p>
+          </div>
+          <div>
+            <p class="text-2xl font-bangers text-brand-orange">35pt</p>
+            <p class="text-[10px] text-brand-text-muted uppercase tracking-wider">One-Touch Size</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

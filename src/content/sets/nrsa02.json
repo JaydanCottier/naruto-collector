@@ -33,10 +33,11 @@
         "Whatnot",
         "SEA local retailers"
     ],
+    "bannerImage": "/images/sets/nrsa02.webp",
     "unsealed": false,
     "affiliateLinks": {
-        "aliexpress": "PLACEHOLDER",
-        "ebay": "PLACEHOLDER",
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20Chapter%20Jin%20Series%202",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20Chapter%20Jin%20Series%202",
         "approxPriceUSD": 48
     },
     "pullRates": {

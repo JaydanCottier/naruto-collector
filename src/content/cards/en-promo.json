@@ -40,7 +40,7 @@
         "variants": [
             "english"
         ],
-        "exclusiveTo": "nrsa02-us",
+        "exclusiveTo": "nrsa02",
         "isPromo": true,
         "notes": "Exclusive to Jin Series 2 display box.",
         "region": "NA",

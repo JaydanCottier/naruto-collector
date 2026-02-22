@@ -2,6 +2,16 @@
 
 The complete index for all KAYOU Naruto trading card sets. Browse cards, track your collection, find what you need, and discover the best boxes to buy.
 
+## ✨ Features
+
+- **Comprehensive Database**: High-resolution metadata covering 34+ distinct official English and Chinese KAYOU Naruto card sets with set dimensions, rarities, and pull rates.
+- **Client-Side Collection Tracking**: Privately document your owned inventory and variants in `localStorage`—no account required.
+- **"Needs" & "Wishlist" Ecosystem**: Instantly isolate missing cards to complete your sets, or bookmark chase cards. Includes built-in one-click affiliate buying links to secure singles you're missing.
+- **Ultra-Fast Search & Discovery**: Real-time fuzzy-text filtering by character, set ID, element, or language (`EN`/`CN`).
+- **Data Portability**: JSON export/import functions for safely backing up and restoring your collection across devices.
+- **Collector Resources**: Comprehensive breakdowns of card tiers, a visual **Rarity Guide**, and a beginner-friendly **"Start Here"** buying guide to prevent getting scammed.
+- **Ninja-Themed Aesthetics**: Fully responsive, dark-mode-first glassmorphic UI matching the Naruto visual identity, powered by Tailwind CSS v4.
+
 ## Quick Start
 
 ```bash

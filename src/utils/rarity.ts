@@ -6,7 +6,7 @@ export interface RarityInfo {
     label: string;
     color: string;
     sortOrder: number;
-    exclusiveSource: string | null;
+    description: string;
 }
 
 export const RARITY_MAP: Record<string, RarityInfo> = {
@@ -16,9 +16,9 @@ export const RARITY_MAP: Record<string, RarityInfo> = {
     TR: { code: 'TR', label: 'Tier Rare', color: '#06b6d4', sortOrder: 4, exclusiveSource: 'T3 ONLY' },
     TGR: { code: 'TGR', label: 'Tier Gold Rare', color: '#14b8a6', sortOrder: 5, exclusiveSource: 'T3 ONLY' },
     HR: { code: 'HR', label: 'Hyper Rare', color: '#ec4899', sortOrder: 6, exclusiveSource: 'T4 W2+ (HR001-009 T4W1 ONLY). Replaced by PTR T4W6+.' },
-    PTR: { code: 'PTR', label: 'Poster Rare', color: '#f97316', sortOrder: 7, exclusiveSource: 'Ninja Age+, T4W6+, NRSA01+02' },
+    PTR: { code: 'PTR', label: 'Poster Rare', color: '#f97316', sortOrder: 7, description: 'Ninja Age+, T4W6+, NRSA01+02' },
     ZR: { code: 'ZR', label: 'Z Rare', color: '#f97316', sortOrder: 8, exclusiveSource: 'T2 ONLY: W4(001-012) W5(013-024) W6(025-036)' },
-    PU: { code: 'PU', label: 'Puzzle Rare', color: '#e879f9', sortOrder: 9, exclusiveSource: 'T4W6+, NRSA01+02' },
+    PU: { code: 'PU', label: 'Puzzle Rare', color: '#e879f9', sortOrder: 9, description: 'T4W6+, NRSA01+02' },
     UR: { code: 'UR', label: 'Ultra Rare', color: '#f59e0b', sortOrder: 10, exclusiveSource: null },
     OR: { code: 'OR', label: 'Omega Rare', color: '#ea580c', sortOrder: 11, exclusiveSource: 'Multiple tiers. Removed in T4W6.' },
     AR: { code: 'AR', label: 'Alpha Rare', color: '#a855f7', sortOrder: 12, exclusiveSource: 'AR1-10 silver = T3W1 ONLY. Rarer than BP T4W7+.' },
@@ -28,21 +28,21 @@ export const RARITY_MAP: Record<string, RarityInfo> = {
     CP: { code: 'CP', label: 'Capital Promo', color: '#f59e0b', sortOrder: 16, exclusiveSource: 'T2.5 ONLY. Gold foil. Never reprinted.' },
     GP: { code: 'GP', label: 'Gold Promo', color: '#fbbf24', sortOrder: 17, exclusiveSource: 'T1 ONLY (W2+)' },
     MR: { code: 'MR', label: 'Master Rare', color: '#c084fc', sortOrder: 18, exclusiveSource: null },
-    QR: { code: 'QR', label: 'Quest Rare', color: '#a78bfa', sortOrder: 19, exclusiveSource: 'Ninja Age ONLY. /720 (hidden /72). REDEMPTION CHINA ONLY.' },
-    XR: { code: 'XR', label: 'Extreme Rare', color: '#3b82f6', sortOrder: 20, exclusiveSource: 'Ninja Age ONLY. /720 (hidden /72).' },
+    QR: { code: 'QR', label: 'Quest Rare', color: '#a78bfa', sortOrder: 19, description: 'Ninja Age ONLY. /720 (hidden /72). REDEMPTION CHINA ONLY.' },
+    XR: { code: 'XR', label: 'Extreme Rare', color: '#3b82f6', sortOrder: 20, description: 'Ninja Age ONLY. /720 (hidden /72).' },
     CR: { code: 'CR', label: 'Collector Rare', color: '#f472b6', sortOrder: 21, exclusiveSource: 'T2 ONLY (W2+). Case hit.' },
     NR: { code: 'NR', label: 'Ninja Rare', color: '#34d399', sortOrder: 22, exclusiveSource: 'T3 ONLY (W2+). Case hit. Rainbow foil.' },
     BP: { code: 'BP', label: 'Battle Promo', color: '#64748b', sortOrder: 23, exclusiveSource: 'T4 ONLY (W2+). Case hit.' },
     SE: { code: 'SE', label: 'Serial Edition', color: '#f59e0b', sortOrder: 24, exclusiveSource: 'T4W4(/777) T4W5(serialized) EX4+5. $300+ range.' },
-    '20TH': { code: '20TH', label: 'Anniversary Promo', color: '#f59e0b', sortOrder: 25, exclusiveSource: 'T4W4 2nd PRINT ONLY. 7th Hokage Naruto.' },
-    LR: { code: 'LR', label: 'Legendary Rare', color: '#fcd34d', sortOrder: 26, exclusiveSource: 'BLISTER PACKS ONLY' },
-    PR: { code: 'PR', label: 'Promo', color: '#94a3b8', sortOrder: 27, exclusiveSource: 'Events + display boxes.' },
-    BR: { code: 'BR', label: 'Badge Rare (Pin)', color: '#94a3b8', sortOrder: 28, exclusiveSource: 'PIN BLIND BOX ONLY' },
-    XP: { code: 'XP', label: 'Extra Pack', color: '#10b981', sortOrder: 29, exclusiveSource: 'FIGURE BLIND BOX ONLY' },
+    '20TH': { code: '20TH', label: 'Anniversary Promo', color: '#f59e0b', sortOrder: 25, description: 'T4W4 2nd PRINT ONLY. 7th Hokage Naruto.' },
+    LR: { code: 'LR', label: 'Legendary Rare', color: '#fcd34d', sortOrder: 26, description: 'BLISTER PACKS ONLY' },
+    PR: { code: 'PR', label: 'Promo', color: '#94a3b8', sortOrder: 27, description: 'Events + display boxes.' },
+    BR: { code: 'BR', label: 'Badge Rare (Pin)', color: '#94a3b8', sortOrder: 28, description: 'PIN BLIND BOX ONLY' },
+    XP: { code: 'XP', label: 'Extra Pack', color: '#10b981', sortOrder: 29, description: 'FIGURE BLIND BOX ONLY' },
     PUR: { code: 'PUR', label: 'Purple Rare', color: '#7c3aed', sortOrder: 30, exclusiveSource: null },
-    SCR: { code: 'SCR', label: 'Scroll Rare', color: '#f97316', sortOrder: 31, exclusiveSource: 'YOUTH SCROLL BOX ONLY. Naruto + Boruto pair.' },
-    'SV-S': { code: 'SV-S', label: 'Scroll Variant Silver', color: '#94a3b8', sortOrder: 32, exclusiveSource: 'HEAVEN+EARTH SCROLL ONLY. Silver variant.' },
-    'SV-G': { code: 'SV-G', label: 'Scroll Variant Gold', color: '#f59e0b', sortOrder: 33, exclusiveSource: 'HEAVEN+EARTH SCROLL ONLY. Gold variant. Minato+Kakashi rarest.' },
+    SCR: { code: 'SCR', label: 'Scroll Rare', color: '#f97316', sortOrder: 31, description: 'YOUTH SCROLL BOX ONLY. Naruto + Boruto pair.' },
+    'SV-S': { code: 'SV-S', label: 'Scroll Variant Silver', color: '#94a3b8', sortOrder: 32, description: 'HEAVEN+EARTH SCROLL ONLY. Silver variant.' },
+    'SV-G': { code: 'SV-G', label: 'Scroll Variant Gold', color: '#f59e0b', sortOrder: 33, description: 'HEAVEN+EARTH SCROLL ONLY. Gold variant. Minato+Kakashi rarest.' },
 };
 
 export const RAINBOW_GRADIENT = 'linear-gradient(135deg,#f97316,#ec4899,#8b5cf6,#3b82f6)';
@@ -87,7 +87,7 @@ export const RARITY_GRID_ROWS = [
 ];
 
 export function getRarityInfo(rarity: string): RarityInfo {
-    return RARITY_MAP[rarity] || { code: rarity, label: rarity, color: '#6b7280', sortOrder: 99, exclusiveSource: null };
+    return RARITY_MAP[rarity] || { code: rarity, label: rarity, color: '#6b7280', sortOrder: 99, description: '' };
 }
 
 export function getRarityColor(rarity: string): string {
@@ -110,8 +110,8 @@ export function getTierColor(tier: string): string {
     return TIER_COLORS[tier] || '#6b7280';
 }
 
-export function getExclusiveSource(rarity: string): string | null {
-    return RARITY_MAP[rarity]?.exclusiveSource || null;
+export function getRarityDescription(rarity: string): string | null {
+    return RARITY_MAP[rarity]?.description || '';
 }
 
 // Figure type display

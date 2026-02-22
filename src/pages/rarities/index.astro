@@ -92,7 +92,7 @@ const rarities = Object.values(RARITY_MAP).sort((a, b) => a.sortOrder - b.sortOr
             <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Badge</th>
             <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Rarity</th>
             <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase">Name</th>
-            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase hidden sm:table-cell">Exclusive Source</th>
+            <th class="px-4 py-3 text-left text-xs font-bold text-brand-text-muted uppercase hidden sm:table-cell">Description</th>
           </tr>
         </thead>
         <tbody>
@@ -110,7 +110,7 @@ const rarities = Object.values(RARITY_MAP).sort((a, b) => a.sortOrder - b.sortOr
               </td>
               <td class="px-4 py-3 font-mono text-white font-bold">{r.code}</td>
               <td class="px-4 py-3 text-white">{r.label}</td>
-              <td class="px-4 py-3 text-xs text-brand-text-muted hidden sm:table-cell">{r.exclusiveSource}</td>
+              <td class="px-4 py-3 text-xs text-brand-text-muted hidden sm:table-cell">{r.description}</td>
             </tr>
           ))}
         </tbody>
@@ -264,6 +264,13 @@ const rarities = Object.values(RARITY_MAP).sort((a, b) => a.sortOrder - b.sortOr
         <p>⚠️ <strong class="text-white">NEVER share your QR code publicly.</strong> Each code can only be redeemed once. If someone else scans your code, your card is gone permanently.</p>
         <p>QR cards are limited to /720 each, with a hidden /72 variant that is exceptionally rare.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Credits -->
+  <section class="mb-12">
+    <div class="text-center text-sm text-brand-text-muted p-6">
+      <p>Rarity definitions and descriptions compiled with credit to <strong class="text-brand-orange">@pasta</strong> and <strong class="text-brand-orange">CapsuleCorpGear</strong>.</p>
     </div>
   </section>
 

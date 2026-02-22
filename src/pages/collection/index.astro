@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CardThumbnail from '../../components/CardThumbnail.astro';
+import CollectingModeToggle from '../../components/CollectingModeToggle.astro';
 import { getCollection } from 'astro:content';
-import { getTierColor, RARITY_MAP } from '../../utils/rarity.ts';
+import { getTierColor, RARITY_MAP, RARITY_RANK, RAINBOW_GRADIENT } from '../../utils/rarity.ts';
 
 const allSets = await getCollection('sets');
 const allCardGroups = await getCollection('cards');
@@ -46,6 +47,8 @@ const allCardsData = allCards.map(c => {
   <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">My Collection</h1>
   <p class="text-brand-text-muted mb-8">Track your KAYOU Naruto card collection. Data is stored locally in your browser &mdash; no account needed.</p>
 
+  <CollectingModeToggle />
+
   <!-- Overall Stats -->
   <div class="bg-brand-surface rounded-xl border border-brand-border p-6 mb-6">
     <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
@@ -74,7 +77,10 @@ const allCardsData = allCards.map(c => {
   <!-- Tabs and Global Filters -->
   <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
     <div class="flex gap-2">
-      <button id="tab-sets" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-orange text-white transition-all">By Set</button>
+      <button id="tab-sets" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-orange text-white transition-all">
+        <span class="tab-label-set">By Set</span>
+        <span class="tab-label-rarity hidden">By Rarity</span>
+      </button>
       <button id="tab-owned" class="px-4 py-2 rounded-lg text-sm font-bold bg-brand-surface text-brand-text-muted border border-brand-border hover:text-white transition-all">All Owned</button>
     </div>
     <div class="flex items-center gap-2">
@@ -120,6 +126,27 @@ const allCardsData = allCards.map(c => {
     </div>
   </div>
 
+  <!-- Rarity View (replaces tab 1 dynamically based on mode) -->
+  <div id="view-rarity" class="hidden">
+    <!-- Highlights Panel -->
+    <div id="rarity-highlights" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6"></div>
+
+    <div class="flex items-center gap-4 mb-4">
+      <label class="text-sm font-bold text-brand-text-muted uppercase tracking-wider">Sort</label>
+      <select id="rarity-sort" class="bg-brand-bg border border-brand-border rounded-lg px-3 py-1.5 text-xs text-white font-rajdhani focus:border-brand-orange outline-none">
+        <option value="rarest">Rarest First</option>
+        <option value="most">Most Complete First</option>
+        <option value="least">Least Complete First</option>
+        <option value="alpha">Alphabetical</option>
+      </select>
+    </div>
+
+    <!-- Rarity List -->
+    <div class="space-y-3" id="rarity-list">
+      <p class="text-sm text-brand-text-muted">Loading rarity progress...</p>
+    </div>
+  </div>
+
   <!-- Tab 2: All Owned -->
   <div id="view-owned" class="hidden">
     <p class="text-sm text-brand-text-muted mb-4" id="owned-label">Loading...</p>
@@ -131,29 +158,62 @@ const allCardsData = allCards.map(c => {
     </div>
   </div>
 
-  <script define:vars={{ totalCards, allCardsData, rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient }])) }}>
+  <script id="page-data" type="application/json" set:html={JSON.stringify({
+    totalCards,
+    allCardsData,
+    rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient, label: v.label, rank: v.sortOrder }])),
+    rainbowGradient: RAINBOW_GRADIENT
+  })}></script>
+
+  <script>
+    import { getCollectingMode } from '../../utils/collectingMode';
+    import { getRarityProgress } from '../../utils/rarityProgress';
+
+    const rawData = document.getElementById('page-data')?.textContent;
+    const { totalCards, allCardsData, rarityMap, rainbowGradient } = rawData ? JSON.parse(rawData) : { totalCards: 0, allCardsData: [], rarityMap: {}, rainbowGradient: '' };
+
     // Tab switching
     const tabSets = document.getElementById('tab-sets');
     const tabOwned = document.getElementById('tab-owned');
     const viewSets = document.getElementById('view-sets');
+    const viewRarity = document.getElementById('view-rarity');
     const viewOwned = document.getElementById('view-owned');
 
-    tabSets?.addEventListener('click', () => {
-      tabSets.classList.add('bg-brand-orange', 'text-white');
-      tabSets.classList.remove('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
-      tabOwned.classList.remove('bg-brand-orange', 'text-white');
-      tabOwned.classList.add('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
-      viewSets.classList.remove('hidden');
-      viewOwned.classList.add('hidden');
-    });
+    let currentMode = getCollectingMode();
+
+    function showMainTab() {
+      tabSets?.classList.add('bg-brand-orange', 'text-white');
+      tabSets?.classList.remove('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
+      tabOwned?.classList.remove('bg-brand-orange', 'text-white');
+      tabOwned?.classList.add('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
+      
+      viewOwned?.classList.add('hidden');
+      
+      if (currentMode === 'rarity') {
+        viewSets?.classList.add('hidden');
+        viewRarity?.classList.remove('hidden');
+        document.querySelector('.tab-label-set')?.classList.add('hidden');
+        document.querySelector('.tab-label-rarity')?.classList.remove('hidden');
+        renderRarityProgress();
+      } else {
+        viewSets?.classList.remove('hidden');
+        viewRarity?.classList.add('hidden');
+        document.querySelector('.tab-label-set')?.classList.remove('hidden');
+        document.querySelector('.tab-label-rarity')?.classList.add('hidden');
+        updateCollectionUI();
+      }
+    }
+
+    tabSets?.addEventListener('click', showMainTab);
 
     tabOwned?.addEventListener('click', () => {
       tabOwned.classList.add('bg-brand-orange', 'text-white');
       tabOwned.classList.remove('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
-      tabSets.classList.remove('bg-brand-orange', 'text-white');
-      tabSets.classList.add('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
-      viewOwned.classList.remove('hidden');
-      viewSets.classList.add('hidden');
+      tabSets?.classList.remove('bg-brand-orange', 'text-white');
+      tabSets?.classList.add('bg-brand-surface', 'text-brand-text-muted', 'border', 'border-brand-border');
+      viewOwned?.classList.remove('hidden');
+      viewSets?.classList.add('hidden');
+      viewRarity?.classList.add('hidden');
       renderOwned();
     });
 
@@ -231,7 +291,115 @@ const allCardsData = allCards.map(c => {
     }
 
     updateCollectionUI();
-    window.addEventListener('collection-updated', updateCollectionUI);
+    if (currentMode === 'rarity') {
+      renderRarityProgress();
+    }
+    
+    window.addEventListener('collection-updated', () => {
+      updateCollectionUI();
+      if (currentMode === 'rarity') renderRarityProgress();
+      if (!viewOwned?.classList.contains('hidden')) renderOwned();
+    });
+
+    window.addEventListener('collecting-mode-change', (e) => {
+      currentMode = e.detail.mode;
+      if (!viewOwned?.classList.contains('hidden')) {
+        // Just update labels if we are on the Owned tab
+        if (currentMode === 'rarity') {
+          document.querySelector('.tab-label-set')?.classList.add('hidden');
+          document.querySelector('.tab-label-rarity')?.classList.remove('hidden');
+        } else {
+          document.querySelector('.tab-label-set')?.classList.remove('hidden');
+          document.querySelector('.tab-label-rarity')?.classList.add('hidden');
+        }
+      } else {
+        showMainTab();
+      }
+    });
+
+    // Rarity Progress Rendering
+    function renderRarityProgress() {
+      const rl = document.getElementById('rarity-list');
+      const hl = document.getElementById('rarity-highlights');
+      if (!rl || !hl) return;
+
+      const raw = localStorage.getItem('naruto-collector-v3');
+      const data = raw ? JSON.parse(raw) : { owned: {} };
+      
+      const progress = getRarityProgress(data, allCardsData);
+      const sort = document.getElementById('rarity-sort')?.value || 'rarest';
+      
+      let sorted = [...progress];
+      if (sort === 'most') sorted.sort((a,b) => b.percent - a.percent);
+      else if (sort === 'least') sorted.sort((a,b) => a.percent - b.percent);
+      else if (sort === 'alpha') sorted.sort((a,b) => a.rarity.localeCompare(b.rarity));
+      // rarest is default, already sorted
+
+      // Filter out zero-total
+      sorted = sorted.filter(p => p.total > 0);
+
+      rl.innerHTML = sorted.map(p => {
+        const rmap = rarityMap[p.rarity] || { color: '#6b7280', isGradient: false };
+        const badgeStyle = rmap.isGradient
+          ? `background: ${rainbowGradient}; color: white;`
+          : `background: ${rmap.color}20; color: ${rmap.color}; border: 1px solid ${rmap.color}40;`;
+        
+        return `
+        <div class="bg-brand-surface rounded-lg border border-brand-border p-4 transition-all">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <span class="text-[10px] font-bold px-1.5 py-0.5 rounded" style="${badgeStyle}">${p.rarity}</span>
+              <span class="text-sm font-semibold text-white">${p.rarityName}</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-xs font-mono text-brand-text-muted">${p.owned} / ${p.total}</span>
+              <span class="text-xs font-bold ${p.percent === 100 ? 'text-green-400' : 'text-brand-orange'}">${p.percent}%</span>
+              <button class="text-[10px] font-bold uppercase tracking-wider text-brand-orange hover:text-white transition-colors" onclick="alert('Drill-down coming soon or inline expansion')">
+                View ›
+              </button>
+            </div>
+          </div>
+          <div class="w-full h-1.5 bg-brand-bg rounded-full overflow-hidden">
+            <div class="h-full rounded-full transition-all duration-500" style="width: ${p.percent}%; ${rmap.isGradient ? `background: ${rainbowGradient}` : `background: ${rmap.color}`}"></div>
+          </div>
+        </div>`;
+      }).join('');
+
+      // Render Highlights
+      const mostComplete = [...progress].filter(p => p.total > 5 && p.percent > 0).sort((a,b) => b.percent - a.percent)[0];
+      const rarestOwned = [...progress].filter(p => p.owned > 0).sort((a,b) => rarityMap[a.rarity]?.rank - rarityMap[b.rarity]?.rank)[0]; // Lowest rank obj = rarest
+      const nearestFinish = [...progress].filter(p => p.total > 5 && p.percent >= 50 && p.percent < 100).sort((a,b) => b.percent - a.percent)[0];
+      const uniqueCollected = progress.filter(p => p.owned > 0).length;
+
+      hl.innerHTML = `
+        <div class="bg-brand-surface border border-brand-border rounded-lg p-3">
+          <p class="text-[10px] text-brand-text-muted uppercase tracking-wider font-bold mb-1">Most Complete</p>
+          <p class="text-sm text-white font-semibold flex items-center gap-2">
+            ${mostComplete ? `${mostComplete.rarity} <span class="text-xs text-brand-text-muted font-normal">— ${mostComplete.percent}% (${mostComplete.owned}/${mostComplete.total})</span>` : 'N/A'}
+          </p>
+        </div>
+        <div class="bg-brand-surface border border-brand-border rounded-lg p-3">
+          <p class="text-[10px] text-brand-text-muted uppercase tracking-wider font-bold mb-1">Rarest Owned</p>
+          <p class="text-sm text-brand-gold font-semibold flex items-center gap-2">
+            ${rarestOwned ? `💎 ${rarestOwned.rarity} <span class="text-xs text-brand-text-muted font-normal">— ${rarestOwned.owned} cards</span>` : 'N/A'}
+          </p>
+        </div>
+        <div class="bg-brand-surface border border-brand-border rounded-lg p-3">
+          <p class="text-[10px] text-brand-text-muted uppercase tracking-wider font-bold mb-1">Closest to Complete</p>
+          <p class="text-sm text-white font-semibold flex items-center gap-2">
+            ${nearestFinish ? `🎯 ${nearestFinish.rarity} <span class="text-xs text-brand-text-muted font-normal">— ${nearestFinish.missing} more to finish</span>` : 'N/A'}
+          </p>
+        </div>
+        <div class="bg-brand-surface border border-brand-border rounded-lg p-3">
+          <p class="text-[10px] text-brand-text-muted uppercase tracking-wider font-bold mb-1">Unique Rarities</p>
+          <p class="text-sm text-white font-semibold flex items-center gap-2">
+            📋 ${uniqueCollected} / ${progress.length}
+          </p>
+        </div>
+      `;
+    }
+
+    document.getElementById('rarity-sort')?.addEventListener('change', renderRarityProgress);
 
     // Sort sets by % incomplete (most incomplete first)
     function sortSetsByIncomplete() {

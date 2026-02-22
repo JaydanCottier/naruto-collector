@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { set, cards } = Astro.props;
-const { getTierColor } = await import('../utils/rarity.ts');
+const { getTierColor, RARITY_MAP } = await import('../utils/rarity.ts');
 
 const seaEqvSet = set.seaEquivalent ? await getEntry('sets', set.seaEquivalent) : null;
 const usEqvSet = set.usEquivalent ? await getEntry('sets', set.usEquivalent) : null;
@@ -317,15 +317,28 @@ const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
   </div>
 
   <!-- Collection Progress -->
-  <div class="mb-6 bg-brand-surface rounded-xl border border-brand-border p-4" id="set-progress">
-    <div class="flex items-center justify-between mb-2">
-      <span class="text-sm font-semibold text-brand-text-muted">Your Collection</span>
-      <span class="text-sm font-mono text-brand-orange" id="progress-count">0 / {cards.length}</span>
+  <div class="mb-6 bg-brand-surface rounded-xl border border-brand-border p-4" id="set-progress-container">
+    <div id="progress-mode-set">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-sm font-semibold text-brand-text-muted">Your Collection</span>
+        <span class="text-sm font-mono text-brand-orange" id="progress-count">0 / {cards.length}</span>
+      </div>
+      <div class="w-full h-2 bg-brand-bg rounded-full overflow-hidden">
+        <div class="h-full bg-brand-orange rounded-full transition-all duration-500" id="progress-bar" style="width: 0%"></div>
+      </div>
     </div>
-    <div class="w-full h-2 bg-brand-bg rounded-full overflow-hidden">
-      <div class="h-full bg-brand-orange rounded-full transition-all duration-500" id="progress-bar" style="width: 0%"></div>
+    <div id="progress-mode-rarity" class="hidden">
+      <div class="text-sm font-semibold text-brand-text-muted mb-3">Your rarity progress in this set:</div>
+      <div id="rarity-mini-bars" class="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
+        <!-- Rendered via JS -->
+      </div>
     </div>
   </div>
+
+  <script id="set-data" type="application/json" set:html={JSON.stringify({
+    cardsData: cards,
+    rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient, label: v.label, rank: v.sortOrder }]))
+  })}></script>
 
   <slot />
 
@@ -344,20 +357,60 @@ const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
     </a>
   </div>
 
-  <script define:vars={{ cardIds, totalCards: cards.length }}>
+  <script>
+    import { getCollectingMode } from '../utils/collectingMode';
+    import { getRarityProgressForSet } from '../utils/rarityProgress';
+
+    const rawData = document.getElementById('set-data')?.textContent;
+    const { cardsData, rarityMap } = rawData ? JSON.parse(rawData) : { cardsData: [], rarityMap: {} };
+    const cardIds = cardsData.map((c: any) => c.id);
+    const totalCards = cardsData.length;
+
     function updateProgress() {
       try {
-        const raw = localStorage.getItem('naruto-collector-v3') || localStorage.getItem('naruto-collector-v3');
-        if (!raw) return;
-        const data = JSON.parse(raw);
-        const owned = cardIds.filter(id => data.owned && data.owned[id]).length;
-        const pct = totalCards > 0 ? Math.round((owned / totalCards) * 100) : 0;
-        document.getElementById('progress-count').textContent = `${owned} / ${totalCards}`;
-        document.getElementById('progress-bar').style.width = `${pct}%`;
+        const raw = localStorage.getItem('naruto-collector-v3');
+        const data = raw ? JSON.parse(raw) : { owned: {} };
+        const mode = getCollectingMode();
+
+        const pSet = document.getElementById('progress-mode-set');
+        const pRarity = document.getElementById('progress-mode-rarity');
+
+        if (mode === 'rarity') {
+          pSet?.classList.add('hidden');
+          pRarity?.classList.remove('hidden');
+
+          const progress = getRarityProgressForSet(data, cardsData);
+          const rBars = document.getElementById('rarity-mini-bars');
+          if (rBars) {
+            rBars.innerHTML = progress.map(p => {
+              const rmap = rarityMap[p.rarity] || { color: '#6b7280' };
+              return `
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold" style="color: ${rmap.color}">${p.rarity}</span>
+                  <span class="text-[10px] font-mono text-brand-text-muted">${p.owned}/${p.total}</span>
+                </div>
+                <div class="w-full h-1.5 bg-brand-bg rounded-full overflow-hidden">
+                  <div class="h-full rounded-full transition-all duration-300" style="width: ${p.percent}%; background: ${rmap.color}"></div>
+                </div>
+              </div>
+              `;
+            }).join('');
+          }
+        } else {
+          pRarity?.classList.add('hidden');
+          pSet?.classList.remove('hidden');
+
+          const owned = cardIds.filter((id: string) => data.owned && data.owned[id]).length;
+          const pct = totalCards > 0 ? Math.round((owned / totalCards) * 100) : 0;
+          document.getElementById('progress-count')!.textContent = `${owned} / ${totalCards}`;
+          document.getElementById('progress-bar')!.style.width = `${pct}%`;
+        }
       } catch(e) {}
     }
     updateProgress();
     window.addEventListener('collection-updated', updateProgress);
+    window.addEventListener('collecting-mode-change', updateProgress);
   </script>
 
   <script>

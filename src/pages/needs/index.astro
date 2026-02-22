@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CollectingModeToggle from '../../components/CollectingModeToggle.astro';
 import { getCollection } from 'astro:content';
 
 const allSets = await getCollection('sets');
@@ -42,6 +43,8 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
 
   <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">What I Need</h1>
   <p class="text-brand-text-muted mb-6">Cards you don't own yet, across all sets. Find where to buy them.</p>
+
+  <CollectingModeToggle />
 
   <!-- Filters -->
   <div class="bg-brand-surface rounded-xl border border-brand-border p-4 mb-6">
@@ -96,7 +99,20 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
     <p class="text-sm text-brand-text-muted">Or you haven't started tracking yet. <a href="/collection" class="text-brand-orange hover:text-white">Check your collection →</a></p>
   </div>
 
-  <script define:vars={{ cardsData, rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient }])) }}>
+  <script id="needs-data" type="application/json" set:html={JSON.stringify({
+    cardsData,
+    rarityMap: Object.fromEntries(Object.entries(RARITY_MAP).map(([k,v]) => [k, { color: v.color, isGradient: v.isGradient, label: v.label, rank: v.sortOrder }]))
+  })}></script>
+
+  <script>
+    import { getCollectingMode } from '../../utils/collectingMode';
+
+    const rawData = document.getElementById('needs-data')?.textContent;
+    const { cardsData, rarityMap } = rawData ? JSON.parse(rawData) : { cardsData: [], rarityMap: {} };
+
+    // Set sorting order map
+    const setOrderMap = new Map();
+    [...new Set(cardsData.map((c: any) => c.setId))].forEach((id, idx) => setOrderMap.set(id, idx));
     function renderNeeds() {
       const raw = localStorage.getItem('naruto-collector-v3');
       const data = raw ? JSON.parse(raw) : { owned: {} };
@@ -128,6 +144,8 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
       const countEl = document.getElementById('needs-count');
       const emptyEl = document.getElementById('needs-empty');
 
+      const mode = getCollectingMode();
+
       if (needed.length === 0) {
         grid.innerHTML = '';
         grid.classList.add('hidden');
@@ -140,47 +158,122 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
       emptyEl.classList.add('hidden');
       countEl.textContent = `${needed.length} cards needed`;
 
-      grid.innerHTML = needed.slice(0, 100).map(c => {
-        const ri = rarityMap[c.rarity] || { color: '#6b7280', isGradient: false };
-        const badgeStyle = ri.isGradient
-          ? 'background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6, #3b82f6); color: white;'
-          : `background: ${ri.color}20; color: ${ri.color};`;
-        const isPlaceholder = c.affiliateLink.includes('PLACEHOLDER');
-        return `
-          <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover fade-in-up">
-            <a href="/cards/${c.slug}/" class="block">
-              <div class="aspect-[5/7] relative overflow-hidden bg-brand-bg">
-                <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover" loading="lazy"
-                  onerror="this.src='/images/placeholder/${c.rarity.toLowerCase()}.svg'" />
-                <span class="absolute top-1.5 right-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="${badgeStyle}">${c.rarity}</span>
-              </div>
-              <div class="p-2">
-                <div class="text-xs font-semibold text-white truncate">${c.name}</div>
-                <div class="text-[10px] text-brand-text-muted truncate">${c.setName}</div>
-              </div>
-            </a>
-            <div class="px-2 pb-2">
-              <a href="${isPlaceholder ? '#' : c.affiliateLink}" ${isPlaceholder ? '' : 'target="_blank" rel="noopener noreferrer nofollow"'}
-                class="block w-full text-center text-[10px] font-bold py-1.5 bg-brand-orange/10 text-brand-orange rounded-lg hover:bg-brand-orange hover:text-white transition-all">
-                Buy Set ~$${c.approxPrice}
+      // Grouping logic based on mode
+      let grouped: { key: string; label: string; countText: string; cards: any[]; sortRank: number }[] = [];
+
+      if (mode === 'rarity') {
+        grid.className = "flex flex-col gap-6"; // Use container for stacked sections
+        const groupMap = new Map();
+        for (const c of needed) {
+          if (!groupMap.has(c.rarity)) groupMap.set(c.rarity, []);
+          groupMap.get(c.rarity).push(c);
+        }
+        
+        for (const [rarity, groupCards] of groupMap.entries()) {
+          const rmap = rarityMap[rarity] || { label: rarity, rank: 999 };
+          const uniqueSets = new Set(groupCards.map((c: any) => c.setName));
+          const setNamesStr = Array.from(uniqueSets).join(' · ');
+          const buyUrl = groupCards[0]?.affiliateLink || '#';
+          
+          grouped.push({
+            key: rarity,
+            label: `${rarity} — ${rmap.label}`,
+            countText: `(${groupCards.length} missing across ${uniqueSets.size} sets)`,
+            cards: groupCards,
+            sortRank: rmap.rank
+          });
+        }
+        grouped.sort((a,b) => a.sortRank - b.sortRank); // rarest first
+
+      } else {
+        // Set mode: simply render the flat grid as before for backward compatibility,
+        // or we can group by set to match the prompt example perfectly.
+        // Let's implement set grouping since the prompt implies it!
+        grid.className = "flex flex-col gap-6";
+        const groupMap = new Map();
+        for (const c of needed) {
+          if (!groupMap.has(c.setId)) groupMap.set(c.setId, { name: c.setName, link: c.affiliateLink, cards: [] });
+          groupMap.get(c.setId).cards.push(c);
+        }
+        
+        for (const [setId, data] of groupMap.entries()) {
+          grouped.push({
+            key: setId,
+            label: data.name,
+            countText: `(${data.cards.length} missing)`,
+            cards: data.cards,
+            sortRank: setOrderMap.get(setId) || 0
+          });
+        }
+        grouped.sort((a,b) => a.sortRank - b.sortRank);
+      }
+
+      grid.innerHTML = grouped.map((group, gIdx) => {
+        // Limit individual group rendering if it's too large, but to keep it simple we show all
+        // or add a show more button. For now standard render.
+        const ri = rarityMap[group.key] || { color: '#6b7280', isGradient: false };
+        let headerColorStyle = mode === 'rarity' 
+          ? (ri.isGradient ? 'text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-purple-500' : `color: ${ri.color}`) 
+          : 'text-brand-orange';
+
+        const cardsHtml = group.cards.map((c: any) => {
+          const cri = rarityMap[c.rarity] || { color: '#6b7280', isGradient: false };
+          const badgeStyle = cri.isGradient
+            ? 'background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6, #3b82f6); color: white;'
+            : `background: ${cri.color}20; color: ${cri.color};`;
+          const isPlaceholder = c.affiliateLink.includes('PLACEHOLDER');
+          return `
+            <div class="bg-brand-surface rounded-xl border border-brand-border overflow-hidden card-hover fade-in-up">
+              <a href="/cards/${c.slug}/" class="block">
+                <div class="aspect-[5/7] relative overflow-hidden bg-brand-bg">
+                  <img src="${c.image}" alt="${c.name}" class="w-full h-full object-cover" loading="lazy"
+                    onerror="this.src='/images/placeholder/${c.rarity.toLowerCase()}.svg'" />
+                  <span class="absolute top-1.5 right-1.5 text-[10px] font-bold px-1.5 py-0.5 rounded-full" style="${badgeStyle}">${c.rarity}</span>
+                </div>
+                <div class="p-2">
+                  <div class="text-xs font-semibold text-white truncate">${c.name}</div>
+                  <div class="text-[10px] text-brand-text-muted truncate">${mode === 'rarity' ? c.setName : c.rarity}</div>
+                </div>
               </a>
             </div>
+          `;
+        }).join('');
+
+        const firstCardPlaceholder = group.cards[0]?.affiliateLink.includes('PLACEHOLDER');
+        const buySection = mode === 'set' ? `
+          <a href="${firstCardPlaceholder ? '#' : group.cards[0]?.affiliateLink}" ${firstCardPlaceholder ? '' : 'target="_blank" rel="noopener noreferrer nofollow"'}
+             class="inline-block px-4 py-2 mt-3 bg-brand-orange/10 text-brand-orange rounded-lg text-sm font-bold hover:bg-brand-orange hover:text-white transition-all">
+            Buy Set →
+          </a>
+        ` : `
+          <div class="mt-3 py-3 px-4 bg-brand-bg rounded-lg text-sm text-brand-text-muted flex items-center justify-between border border-brand-border">
+            <span>Sets containing missing ${group.key}: <span class="text-white">${Array.from(new Set(group.cards.map((c: any) => c.setName))).join(' · ')}</span></span>
+          </div>
+        `;
+
+        return `
+          <div class="group-section pb-4 ${gIdx < grouped.length - 1 ? 'border-b border-brand-border' : ''}">
+            <div class="flex items-baseline gap-3 mb-3">
+              <h2 class="text-lg font-bangers tracking-wider" style="${headerColorStyle}">${group.label}</h2>
+              <span class="text-sm font-mono text-brand-text-muted">${group.countText}</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+              ${cardsHtml}
+            </div>
+            ${buySection}
           </div>
         `;
       }).join('');
-
-      if (needed.length > 100) {
-        grid.innerHTML += `<div class="col-span-full text-center text-sm text-brand-text-muted py-4">Showing 100 of ${needed.length} cards. Use filters to narrow down.</div>`;
-      }
     }
 
     renderNeeds();
 
-    document.getElementById('filter-region').addEventListener('change', renderNeeds);
-    document.getElementById('filter-set').addEventListener('change', renderNeeds);
-    document.getElementById('filter-tier').addEventListener('change', renderNeeds);
-    document.getElementById('filter-rarity').addEventListener('change', renderNeeds);
-    document.getElementById('filter-char').addEventListener('change', renderNeeds);
+    document.getElementById('filter-region')?.addEventListener('change', renderNeeds);
+    document.getElementById('filter-set')?.addEventListener('change', renderNeeds);
+    document.getElementById('filter-tier')?.addEventListener('change', renderNeeds);
+    document.getElementById('filter-rarity')?.addEventListener('change', renderNeeds);
+    document.getElementById('filter-char')?.addEventListener('change', renderNeeds);
     window.addEventListener('collection-updated', renderNeeds);
+    window.addEventListener('collecting-mode-change', renderNeeds);
   </script>
 </BaseLayout>

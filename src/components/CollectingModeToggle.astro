@@ -1,0 +1,72 @@
+---
+---
+
+<div class="mb-6 flex flex-col md:flex-row items-center justify-between gap-4 bg-brand-surface border border-brand-border p-4 rounded-xl">
+  <div>
+    <h3 class="text-sm font-bold text-white mb-1">Collecting Mode</h3>
+    <p class="text-xs text-brand-text-muted">Choose how you want to track and view your progress.</p>
+  </div>
+  <div class="flex items-center gap-2 bg-brand-bg p-1 rounded-lg w-full md:w-auto">
+    <button 
+      id="mode-toggle-set"
+      class="flex-1 md:w-32 py-2 text-sm font-rajdhani font-semibold rounded-md transition-all toggle-btn"
+      data-mode="set"
+      aria-pressed="true"
+    >
+      📦 Sets
+    </button>
+    <button 
+      id="mode-toggle-rarity"
+      class="flex-1 md:w-32 py-2 text-sm font-rajdhani font-semibold rounded-md transition-all toggle-btn"
+      data-mode="rarity"
+      aria-pressed="false"
+    >
+      ⭐ Rarity
+    </button>
+  </div>
+</div>
+
+<script>
+  import { getCollectingMode, setCollectingMode } from '../utils/collectingMode';
+
+  function updateToggleUI(mode: string) {
+    const setBtn = document.getElementById('mode-toggle-set');
+    const rarityBtn = document.getElementById('mode-toggle-rarity');
+    
+    if (!setBtn || !rarityBtn) return;
+
+    if (mode === 'rarity') {
+      rarityBtn.setAttribute('aria-pressed', 'true');
+      rarityBtn.className = 'flex-1 md:w-32 py-2 text-sm font-rajdhani font-semibold rounded-md transition-all toggle-btn bg-brand-orange text-white shadow-md shadow-brand-orange/20';
+      
+      setBtn.setAttribute('aria-pressed', 'false');
+      setBtn.className = 'flex-1 md:w-32 py-2 text-sm font-rajdhani font-semibold rounded-md transition-all toggle-btn text-brand-orange border border-brand-orange hover:bg-brand-orange/10';
+    } else {
+      setBtn.setAttribute('aria-pressed', 'true');
+      setBtn.className = 'flex-1 md:w-32 py-2 text-sm font-rajdhani font-semibold rounded-md transition-all toggle-btn bg-brand-orange text-white shadow-md shadow-brand-orange/20';
+      
+      rarityBtn.setAttribute('aria-pressed', 'false');
+      rarityBtn.className = 'flex-1 md:w-32 py-2 text-sm font-rajdhani font-semibold rounded-md transition-all toggle-btn text-brand-orange border border-brand-orange hover:bg-brand-orange/10';
+    }
+  }
+
+  // Initial load
+  const currentMode = getCollectingMode();
+  updateToggleUI(currentMode);
+
+  // Bind clicks
+  document.getElementById('mode-toggle-set')?.addEventListener('click', () => {
+    setCollectingMode('set');
+    updateToggleUI('set');
+  });
+
+  document.getElementById('mode-toggle-rarity')?.addEventListener('click', () => {
+    setCollectingMode('rarity');
+    updateToggleUI('rarity');
+  });
+
+  // Listen for changes from other components (if any)
+  window.addEventListener('collecting-mode-change', ((e: CustomEvent) => {
+    updateToggleUI(e.detail.mode);
+  }) as EventListener);
+</script>

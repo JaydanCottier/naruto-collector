@@ -1,36 +1,37 @@
 {
-  "id": "t2w3",
-  "slug": "t2w3",
-  "officialCode": "NR-CC-B003",
-  "name": "T2W3",
-  "displayName": "Tier 2 Wave 3",
-  "tier": "T2",
-  "wave": 3,
-  "series": "Tier 2",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2021-11-01",
-  "cardCount": 8,
-  "packCount": 30,
-  "packPrice": "2¥",
-  "caseSize": {
-    "regular": 24,
-    "master": 48
-  },
-  "description": "Chapter of Soldiers — Tier 2 Wave 3.",
-  "logoImage": "/images/sets/t2w3-logo.png",
-  "bannerImage": "/images/sets/t2w3-banner.jpg",
-  "notes": "",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 20,
-    "approxPriceCNY": 60
-  },
-  "pullRates": {
-    "ur_per_packs": 8,
-    "hit_per_packs": 4,
-    "valueRating": 3
-  }
+    "id": "t2w3",
+    "slug": "t2w3",
+    "officialCode": "NR-CC-B003",
+    "name": "T2W3",
+    "displayName": "Tier 2 Wave 3",
+    "tier": "T2",
+    "wave": 3,
+    "series": "Tier 2",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2021-11-01",
+    "cardCount": 8,
+    "packCount": 30,
+    "packPrice": "2¥",
+    "caseSize": {
+        "regular": 24,
+        "master": 48
+    },
+    "description": "Chapter of Soldiers — Tier 2 Wave 3.",
+    "logoImage": "/images/sets/t2w3-logo.png",
+    "bannerImage": "/images/sets/t2w3-banner.jpg",
+    "notes": "",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T2W3",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T2W3",
+        "approxPriceUSD": 20,
+        "approxPriceCNY": 60
+    },
+    "pullRates": {
+        "ur_per_packs": 8,
+        "hit_per_packs": 4,
+        "valueRating": 3
+    },
+    "region": "CN"
 }

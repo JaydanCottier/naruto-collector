@@ -1,36 +1,37 @@
 {
-  "id": "t4w5",
-  "slug": "t4w5",
-  "officialCode": "NR-RD-Z005",
-  "name": "T4W5",
-  "displayName": "Tier 4 Wave 5",
-  "tier": "T4",
-  "wave": 5,
-  "series": "Tier 4",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2023-01-01",
-  "cardCount": 8,
-  "packCount": 18,
-  "packPrice": "10¥",
-  "caseSize": {
-    "regular": 18,
-    "master": 36
-  },
-  "description": "Chapter of the Array — Tier 4 Wave 5.",
-  "logoImage": "/images/sets/t4w5-logo.png",
-  "bannerImage": "/images/sets/t4w5-banner.jpg",
-  "notes": "Serialized SEs: 007+008 /199, 009+010 /699, 011+012 /999. $300+ range. NOT guaranteed. T4 sticker seals.",
-  "unsealed": true,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 33,
-    "approxPriceCNY": 180
-  },
-  "pullRates": {
-    "ur_per_packs": 3,
-    "hit_per_packs": 1,
-    "valueRating": 5
-  }
+    "id": "t4w5",
+    "slug": "t4w5",
+    "officialCode": "NR-RD-Z005",
+    "name": "T4W5",
+    "displayName": "Tier 4 Wave 5",
+    "tier": "T4",
+    "wave": 5,
+    "series": "Tier 4",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2023-01-01",
+    "cardCount": 8,
+    "packCount": 18,
+    "packPrice": "10¥",
+    "caseSize": {
+        "regular": 18,
+        "master": 36
+    },
+    "description": "Chapter of the Array — Tier 4 Wave 5.",
+    "logoImage": "/images/sets/t4w5-logo.png",
+    "bannerImage": "/images/sets/t4w5-banner.jpg",
+    "notes": "Serialized SEs: 007+008 /199, 009+010 /699, 011+012 /999. $300+ range. NOT guaranteed. T4 sticker seals.",
+    "unsealed": true,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T4W5",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T4W5",
+        "approxPriceUSD": 33,
+        "approxPriceCNY": 180
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    },
+    "region": "CN"
 }

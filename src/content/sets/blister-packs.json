@@ -1,24 +1,25 @@
 {
-  "id": "blister-packs",
-  "slug": "blister-packs",
-  "name": "Blister Packs",
-  "displayName": "Blister Packs",
-  "tier": "BLISTER",
-  "wave": null,
-  "series": "Blister",
-  "type": "blister",
-  "language": "CN",
-  "releaseDate": "2021-01-01",
-  "cardCount": 8,
-  "description": "4 packs + 1 promo card per blister.",
-  "logoImage": "/images/sets/blister-packs-logo.png",
-  "bannerImage": "/images/sets/blister-packs-banner.jpg",
-  "notes": "4 packs + 1 promo. ONLY source of LR rarity. Available: T3W1/W2/W3 (~$15), T4W1/W2/W3 (~$20).",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 15,
-    "approxPriceCNY": 100
-  }
+    "id": "blister-packs",
+    "slug": "blister-packs",
+    "name": "Blister Packs",
+    "displayName": "Blister Packs",
+    "tier": "BLISTER",
+    "wave": null,
+    "series": "Blister",
+    "type": "blister",
+    "language": "CN",
+    "releaseDate": "2021-01-01",
+    "cardCount": 8,
+    "description": "4 packs + 1 promo card per blister.",
+    "logoImage": "/images/sets/blister-packs-logo.png",
+    "bannerImage": "/images/sets/blister-packs-banner.jpg",
+    "notes": "4 packs + 1 promo. ONLY source of LR rarity. Available: T3W1/W2/W3 (~$15), T4W1/W2/W3 (~$20).",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20Blister%20Packs",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20Blister%20Packs",
+        "approxPriceUSD": 15,
+        "approxPriceCNY": 100
+    },
+    "region": "CN"
 }

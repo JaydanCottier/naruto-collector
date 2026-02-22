@@ -1,29 +1,30 @@
 {
-  "id": "ninja-age-n",
-  "slug": "ninja-age-n",
-  "name": "The Age of Ninjas — N Edition (Noble)",
-  "displayName": "The Age of Ninjas — N Edition",
-  "tier": "SP",
-  "wave": null,
-  "series": "Special",
-  "type": "special",
-  "language": "CN",
-  "releaseDate": "2023-03-01",
-  "cardCount": 8,
-  "description": "Gold N embossed Noble Edition of Age of Ninjas.",
-  "logoImage": "/images/sets/ninja-age-n-logo.png",
-  "bannerImage": "/images/sets/ninja-age-n-banner.jpg",
-  "notes": "Gold N embossed box. 4 exclusive cards (NONE guaranteed): Special SP Naruto, Wedding MR Naruto, Wedding MR Hinata, Special QR Naruto, Serial XR /72 (RAREST CARD IN ALL KAYOU). QR = REDEMPTION. China only. Never share the code.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 59,
-    "approxPriceCNY": 360
-  },
-  "pullRates": {
-    "ur_per_packs": 3,
-    "hit_per_packs": 1,
-    "valueRating": 5
-  }
+    "id": "ninja-age-n",
+    "slug": "ninja-age-n",
+    "name": "The Age of Ninjas — N Edition (Noble)",
+    "displayName": "The Age of Ninjas — N Edition",
+    "tier": "SP",
+    "wave": null,
+    "series": "Special",
+    "type": "special",
+    "language": "CN",
+    "releaseDate": "2023-03-01",
+    "cardCount": 8,
+    "description": "Gold N embossed Noble Edition of Age of Ninjas.",
+    "logoImage": "/images/sets/ninja-age-n-logo.png",
+    "bannerImage": "/images/sets/ninja-age-n-banner.jpg",
+    "notes": "Gold N embossed box. 4 exclusive cards (NONE guaranteed): Special SP Naruto, Wedding MR Naruto, Wedding MR Hinata, Special QR Naruto, Serial XR /72 (RAREST CARD IN ALL KAYOU). QR = REDEMPTION. China only. Never share the code.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20The%20Age%20of%20Ninjas%20%E2%80%94%20N%20Edition%20(Noble)",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20The%20Age%20of%20Ninjas%20%E2%80%94%20N%20Edition%20(Noble)",
+        "approxPriceUSD": 59,
+        "approxPriceCNY": 360
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    },
+    "region": "CN"
 }

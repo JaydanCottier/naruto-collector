@@ -15,7 +15,13 @@
             "standard"
         ],
         "exclusiveTo": "ninja-age-n",
-        "notes": "N Edition ONLY. NOT guaranteed per box."
+        "notes": "N Edition ONLY. NOT guaranteed per box.",
+        "region": "CN",
+        "setPrefix": "NINJA-AGE-N",
+        "cardNumber": "SP-N01",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "NINJA-AGE-N-SP-SP-N01L1"
     },
     {
         "id": "ninja-age-n-002",
@@ -33,7 +39,13 @@
             "standard"
         ],
         "exclusiveTo": "ninja-age-n",
-        "notes": "N Edition ONLY. Naruto + Hinata wedding."
+        "notes": "N Edition ONLY. Naruto + Hinata wedding.",
+        "region": "CN",
+        "setPrefix": "NINJA-AGE-N",
+        "cardNumber": "MR-W01",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "NINJA-AGE-N-MR-MR-W01L1"
     },
     {
         "id": "ninja-age-n-003",
@@ -51,7 +63,13 @@
             "standard"
         ],
         "exclusiveTo": "ninja-age-n",
-        "notes": "N Edition ONLY."
+        "notes": "N Edition ONLY.",
+        "region": "CN",
+        "setPrefix": "NINJA-AGE-N",
+        "cardNumber": "MR-W02",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "NINJA-AGE-N-MR-MR-W02L1"
     },
     {
         "id": "ninja-age-n-004",
@@ -69,7 +87,13 @@
             "standard"
         ],
         "exclusiveTo": "ninja-age-n",
-        "notes": "N Edition ONLY. REDEMPTION — China only. Never share the QR code."
+        "notes": "N Edition ONLY. REDEMPTION — China only. Never share the QR code.",
+        "region": "CN",
+        "setPrefix": "NINJA-AGE-N",
+        "cardNumber": "QR-N01",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "NINJA-AGE-N-QR-QR-N01L1"
     },
     {
         "id": "ninja-age-n-005",
@@ -88,7 +112,13 @@
         ],
         "exclusiveTo": "ninja-age-n",
         "serialLimit": 72,
-        "notes": "RAREST CARD IN ALL KAYOU. /72 serial. N Edition ONLY."
+        "notes": "RAREST CARD IN ALL KAYOU. /72 serial. N Edition ONLY.",
+        "region": "CN",
+        "setPrefix": "NINJA-AGE-N",
+        "cardNumber": "XR-001",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "NINJA-AGE-N-XR-XR-001L1"
     },
     {
         "id": "ninja-age-n-006",
@@ -105,7 +135,13 @@
         "variants": [
             "standard",
             "diamond"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "NINJA-AGE-N",
+        "cardNumber": "PTR-001",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "NINJA-AGE-N-PTR-PTR-001L1"
     },
     {
         "id": "ninja-age-n-007",
@@ -122,7 +158,13 @@
         "variants": [
             "standard",
             "diamond"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "NINJA-AGE-N",
+        "cardNumber": "SSR-001",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "NINJA-AGE-N-SSR-SSR-001L1"
     },
     {
         "id": "ninja-age-n-008",
@@ -139,6 +181,12 @@
         "variants": [
             "standard",
             "diamond"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "NINJA-AGE-N",
+        "cardNumber": "UR-001",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "NINJA-AGE-N-UR-UR-001L1"
     }
 ]

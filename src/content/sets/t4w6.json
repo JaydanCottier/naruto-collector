@@ -1,39 +1,44 @@
 {
-  "id": "t4w6",
-  "slug": "t4w6",
-  "officialCode": "NR-RD-Z006",
-  "name": "T4W6",
-  "displayName": "Tier 4 Wave 6 — Zabuza Arc",
-  "tier": "T4",
-  "wave": 6,
-  "arc": "Zabuza Arc",
-  "series": "Tier 4",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2023-09-01",
-  "cardCount": 158,
-  "packCount": 18,
-  "packPrice": "10¥",
-  "packContents": "1x PTR per pack, every other pack SSR+",
-  "caseSize": {
-    "regular": 18,
-    "master": 36
-  },
-  "description": "Chapter of the Array — Tier 4 Wave 6.",
-  "logoImage": "/images/sets/t4w6-logo.png",
-  "bannerImage": "/images/sets/t4w6-banner.jpg",
-  "notes": "System update. HRs→PTRs. ARs/ORs removed. New PU rarity. Rs=Zabuza scenes. MRs=zodiac+Team7 puzzle. 158 cards. T4 sticker seals.",
-  "englishEquivalent": "nrsa01-us",
-  "unsealed": true,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 33,
-    "approxPriceCNY": 180
-  },
-  "pullRates": {
-    "ur_per_packs": 3,
-    "hit_per_packs": 1,
-    "valueRating": 5
-  }
+    "id": "t4w6",
+    "slug": "t4w6",
+    "officialCode": "NR-RD-Z006",
+    "name": "T4W6",
+    "displayName": "Tier 4 Wave 6 — Zabuza Arc",
+    "tier": "T4",
+    "wave": 6,
+    "arc": "Zabuza Arc",
+    "series": "Tier 4",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2023-09-01",
+    "cardCount": 158,
+    "packCount": 18,
+    "packPrice": "10¥",
+    "packContents": "1x PTR per pack, every other pack SSR+",
+    "caseSize": {
+        "regular": 18,
+        "master": 36
+    },
+    "description": "Chapter of the Array — Tier 4 Wave 6.",
+    "logoImage": "/images/sets/t4w6-logo.png",
+    "bannerImage": "/images/sets/t4w6-banner.jpg",
+    "notes": "System update. HRs→PTRs. ARs/ORs removed. New PU rarity. Rs=Zabuza scenes. MRs=zodiac+Team7 puzzle. 158 cards. T4 sticker seals.",
+    "officialCodeShort": "NRZ06",
+    "englishEquivalents": [
+        "nrv01",
+        "heaven-scroll-s1"
+    ],
+    "unsealed": true,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T4W6",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T4W6",
+        "approxPriceUSD": 33,
+        "approxPriceCNY": 180
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    },
+    "region": "CN"
 }

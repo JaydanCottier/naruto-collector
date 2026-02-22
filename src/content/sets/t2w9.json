@@ -1,36 +1,41 @@
 {
-  "id": "t2w9",
-  "slug": "t2w9",
-  "officialCode": "NR-CC-B009",
-  "name": "T2W9",
-  "displayName": "Tier 2 Wave 9",
-  "tier": "T2",
-  "wave": 9,
-  "series": "Tier 2",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2024-09-01",
-  "cardCount": 8,
-  "packCount": 30,
-  "packPrice": "2¥",
-  "caseSize": {
-    "regular": 24,
-    "master": 48
-  },
-  "description": "Chapter of Soldiers — Tier 2 Wave 9.",
-  "logoImage": "/images/sets/t2w9-logo.png",
-  "bannerImage": "/images/sets/t2w9-banner.jpg",
-  "notes": "",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 20,
-    "approxPriceCNY": 60
-  },
-  "pullRates": {
-    "ur_per_packs": 8,
-    "hit_per_packs": 4,
-    "valueRating": 3
-  }
+    "id": "t2w9",
+    "slug": "t2w9",
+    "officialCode": "NR-CC-B009",
+    "name": "T2W9",
+    "displayName": "Tier 2 Wave 9",
+    "tier": "T2",
+    "wave": 9,
+    "series": "Tier 2",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2024-09-01",
+    "cardCount": 8,
+    "packCount": 30,
+    "packPrice": "2¥",
+    "caseSize": {
+        "regular": 24,
+        "master": 48
+    },
+    "description": "Chapter of Soldiers — Tier 2 Wave 9.",
+    "logoImage": "/images/sets/t2w9-logo.png",
+    "bannerImage": "/images/sets/t2w9-banner.jpg",
+    "notes": "",
+    "officialCodeShort": "NRB09",
+    "englishEquivalents": [
+        "nrea02"
+    ],
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T2W9",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T2W9",
+        "approxPriceUSD": 20,
+        "approxPriceCNY": 60
+    },
+    "pullRates": {
+        "ur_per_packs": 8,
+        "hit_per_packs": 4,
+        "valueRating": 3
+    },
+    "region": "CN"
 }

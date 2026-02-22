@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BuyButton from '../../components/affiliate/BuyButton.astro';
 import { TIER_COLORS } from '../../utils/rarity.ts';
 ---
 
-<BaseLayout title="Product Types — KAYOU Naruto Products Explained" description="Everything you need to know about KAYOU Naruto product types: Booster Boxes, EX Rainbow Packs, Blister Packs, Pin Blind Box, and Special Boxes.">
+<BaseLayout title="Product Types &mdash; KAYOU Naruto Products Explained" description="Everything you need to know about KAYOU Naruto product types: Booster Boxes, EX Rainbow Packs, Blister Packs, Pin Blind Box, and Special Boxes.">
 
   <h1 class="text-4xl sm:text-6xl font-bangers tracking-wider text-white mb-3 text-center">
     Product <span class="text-gradient-orange">Types</span>
@@ -20,7 +21,7 @@ import { TIER_COLORS } from '../../utils/rarity.ts';
           <span class="text-2xl">📦</span>
           <h2 class="text-2xl font-bangers tracking-wider text-white">Booster Boxes</h2>
         </div>
-        <p class="text-sm text-brand-text-muted mt-1">The core product line — 4 tiers of increasing rarity and value.</p>
+        <p class="text-sm text-brand-text-muted mt-1">The core product line &mdash; 4 tiers of increasing rarity and value.</p>
       </div>
       <div class="p-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
@@ -41,7 +42,8 @@ import { TIER_COLORS } from '../../utils/rarity.ts';
           </div>
         ))}
       </div>
-      <div class="px-6 pb-6">
+      <div class="px-6 pb-6 flex flex-col sm:flex-row items-center gap-4">
+        <BuyButton href="https://s.click.aliexpress.com/e/_DkM1Gyl" label="Search Booster Boxes" />
         <a href="/sets" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
           Browse all booster box sets →
         </a>
@@ -57,7 +59,7 @@ import { TIER_COLORS } from '../../utils/rarity.ts';
           <span class="text-2xl">🌈</span>
           <h2 class="text-2xl font-bangers tracking-wider text-white">EX Rainbow Packs</h2>
         </div>
-        <p class="text-sm text-brand-text-muted mt-1">Loose packs only — not available in booster boxes.</p>
+        <p class="text-sm text-brand-text-muted mt-1">Loose packs only &mdash; not available in booster boxes.</p>
       </div>
       <div class="p-6">
         <div class="grid sm:grid-cols-2 gap-4">
@@ -74,15 +76,18 @@ import { TIER_COLORS } from '../../utils/rarity.ts';
           <div>
             <h3 class="text-sm font-semibold text-white mb-2">Exclusive Rarities</h3>
             <ul class="text-xs space-y-1.5">
-              <li class="text-red-400">• SP009 — ONLY found in EX packs. One of the most expensive cards in all KAYOU.</li>
+              <li class="text-red-400">• SP009 &mdash; ONLY found in EX packs. One of the most expensive cards in all KAYOU.</li>
               <li class="text-brand-gold">• SE cards available in EX4 and EX5</li>
               <li class="text-brand-orange">• SLR Black + White pairs pullable</li>
             </ul>
           </div>
         </div>
-        <a href="/sets/ex-packs/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold mt-4 inline-block">
-          View EX Rainbow Packs set →
-        </a>
+        <div class="mt-6 flex flex-col sm:flex-row items-center gap-4">
+          <BuyButton href="https://s.click.aliexpress.com/e/_DkM1Gyl" label="Search EX Packs" />
+          <a href="/sets/ex-packs/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
+            View EX Rainbow Packs set →
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -103,12 +108,15 @@ import { TIER_COLORS } from '../../utils/rarity.ts';
         </p>
         <div class="bg-brand-gold/10 border border-brand-gold/20 rounded-lg p-3 mb-4">
           <p class="text-xs text-brand-gold font-semibold">
-            📌 ONLY source of LR (Legendary Rare) — found nowhere else in the KAYOU line.
+            📌 ONLY source of LR (Legendary Rare) &mdash; found nowhere else in the KAYOU line.
           </p>
         </div>
-        <a href="/sets/blister-packs/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
-          View Blister Packs set →
-        </a>
+        <div class="mt-4 flex flex-col sm:flex-row items-center gap-4">
+          <BuyButton href="https://s.click.aliexpress.com/e/_DkM1Gyl" label="Search Blister Packs" />
+          <a href="/sets/blister-packs/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
+            View Blister Packs set →
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -125,7 +133,7 @@ import { TIER_COLORS } from '../../utils/rarity.ts';
       </div>
       <div class="p-6">
         <p class="text-sm text-brand-text-muted mb-3">
-          Not cards — but part of the KAYOU Naruto ecosystem. <strong class="text-white">12 pins</strong> to collect with <strong class="text-white">4 chase variants</strong> that are significantly harder to find.
+          Not cards &mdash; but part of the KAYOU Naruto ecosystem. <strong class="text-white">12 pins</strong> to collect with <strong class="text-white">4 chase variants</strong> that are significantly harder to find.
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
           {['Jiraiya', 'Tsunade', 'Orochimaru', 'Sage Naruto'].map(name => (
@@ -137,12 +145,15 @@ import { TIER_COLORS } from '../../utils/rarity.ts';
         </div>
         <div class="bg-brand-gold/10 border border-brand-gold/20 rounded-lg p-3 mb-4">
           <p class="text-xs text-brand-gold font-semibold">
-            📌 ONLY source of BR (Badge Rare) — exclusive to the Pin Blind Box.
+            📌 ONLY source of BR (Badge Rare) &mdash; exclusive to the Pin Blind Box.
           </p>
         </div>
-        <a href="/sets/pin-blind-box/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
-          View Pin Blind Box set →
-        </a>
+        <div class="mt-4 flex flex-col sm:flex-row items-center gap-4">
+          <BuyButton href="https://s.click.aliexpress.com/e/_DkM1Gyl" label="Search Pin Blind Boxes" />
+          <a href="/sets/pin-blind-box/" class="text-sm text-brand-orange hover:text-white transition-colors font-semibold">
+            View Pin Blind Box set →
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -161,12 +172,13 @@ import { TIER_COLORS } from '../../utils/rarity.ts';
         <p class="text-sm text-brand-text-muted mb-3">
           KAYOU releases special boxes for holidays and milestones. These typically contain a mix of packs from different tiers, plus <strong class="text-white">exclusive cards</strong> not found anywhere else.
         </p>
-        <div class="space-y-2 text-xs text-brand-text-muted">
+        <div class="space-y-2 text-xs text-brand-text-muted mb-6">
           <p>• <strong class="text-white">Youth Scroll Box:</strong> Source of SCR (Scroll Rare)</p>
-          <p>• <strong class="text-white">Heaven + Earth Scroll:</strong> Source of SV (Scroll Variant) — Gold + Silver</p>
+          <p>• <strong class="text-white">Heaven + Earth Scroll:</strong> Source of SV (Scroll Variant) &mdash; Gold + Silver</p>
           <p>• <strong class="text-white">Ninja Age (N Edition):</strong> Source of XR (Extreme Rare) /72 and QR (Quest Rare)</p>
           <p>• <strong class="text-white">20th Anniversary Box:</strong> Source of 20TH Anniversary cards (T4W4 2nd print only)</p>
         </div>
+        <BuyButton href="https://s.click.aliexpress.com/e/_DkM1Gyl" label="Search Special Boxes" />
       </div>
     </div>
   </section>

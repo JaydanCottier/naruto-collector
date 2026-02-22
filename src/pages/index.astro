@@ -19,7 +19,7 @@ const latestSets = sortedSets.slice(0, 6);
 // Get unique characters
 const uniqueCharacters = new Set(allCards.map(c => c.character).filter(Boolean));
 
-// Featured cards — highest rarity from latest sets
+// Featured cards &mdash; highest rarity from latest sets
 const featuredCards = allCards
   .filter(c => ['UR','SE','SP','HR','XR','SLR','SCR','SV','LR','PU'].includes(c.rarity))
   .slice(0, 8);

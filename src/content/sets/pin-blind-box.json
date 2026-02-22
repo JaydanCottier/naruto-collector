@@ -1,24 +1,25 @@
 {
-  "id": "pin-blind-box",
-  "slug": "pin-blind-box",
-  "name": "Badge Pin Blind Box",
-  "displayName": "Badge Pin Blind Box",
-  "tier": "PIN",
-  "wave": null,
-  "series": "Pin",
-  "type": "pin",
-  "language": "CN",
-  "releaseDate": "2022-01-01",
-  "cardCount": 8,
-  "description": "Metal pin blind boxes with exclusive BR cards.",
-  "logoImage": "/images/sets/pin-blind-box-logo.png",
-  "bannerImage": "/images/sets/pin-blind-box-banner.jpg",
-  "notes": "ONLY source of BR rarity. 16 total BRs: 12 common + 4 chases. Chases: Sage Mode Naruto, Jiraiya, Tsunade, Orochimaru. Each box: 1 metal pin + 1 BR card. 12-pack: 11 common + 1 chase guaranteed. Case ~$45.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 45,
-    "approxPriceCNY": 280
-  }
+    "id": "pin-blind-box",
+    "slug": "pin-blind-box",
+    "name": "Badge Pin Blind Box",
+    "displayName": "Badge Pin Blind Box",
+    "tier": "PIN",
+    "wave": null,
+    "series": "Pin",
+    "type": "pin",
+    "language": "CN",
+    "releaseDate": "2022-01-01",
+    "cardCount": 8,
+    "description": "Metal pin blind boxes with exclusive BR cards.",
+    "logoImage": "/images/sets/pin-blind-box-logo.png",
+    "bannerImage": "/images/sets/pin-blind-box-banner.jpg",
+    "notes": "ONLY source of BR rarity. 16 total BRs: 12 common + 4 chases. Chases: Sage Mode Naruto, Jiraiya, Tsunade, Orochimaru. Each box: 1 metal pin + 1 BR card. 12-pack: 11 common + 1 chase guaranteed. Case ~$45.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20Badge%20Pin%20Blind%20Box",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20Badge%20Pin%20Blind%20Box",
+        "approxPriceUSD": 45,
+        "approxPriceCNY": 280
+    },
+    "region": "CN"
 }

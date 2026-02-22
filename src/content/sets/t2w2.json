@@ -1,37 +1,38 @@
 {
-  "id": "t2w2",
-  "slug": "t2w2",
-  "officialCode": "NR-CC-B002",
-  "name": "T2W2",
-  "displayName": "Tier 2 Wave 2",
-  "tier": "T2",
-  "wave": 2,
-  "series": "Tier 2",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2021-07-01",
-  "cardCount": 8,
-  "packCount": 30,
-  "packPrice": "2¥",
-  "packContents": "4x R + 1x SR+. CR case hit from W2.",
-  "caseSize": {
-    "regular": 24,
-    "master": 48
-  },
-  "description": "Chapter of Soldiers — Tier 2 Wave 2.",
-  "logoImage": "/images/sets/t2w2-logo.png",
-  "bannerImage": "/images/sets/t2w2-banner.jpg",
-  "notes": "CR rarity case hit starts this wave.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 20,
-    "approxPriceCNY": 60
-  },
-  "pullRates": {
-    "ur_per_packs": 8,
-    "hit_per_packs": 4,
-    "valueRating": 3
-  }
+    "id": "t2w2",
+    "slug": "t2w2",
+    "officialCode": "NR-CC-B002",
+    "name": "T2W2",
+    "displayName": "Tier 2 Wave 2",
+    "tier": "T2",
+    "wave": 2,
+    "series": "Tier 2",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2021-07-01",
+    "cardCount": 8,
+    "packCount": 30,
+    "packPrice": "2¥",
+    "packContents": "4x R + 1x SR+. CR case hit from W2.",
+    "caseSize": {
+        "regular": 24,
+        "master": 48
+    },
+    "description": "Chapter of Soldiers — Tier 2 Wave 2.",
+    "logoImage": "/images/sets/t2w2-logo.png",
+    "bannerImage": "/images/sets/t2w2-banner.jpg",
+    "notes": "CR rarity case hit starts this wave.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T2W2",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T2W2",
+        "approxPriceUSD": 20,
+        "approxPriceCNY": 60
+    },
+    "pullRates": {
+        "ur_per_packs": 8,
+        "hit_per_packs": 4,
+        "valueRating": 3
+    },
+    "region": "CN"
 }

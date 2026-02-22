@@ -1,29 +1,30 @@
 {
-  "id": "heaven-earth-scroll",
-  "slug": "heaven-earth-scroll",
-  "name": "Heaven and Earth Scroll Box",
-  "displayName": "Heaven and Earth Scroll Box",
-  "tier": "SP",
-  "wave": null,
-  "series": "Special",
-  "type": "gift",
-  "language": "CN",
-  "releaseDate": "2022-11-11",
-  "cardCount": 8,
-  "description": "11.11 gift set with exclusive SV (Scroll Variant) cards.",
-  "logoImage": "/images/sets/heaven-earth-scroll-logo.png",
-  "bannerImage": "/images/sets/heaven-earth-scroll-banner.jpg",
-  "notes": "ONLY source of SV-S and SV-G rarities. Contents: 1 brick slab + 2 special packs. Each special pack: 1 guaranteed SV card. One pack has chance at gold SV chase (Gold Minato + Gold Kakashi rarest). Also contains exclusive URs, SPs, HRs.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 30,
-    "approxPriceCNY": 200
-  },
-  "pullRates": {
-    "ur_per_packs": 3,
-    "hit_per_packs": 1,
-    "valueRating": 5
-  }
+    "id": "heaven-earth-scroll",
+    "slug": "heaven-earth-scroll",
+    "name": "Heaven and Earth Scroll Box",
+    "displayName": "Heaven and Earth Scroll Box",
+    "tier": "SP",
+    "wave": null,
+    "series": "Special",
+    "type": "gift",
+    "language": "CN",
+    "releaseDate": "2022-11-11",
+    "cardCount": 8,
+    "description": "11.11 gift set with exclusive SV (Scroll Variant) cards.",
+    "logoImage": "/images/sets/heaven-earth-scroll-logo.png",
+    "bannerImage": "/images/sets/heaven-earth-scroll-banner.jpg",
+    "notes": "ONLY source of SV-S and SV-G rarities. Contents: 1 brick slab + 2 special packs. Each special pack: 1 guaranteed SV card. One pack has chance at gold SV chase (Gold Minato + Gold Kakashi rarest). Also contains exclusive URs, SPs, HRs.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20Heaven%20and%20Earth%20Scroll%20Box",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20Heaven%20and%20Earth%20Scroll%20Box",
+        "approxPriceUSD": 30,
+        "approxPriceCNY": 200
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    },
+    "region": "CN"
 }

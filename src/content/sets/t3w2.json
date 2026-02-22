@@ -1,36 +1,37 @@
 {
-  "id": "t3w2",
-  "slug": "t3w2",
-  "officialCode": "NR-CC-D002",
-  "name": "T3W2",
-  "displayName": "Tier 3 Wave 2",
-  "tier": "T3",
-  "wave": 2,
-  "series": "Tier 3",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2021-10-01",
-  "cardCount": 8,
-  "packCount": 20,
-  "packPrice": "5¥",
-  "caseSize": {
-    "regular": 24,
-    "master": 48
-  },
-  "description": "Chapter of Fighting — Tier 3 Wave 2.",
-  "logoImage": "/images/sets/t3w2-logo.png",
-  "bannerImage": "/images/sets/t3w2-banner.jpg",
-  "notes": "NR exclusive starts W2. Blister packs available separately.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 28,
-    "approxPriceCNY": 100
-  },
-  "pullRates": {
-    "ur_per_packs": 5,
-    "hit_per_packs": 2,
-    "valueRating": 4
-  }
+    "id": "t3w2",
+    "slug": "t3w2",
+    "officialCode": "NR-CC-D002",
+    "name": "T3W2",
+    "displayName": "Tier 3 Wave 2",
+    "tier": "T3",
+    "wave": 2,
+    "series": "Tier 3",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2021-10-01",
+    "cardCount": 8,
+    "packCount": 20,
+    "packPrice": "5¥",
+    "caseSize": {
+        "regular": 24,
+        "master": 48
+    },
+    "description": "Chapter of Fighting — Tier 3 Wave 2.",
+    "logoImage": "/images/sets/t3w2-logo.png",
+    "bannerImage": "/images/sets/t3w2-banner.jpg",
+    "notes": "NR exclusive starts W2. Blister packs available separately.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T3W2",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T3W2",
+        "approxPriceUSD": 28,
+        "approxPriceCNY": 100
+    },
+    "pullRates": {
+        "ur_per_packs": 5,
+        "hit_per_packs": 2,
+        "valueRating": 4
+    },
+    "region": "CN"
 }

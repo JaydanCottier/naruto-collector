@@ -1,0 +1,55 @@
+{
+    "id": "nrv01",
+    "slug": "nrv01",
+    "officialCode": "NRV01",
+    "name": "Smriti Collectible Cards - Chapter Jin",
+    "shortName": "Chapter Jin",
+    "displayName": "Smriti Collectible Cards - Chapter Jin (NRV01)",
+    "tier": "T4",
+    "type": "booster",
+    "language": "EN",
+    "region": "SEA",
+    "regions": [
+        "SEA"
+    ],
+    "releaseDate": "2025-06-01",
+    "packCount": 24,
+    "packPrice": "~$4",
+    "packContents": "8 cards per pack",
+    "boxesPerCarton": 8,
+    "cardCount": 158,
+    "arc": "Zabuza Arc",
+    "cnEquivalent": "t4w6",
+    "cnEquivalentCode": "NRZ06",
+    "cnEquivalentLabel": "Tier 4 Wave 6 (NRZ06)",
+    "seaEquivalent": "nrv01",
+    "naEquivalent": "heaven-scroll-s1",
+    "notes": "SEA release of T4W6 (Zabuza Arc). Same card pool as NRSA01 but different Set ID and card prefixes. Released June 2025, four months before the NA equivalent.",
+    "cardBreakdown": {
+        "SE": 4,
+        "SP": 4,
+        "BP": 7,
+        "MR": 6,
+        "PU": 8,
+        "PTR": 20,
+        "UR": 15,
+        "SSR": 24,
+        "SR": 20,
+        "R": 50
+    },
+    "retailAvailability": [
+        "AliExpress",
+        "Whatnot",
+        "SEA local retailers"
+    ],
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "PLACEHOLDER",
+        "approxPriceUSD": 55
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    }
+}

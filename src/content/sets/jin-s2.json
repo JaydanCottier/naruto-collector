@@ -1,0 +1,45 @@
+{
+    "id": "jin-s2",
+    "slug": "jin-s2",
+    "officialCode": "NRSA2",
+    "officialCodeShort": "NRSA2",
+    "name": "Chapter Jin Series 2",
+    "displayName": "Smriti — Chapter Jin Series 2 (NRSA2)",
+    "tier": "T4",
+    "type": "booster",
+    "language": "EN",
+    "region": "GLOBAL",
+    "regions": [
+        "SEA",
+        "NA"
+    ],
+    "releaseDate": "2025-12-01",
+    "packCount": 12,
+    "arc": "Chunin Exams",
+    "cnEquivalent": "t4w7",
+    "cnEquivalentShort": "NRZ07",
+    "seaEquivalent": "jin-s2",
+    "bannerImage": "/images/sets/jin-s2.jpg",
+    "notes": "Same release for SEA and US. English version of T4W7. 12 blister packs per display. Each display includes 1 Promo card. AR rarity (10 types, ukiyo-e battle art) is the main highlight.",
+    "exclusiveCards": [
+        "NRSA2-PR display promo"
+    ],
+    "retailAvailability": [
+        "eBay",
+        "AliExpress",
+        "Whatnot",
+        "GameStop"
+    ],
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20Chapter%20Jin%20Series%202",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20Chapter%20Jin%20Series%202",
+        "approxPriceUSD": 48
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    },
+    "naEquivalent": "jin-s2"
+}

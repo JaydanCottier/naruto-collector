@@ -18,7 +18,11 @@
         ],
         "exclusiveTo": "nrsa01-us",
         "isPromo": true,
-        "notes": "Exclusive to Heaven Scroll S1 24-pack display box ONLY."
+        "notes": "Exclusive to Heaven Scroll S1 24-pack display box ONLY.",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-001",
+        "cardSerial": "NRSA-PR-PR-001"
     },
     {
         "id": "en-promo-002",
@@ -38,7 +42,11 @@
         ],
         "exclusiveTo": "nrsa02-us",
         "isPromo": true,
-        "notes": "Exclusive to Jin Series 2 display box."
+        "notes": "Exclusive to Jin Series 2 display box.",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-002",
+        "cardSerial": "NRSA-PR-PR-002"
     },
     {
         "id": "en-promo-003",
@@ -57,7 +65,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": "Event exclusive promo."
+        "notes": "Event exclusive promo.",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-003",
+        "cardSerial": "NRSA-PR-PR-003"
     },
     {
         "id": "en-promo-004",
@@ -76,7 +88,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": "Event exclusive promo."
+        "notes": "Event exclusive promo.",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-004",
+        "cardSerial": "NRSA-PR-PR-004"
     },
     {
         "id": "en-promo-005",
@@ -95,7 +111,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": "Event exclusive promo."
+        "notes": "Event exclusive promo.",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-005",
+        "cardSerial": "NRSA-PR-PR-005"
     },
     {
         "id": "en-promo-006",
@@ -114,7 +134,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": "Event exclusive promo."
+        "notes": "Event exclusive promo.",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-006",
+        "cardSerial": "NRSA-PR-PR-006"
     },
     {
         "id": "en-promo-007",
@@ -133,7 +157,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": "Event exclusive promo."
+        "notes": "Event exclusive promo.",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-007",
+        "cardSerial": "NRSA-PR-PR-007"
     },
     {
         "id": "en-promo-008",
@@ -152,7 +180,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": "Event exclusive promo."
+        "notes": "Event exclusive promo.",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-008",
+        "cardSerial": "NRSA-PR-PR-008"
     },
     {
         "id": "nrsa-pr-002",
@@ -172,7 +204,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": ""
+        "notes": "",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-002",
+        "cardSerial": "NRSA-PR-PR-002"
     },
     {
         "id": "nrsa-pr-003",
@@ -192,7 +228,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": ""
+        "notes": "",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-003",
+        "cardSerial": "NRSA-PR-PR-003"
     },
     {
         "id": "nrsa-pr-004",
@@ -212,7 +252,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": ""
+        "notes": "",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-004",
+        "cardSerial": "NRSA-PR-PR-004"
     },
     {
         "id": "nrsa-pr-005",
@@ -232,7 +276,11 @@
             "english"
         ],
         "isPromo": true,
-        "notes": ""
+        "notes": "",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-005",
+        "cardSerial": "NRSA-PR-PR-005"
     },
     {
         "id": "nrsa-pr-006",
@@ -252,6 +300,10 @@
             "english"
         ],
         "isPromo": true,
-        "notes": ""
+        "notes": "",
+        "region": "NA",
+        "setPrefix": "NRSA-PR",
+        "cardNumber": "PR-006",
+        "cardSerial": "NRSA-PR-PR-006"
     }
 ]

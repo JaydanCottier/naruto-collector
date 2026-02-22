@@ -1,32 +1,33 @@
 {
-  "id": "age-of-ninjas",
-  "slug": "age-of-ninjas",
-  "name": "The Age of Ninjas",
-  "displayName": "The Age of Ninjas",
-  "tier": "SP",
-  "wave": null,
-  "series": "Special",
-  "type": "special",
-  "language": "CN",
-  "releaseDate": "2023-03-01",
-  "cardCount": 8,
-  "packCount": 10,
-  "packPrice": "5¥",
-  "packContents": "5 cards per pack. 1x PTR guaranteed.",
-  "description": "Ninja Age box introducing PTR, QR, and XR rarities.",
-  "logoImage": "/images/sets/age-of-ninjas-logo.png",
-  "bannerImage": "/images/sets/age-of-ninjas-banner.jpg",
-  "notes": "10 packs of 5 cards. PTR (20 poster cards over 20 years), QR (chibi, /720, hidden /72 — REDEMPTION CHINA ONLY), XR (scroll art, /720). Diamond parallel variants. Two versions: Regular (~$20) and N Edition Noble (~$59).",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 20,
-    "approxPriceCNY": 120
-  },
-  "pullRates": {
-    "ur_per_packs": 4,
-    "hit_per_packs": 2,
-    "valueRating": 4
-  }
+    "id": "age-of-ninjas",
+    "slug": "age-of-ninjas",
+    "name": "The Age of Ninjas",
+    "displayName": "The Age of Ninjas",
+    "tier": "SP",
+    "wave": null,
+    "series": "Special",
+    "type": "special",
+    "language": "CN",
+    "releaseDate": "2023-03-01",
+    "cardCount": 8,
+    "packCount": 10,
+    "packPrice": "5¥",
+    "packContents": "5 cards per pack. 1x PTR guaranteed.",
+    "description": "Ninja Age box introducing PTR, QR, and XR rarities.",
+    "logoImage": "/images/sets/age-of-ninjas-logo.png",
+    "bannerImage": "/images/sets/age-of-ninjas-banner.jpg",
+    "notes": "10 packs of 5 cards. PTR (20 poster cards over 20 years), QR (chibi, /720, hidden /72 — REDEMPTION CHINA ONLY), XR (scroll art, /720). Diamond parallel variants. Two versions: Regular (~$20) and N Edition Noble (~$59).",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20The%20Age%20of%20Ninjas",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20The%20Age%20of%20Ninjas",
+        "approxPriceUSD": 20,
+        "approxPriceCNY": 120
+    },
+    "pullRates": {
+        "ur_per_packs": 4,
+        "hit_per_packs": 2,
+        "valueRating": 4
+    },
+    "region": "CN"
 }

@@ -1,24 +1,25 @@
 {
-  "id": "2023-new-year",
-  "slug": "2023-new-year",
-  "name": "2023 New Year Legendary Scroll Box",
-  "displayName": "2023 New Year Legendary Scroll Box",
-  "tier": "SP",
-  "wave": null,
-  "series": "Special",
-  "type": "gift",
-  "language": "CN",
-  "releaseDate": "2023-01-15",
-  "cardCount": 8,
-  "description": "New Year gift set with exclusive coin card and calendar cards.",
-  "logoImage": "/images/sets/2023-new-year-logo.png",
-  "bannerImage": "/images/sets/2023-new-year-banner.jpg",
-  "notes": "Exclusive coin card, calendar cards+stand, 2 New Year themed SE cards, 2 card bricks. 3 packs with gold/silver SV, SP, AR, UR, HR rarities.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 100,
-    "approxPriceCNY": 600
-  }
+    "id": "2023-new-year",
+    "slug": "2023-new-year",
+    "name": "2023 New Year Legendary Scroll Box",
+    "displayName": "2023 New Year Legendary Scroll Box",
+    "tier": "SP",
+    "wave": null,
+    "series": "Special",
+    "type": "gift",
+    "language": "CN",
+    "releaseDate": "2023-01-15",
+    "cardCount": 8,
+    "description": "New Year gift set with exclusive coin card and calendar cards.",
+    "logoImage": "/images/sets/2023-new-year-logo.png",
+    "bannerImage": "/images/sets/2023-new-year-banner.jpg",
+    "notes": "Exclusive coin card, calendar cards+stand, 2 New Year themed SE cards, 2 card bricks. 3 packs with gold/silver SV, SP, AR, UR, HR rarities.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%202023%20New%20Year%20Legendary%20Scroll%20Box",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%202023%20New%20Year%20Legendary%20Scroll%20Box",
+        "approxPriceUSD": 100,
+        "approxPriceCNY": 600
+    },
+    "region": "CN"
 }

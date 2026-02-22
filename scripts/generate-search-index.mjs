@@ -35,6 +35,9 @@ for (const file of cardFiles) {
             setName: setNameMap[card.setId] || card.setId,
             setSlug: card.setSlug || card.setId,
             image: card.image,
+            cardSerial: card.cardSerial || `${card.setPrefix || card.setId}-${card.rarity}-${card.number}`,
+            number: card.number || '',
+            region: card.region || 'CN',
         });
     }
 }

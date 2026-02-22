@@ -13,7 +13,13 @@
         "image": "/images/cards/figure-blind-box/xp-001.jpg",
         "variants": [
             "standard"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "FIGURE-BLIND-BOX",
+        "cardNumber": "XP-001",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "FIGURE-BLIND-BOX-XP-XP-001L1"
     },
     {
         "id": "fig-bb-002",
@@ -29,7 +35,13 @@
         "image": "/images/cards/figure-blind-box/xp-002.jpg",
         "variants": [
             "standard"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "FIGURE-BLIND-BOX",
+        "cardNumber": "XP-002",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "FIGURE-BLIND-BOX-XP-XP-002L1"
     },
     {
         "id": "fig-bb-003",
@@ -45,7 +57,13 @@
         "image": "/images/cards/figure-blind-box/xp-003.jpg",
         "variants": [
             "standard"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "FIGURE-BLIND-BOX",
+        "cardNumber": "XP-003",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "FIGURE-BLIND-BOX-XP-XP-003L1"
     },
     {
         "id": "fig-bb-004",
@@ -61,7 +79,13 @@
         "image": "/images/cards/figure-blind-box/xp-004.jpg",
         "variants": [
             "standard"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "FIGURE-BLIND-BOX",
+        "cardNumber": "XP-004",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "FIGURE-BLIND-BOX-XP-XP-004L1"
     },
     {
         "id": "fig-bb-005",
@@ -77,7 +101,13 @@
         "image": "/images/cards/figure-blind-box/xp-005.jpg",
         "variants": [
             "standard"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "FIGURE-BLIND-BOX",
+        "cardNumber": "XP-005",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "FIGURE-BLIND-BOX-XP-XP-005L1"
     },
     {
         "id": "fig-bb-006",
@@ -93,7 +123,13 @@
         "image": "/images/cards/figure-blind-box/xp-006.jpg",
         "variants": [
             "standard"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "FIGURE-BLIND-BOX",
+        "cardNumber": "XP-006",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "FIGURE-BLIND-BOX-XP-XP-006L1"
     },
     {
         "id": "fig-bb-007",
@@ -109,7 +145,13 @@
         "image": "/images/cards/figure-blind-box/xp-007.jpg",
         "variants": [
             "standard"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "FIGURE-BLIND-BOX",
+        "cardNumber": "XP-007",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "FIGURE-BLIND-BOX-XP-XP-007L1"
     },
     {
         "id": "fig-bb-008",
@@ -125,6 +167,12 @@
         "image": "/images/cards/figure-blind-box/xp-008.jpg",
         "variants": [
             "standard"
-        ]
+        ],
+        "region": "CN",
+        "setPrefix": "FIGURE-BLIND-BOX",
+        "cardNumber": "XP-008",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "FIGURE-BLIND-BOX-XP-XP-008L1"
     }
 ]

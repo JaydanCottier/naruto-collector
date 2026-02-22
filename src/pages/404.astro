@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 - Page Not Found" description="The page you are looking for does not exist.">
+  <div class="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+    <div class="mb-8">
+      <span class="text-9xl font-bangers tracking-wider text-brand-orange drop-shadow-lg">404</span>
+    </div>
+    
+    <h1 class="text-3xl md:text-5xl font-bangers tracking-wider text-white mb-4">
+      Lost in the Genjutsu?
+    </h1>
+    
+    <p class="text-brand-text-muted text-lg max-w-md mb-8">
+      We couldn't find the page you're looking for. It might have been moved, deleted, or never existed in this timeline.
+    </p>
+    
+    <a href="/" class="inline-flex items-center justify-center px-8 py-3 bg-brand-orange hover:bg-orange-500 text-black font-bold rounded-full transition-all group">
+      Return to Hidden Leaf
+    </a>
+  </div>
+</BaseLayout>

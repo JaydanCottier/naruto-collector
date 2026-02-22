@@ -1,37 +1,38 @@
 {
-  "id": "t1w1",
-  "slug": "t1w1",
-  "officialCode": "NR-CC-L001",
-  "name": "T1W1",
-  "displayName": "Tier 1 Wave 1",
-  "tier": "T1",
-  "wave": 1,
-  "series": "Tier 1",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2021-01-01",
-  "cardCount": 8,
-  "packCount": 36,
-  "packPrice": "1¥",
-  "packContents": "R (non-holo in T1), chance at UR+",
-  "caseSize": {
-    "regular": 24,
-    "master": 48
-  },
-  "description": "Chapter of Pros — Tier 1 Wave 1.",
-  "logoImage": "/images/sets/t1w1-logo.png",
-  "bannerImage": "/images/sets/t1w1-banner.jpg",
-  "notes": "Chapter of Pros. R cards not holographic in T1.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 12,
-    "approxPriceCNY": 36
-  },
-  "pullRates": {
-    "ur_per_packs": 12,
-    "hit_per_packs": 6,
-    "valueRating": 2
-  }
+    "id": "t1w1",
+    "slug": "t1w1",
+    "officialCode": "NR-CC-L001",
+    "name": "T1W1",
+    "displayName": "Tier 1 Wave 1",
+    "tier": "T1",
+    "wave": 1,
+    "series": "Tier 1",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2021-01-01",
+    "cardCount": 8,
+    "packCount": 36,
+    "packPrice": "1¥",
+    "packContents": "R (non-holo in T1), chance at UR+",
+    "caseSize": {
+        "regular": 24,
+        "master": 48
+    },
+    "description": "Chapter of Pros — Tier 1 Wave 1.",
+    "logoImage": "/images/sets/t1w1-logo.png",
+    "bannerImage": "/images/sets/t1w1-banner.jpg",
+    "notes": "Chapter of Pros. R cards not holographic in T1.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T1W1",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T1W1",
+        "approxPriceUSD": 12,
+        "approxPriceCNY": 36
+    },
+    "pullRates": {
+        "ur_per_packs": 12,
+        "hit_per_packs": 6,
+        "valueRating": 2
+    },
+    "region": "CN"
 }

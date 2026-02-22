@@ -1,36 +1,37 @@
 {
-  "id": "ex-packs",
-  "slug": "ex-packs",
-  "name": "EX Rainbow Packs",
-  "displayName": "EX Rainbow Packs",
-  "tier": "EX",
-  "wave": null,
-  "series": "EX",
-  "type": "ex",
-  "language": "CN",
-  "releaseDate": "2021-06-01",
-  "cardCount": 8,
-  "waves": [
-    "EX1 Naruto",
-    "EX2 Kakashi",
-    "EX3 Neji",
-    "EX4 Sasuke",
-    "EX5 Naruto"
-  ],
-  "description": "Loose packs sold directly from KAYOU official store.",
-  "logoImage": "/images/sets/ex-packs-logo.png",
-  "bannerImage": "/images/sets/ex-packs-banner.jpg",
-  "notes": "Loose packs only. 100 per case, 12 cases per master case. SP009 EXCLUSIVE. SLR pullable. EX4+5 have SEs. $3-4 per pack (W2-5), $20 per pack (W1). Highest hit rate.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 4,
-    "approxPriceCNY": 20
-  },
-  "pullRates": {
-    "ur_per_packs": 3,
-    "hit_per_packs": 1,
-    "valueRating": 5
-  }
+    "id": "ex-packs",
+    "slug": "ex-packs",
+    "name": "EX Rainbow Packs",
+    "displayName": "EX Rainbow Packs",
+    "tier": "EX",
+    "wave": null,
+    "series": "EX",
+    "type": "ex",
+    "language": "CN",
+    "releaseDate": "2021-06-01",
+    "cardCount": 8,
+    "waves": [
+        "EX1 Naruto",
+        "EX2 Kakashi",
+        "EX3 Neji",
+        "EX4 Sasuke",
+        "EX5 Naruto"
+    ],
+    "description": "Loose packs sold directly from KAYOU official store.",
+    "logoImage": "/images/sets/ex-packs-logo.png",
+    "bannerImage": "/images/sets/ex-packs-banner.jpg",
+    "notes": "Loose packs only. 100 per case, 12 cases per master case. SP009 EXCLUSIVE. SLR pullable. EX4+5 have SEs. $3-4 per pack (W2-5), $20 per pack (W1). Highest hit rate.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20EX%20Rainbow%20Packs",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20EX%20Rainbow%20Packs",
+        "approxPriceUSD": 4,
+        "approxPriceCNY": 20
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    },
+    "region": "CN"
 }

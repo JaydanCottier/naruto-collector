@@ -1,24 +1,25 @@
 {
-  "id": "official-binder",
-  "slug": "official-binder",
-  "name": "Official Binder Box",
-  "displayName": "Official Binder Box",
-  "tier": "SP",
-  "wave": null,
-  "series": "Special",
-  "type": "gift",
-  "language": "CN",
-  "releaseDate": "2022-04-01",
-  "cardCount": 8,
-  "description": "Official collector binder with booster packs.",
-  "logoImage": "/images/sets/official-binder-logo.png",
-  "bannerImage": "/images/sets/official-binder-banner.jpg",
-  "notes": "Official collector binder + packs.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 40,
-    "approxPriceCNY": 250
-  }
+    "id": "official-binder",
+    "slug": "official-binder",
+    "name": "Official Binder Box",
+    "displayName": "Official Binder Box",
+    "tier": "SP",
+    "wave": null,
+    "series": "Special",
+    "type": "gift",
+    "language": "CN",
+    "releaseDate": "2022-04-01",
+    "cardCount": 8,
+    "description": "Official collector binder with booster packs.",
+    "logoImage": "/images/sets/official-binder-logo.png",
+    "bannerImage": "/images/sets/official-binder-banner.jpg",
+    "notes": "Official collector binder + packs.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20Official%20Binder%20Box",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20Official%20Binder%20Box",
+        "approxPriceUSD": 40,
+        "approxPriceCNY": 250
+    },
+    "region": "CN"
 }

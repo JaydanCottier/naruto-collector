@@ -7,6 +7,8 @@ import BuyButton from '../../components/affiliate/BuyButton.astro';
 import AffiliateDisclosure from '../../components/affiliate/AffiliateDisclosure.astro';
 import { getCollection } from 'astro:content';
 import { getRarityInfo } from '../../utils/rarity.ts';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export async function getStaticPaths() {
   const allCardGroups = await getCollection('cards');
@@ -36,6 +38,16 @@ const { card, set, sameSetCards, sameCharCards } = Astro.props;
 const rarityInfo = getRarityInfo(card.rarity);
 const affiliateLink = set?.affiliateLinks?.aliexpress || '#';
 const approxPrice = set?.affiliateLinks?.approxPriceUSD || 0;
+
+let imageSrc = card.image;
+try {
+  const imagePath = path.join(process.cwd(), 'public', card.image);
+  if (!fs.existsSync(imagePath)) {
+    imageSrc = `/images/placeholder/${card.rarity.toLowerCase()}.svg`;
+  }
+} catch (e) {
+  imageSrc = `/images/placeholder/${card.rarity.toLowerCase()}.svg`;
+}
 ---
 
 <BaseLayout title={`${card.name} â€” ${card.id.toUpperCase()}`} description={`${card.name} (${card.rarity}) from ${set?.displayName || card.setId} â€” KAYOU Naruto Trading Card`}>
@@ -57,10 +69,9 @@ const approxPrice = set?.affiliateLinks?.approxPriceUSD || 0;
       <div class="relative w-full max-w-sm">
         <div class="aspect-[5/7] rounded-2xl overflow-hidden border border-brand-border bg-brand-surface shadow-2xl">
           <img
-            src={card.image}
+            src={imageSrc}
             alt={card.name}
             class="w-full h-full object-cover"
-            onerror={`this.onerror=null;this.src='/images/placeholder/${card.rarity.toLowerCase()}.svg'`}
           />
         </div>
       </div>
@@ -70,7 +81,14 @@ const approxPrice = set?.affiliateLinks?.approxPriceUSD || 0;
     <div>
       <div class="flex items-center gap-3 mb-3">
         <RarityBadge rarity={card.rarity} size="md" />
-        <span class="text-sm font-mono text-brand-text-muted">#{card.number}</span>
+        <button
+          class="official-code-btn inline-flex items-center gap-1.5 px-2.5 py-1 bg-brand-surface border border-brand-border rounded-lg text-sm font-mono text-brand-text-muted hover:text-white hover:border-brand-orange/50 transition-colors cursor-pointer"
+          data-code={card.cardSerial || `${card.setId?.toUpperCase()}-${card.number}`}
+          title="Click to copy"
+        >
+          <span class="text-brand-text-muted">📋</span>
+          <span>{card.cardSerial || `${card.setId?.toUpperCase()}-${card.number}`}</span>
+        </button>
       </div>
 
       <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-2">{card.name}</h1>
@@ -106,6 +124,10 @@ const approxPrice = set?.affiliateLinks?.approxPriceUSD || 0;
                   {set?.displayName || card.setId}
                 </a>
               </td>
+            </tr>
+            <tr class="border-b border-brand-border">
+              <td class="px-4 py-3 text-brand-text-muted font-semibold">Serial</td>
+              <td class="px-4 py-3 text-white font-mono">{card.cardSerial || `${card.setId?.toUpperCase()}-${card.number}`}</td>
             </tr>
             <tr class="border-b border-brand-border">
               <td class="px-4 py-3 text-brand-text-muted font-semibold">Number</td>

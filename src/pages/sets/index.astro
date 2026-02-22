@@ -31,9 +31,13 @@ const sortedSpecial = specialSets.sort((a, b) =>
 const sortedEN = enSets.sort((a, b) =>
   new Date(a.data.releaseDate).valueOf() - new Date(b.data.releaseDate).valueOf()
 );
+
+const usSets = sortedEN.filter(s => s.data.regions?.includes('US') && s.data.type !== 'promo');
+const seaSets = sortedEN.filter(s => s.data.regions?.includes('SEA') && s.data.type !== 'promo');
+const promoSetsEN = sortedEN.filter(s => s.data.type === 'promo' && s.data.language === 'EN');
 ---
 
-<BaseLayout title="Browse Sets" description="Browse all KAYOU Naruto trading card sets — Chinese and English releases, organized by tier.">
+<BaseLayout title="Browse Sets" description="Browse all KAYOU Naruto trading card sets &mdash; Chinese and English releases, organized by tier.">
 
   <h1 class="text-3xl sm:text-4xl font-bangers tracking-wider text-white mb-6">Browse Sets</h1>
 
@@ -88,15 +92,54 @@ const sortedEN = enSets.sort((a, b) =>
 
     <!-- English sets -->
     <section class="mb-10 tier-section" data-lang="english" id="section-english">
-      <div class="flex items-center gap-3 mb-4">
+      <div class="flex items-center gap-3 mb-6">
         <div class="w-1 h-8 rounded-full bg-blue-500"></div>
         <h2 class="text-xl font-bangers tracking-wider text-white">English Releases</h2>
-        <span class="text-xs text-brand-text-muted font-semibold">{sortedEN.length} sets</span>
+        <span class="text-xs text-brand-text-muted font-semibold">{sortedEN.length} products</span>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 stagger-grid">
-        {sortedEN.map(set => (
-          <SetCard set={set.data} />
-        ))}
+
+      <div class="space-y-8">
+        <!-- US Releases -->
+        {usSets.length > 0 && (
+          <div>
+            <h3 class="text-lg font-bold text-brand-text-muted mb-4 flex items-center gap-2">
+              <span>🇺🇸</span> US Releases
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 stagger-grid">
+              {usSets.map(set => (
+                <SetCard set={set.data} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- SEA Releases -->
+        {seaSets.length > 0 && (
+          <div>
+            <h3 class="text-lg font-bold text-brand-text-muted mb-4 flex items-center gap-2">
+              <span>🌏</span> SEA Releases
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 stagger-grid">
+              {seaSets.map(set => (
+                <SetCard set={set.data} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- EN Promos -->
+        {promoSetsEN.length > 0 && (
+          <div>
+            <h3 class="text-lg font-bold text-brand-text-muted mb-4 flex items-center gap-2">
+              <span>⭐</span> English Promos
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 stagger-grid">
+              {promoSetsEN.map(set => (
+                <SetCard set={set.data} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   </div>

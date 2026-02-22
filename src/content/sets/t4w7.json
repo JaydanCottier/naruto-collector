@@ -1,38 +1,42 @@
 {
-  "id": "t4w7",
-  "slug": "t4w7",
-  "officialCode": "NR-RD-Z007",
-  "name": "T4W7",
-  "displayName": "Tier 4 Wave 7 — Chunin Exams",
-  "tier": "T4",
-  "wave": 7,
-  "arc": "Chunin Exams",
-  "series": "Tier 4",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2024-06-01",
-  "cardCount": 8,
-  "packCount": 18,
-  "packPrice": "10¥",
-  "caseSize": {
-    "regular": 18,
-    "master": 36
-  },
-  "description": "Chapter of the Array — Tier 4 Wave 7.",
-  "logoImage": "/images/sets/t4w7-logo.png",
-  "bannerImage": "/images/sets/t4w7-banner.jpg",
-  "notes": "ARs return, now rarer than BPs. PTRs+PUs back. Rs=Chunin Exam scenes. MRs=zodiacs. PU sets: Team Guy, Naruto+Jiraiya, Orochimaru+Kabuto. T4 sticker seals.",
-  "englishEquivalent": "nrsa02-us",
-  "unsealed": true,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 33,
-    "approxPriceCNY": 180
-  },
-  "pullRates": {
-    "ur_per_packs": 3,
-    "hit_per_packs": 1,
-    "valueRating": 5
-  }
+    "id": "t4w7",
+    "slug": "t4w7",
+    "officialCode": "NR-RD-Z007",
+    "name": "T4W7",
+    "displayName": "Tier 4 Wave 7 — Chunin Exams",
+    "tier": "T4",
+    "wave": 7,
+    "arc": "Chunin Exams",
+    "series": "Tier 4",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2024-06-01",
+    "cardCount": 8,
+    "packCount": 18,
+    "packPrice": "10¥",
+    "caseSize": {
+        "regular": 18,
+        "master": 36
+    },
+    "description": "Chapter of the Array — Tier 4 Wave 7.",
+    "logoImage": "/images/sets/t4w7-logo.png",
+    "bannerImage": "/images/sets/t4w7-banner.jpg",
+    "notes": "ARs return, now rarer than BPs. PTRs+PUs back. Rs=Chunin Exam scenes. MRs=zodiacs. PU sets: Team Guy, Naruto+Jiraiya, Orochimaru+Kabuto. T4 sticker seals.",
+    "officialCodeShort": "NRZ07",
+    "englishEquivalents": [
+        "jin-s2"
+    ],
+    "unsealed": true,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T4W7",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T4W7",
+        "approxPriceUSD": 33,
+        "approxPriceCNY": 180
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    },
+    "region": "CN"
 }

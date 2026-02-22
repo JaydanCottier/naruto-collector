@@ -88,7 +88,9 @@ import RarityBadge from '../components/cards/RarityBadge.astro';
         c.name.toLowerCase().includes(q) ||
         (c.character && c.character.toLowerCase().includes(q)) ||
         c.setName.toLowerCase().includes(q) ||
-        c.rarity.toLowerCase().includes(q)
+        c.rarity.toLowerCase().includes(q) ||
+        (c.cardSerial && c.cardSerial.toLowerCase().includes(q)) ||
+        (c.number && c.number.toLowerCase().includes(q))
       );
 
       searchStatus.textContent = `${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`;

@@ -1,24 +1,25 @@
 {
-  "id": "the-last-gift",
-  "slug": "the-last-gift",
-  "name": "The Last: Naruto the Movie Gift Box",
-  "displayName": "The Last Gift Box",
-  "tier": "SP",
-  "wave": null,
-  "series": "Special",
-  "type": "gift",
-  "language": "CN",
-  "releaseDate": "2023-06-01",
-  "cardCount": 8,
-  "description": "Movie commemoration gift set.",
-  "logoImage": "/images/sets/the-last-gift-logo.png",
-  "bannerImage": "/images/sets/the-last-gift-banner.jpg",
-  "notes": "Movie commemoration gift set. Further details TBC.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 30,
-    "approxPriceCNY": 180
-  }
+    "id": "the-last-gift",
+    "slug": "the-last-gift",
+    "name": "The Last: Naruto the Movie Gift Box",
+    "displayName": "The Last Gift Box",
+    "tier": "SP",
+    "wave": null,
+    "series": "Special",
+    "type": "gift",
+    "language": "CN",
+    "releaseDate": "2023-06-01",
+    "cardCount": 8,
+    "description": "Movie commemoration gift set.",
+    "logoImage": "/images/sets/the-last-gift-logo.png",
+    "bannerImage": "/images/sets/the-last-gift-banner.jpg",
+    "notes": "Movie commemoration gift set. Further details TBC.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20The%20Last%3A%20Naruto%20the%20Movie%20Gift%20Box",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20The%20Last%3A%20Naruto%20the%20Movie%20Gift%20Box",
+        "approxPriceUSD": 30,
+        "approxPriceCNY": 180
+    },
+    "region": "CN"
 }

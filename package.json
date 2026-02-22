@@ -10,11 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "@astrojs/check": "^0.9.6",
+    "astro": "^5.17.1",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.0",
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.2.0",
+    "playwright": "^1.58.2",
     "tailwindcss": "^4.2.0"
   }
 }

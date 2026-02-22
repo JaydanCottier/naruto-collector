@@ -15,7 +15,13 @@
         "description": "Badge Rare pin — standard pull.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "PIN-BLIND-BOX",
+        "cardNumber": "001",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "PIN-BLIND-BOX-BR-001L1"
     },
     {
         "id": "pin-002",
@@ -33,7 +39,13 @@
         "description": "Badge Rare pin — standard pull.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "PIN-BLIND-BOX",
+        "cardNumber": "002",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "PIN-BLIND-BOX-BR-002L1"
     },
     {
         "id": "pin-003",
@@ -51,7 +63,13 @@
         "description": "Badge Rare pin — standard pull.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "PIN-BLIND-BOX",
+        "cardNumber": "003",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "PIN-BLIND-BOX-BR-003L1"
     },
     {
         "id": "pin-004",
@@ -69,7 +87,13 @@
         "description": "Badge Rare pin — standard pull.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "PIN-BLIND-BOX",
+        "cardNumber": "004",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "PIN-BLIND-BOX-BR-004L1"
     },
     {
         "id": "pin-005",
@@ -87,7 +111,13 @@
         "description": "Chase pin — one of the 4 hardest to find.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "PIN-BLIND-BOX",
+        "cardNumber": "005",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "PIN-BLIND-BOX-BR-005L1"
     },
     {
         "id": "pin-006",
@@ -105,7 +135,13 @@
         "description": "Chase pin — one of the 4 hardest to find.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "PIN-BLIND-BOX",
+        "cardNumber": "006",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "PIN-BLIND-BOX-BR-006L1"
     },
     {
         "id": "pin-007",
@@ -123,7 +159,13 @@
         "description": "Chase pin — one of the 4 hardest to find.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "PIN-BLIND-BOX",
+        "cardNumber": "007",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "PIN-BLIND-BOX-BR-007L1"
     },
     {
         "id": "pin-008",
@@ -141,6 +183,12 @@
         "description": "Chase pin — one of the 4 hardest to find. Sage Mode variant.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "PIN-BLIND-BOX",
+        "cardNumber": "008",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "PIN-BLIND-BOX-BR-008L1"
     }
 ]

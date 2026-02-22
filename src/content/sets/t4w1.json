@@ -1,44 +1,45 @@
 {
-  "id": "t4w1",
-  "slug": "t4w1",
-  "officialCode": "NR-RD-Z001",
-  "name": "T4W1",
-  "displayName": "Tier 4 Wave 1",
-  "tier": "T4",
-  "wave": 1,
-  "series": "Tier 4",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2021-04-01",
-  "cardCount": 8,
-  "packCount": 18,
-  "packPrice": "10¥",
-  "packContents": "Every other pack SSR+",
-  "caseSize": {
-    "regular": 18,
-    "master": 36
-  },
-  "boxVariants": {
-    "sl": {
-      "code": "1-10",
-      "approxPriceUSD": 40
+    "id": "t4w1",
+    "slug": "t4w1",
+    "officialCode": "NR-RD-Z001",
+    "name": "T4W1",
+    "displayName": "Tier 4 Wave 1",
+    "tier": "T4",
+    "wave": 1,
+    "series": "Tier 4",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2021-04-01",
+    "cardCount": 8,
+    "packCount": 18,
+    "packPrice": "10¥",
+    "packContents": "Every other pack SSR+",
+    "caseSize": {
+        "regular": 18,
+        "master": 36
     },
-    "lb": null
-  },
-  "description": "Chapter of the Array — Tier 4 Wave 1.",
-  "logoImage": "/images/sets/t4w1-logo.png",
-  "bannerImage": "/images/sets/t4w1-banner.jpg",
-  "notes": "HR 001-009 EXCLUSIVE. SLR #6 Itachi EXCLUSIVE (hardest SLR). SP 005-008 EXCLUSIVE (Kaguya hardest). T4 sticker seals — NOT shrink wrapped. Normal.",
-  "unsealed": true,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 59,
-    "approxPriceCNY": 180
-  },
-  "pullRates": {
-    "ur_per_packs": 3,
-    "hit_per_packs": 1,
-    "valueRating": 5
-  }
+    "boxVariants": {
+        "sl": {
+            "code": "1-10",
+            "approxPriceUSD": 40
+        },
+        "lb": null
+    },
+    "description": "Chapter of the Array — Tier 4 Wave 1.",
+    "logoImage": "/images/sets/t4w1-logo.png",
+    "bannerImage": "/images/sets/t4w1-banner.jpg",
+    "notes": "HR 001-009 EXCLUSIVE. SLR #6 Itachi EXCLUSIVE (hardest SLR). SP 005-008 EXCLUSIVE (Kaguya hardest). T4 sticker seals — NOT shrink wrapped. Normal.",
+    "unsealed": true,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T4W1",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T4W1",
+        "approxPriceUSD": 59,
+        "approxPriceCNY": 180
+    },
+    "pullRates": {
+        "ur_per_packs": 3,
+        "hit_per_packs": 1,
+        "valueRating": 5
+    },
+    "region": "CN"
 }

@@ -1,5 +1,7 @@
 ---
 import RarityBadge from './cards/RarityBadge.astro';
+import fs from 'node:fs';
+import path from 'node:path';
 
 interface Props {
   card: {
@@ -9,13 +11,25 @@ interface Props {
     number: string;
     rarity: string;
     image: string;
+    image: string;
     setId?: string;
+    cardSerial?: string;
     character?: string | null;
   };
   showSet?: boolean;
 }
 
 const { card, showSet = false } = Astro.props;
+
+let imageSrc = card.image;
+try {
+  const imagePath = path.join(process.cwd(), 'public', card.image);
+  if (!fs.existsSync(imagePath)) {
+    imageSrc = `/images/placeholder/${card.rarity.toLowerCase()}.svg`;
+  }
+} catch (e) {
+  imageSrc = `/images/placeholder/${card.rarity.toLowerCase()}.svg`;
+}
 ---
 
 <a
@@ -29,23 +43,22 @@ const { card, showSet = false } = Astro.props;
   <!-- Image -->
   <div class="relative aspect-[5/7] bg-brand-bg overflow-hidden">
     <img
-      src={card.image}
+      src={imageSrc}
       alt={card.name}
       class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
       loading="lazy"
-      onerror={`this.onerror=null;this.src='/images/placeholder/${card.rarity.toLowerCase()}.svg'`}
     />
     <!-- Rarity badge -->
     <div class="absolute top-2 left-2">
       <RarityBadge rarity={card.rarity} />
     </div>
 
-    <!-- Owned overlay (green ✓) — bottom-left -->
+    <!-- Owned overlay (green ✓) &mdash; bottom-left -->
     <div class="owned-overlay absolute bottom-2 left-2 hidden items-center justify-center w-7 h-7 rounded-full bg-green-500/90 text-white text-sm font-bold shadow-lg" data-card-id={card.id}>
       ✓
     </div>
 
-    <!-- Wishlist overlay (gold ⭐) — top-right -->
+    <!-- Wishlist overlay (gold ⭐) &mdash; top-right -->
     <div class="wishlist-overlay absolute top-2 right-2 hidden items-center justify-center w-7 h-7 rounded-full bg-yellow-500/90 text-white text-sm shadow-lg" data-card-id={card.id}>
       ⭐
     </div>
@@ -85,9 +98,9 @@ const { card, showSet = false } = Astro.props;
   <!-- Info -->
   <div class="p-2.5">
     <div class="flex items-center gap-1.5 mb-0.5">
-      <span class="text-[10px] font-mono text-brand-text-muted">#{card.number}</span>
+      <span class="text-[13px] font-mono text-brand-text-muted">{card.cardSerial || `#${card.number}`}</span>
       {showSet && card.setId && (
-        <span class="text-[10px] text-brand-text-muted">• {card.setId.toUpperCase()}</span>
+        <span class="text-[10px] text-brand-text-muted">&bull; {card.setId.toUpperCase()}</span>
       )}
     </div>
     <p class="text-sm font-semibold text-white truncate leading-tight">{card.name}</p>

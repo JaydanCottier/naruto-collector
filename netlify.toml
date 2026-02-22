@@ -11,3 +11,18 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=2592000"
+
+[[redirects]]
+  from = "/rarity-guide"
+  to = "/rarities"
+  status = 301
+
+[[redirects]]
+  from = "/sets/jin-s2"
+  to = "/sets/nrsa02"
+  status = 301
+
+[[redirects]]
+  from = "/cards/jin-s2-*"
+  to = "/cards/nrsa02-:splat"
+  status = 301

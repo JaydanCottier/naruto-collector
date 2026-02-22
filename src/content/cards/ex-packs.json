@@ -15,7 +15,13 @@
         "description": "",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "EX-PACKS",
+        "cardNumber": "001",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "EX-PACKS-UR-001L1"
     },
     {
         "id": "ex-002",
@@ -33,7 +39,13 @@
         "description": "",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "EX-PACKS",
+        "cardNumber": "002",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "EX-PACKS-SR-002L1"
     },
     {
         "id": "ex-003",
@@ -51,7 +63,13 @@
         "description": "SP009 — one of the most valuable KAYOU cards. ONLY found in EX packs.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "EX-PACKS",
+        "cardNumber": "003",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "EX-PACKS-SP-003L1"
     },
     {
         "id": "ex-004",
@@ -69,7 +87,13 @@
         "description": "",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "EX-PACKS",
+        "cardNumber": "004",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "EX-PACKS-SSR-004L1"
     },
     {
         "id": "ex-005",
@@ -87,7 +111,13 @@
         "description": "SLR card — available in Black and White variants.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "EX-PACKS",
+        "cardNumber": "005",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "EX-PACKS-SLR-005L1"
     },
     {
         "id": "ex-006",
@@ -105,7 +135,13 @@
         "description": "",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "EX-PACKS",
+        "cardNumber": "006",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "EX-PACKS-R-006L1"
     },
     {
         "id": "ex-007",
@@ -123,7 +159,13 @@
         "description": "SE card available in EX4 and EX5 packs.",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "EX-PACKS",
+        "cardNumber": "007",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "EX-PACKS-SE-007L1"
     },
     {
         "id": "ex-008",
@@ -141,6 +183,12 @@
         "description": "",
         "variant": null,
         "serialLimit": null,
-        "isPromo": false
+        "isPromo": false,
+        "region": "CN",
+        "setPrefix": "EX-PACKS",
+        "cardNumber": "008",
+        "variantLevel": "L1",
+        "variantLevelDesc": "Standard",
+        "cardSerial": "EX-PACKS-R-008L1"
     }
 ]

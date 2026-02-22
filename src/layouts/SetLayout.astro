@@ -4,6 +4,7 @@ import PullRateCard from '../components/sets/PullRateCard.astro';
 import BuyButton from '../components/affiliate/BuyButton.astro';
 import AffiliateDisclosure from '../components/affiliate/AffiliateDisclosure.astro';
 import CompleteYourSet from '../components/sets/CompleteYourSet.astro';
+import { getEntry } from 'astro:content';
 
 interface Props {
   set: any;
@@ -12,6 +13,13 @@ interface Props {
 
 const { set, cards } = Astro.props;
 const { getTierColor } = await import('../utils/rarity.ts');
+
+const seaEqvSet = set.seaEquivalent ? await getEntry('sets', set.seaEquivalent) : null;
+const usEqvSet = set.usEquivalent ? await getEntry('sets', set.usEquivalent) : null;
+const englishEquivalentsSets = set.englishEquivalents && set.englishEquivalents.length > 0
+  ? await Promise.all(set.englishEquivalents.map((id: string) => getEntry('sets', id)))
+  : [];
+
 const tierColor = getTierColor(set.tier);
 const link = set.affiliateLinks?.aliexpress || '#';
 const price = set.affiliateLinks?.approxPriceUSD || 0;
@@ -22,7 +30,7 @@ const valueStars = set.pullRates?.valueRating || 3;
 const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
 ---
 
-<BaseLayout title={`${set.displayName || set.name} — Set Details`} description={set.description}>
+<BaseLayout title={`${set.displayName || set.name} &mdash; Set Details`} description={set.description}>
   <!-- Set Header -->
   <div class="relative rounded-2xl overflow-hidden mb-8 border border-brand-border">
     <div class="absolute inset-0 bg-brand-surface"></div>
@@ -33,9 +41,9 @@ const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
       <!-- Breadcrumb -->
       <nav class="text-xs text-brand-text-muted mb-4 font-semibold">
         <a href="/" class="hover:text-white transition-colors">Home</a>
-        <span class="mx-2">›</span>
+        <span class="mx-2">&rsaquo;</span>
         <a href="/sets" class="hover:text-white transition-colors">Sets</a>
-        <span class="mx-2">›</span>
+        <span class="mx-2">&rsaquo;</span>
         <span class="text-white">{set.displayName || set.name}</span>
       </nav>
 
@@ -54,6 +62,21 @@ const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
             {set.arc && (
               <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 border border-purple-500/30">
                 ⚔️ {set.arc}
+              </span>
+            )}
+            {set.region === 'US' && (
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                🇺🇸 US Release
+              </span>
+            )}
+            {set.region === 'SEA' && (
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-500 border border-amber-500/30">
+                🌏 SEA Release
+              </span>
+            )}
+            {set.region === 'GLOBAL' && (
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                🌐 Global Release
               </span>
             )}
             {isFinalWave && (
@@ -183,10 +206,24 @@ const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
         </p>
       )}
 
-      {set.englishEquivalent && (
-        <p class="mt-2 text-xs text-blue-400">
-          🇬🇧 Also available as <a href={`/sets/${set.englishEquivalent}/`} class="underline hover:text-white">{set.englishEquivalent}</a>
-        </p>
+      {englishEquivalentsSets.length > 0 && (
+        <div class="mt-4 p-3 rounded-lg border border-blue-500/30 bg-blue-500/10">
+          <p class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+            <span>🇬🇧</span> Available in English as:
+          </p>
+          <div class="space-y-1.5 text-xs text-brand-text-muted">
+            {englishEquivalentsSets.map((eq: any) => {
+              if (!eq) return null;
+              const eqSet = eq.data;
+              const flag = eqSet.region === 'US' ? '🇺🇸' : eqSet.region === 'SEA' ? '🌏' : '🌐';
+              return (
+                <a href={`/sets/${eq.slug || eqSet.slug}/`} class="block hover:text-white transition-colors">
+                  {flag} <strong>{eqSet.displayName || eqSet.name} ({eqSet.officialCode})</strong> &mdash; {eqSet.region} &mdash; {eqSet.releaseDate}
+                </a>
+              );
+            })}
+          </div>
+        </div>
       )}
       {set.cnEquivalent && (
         <p class="mt-2 text-xs text-red-400">
@@ -217,6 +254,43 @@ const isFinalWave = (set.id === 't1w4' || set.id === 't3w5');
         <p class="text-sm font-semibold text-amber-400 mb-1">Poor Hit Rate Warning</p>
         <p class="text-xs text-amber-300/80">
           This set has a significantly lower hit rate than other products in its tier. Community consensus rates this as poor value for money. Consider other options in the same price range. <a href="/start-here" class="underline text-amber-400 hover:text-white">See our recommendations →</a>
+        </p>
+      </div>
+    </div>
+  )}
+
+  <!-- Cross-Region Banners -->
+  {set.region === 'US' && seaEqvSet && (
+    <div class="mb-6 bg-brand-surface border border-brand-border rounded-xl p-4 flex items-start gap-3">
+      <span class="text-lg shrink-0">🌏</span>
+      <div>
+        <p class="text-sm font-semibold text-brand-text mb-1">SEA Collectors</p>
+        <p class="text-xs text-brand-text-muted">
+          This is the same set as <strong>{seaEqvSet.data.displayName || seaEqvSet.data.name} ({seaEqvSet.data.officialCode})</strong> &mdash; same card pool, different packaging.
+        </p>
+      </div>
+    </div>
+  )}
+
+  {set.region === 'SEA' && usEqvSet && (
+    <div class="mb-6 bg-brand-surface border border-brand-border rounded-xl p-4 flex items-start gap-3">
+      <span class="text-lg shrink-0">🇺🇸</span>
+      <div>
+        <p class="text-sm font-semibold text-brand-text mb-1">US Collectors</p>
+        <p class="text-xs text-brand-text-muted">
+          This set is available as <strong>{usEqvSet.data.displayName || usEqvSet.data.name} ({usEqvSet.data.officialCode})</strong> in the US.
+        </p>
+      </div>
+    </div>
+  )}
+
+  {set.region === 'SEA' && !usEqvSet && (
+    <div class="mb-6 bg-brand-surface border border-brand-border rounded-xl p-4 flex items-start gap-3">
+      <span class="text-lg shrink-0">ℹ️</span>
+      <div>
+        <p class="text-sm font-semibold text-brand-text mb-1">Regional Availability</p>
+        <p class="text-xs text-brand-text-muted">
+          This set is available in Southeast Asia only. No US equivalent has been announced.
         </p>
       </div>
     </div>

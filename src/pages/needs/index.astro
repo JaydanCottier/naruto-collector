@@ -21,6 +21,8 @@ const cardsData = allCards.map(c => {
     setSlug: c.setSlug,
     tier: set?.data.tier || '',
     image: c.image,
+    image: c.image,
+    region: set?.data.region || 'CN',
     affiliateLink: set?.data.affiliateLinks?.aliexpress || '#',
     approxPrice: set?.data.affiliateLinks?.approxPriceUSD || 0,
   };
@@ -31,6 +33,7 @@ const sets = allSets.map(s => ({ id: s.data.id, name: s.data.displayName || s.da
 const tiers = [...new Set(allSets.map(s => s.data.tier))].sort();
 const rarities = [...new Set(allCards.map(c => c.rarity))].sort();
 const characters = [...new Set(allCards.map(c => c.character).filter(Boolean))].sort() as string[];
+const regions = ['CN', 'NA', 'SEA', 'GLOBAL'];
 
 import { RARITY_MAP } from '../../utils/rarity.ts';
 ---
@@ -42,7 +45,14 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
 
   <!-- Filters -->
   <div class="bg-brand-surface rounded-xl border border-brand-border p-4 mb-6">
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+      <div>
+        <label class="text-[10px] font-bold text-brand-text-muted uppercase tracking-wider mb-1 block">Region</label>
+        <select id="filter-region" class="w-full bg-brand-bg border border-brand-border rounded-lg px-2 py-1.5 text-xs text-white font-rajdhani">
+          <option value="">All Regions</option>
+          {regions.map(r => <option value={r}>{r}</option>)}
+        </select>
+      </div>
       <div>
         <label class="text-[10px] font-bold text-brand-text-muted uppercase tracking-wider mb-1 block">Set</label>
         <select id="filter-set" class="w-full bg-brand-bg border border-brand-border rounded-lg px-2 py-1.5 text-xs text-white font-rajdhani">
@@ -96,14 +106,17 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
       const filterTier = document.getElementById('filter-tier').value;
       const filterRarity = document.getElementById('filter-rarity').value;
       const filterChar = document.getElementById('filter-char').value;
+      const filterRegion = document.getElementById('filter-region').value;
 
       const valSet = filterSet ? filterSet.trim() : '';
       const valTier = filterTier ? filterTier.trim().toLowerCase() : '';
       const valRarity = filterRarity ? filterRarity.trim().toLowerCase() : '';
       const valChar = filterChar ? filterChar.trim().toLowerCase() : '';
+      const valRegion = filterRegion ? filterRegion.trim() : '';
 
       const needed = cardsData.filter(c => {
         if (owned[c.id]) return false;
+        if (valRegion && c.region !== valRegion) return false;
         if (valSet && c.setId !== valSet) return false;
         if (valTier && (c.tier || '').toLowerCase() !== valTier) return false;
         if (valRarity && (c.rarity || '').toLowerCase() !== valRarity) return false;
@@ -163,6 +176,7 @@ import { RARITY_MAP } from '../../utils/rarity.ts';
 
     renderNeeds();
 
+    document.getElementById('filter-region').addEventListener('change', renderNeeds);
     document.getElementById('filter-set').addEventListener('change', renderNeeds);
     document.getElementById('filter-tier').addEventListener('change', renderNeeds);
     document.getElementById('filter-rarity').addEventListener('change', renderNeeds);

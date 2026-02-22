@@ -1,32 +1,33 @@
 {
-  "id": "t2-5w1",
-  "slug": "t2-5w1",
-  "officialCode": "NR-RD-J001",
-  "name": "T2.5W1",
-  "displayName": "Tier 2.5 — Itachi Cloud Box",
-  "tier": "T2.5",
-  "wave": 1,
-  "series": "Tier 2.5",
-  "type": "special",
-  "language": "CN",
-  "releaseDate": "2021-06-01",
-  "cardCount": 8,
-  "packCount": 50,
-  "packPrice": "2¥",
-  "description": "Capital Chapter — Itachi Cloud Box.",
-  "logoImage": "/images/sets/t2-5w1-logo.png",
-  "bannerImage": "/images/sets/t2-5w1-banner.jpg",
-  "notes": "Capital Chapter. ONLY WAVE EVER MADE. CP rarity found NOWHERE else. 50 packs — best beginner box.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 25,
-    "approxPriceCNY": 100
-  },
-  "pullRates": {
-    "ur_per_packs": 6,
-    "hit_per_packs": 3,
-    "valueRating": 4
-  }
+    "id": "t2-5w1",
+    "slug": "t2-5w1",
+    "officialCode": "NR-RD-J001",
+    "name": "T2.5W1",
+    "displayName": "Tier 2.5 — Itachi Cloud Box",
+    "tier": "T2.5",
+    "wave": 1,
+    "series": "Tier 2.5",
+    "type": "special",
+    "language": "CN",
+    "releaseDate": "2021-06-01",
+    "cardCount": 8,
+    "packCount": 50,
+    "packPrice": "2¥",
+    "description": "Capital Chapter — Itachi Cloud Box.",
+    "logoImage": "/images/sets/t2-5w1-logo.png",
+    "bannerImage": "/images/sets/t2-5w1-banner.jpg",
+    "notes": "Capital Chapter. ONLY WAVE EVER MADE. CP rarity found NOWHERE else. 50 packs — best beginner box.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T2.5W1",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T2.5W1",
+        "approxPriceUSD": 25,
+        "approxPriceCNY": 100
+    },
+    "pullRates": {
+        "ur_per_packs": 6,
+        "hit_per_packs": 3,
+        "valueRating": 4
+    },
+    "region": "CN"
 }

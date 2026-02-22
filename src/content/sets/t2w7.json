@@ -1,37 +1,38 @@
 {
-  "id": "t2w7",
-  "slug": "t2w7",
-  "officialCode": "NR-CC-B007",
-  "name": "T2W7",
-  "displayName": "Tier 2 Wave 7 — Zabuza Arc",
-  "tier": "T2",
-  "wave": 7,
-  "arc": "Zabuza Arc",
-  "series": "Tier 2",
-  "type": "booster",
-  "language": "CN",
-  "releaseDate": "2023-11-01",
-  "cardCount": 8,
-  "packCount": 30,
-  "packPrice": "2¥",
-  "caseSize": {
-    "regular": 24,
-    "master": 48
-  },
-  "description": "Chapter of Soldiers — Tier 2 Wave 7.",
-  "logoImage": "/images/sets/t2w7-logo.png",
-  "bannerImage": "/images/sets/t2w7-banner.jpg",
-  "notes": "⚠️ POOR HIT RATE (community consensus). ZRs removed. No ARs/ORs/PUs. Introduces Boruto cards. CR case hits: Zabuza, Haku, Sexy Jutsu Naruto, Boruto.",
-  "unsealed": false,
-  "affiliateLinks": {
-    "aliexpress": "PLACEHOLDER",
-    "ebay": "",
-    "approxPriceUSD": 18,
-    "approxPriceCNY": 60
-  },
-  "pullRates": {
-    "ur_per_packs": 10,
-    "hit_per_packs": 6,
-    "valueRating": 1
-  }
+    "id": "t2w7",
+    "slug": "t2w7",
+    "officialCode": "NR-CC-B007",
+    "name": "T2W7",
+    "displayName": "Tier 2 Wave 7 — Zabuza Arc",
+    "tier": "T2",
+    "wave": 7,
+    "arc": "Zabuza Arc",
+    "series": "Tier 2",
+    "type": "booster",
+    "language": "CN",
+    "releaseDate": "2023-11-01",
+    "cardCount": 8,
+    "packCount": 30,
+    "packPrice": "2¥",
+    "caseSize": {
+        "regular": 24,
+        "master": 48
+    },
+    "description": "Chapter of Soldiers — Tier 2 Wave 7.",
+    "logoImage": "/images/sets/t2w7-logo.png",
+    "bannerImage": "/images/sets/t2w7-banner.jpg",
+    "notes": "⚠️ POOR HIT RATE (community consensus). ZRs removed. No ARs/ORs/PUs. Introduces Boruto cards. CR case hits: Zabuza, Haku, Sexy Jutsu Naruto, Boruto.",
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "https://www.aliexpress.com/wholesale?SearchText=kayou%20naruto%20T2W7",
+        "ebay": "https://www.ebay.com/sch/i.html?_nkw=kayou%20naruto%20T2W7",
+        "approxPriceUSD": 18,
+        "approxPriceCNY": 60
+    },
+    "pullRates": {
+        "ur_per_packs": 10,
+        "hit_per_packs": 6,
+        "valueRating": 1
+    },
+    "region": "CN"
 }

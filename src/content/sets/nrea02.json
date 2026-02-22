@@ -1,0 +1,36 @@
+{
+    "id": "nrea02",
+    "slug": "nrea02",
+    "officialCode": "NREA02",
+    "name": "Smriti Collectible Cards - Earth Scroll-002",
+    "shortName": "Earth Scroll-002",
+    "displayName": "Smriti Collectible Cards - Earth Scroll-002 (NREA02)",
+    "tier": "T2",
+    "type": "booster",
+    "language": "EN",
+    "region": "SEA",
+    "regions": [
+        "SEA"
+    ],
+    "releaseDate": "2026-01-01",
+    "cnEquivalent": "t2w9",
+    "cnEquivalentCode": "NRB09",
+    "cnEquivalentLabel": "Tier 2 Wave 9 (NRB09)",
+    "seaEquivalent": "nrea02",
+    "naEquivalent": null,
+    "notes": "SEA-only release. No NA equivalent. English version of T2W9. Most recently released English KAYOU set as of early 2026.",
+    "retailAvailability": [
+        "AliExpress",
+        "SEA local retailers"
+    ],
+    "unsealed": false,
+    "affiliateLinks": {
+        "aliexpress": "PLACEHOLDER",
+        "approxPriceUSD": 20
+    },
+    "pullRates": {
+        "ur_per_packs": 8,
+        "hit_per_packs": 4,
+        "valueRating": 3
+    }
+}

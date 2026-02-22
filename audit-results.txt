@@ -1,0 +1,74 @@
+Found 791 HTML files to audit.
+
+--- AUDIT RESULTS ---
+❌ Found 15 broken targets:
+
+[Target: /cards/${t.slug}/]
+   Found in 791 pages, examples:
+   - \404.html
+   - \card-dimensions\index.html
+   - \cards\2023-new-year-001-minato-namikaze\index.html
+
+[Target: ${t.image}]
+   Found in 791 pages, examples:
+   - \404.html
+   - \card-dimensions\index.html
+   - \cards\2023-new-year-001-minato-namikaze\index.html
+
+[Target: /images/placeholder/xp.svg]
+   Found in 153 pages, examples:
+   - \cards\age-of-ninjas-007-sasuke-uchiha\index.html
+   - \cards\age-of-ninjas-008-sakura-haruno\index.html
+   - \cards\blister-002-gaara\index.html
+
+[Target: /images/placeholder/br.svg]
+   Found in 107 pages, examples:
+   - \cards\age-of-ninjas-007-sasuke-uchiha\index.html
+   - \cards\age-of-ninjas-008-sakura-haruno\index.html
+   - \cards\blister-004-sasuke-uchiha\index.html
+
+[Target: /rarity-guide]
+   Found in 2 pages, examples:
+   - \products\index.html
+   - \start-here\index.html
+
+[Target: /cards/${e.slug}/]
+   Found in 1 pages, examples:
+   - \search\index.html
+
+[Target: ${e.image}]
+   Found in 1 pages, examples:
+   - \search\index.html
+
+[Target: /images/sets/t2-5w1-banner.jpg]
+   Found in 1 pages, examples:
+   - \start-here\index.html
+
+[Target: /images/sets/t4w6-banner.jpg]
+   Found in 1 pages, examples:
+   - \start-here\index.html
+
+[Target: /images/sets/t4w7-banner.jpg]
+   Found in 1 pages, examples:
+   - \start-here\index.html
+
+[Target: /images/sets/t1w1-banner.jpg]
+   Found in 1 pages, examples:
+   - \start-here\index.html
+
+[Target: /images/sets/t2w1-banner.jpg]
+   Found in 1 pages, examples:
+   - \start-here\index.html
+
+[Target: ${isPlaceholder ? '#' : setInfo.link}]
+   Found in 1 pages, examples:
+   - \wishlist\index.html
+
+[Target: /cards/${c.slug}/]
+   Found in 1 pages, examples:
+   - \wishlist\index.html
+
+[Target: ${c.image}]
+   Found in 1 pages, examples:
+   - \wishlist\index.html
+
